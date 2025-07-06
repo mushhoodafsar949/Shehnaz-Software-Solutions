@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a routerLink="/" class="navbar-logo-link">
+        <img src="assets/logo.svg" alt="Shehnaz Software Solutions Logo" class="navbar-logo">
+        <span class="brand-name">Shehnaz Software Solutions</span>
+      </a>
+    </div>
+
+    <div class="navbar-menu-container" [class.is-open]="menuOpen">
+      <div class="navbar-menu">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="navbar-item">Home</a>
+        <a routerLink="/about" routerLinkActive="active-link" class="navbar-item">About</a>
+        <a routerLink="/services" routerLinkActive="active-link" class="navbar-item">Services</a>
+        <a routerLink="/contact" routerLinkActive="active-link" class="navbar-item">Contact</a>
+        <a routerLink="/feedback" routerLinkActive="active-link" class="navbar-item">Feedback</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <button class="theme-toggle-btn" (click)="toggleTheme()" [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' mode'">
+          <mat-icon>{{ currentTheme === 'light' ? 'dark_mode' : 'light_mode' }}</mat-icon>
+        </button>
+        <button class="navbar-cta" mat-raised-button color="primary" (click)="openQuoteDialog()">Get a Quote</button>
+      </div>
+    </div>
+
+    <button class="hamburger-menu" (click)="toggleMenu()">
+      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </div>
+</nav> 

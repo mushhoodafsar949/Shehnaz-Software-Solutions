@@ -1,0 +1,18 @@
+<mat-sidenav-container class="main-sidenav-container">
+  <mat-sidenav #drawer class="main-sidenav" mode="over" [opened]="false">
+    <nav class="sidenav-links">
+      <a mat-list-item routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="drawer.close()">Home</a>
+      <a mat-list-item routerLink="/about" routerLinkActive="active-link" (click)="drawer.close()">About</a>
+      <a mat-list-item routerLink="/services" routerLinkActive="active-link" (click)="drawer.close()">Services</a>
+      <a mat-list-item routerLink="/feedback" routerLinkActive="active-link" (click)="drawer.close()">Feedback</a>
+      <a mat-list-item routerLink="/contact" routerLinkActive="active-link" (click)="drawer.close()">Contact</a>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-navbar [drawer]="drawer"></app-navbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container> 

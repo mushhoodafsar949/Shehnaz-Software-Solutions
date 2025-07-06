@@ -1,0 +1,213 @@
+<div class="quote-dialog-container">
+  <!-- Header -->
+  <div class="dialog-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="dialog-title">
+          <mat-icon class="title-icon">receipt_long</mat-icon>
+          Software Development Quote
+        </h1>
+        <p class="dialog-subtitle">Custom pricing for your project requirements</p>
+      </div>
+      <button mat-icon-button class="close-btn" (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="dialog-content">
+    <!-- Pricing Tiers Section -->
+    <div class="pricing-tiers-section">
+      <h2 class="section-title">
+        <mat-icon>star</mat-icon>
+        Choose Your Package
+      </h2>
+      <div class="tiers-grid">
+        <div 
+          *ngFor="let tier of pricingTiers" 
+          class="tier-card"
+          [class.selected]="selectedTier === tier"
+          (click)="selectedTier = tier"
+        >
+          <div class="tier-header">
+            <h3 class="tier-name">{{ tier.name }}</h3>
+            <div class="tier-multiplier">{{ tier.multiplier }}x</div>
+          </div>
+          <div class="tier-features">
+            <div *ngFor="let feature of tier.features" class="tier-feature">
+              <mat-icon class="feature-icon">check_circle</mat-icon>
+              {{ feature }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Selection Section -->
+    <div class="services-section">
+      <h2 class="section-title">
+        <mat-icon>list_alt</mat-icon>
+        Select Services
+      </h2>
+      <div class="services-grid">
+        <div 
+          *ngFor="let service of services" 
+          class="service-card"
+          [class.selected]="service.selected"
+          (click)="toggleService(service)"
+        >
+          <div class="service-header">
+            <div class="service-icon">
+              <mat-icon [style.color]="getComplexityColor(service.complexity)">
+                {{ getCategoryIcon(service.category) }}
+              </mat-icon>
+            </div>
+            <div class="service-info">
+              <h3 class="service-name">{{ service.name }}</h3>
+              <p class="service-description">{{ service.description }}</p>
+            </div>
+            <div class="service-price">
+              <div class="base-price">{{ formatCurrency(service.basePrice) }}</div>
+              <div class="adjusted-price" *ngIf="selectedTier.multiplier !== 1">
+                {{ formatCurrency(getServicePrice(service)) }}
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-details">
+            <div class="service-meta">
+              <mat-chip-set>
+                <mat-chip class="complexity-chip" [style.background-color]="getComplexityColor(service.complexity)">
+                  {{ service.complexity | titlecase }}
+                </mat-chip>
+                <mat-chip class="time-chip">
+                  <mat-icon>schedule</mat-icon>
+                  {{ service.estimatedTime }}
+                </mat-chip>
+              </mat-chip-set>
+            </div>
+            
+            <div class="service-features">
+              <div *ngFor="let feature of service.features" class="feature-item">
+                <mat-icon class="feature-icon">arrow_right</mat-icon>
+                {{ feature }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section" *ngIf="selectedServices.length > 0">
+      <h2 class="section-title">
+        <mat-icon>calculate</mat-icon>
+        Quote Summary
+      </h2>
+      
+      <div class="summary-content">
+        <div class="summary-details">
+          <div class="summary-item">
+            <span class="summary-label">Selected Package:</span>
+            <span class="summary-value">{{ selectedTier.name }}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Services Selected:</span>
+            <span class="summary-value">{{ selectedServices.length }}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Estimated Timeline:</span>
+            <span class="summary-value">{{ projectTimeline }}</span>
+          </div>
+        </div>
+
+        <div class="pricing-breakdown">
+          <div class="breakdown-item">
+            <span class="breakdown-label">Subtotal:</span>
+            <span class="breakdown-value">{{ formatCurrency(getSubtotal()) }}</span>
+          </div>
+          
+          <div class="discount-section">
+            <button 
+              mat-button 
+              class="discount-toggle"
+              (click)="showDiscountInput = !showDiscountInput"
+            >
+              <mat-icon>local_offer</mat-icon>
+              Add Discount
+            </button>
+            
+            <div class="discount-input" *ngIf="showDiscountInput">
+              <mat-form-field appearance="outline">
+                <mat-label>Discount Percentage</mat-label>
+                <input 
+                  matInput 
+                  type="number" 
+                  [(ngModel)]="discountPercentage"
+                  min="0" 
+                  max="50"
+                  placeholder="0"
+                >
+                <span matSuffix>%</span>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="breakdown-item discount" *ngIf="discountPercentage > 0">
+            <span class="breakdown-label">Discount ({{ discountPercentage }}%):</span>
+            <span class="breakdown-value discount-value">-{{ formatCurrency(getDiscountAmount()) }}</span>
+          </div>
+
+          <mat-divider></mat-divider>
+          
+          <div class="breakdown-item total">
+            <span class="breakdown-label">Total:</span>
+            <span class="breakdown-value total-value">{{ getTotalFormatted() }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="selectedServices.length === 0">
+      <mat-icon class="empty-icon">shopping_cart</mat-icon>
+      <h3>No Services Selected</h3>
+      <p>Choose from our comprehensive range of software development services to get your personalized quote.</p>
+    </div>
+  </div>
+
+  <!-- Footer Actions -->
+  <div class="dialog-footer">
+    <div class="footer-actions">
+      <button 
+        mat-stroked-button 
+        class="download-btn"
+        (click)="downloadPDF()"
+        [disabled]="selectedServices.length === 0"
+      >
+        <mat-icon>picture_as_pdf</mat-icon>
+        Download PDF
+      </button>
+      
+      <button 
+        mat-stroked-button 
+        class="download-btn"
+        (click)="downloadExcel()"
+        [disabled]="selectedServices.length === 0"
+      >
+        <mat-icon>table_chart</mat-icon>
+        Download Excel
+      </button>
+      
+      <button 
+        mat-raised-button 
+        color="primary" 
+        class="contact-btn"
+        (click)="close()"
+      >
+        <mat-icon>send</mat-icon>
+        Contact Us
+      </button>
+    </div>
+  </div>
+</div> 

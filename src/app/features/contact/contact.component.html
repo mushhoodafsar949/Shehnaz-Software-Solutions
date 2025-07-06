@@ -1,0 +1,276 @@
+<!-- Professional Contact Page -->
+<div class="contact-professional-wrapper">
+  <div class="contact-hero-section">
+    <div class="hero-background">
+      <div class="hero-lightray one"></div>
+      <div class="hero-lightray two"></div>
+      <div class="hero-lightray three"></div>
+    </div>
+    <div class="hero-content-card">
+      <div class="hero-content">
+        <div class="hero-company-name">Shehnaz Software Solutions</div>
+        <h1 class="hero-headline">
+          Let's Build Something
+          <br>
+          <span class="highlight">Amazing Together.</span>
+        </h1>
+        <p class="hero-description">
+          Ready to start your next project? Let's discuss how we can help bring your ideas to life and transform your business.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schedule Meeting Section -->
+  <section class="schedule-section">
+    <div class="schedule-container">
+      <div class="schedule-header">
+        <h2>Schedule a Meeting</h2>
+        <p>Book a convenient time for a Google Meet consultation. We'll discuss your project requirements and provide expert guidance.</p>
+      </div>
+      
+      <div class="schedule-content">
+        <div class="schedule-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <mat-icon>video_call</mat-icon>
+            </div>
+            <h3>Google Meet Consultation</h3>
+            <p>30-minute video call to discuss your project requirements, timeline, and budget.</p>
+            <ul class="meeting-benefits">
+              <li><mat-icon>check_circle</mat-icon> Free consultation</li>
+              <li><mat-icon>check_circle</mat-icon> No obligation</li>
+              <li><mat-icon>check_circle</mat-icon> Expert guidance</li>
+              <li><mat-icon>check_circle</mat-icon> Project roadmap</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="schedule-calendar">
+          <div class="calendar-container" role="region" aria-label="Meeting Date Picker">
+            <div class="calendar-header-row">
+              <button mat-icon-button aria-label="Previous Month" (click)="previousMonth()">
+                <mat-icon>chevron_left</mat-icon>
+              </button>
+              <div class="calendar-month-label" aria-live="polite">{{ currentMonthYear }}</div>
+              <button mat-icon-button aria-label="Next Month" (click)="nextMonth()">
+                <mat-icon>chevron_right</mat-icon>
+              </button>
+            </div>
+            <div class="calendar-grid" role="grid">
+              <div class="calendar-weekdays" role="row">
+                <div class="weekday" *ngFor="let day of weekDays" role="columnheader">{{ day }}</div>
+              </div>
+              <div class="calendar-days" role="rowgroup">
+                <ng-container *ngFor="let day of calendarDays">
+                  <button
+                    class="calendar-day"
+                    [class.other-month]="!day.isCurrentMonth"
+                    [class.selected]="day.isSelected"
+                    [class.available]="day.isAvailable"
+                    [class.today]="day.isToday"
+                    [disabled]="!day.isAvailable"
+                    (click)="selectDate(day)"
+                    type="button"
+                    role="gridcell"
+                    [attr.aria-selected]="day.isSelected"
+                    [attr.aria-label]="day.fullDate | date:'fullDate'"
+                  >
+                    <span class="day-number">{{ day.date }}</span>
+                    <span *ngIf="day.isToday" class="today-badge">Today</span>
+                  </button>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+
+          <!-- Time Slots Section (in-flow, not popup) -->
+          <div class="time-slots-section" *ngIf="selectedDate">
+            <h4>Select a Time Slot</h4>
+            <div class="time-slots-container">
+              <div
+                class="time-slot"
+                *ngFor="let slot of selectedDate.timeSlots"
+                [class.selected]="slot.isSelected"
+                [class.unavailable]="!slot.isAvailable"
+                (click)="selectTimeSlot(slot)"
+                tabindex="0"
+                role="button"
+                [attr.aria-pressed]="slot.isSelected"
+              >
+                {{ slot.time }}
+              </div>
+            </div>
+          </div>
+          
+          <!-- Booking Summary and Form -->
+          <button *ngIf="selectedDate && selectedTimeSlot" mat-raised-button color="primary" class="open-booking-dialog-btn" (click)="openBookingDialog()">
+            <mat-icon>event_available</mat-icon>
+            Review & Confirm Meeting
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-main-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+          <div class="info-container">
+            <div class="section-header">
+              <h2>Get In Touch</h2>
+              <p>We're here to help with your software development needs.</p>
+            </div>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <mat-icon>location_on</mat-icon>
+                </div>
+                <div class="contact-content">
+                  <h4>Office Location</h4>
+                  <p>Islamabad, Pakistan</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <mat-icon>schedule</mat-icon>
+                </div>
+                <div class="contact-content">
+                  <h4>Business Hours</h4>
+                  <p>Monday - Saturday: 9:00 AM – 7:00 PM</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <mat-icon>email</mat-icon>
+                </div>
+                <div class="contact-content">
+                  <h4>Email Us</h4>
+                  <a href="mailto:info@shehnazsoft.com">info&#64;shehnazsoft.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <mat-icon>call</mat-icon>
+                </div>
+                <div class="contact-content">
+                  <h4>Call Us</h4>
+                  <a href="tel:+923115191759">+92 311 5191759</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <h4>Connect With Us</h4>
+              <div class="social-buttons">
+                <a href="https://wa.me/923115191759" target="_blank" rel="noopener" class="social-btn whatsapp">
+                  <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="16" fill="#25D366"/>
+                    <path d="M16 6.667A9.333 9.333 0 0 0 7.333 16c0 1.64.44 3.18 1.28 4.54l-1.36 4.98 5.11-1.34A9.333 9.333 0 1 0 16 6.667Zm0 16.8c-1.36 0-2.7-.36-3.86-1.04l-.27-.16-3.04.8.8-2.97-.18-.28A7.6 7.6 0 1 1 16 23.467Zm4.18-5.13c-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.5.12-.15.23-.57.75-.7.9-.13.15-.26.17-.49.06-.23-.12-.97-.36-1.85-1.13-.68-.6-1.14-1.34-1.28-1.56-.13-.23-.01-.35.1-.46.1-.1.23-.26.34-.39.11-.13.15-.23.23-.38.08-.15.04-.28-.02-.4-.06-.12-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.4.06-.62.28-.21.22-.82.8-.82 1.96 0 1.16.84 2.28.96 2.44.12.16 1.65 2.53 4.01 3.45.56.19.99.3 1.33.38.56.12 1.07.1 1.47.06.45-.05 1.36-.56 1.55-1.1.19-.54.19-1 .13-1.1-.06-.1-.21-.16-.44-.28Z" fill="#fff"/>
+                  </svg>
+                  WhatsApp
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="social-btn linkedin">
+                  <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="6" fill="#1976d2"/>
+                    <path d="M10.666 13.333h2.667v8H10.666v-8zm1.333-4a1.333 1.333 0 1 1 0 2.667 1.333 1.333 0 0 1 0-2.667zm3.334 4h2.56v1.093h.037c.356-.675 1.226-1.387 2.523-1.387 2.7 0 3.2 1.776 3.2 4.084v4.21h-2.667v-3.733c0-.89-.016-2.034-1.24-2.034-1.24 0-1.427.968-1.427 1.967v3.8h-2.667v-8z" fill="#fff"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" class="social-btn facebook">
+                  <mat-icon>facebook</mat-icon>
+                  Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <div class="form-container">
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+            
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+              <div class="form-row">
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Full Name *</mat-label>
+                  <input matInput name="name" [(ngModel)]="contact.name" required />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Email Address *</mat-label>
+                  <input matInput name="email" [(ngModel)]="contact.email" type="email" required />
+                </mat-form-field>
+              </div>
+              
+              <div class="form-row">
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput name="phone" [(ngModel)]="contact.phone" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Company Name</mat-label>
+                  <input matInput name="company" [(ngModel)]="contact.company" />
+                </mat-form-field>
+              </div>
+              
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Subject *</mat-label>
+                <input matInput name="subject" [(ngModel)]="contact.subject" required />
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Message *</mat-label>
+                <textarea matInput name="message" [(ngModel)]="contact.message" rows="5" required></textarea>
+              </mat-form-field>
+              
+              <button mat-raised-button color="primary" class="submit-btn" type="submit" [disabled]="!contactForm.valid || isSubmitting">
+                <mat-icon *ngIf="!isSubmitting">send</mat-icon>
+                <span *ngIf="isSubmitting" class="loading-text">Sending...</span>
+                {{ isSubmitting ? '' : 'Send Message' }}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Map Section -->
+<section class="contact-map-section">
+  <div class="map-container">
+    <div class="map-header">
+      <h2>Find Us Here</h2>
+      <p>Visit our office in Islamabad, Pakistan</p>
+    </div>
+    <div class="map-card">
+      <div class="map-iframe">
+        <iframe
+          src="https://www.google.com/maps?q=Islamabad&output=embed"
+          width="100%" height="400" style="border:0; border-radius: 20px;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Message -->
+<div class="success-overlay" *ngIf="formSent">
+  <div class="success-card">
+    <div class="success-icon">
+      <mat-icon>check_circle</mat-icon>
+    </div>
+    <h3>Message Sent Successfully!</h3>
+    <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+    <button mat-raised-button color="primary" (click)="closeSuccess()">Close</button>
+  </div>
+</div> 

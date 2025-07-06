@@ -1,0 +1,100 @@
+<div class="booking-summary">
+  <!-- Success Message -->
+  <div class="success-message" *ngIf="showSuccess">
+    <div class="success-icon">
+      <mat-icon>check_circle</mat-icon>
+    </div>
+    <h4>Meeting Scheduled Successfully!</h4>
+    <p>Check your email for the Google Meet link. We look forward to meeting with you!</p>
+    <div class="success-details">
+      <p><strong>Date:</strong> {{ data.selectedDate.fullDate | date:'EEEE, MMMM d, y' }}</p>
+      <p><strong>Time:</strong> {{ data.selectedTimeSlot.time }}</p>
+      <p><strong>Duration:</strong> 30 minutes</p>
+    </div>
+    <button mat-raised-button color="primary" (click)="close()" class="close-btn">
+      <mat-icon>close</mat-icon>
+      Close
+    </button>
+  </div>
+
+  <!-- Booking Form (shown when not in success state) -->
+  <div *ngIf="!showSuccess">
+    <div class="summary-header">
+      <div class="summary-icon">
+        <mat-icon>event_available</mat-icon>
+      </div>
+      <h4>Meeting Confirmation</h4>
+      <p>Please review your meeting details and fill out the form below</p>
+    </div>
+    
+    <div class="summary-details">
+      <div class="detail-item">
+        <div class="detail-icon">
+          <mat-icon>calendar_today</mat-icon>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Date</span>
+          <span class="detail-value">{{ data.selectedDate.fullDate | date:'EEEE, MMMM d, y' }}</span>
+        </div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon">
+          <mat-icon>schedule</mat-icon>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Time</span>
+          <span class="detail-value">{{ data.selectedTimeSlot.time }}</span>
+        </div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon">
+          <mat-icon>timer</mat-icon>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Duration</span>
+          <span class="detail-value">30 minutes</span>
+        </div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon">
+          <span class="google-meet-icon">G</span>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label">Platform</span>
+          <span class="detail-value">Google Meet</span>
+        </div>
+      </div>
+    </div>
+    
+    <form (ngSubmit)="scheduleMeeting()" #scheduleForm="ngForm" class="schedule-form">
+      <div class="form-header">
+        <h5>Your Information</h5>
+        <p>We'll send the meeting link to your email</p>
+      </div>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Your Name *</mat-label>
+        <input matInput name="scheduleName" [(ngModel)]="data.scheduleData.name" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Email Address *</mat-label>
+        <input matInput name="scheduleEmail" [(ngModel)]="data.scheduleData.email" type="email" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Company Name</mat-label>
+        <input matInput name="scheduleCompany" [(ngModel)]="data.scheduleData.company" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Project Brief (Optional)</mat-label>
+        <textarea matInput name="scheduleMessage" [(ngModel)]="data.scheduleData.message" rows="3" placeholder="Brief description of your project or what you'd like to discuss"></textarea>
+      </mat-form-field>
+      <div class="dialog-actions">
+        <button mat-stroked-button color="primary" type="button" (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" class="schedule-btn" type="submit" [disabled]="!scheduleForm.valid || isScheduling">
+          <mat-icon *ngIf="!isScheduling">schedule</mat-icon>
+          <span *ngIf="isScheduling" class="loading-text">Scheduling...</span>
+          {{ isScheduling ? '' : 'Schedule Meeting' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div> 

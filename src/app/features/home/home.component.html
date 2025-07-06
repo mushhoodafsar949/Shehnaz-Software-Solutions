@@ -1,0 +1,286 @@
+<section class="hero-v2-section">
+  <div class="hero-v2-background">
+    <div class="hero-v2-lightray one"></div>
+    <div class="hero-v2-lightray two"></div>
+    <div class="hero-v2-lightray three"></div>
+  </div>
+  <div class="hero-v2-content-card" @fadeIn>
+    <div class="hero-v2-content">
+      <div class="hero-v2-company-name" @slideUp>Shehnaz Software Solutions</div>
+      <h1 class="hero-v2-headline" @slideUp>
+        Digital Solutions,
+        <br>
+        <span class="highlight">Engineered for Growth.</span>
+      </h1>
+      <p class="hero-v2-description" @slideUp>
+        Your dedicated partner in building scalable, secure, and transformative software that drives results.
+      </p>
+      <div class="hero-v2-actions" @slideUp>
+        <button mat-stroked-button class="hero-v2-cta-secondary" (click)="navigateToServices()">Explore Services</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ceo-section" @fadeIn>
+  <div class="ceo-container">
+    <div class="ceo-hero-card" @slideUp>
+      <div class="ceo-background-pattern"></div>
+      <div class="ceo-content-wrapper">
+        <div class="ceo-image-section" @slideInLeft>
+          <div class="ceo-image-3d-container">
+            <div class="ceo-image-shadow"></div>
+            <div class="ceo-image-frame">
+              <img [src]="ceoImagePath" 
+                   alt="Mushhood - CEO of Shehnaz Software Solutions" 
+                   class="ceo-portrait"
+                   (error)="onImageError($event)"
+                   (load)="onImageLoad($event)">
+              <div class="ceo-image-overlay"></div>
+              <!-- Fallback placeholder if image fails to load -->
+              <div class="ceo-image-fallback" *ngIf="imageError">
+                <mat-icon>person</mat-icon>
+                <span>CEO Image</span>
+              </div>
+            </div>
+            <div class="ceo-image-glow"></div>
+          </div>
+          <div class="ceo-badge-floating">
+            <mat-icon>star</mat-icon>
+            <span>CEO & Founder</span>
+          </div>
+        </div>
+        
+        <div class="ceo-content-section" @slideInRight>
+          <div class="ceo-header">
+            <div class="ceo-name-display">
+              <span class="ceo-first-name">Mushhood Afsar</span>
+              <span class="ceo-title-text">Chief Executive Officer</span>
+            </div>
+            <div class="ceo-company-badge">3S</div>
+          </div>
+          
+          <div class="ceo-vision-container">
+            <h3 class="vision-title">Vision & Leadership</h3>
+            <div class="vision-quote">
+              <div class="quote-mark">"</div>
+              <p class="vision-text">
+                We believe in the relentless pursuit of excellence through unwavering hardwork and seamless ease of execution. 
+                Our mission is to transform businesses by making complex technology solutions accessible, efficient, and powerful. 
+                Every line of code we write, every system we build, and every partnership we forge is driven by our commitment 
+                to deliver transformative results that exceed expectations.
+              </p>
+            </div>
+            
+            <div class="vision-pillars-modern">
+              <div class="pillar-item" @scaleIn>
+                <div class="pillar-icon">
+                  <mat-icon>lightbulb</mat-icon>
+                </div>
+                <span class="pillar-text">Ease</span>
+              </div>
+              <div class="pillar-item" @scaleIn>
+                <div class="pillar-icon">
+                  <mat-icon>trending_up</mat-icon>
+                </div>
+                <span class="pillar-text">Hardwork</span>
+              </div>
+              <div class="pillar-item" @scaleIn>
+                <div class="pillar-icon">
+                  <mat-icon>transform</mat-icon>
+                </div>
+                <span class="pillar-text">Transformation</span>
+              </div>
+              <div class="pillar-item" @scaleIn>
+                <div class="pillar-icon">
+                  <mat-icon>rocket_launch</mat-icon>
+                </div>
+                <span class="pillar-text">Relentless</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section" @fadeIn>
+  <div class="stats-container" @fadeIn>
+    <div class="stat-item" @slideInLeft>
+      <div class="stat-number">150+</div>
+      <div class="stat-label">Projects Delivered</div>
+    </div>
+    <div class="stat-item" @slideInRight>
+      <div class="stat-number">98%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+    <div class="stat-item" @slideInLeft>
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Support Available</div>
+    </div>
+    <div class="stat-item" @slideInRight>
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+</section>
+
+<mat-card class="home-intro-card mat-elevation-z3" @slideUp>
+  <mat-card-content>
+    <div class="intro-header" @fadeIn>
+      <h3>Why Choose 3S?</h3>
+      <p class="intro-subtitle">We combine technical expertise with business acumen to deliver solutions that matter.</p>
+    </div>
+    <div class="intro-grid" @fadeIn>
+      <div class="intro-item" @scaleIn>
+        <mat-icon>verified</mat-icon>
+        <h4>Proven Expertise</h4>
+        <p>Expert team with deep knowledge in modern technologies and best practices.</p>
+      </div>
+      <div class="intro-item" @scaleIn>
+        <mat-icon>handshake</mat-icon>
+        <h4>Client Partnership</h4>
+        <p>Transparent communication and collaborative approach throughout the journey.</p>
+      </div>
+      <div class="intro-item" @scaleIn>
+        <mat-icon>rocket_launch</mat-icon>
+        <h4>End-to-End Solutions</h4>
+        <p>Complete development lifecycle from concept to deployment and maintenance.</p>
+      </div>
+      <div class="intro-item" @scaleIn>
+        <mat-icon>trending_up</mat-icon>
+        <h4>Scalable Results</h4>
+        <p>Solutions that grow with your business and adapt to changing needs.</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<section class="capabilities-section" @fadeIn>
+  <div class="section-header" @fadeInUp>
+    <h2>Our Core Capabilities</h2>
+    <p>Comprehensive software solutions tailored to your business needs</p>
+  </div>
+  <div class="capabilities-grid" @fadeIn>
+    <div class="capability" @slideInLeft>
+      <div class="capability-icon" @pulse>
+        <mat-icon>devices</mat-icon>
+      </div>
+      <h4>Web & Mobile Development</h4>
+      <p>Modern, responsive applications built with cutting-edge frameworks and technologies.</p>
+      <ul class="capability-features">
+        <li>React, Angular, Vue.js</li>
+        <li>React Native, Flutter</li>
+        <li>Progressive Web Apps</li>
+      </ul>
+    </div>
+    <div class="capability" @slideInRight>
+      <div class="capability-icon" @pulse>
+        <mat-icon>cloud</mat-icon>
+      </div>
+      <h4>Cloud & DevOps</h4>
+      <p>Scalable cloud infrastructure and automated deployment pipelines for seamless operations.</p>
+      <ul class="capability-features">
+        <li>AWS, Azure, Google Cloud</li>
+        <li>Docker, Kubernetes</li>
+        <li>CI/CD Pipelines</li>
+      </ul>
+    </div>
+    <div class="capability" @slideInLeft>
+      <div class="capability-icon" @pulse>
+        <mat-icon>security</mat-icon>
+      </div>
+      <h4>Security & Compliance</h4>
+      <p>Enterprise-grade security measures and compliance frameworks to protect your data.</p>
+      <ul class="capability-features">
+        <li>OAuth 2.0, JWT</li>
+        <li>GDPR, HIPAA Compliance</li>
+        <li>Penetration Testing</li>
+      </ul>
+    </div>
+    <div class="capability" @slideInRight>
+      <div class="capability-icon" @pulse>
+        <mat-icon>analytics</mat-icon>
+      </div>
+      <h4>Data & Analytics</h4>
+      <p>Advanced analytics and AI solutions to unlock insights and drive data-driven decisions.</p>
+      <ul class="capability-features">
+        <li>Machine Learning</li>
+        <li>Big Data Processing</li>
+        <li>Business Intelligence</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section" @fadeInUp>
+  <div class="section-header" @fadeIn>
+    <h2>Client Success Stories</h2>
+    <p>Trusted by businesses worldwide to deliver exceptional results</p>
+  </div>
+  <div class="testimonials-grid" @fadeIn>
+    <mat-card class="testimonial-card" @scaleIn>
+      <mat-card-content>
+        <div class="testimonial-rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+        <p>"3S delivered our e-commerce platform on time and exceeded all expectations. Their team's expertise and professionalism are unmatched."</p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>Sarah Johnson</strong>
+            <span>CEO, TechStart Inc.</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="testimonial-card" @scaleIn>
+      <mat-card-content>
+        <div class="testimonial-rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+        <p>"The best software partner we've ever worked with. Their cloud migration expertise helped us scale 10x faster than expected."</p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>Ahmed Rahman</strong>
+            <span>CTO, FinTech Solutions</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="testimonial-card" @scaleIn>
+      <mat-card-content>
+        <div class="testimonial-rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+        <p>"Their analytics platform transformed our decision-making process. ROI was achieved within the first quarter."</p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <strong>Priya Sharma</strong>
+            <span>Product Director, DataCorp</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<section class="cta-section" @fadeIn>
+  <div class="cta-content" @fadeInUp>
+    <h2>Ready to Transform Your Business?</h2>
+    <p>Let's discuss how we can help you achieve your digital goals</p>
+    <button mat-raised-button color="primary" class="cta-button" @bounceIn (click)="navigateToServices()">Get Started Today</button>
+  </div>
+</section> 

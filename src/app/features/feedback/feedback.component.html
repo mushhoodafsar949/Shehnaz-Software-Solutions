@@ -1,0 +1,127 @@
+<!-- Company Logo Background -->
+<div class="feedback-modern-wrapper">
+  <div class="feedback-modern-card">
+    <div class="feedback-modern-columns">
+      <!-- Left: Illustration/Animated SVG -->
+      <div class="feedback-modern-illustration">
+
+        <div class="feedback-modern-illustration-text">
+          <div class="logo-3s">3S</div>
+          <h2>We Love Your Feedback!</h2>
+          <p>Help us improve and grow by sharing your thoughts.</p>
+        </div>
+      </div>
+      <!-- Right: Form -->
+      <div class="feedback-modern-form-container">
+        <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm" class="feedback-modern-form">
+          <h1 class="form-title">Share Your Experience</h1>
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="modern-field">
+              <mat-icon matPrefix>person</mat-icon>
+              <input matInput name="name" [(ngModel)]="feedback.name" placeholder="Your Name" required />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="modern-field">
+              <mat-icon matPrefix>email</mat-icon>
+              <input matInput name="email" [(ngModel)]="feedback.email" type="email" placeholder="Email Address" required />
+            </mat-form-field>
+          </div>
+          <mat-form-field appearance="outline" class="modern-field">
+            <mat-icon matPrefix>subject</mat-icon>
+            <input matInput name="subject" [(ngModel)]="feedback.subject" placeholder="Subject" required />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="modern-field">
+            <mat-icon matPrefix>chat</mat-icon>
+            <textarea matInput name="message" [(ngModel)]="feedback.message" rows="4" placeholder="Your Message" required></textarea>
+          </mat-form-field>
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="modern-field">
+              <mat-icon matPrefix>vpn_key</mat-icon>
+              <input matInput name="token" [(ngModel)]="feedback.token" placeholder="Feedback Token" required />
+            </mat-form-field>
+            <div *ngIf="tokenError" class="token-error">{{ tokenError }}</div>
+          </div>
+          <div class="modern-rating">
+            <label class="rating-label">Rate Us</label>
+            <div class="rating-stars">
+              <button type="button" *ngFor="let star of [1,2,3,4,5]" class="star-btn" [class.active]="feedback.rating >= star" (click)="setRating(star)">
+                <mat-icon>{{ feedback.rating >= star ? 'star' : 'star_outline' }}</mat-icon>
+              </button>
+            </div>
+          </div>
+          <button mat-raised-button color="primary" class="modern-submit-btn" type="submit" [disabled]="!feedbackForm.valid || isSubmitting">
+            <mat-icon *ngIf="!isSubmitting">send</mat-icon>
+            <span *ngIf="isSubmitting" class="loading-text">Sending...</span>
+            {{ isSubmitting ? '' : 'Send Feedback' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEEDBACK DISPLAY SECTION -->
+<section class="feedback-display-section">
+  <div class="display-container">
+    <div class="section-header">
+      <h2>Why Your Feedback Matters</h2>
+      <p>Help us deliver exceptional software solutions</p>
+    </div>
+    <div class="feedback-benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <mat-icon>trending_up</mat-icon>
+        </div>
+        <div class="benefit-content">
+          <h4>Continuous Improvement</h4>
+          <p>Your insights help us enhance our development processes and deliver better solutions.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <mat-icon>lightbulb</mat-icon>
+        </div>
+        <div class="benefit-content">
+          <h4>Innovation Drive</h4>
+          <p>Your feedback inspires new features and technologies that benefit all our clients.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <mat-icon>support_agent</mat-icon>
+        </div>
+        <div class="benefit-content">
+          <h4>Better Support</h4>
+          <p>Your suggestions help us provide more responsive and effective customer service.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <mat-icon>handshake</mat-icon>
+        </div>
+        <div class="benefit-content">
+          <h4>Stronger Partnership</h4>
+          <p>Your feedback strengthens our relationship and ensures we meet your exact needs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="empty-state" *ngIf="feedbacks.length === 0">
+      <div class="empty-icon">
+        <mat-icon>chat_bubble_outline</mat-icon>
+      </div>
+      <h3>Be the First to Share</h3>
+      <p>Your feedback will help us improve and serve you better</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS MESSAGE -->
+<div class="success-overlay" *ngIf="showSuccess">
+  <div class="success-card">
+    <div class="success-icon">
+      <mat-icon>check_circle</mat-icon>
+    </div>
+    <h3>Thank You!</h3>
+    <p>Your feedback has been submitted successfully. We'll review it and get back to you soon.</p>
+    <button mat-raised-button color="primary" (click)="closeSuccess()">Close</button>
+  </div>
+</div> 

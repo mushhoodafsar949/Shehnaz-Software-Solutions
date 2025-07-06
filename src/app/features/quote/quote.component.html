@@ -1,0 +1,330 @@
+<div class="quote-page-container" [class.dark-theme]="currentTheme === 'dark'">
+  <!-- Hero Section -->
+  <section class="hero-v2-section">
+    <div class="hero-v2-background">
+      <div class="hero-v2-lightray one"></div>
+      <div class="hero-v2-lightray two"></div>
+      <div class="hero-v2-lightray three"></div>
+    </div>
+    <div class="hero-v2-content-card" @fadeIn>
+      <div class="hero-v2-content">
+        <div class="hero-v2-company-name" @slideUp>Shehnaz Software Solutions</div>
+        <h1 class="hero-v2-headline" @slideUp>
+          Get Your Custom Quote
+          <br>
+          <span class="highlight">Tailored for Success.</span>
+        </h1>
+        <p class="hero-v2-description" @slideUp>
+          Choose from our comprehensive range of software development services and get instant pricing estimates tailored to your project requirements.
+        </p>
+        <div class="hero-v2-stats" @slideUp>
+          <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Services</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Pricing Tiers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-content">
+    <!-- Pricing Tiers Section -->
+    <div class="tiers-section">
+      <h2 class="section-title">
+        <mat-icon>layers</mat-icon>
+        Choose Your Package Tier
+      </h2>
+      <p class="section-description">Select the package tier that best fits your project requirements and budget.</p>
+      <div class="tiers-grid">
+        <div 
+          *ngFor="let tier of pricingTiers" 
+          class="tier-card"
+          [class.selected]="selectedTier === tier"
+          (click)="onTierChange(tier)"
+        >
+          <div class="tier-header">
+            <h3 class="tier-name">{{ tier.name }}</h3>
+            <div class="tier-multiplier">{{ tier.multiplier }}x</div>
+          </div>
+          <div class="tier-features">
+            <div *ngFor="let feature of tier.features" class="tier-feature">
+              <mat-icon class="feature-icon">check_circle</mat-icon>
+              {{ feature }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Requirements Section for Enterprise -->
+    <div class="custom-requirements-section" *ngIf="showCustomRequirements">
+      <h2 class="section-title">
+        <mat-icon>edit</mat-icon>
+        Custom Requirements
+      </h2>
+      <p class="section-description">Tell us about your specific project requirements and any additional services you need.</p>
+      <div class="custom-requirements-content">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Describe your project requirements</mat-label>
+          <textarea 
+            matInput 
+            [(ngModel)]="customRequirements"
+            rows="6"
+            placeholder="Please describe your project in detail, including specific features, integrations, technologies, or any other requirements you have..."
+          ></textarea>
+        </mat-form-field>
+        <div class="additional-services">
+          <h4>Additional Services (Optional)</h4>
+          <p>Select any additional services you might need:</p>
+          <div class="additional-services-grid">
+            <mat-checkbox class="additional-service-item">
+              <div class="service-checkbox-content">
+                <div class="service-name">DevOps & CI/CD Setup</div>
+                <div class="service-description">Automated deployment pipelines and infrastructure management</div>
+              </div>
+            </mat-checkbox>
+            <mat-checkbox class="additional-service-item">
+              <div class="service-checkbox-content">
+                <div class="service-name">Performance Testing</div>
+                <div class="service-description">Load testing, stress testing, and performance optimization</div>
+              </div>
+            </mat-checkbox>
+            <mat-checkbox class="additional-service-item">
+              <div class="service-checkbox-content">
+                <div class="service-name">Security Audit</div>
+                <div class="service-description">Comprehensive security assessment and penetration testing</div>
+              </div>
+            </mat-checkbox>
+            <mat-checkbox class="additional-service-item">
+              <div class="service-checkbox-content">
+                <div class="service-name">Data Analytics</div>
+                <div class="service-description">Business intelligence and data visualization solutions</div>
+              </div>
+            </mat-checkbox>
+            <mat-checkbox class="additional-service-item">
+              <div class="service-checkbox-content">
+                <div class="service-name">Third-party Integrations</div>
+                <div class="service-description">Integration with external APIs and services</div>
+              </div>
+            </mat-checkbox>
+            <mat-checkbox class="additional-service-item">
+              <div class="service-checkbox-content">
+                <div class="service-name">Training & Documentation</div>
+                <div class="service-description">User training and comprehensive documentation</div>
+              </div>
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Selection Section -->
+    <div class="services-section">
+      <h2 class="section-title">
+        <mat-icon>list_alt</mat-icon>
+        Select Services
+      </h2>
+      <p class="section-description">Choose the services you need for your project. Click on any service to select or deselect it.</p>
+      <div class="services-grid">
+        <div 
+          *ngFor="let service of services" 
+          class="service-card"
+          [class.selected]="service.selected"
+          (click)="toggleService(service)"
+        >
+          <div class="service-header">
+            <div class="service-icon">
+              <mat-icon [style.color]="getComplexityColor(service.complexity)">
+                {{ getCategoryIcon(service.category) }}
+              </mat-icon>
+            </div>
+            <div class="service-info">
+              <h3 class="service-name">{{ service.name }}</h3>
+              <p class="service-description">{{ service.description }}</p>
+            </div>
+            <div class="service-price">
+              <div class="base-price">{{ formatCurrency(service.basePrice) }}</div>
+              <div class="adjusted-price" *ngIf="selectedTier.multiplier !== 1">
+                {{ formatCurrency(getServicePrice(service)) }}
+              </div>
+            </div>
+          </div>
+          <div class="service-details">
+            <div class="service-meta">
+              <mat-chip-set>
+                <mat-chip class="complexity-chip" [style.background-color]="getComplexityColor(service.complexity)">
+                  {{ service.complexity | titlecase }}
+                </mat-chip>
+                <mat-chip class="time-chip">
+                  <mat-icon>schedule</mat-icon>
+                  {{ service.estimatedTime }}
+                </mat-chip>
+              </mat-chip-set>
+            </div>
+            <!-- Week Range Selection -->
+            <div class="week-range-section" *ngIf="service.selected">
+              <h4 class="week-range-title">Project Duration: {{ service.weekRange }} weeks</h4>
+              <mat-slider 
+                [min]="1" 
+                [max]="52" 
+                [step]="1"
+                (valueChange)="updateWeekRange(service, $event)"
+                (click)="$event.stopPropagation()"
+                class="week-slider"
+              >
+                <input matSliderThumb [value]="service.weekRange">
+              </mat-slider>
+              <div class="week-labels">
+                <span>1 week</span>
+                <span>26 weeks</span>
+                <span>52 weeks</span>
+              </div>
+            </div>
+            <!-- Feature Lists -->
+            <mat-expansion-panel 
+              class="features-panel"
+              (click)="$event.stopPropagation()"
+              *ngIf="service.selected"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>featured_play_list</mat-icon>
+                  Features ({{ service.features.length }} included)
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="features-content">
+                <div class="included-features">
+                  <h5 class="features-subtitle">
+                    <mat-icon class="included-icon">check_circle</mat-icon>
+                    Included Features
+                  </h5>
+                  <div class="feature-list">
+                    <div *ngFor="let feature of service.features" class="feature-item included">
+                      <mat-icon class="feature-icon">check</mat-icon>
+                      <div class="feature-details">
+                        <div class="feature-name">{{ feature }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section" *ngIf="selectedServices.length > 0">
+      <h2 class="section-title">
+        <mat-icon>calculate</mat-icon>
+        Quote Summary
+      </h2>
+      <div class="summary-content">
+        <div class="summary-details">
+          <div class="summary-item">
+            <span class="summary-label">Selected Package:</span>
+            <span class="summary-value">{{ selectedTier.name }}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Services Selected:</span>
+            <span class="summary-value">{{ selectedServices.length }}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Estimated Timeline:</span>
+            <span class="summary-value">{{ projectTimeline }}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Total Weeks:</span>
+            <span class="summary-value">{{ getMaxWeeks() }} weeks</span>
+          </div>
+        </div>
+        <div class="pricing-breakdown">
+          <div class="breakdown-item">
+            <span class="breakdown-label">Subtotal:</span>
+            <span class="breakdown-value">{{ formatCurrency(getSubtotal()) }}</span>
+          </div>
+          <div class="discount-section">
+            <button 
+              mat-button 
+              class="discount-toggle"
+              (click)="showDiscountInput = !showDiscountInput"
+            >
+              <mat-icon>local_offer</mat-icon>
+              Add Discount
+            </button>
+            <div class="discount-input" *ngIf="showDiscountInput">
+              <mat-form-field appearance="outline">
+                <mat-label>Discount Percentage</mat-label>
+                <input 
+                  matInput 
+                  type="number" 
+                  [(ngModel)]="discountPercentage"
+                  min="0" 
+                  max="50"
+                  placeholder="0"
+                >
+                <span matSuffix>%</span>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="breakdown-item discount" *ngIf="discountPercentage > 0">
+            <span class="breakdown-label">Discount ({{ discountPercentage }}%):</span>
+            <span class="breakdown-value discount-value">-{{ formatCurrency(getDiscountAmount()) }}</span>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="breakdown-item total">
+            <span class="breakdown-label">Total:</span>
+            <span class="breakdown-value total-value">{{ getTotalFormatted() }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="selectedServices.length === 0">
+      <mat-icon class="empty-icon">shopping_cart</mat-icon>
+      <h3>No Services Selected</h3>
+      <p>Choose from our comprehensive range of software development services to get your personalized quote.</p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-section" *ngIf="selectedServices.length > 0">
+      <div class="action-buttons">
+        <button 
+          mat-stroked-button 
+          class="download-btn"
+          (click)="downloadPDF()"
+        >
+          <mat-icon>picture_as_pdf</mat-icon>
+          Download PDF
+        </button>
+        <button 
+          mat-stroked-button 
+          class="download-btn"
+          (click)="downloadExcel()"
+        >
+          <mat-icon>table_chart</mat-icon>
+          Download Excel
+        </button>
+        <button 
+          mat-raised-button 
+          color="primary" 
+          class="contact-btn"
+          (click)="contactUs()"
+        >
+          <mat-icon>send</mat-icon>
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

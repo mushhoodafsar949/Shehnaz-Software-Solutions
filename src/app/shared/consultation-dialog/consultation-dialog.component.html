@@ -1,0 +1,199 @@
+<div class="quote-dialog-container consultation-dialog-container">
+  <!-- Header -->
+  <div class="dialog-header">
+    <div class="header-row">
+      <div class="header-title">
+        <mat-icon class="title-icon">psychology</mat-icon>
+        <span class="dialog-title">Free Consultation Assessment</span>
+      </div>
+      <button mat-icon-button class="close-btn" (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="dialog-content">
+    <div class="progress-indicator">
+      {{ questionHistory.length }} / {{ totalQuestions }}
+    </div>
+    <div *ngIf="!showResults && currentQuestion">
+      <div class="question-container fade-in">
+        <div class="question-header">
+          <div class="question-category">{{ currentQuestion.category }}</div>
+          <h3 class="question-text">{{ currentQuestion.question }}</h3>
+        </div>
+        <div class="question-content">
+          <!-- Multiple Choice as Card List -->
+          <div class="option-list" *ngIf="(currentQuestion.type === 'radio' || currentQuestion.type === 'select') && currentQuestion.options">
+            <div 
+              *ngFor="let option of currentQuestion.options"
+              class="option-card"
+              [class.selected]="currentAnswer === option"
+              (click)="selectOption(option)"
+              (keydown)="onOptionKeydown($event, option, currentQuestion.type)"
+              tabindex="0"
+              role="button"
+              [attr.aria-pressed]="currentAnswer === option"
+            >
+              {{ option }}
+            </div>
+          </div>
+          <!-- Checkbox as Card List -->
+          <div class="option-list" *ngIf="currentQuestion.type === 'checkbox' && currentQuestion.options">
+            <div 
+              *ngFor="let option of currentQuestion.options"
+              class="option-card"
+              [class.selected]="isOptionSelected(option)"
+              (click)="toggleCheckboxOption(option)"
+              (keydown)="onOptionKeydown($event, option, 'checkbox')"
+              tabindex="0"
+              role="button"
+              [attr.aria-pressed]="isOptionSelected(option)"
+            >
+              {{ option }}
+            </div>
+          </div>
+          <!-- Text Input -->
+          <div *ngIf="currentQuestion.type === 'text'">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your answer</mat-label>
+              <textarea matInput [(ngModel)]="currentAnswer" rows="3" placeholder="Please provide your answer..."></textarea>
+            </mat-form-field>
+          </div>
+          <!-- Number Input -->
+          <div *ngIf="currentQuestion.type === 'number'">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Enter a number</mat-label>
+              <input matInput type="number" [(ngModel)]="currentAnswer" placeholder="Enter a number...">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="question-navigation">
+          <button mat-button (click)="previousStep()" [disabled]="!canGoBack()">
+            <mat-icon>arrow_back</mat-icon>
+            Previous
+          </button>
+          <button mat-raised-button color="primary" (click)="nextStep()" [disabled]="!isCurrentAnswerValid()">
+            Next
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Results Section -->
+    <div class="results-container" *ngIf="showResults && consultationResult">
+      <div class="results-header">
+        <mat-icon class="results-icon">assessment</mat-icon>
+        <h2>Your Personalized Recommendation</h2>
+        <p>Based on your answers, here's what we recommend for your project:</p>
+      </div>
+
+      <!-- Score Card -->
+      <mat-card class="score-card">
+        <mat-card-content>
+          <div class="score-display">
+            <div class="score-circle" [ngClass]="'priority-' + consultationResult.priority">
+              <span class="score-number">{{ consultationResult.score }}</span>
+              <span class="score-label">Score</span>
+            </div>
+            <div class="score-details">
+              <h3>Project Priority: {{ consultationResult.priority | titlecase }}</h3>
+              <p>{{ consultationResult.recommendation }}</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Recommended Services -->
+      <mat-card class="services-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>star</mat-icon>
+            Recommended Services
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="services-list">
+            <div 
+              *ngFor="let service of consultationResult.services" 
+              class="service-item">
+              <mat-icon>check_circle</mat-icon>
+              <span>{{ service }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Project Details -->
+      <div class="project-details">
+        <mat-card class="detail-card">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>attach_money</mat-icon>
+              Estimated Budget
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="detail-value">{{ consultationResult.estimatedBudget }}</p>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="detail-card">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>schedule</mat-icon>
+              Timeline
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="detail-value">{{ consultationResult.timeline }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Next Steps -->
+      <mat-card class="next-steps-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>trending_up</mat-icon>
+            Recommended Next Steps
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="next-steps-list">
+            <div 
+              *ngFor="let step of consultationResult.nextSteps; let i = index" 
+              class="step-item">
+              <div class="step-number">{{ i + 1 }}</div>
+              <span>{{ step }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Action Buttons -->
+      <div class="results-actions">
+        <button 
+          mat-raised-button 
+          color="primary" 
+          class="quote-button"
+          (click)="getQuote()">
+          <mat-icon>receipt</mat-icon>
+          Get Detailed Quote
+        </button>
+        
+        <button mat-stroked-button (click)="downloadPDF()">
+          <mat-icon>picture_as_pdf</mat-icon>
+          Download PDF
+        </button>
+        
+        <button 
+          mat-stroked-button 
+          (click)="close()">
+          <mat-icon>close</mat-icon>
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 
