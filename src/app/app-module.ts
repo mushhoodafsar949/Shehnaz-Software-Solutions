@@ -28,7 +28,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     MatSidenavModule,
     MatIconModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

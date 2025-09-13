@@ -77,7 +77,7 @@ import { MatIconModule } from '@angular/material/icon';
           </linearGradient>
         </defs>
         <rect x="5" y="5" width="90" height="90" rx="22" fill="url(#default-gradient)"/>
-        <image x="20" y="20" width="60" height="60" href="assets/logo.jpg"/>
+        <image x="20" y="20" width="60" height="60" href="assets/logo.jpg" loading="lazy"/>
       </svg>
     </ng-container>`,
   styles: [`:host { display: flex; align-items: center; justify-content: center; } svg { display: block; } mat-icon { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }`]

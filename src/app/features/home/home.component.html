@@ -34,6 +34,9 @@
               <img [src]="ceoImagePath" 
                    alt="Mushhood - CEO of Nest Tech Solutions" 
                    class="ceo-portrait"
+                   loading="lazy"
+                   width="400"
+                   height="500"
                    (error)="onImageError($event)"
                    (load)="onImageLoad($event)">
               <div class="ceo-image-overlay"></div>
@@ -58,7 +61,7 @@
               <span class="ceo-title-text">Chief Executive Officer</span>
             </div>
             <div class="ceo-company-badge">
-              <img src="assets/logo.jpg" alt="Nest Tech Solutions Logo" class="company-logo">
+              <img src="assets/logo.jpg" alt="Nest Tech Solutions Logo" class="company-logo" loading="lazy" width="40" height="40">
             </div>
           </div>
           
