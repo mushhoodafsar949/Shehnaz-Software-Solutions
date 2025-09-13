@@ -208,7 +208,7 @@ export class ContactComponent implements OnInit {
     // Email to client
     const clientEmail = {
       to: this.scheduleData.email,
-      subject: 'Meeting Confirmed - Shehnaz Software Solutions',
+      subject: 'Meeting Confirmed - Nest Tech Solutions',
       body: `
         Dear ${this.scheduleData.name},
         
@@ -223,7 +223,7 @@ export class ContactComponent implements OnInit {
         We look forward to discussing your project!
         
         Best regards,
-        Shehnaz Software Solutions Team
+        Nest Tech Solutions Team
       `
     };
     

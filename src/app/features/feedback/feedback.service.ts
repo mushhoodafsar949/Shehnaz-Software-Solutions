@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 export class FeedbackService {
   private feedbacks = [
     { name: 'Ali', message: 'Great service!' },
-    { name: 'Sara', message: 'Loved working with 3S.' }
+    { name: 'Sara', message: 'Loved working with NTS.' }
   ];
 
   getFeedbacks(): Observable<any[]> {

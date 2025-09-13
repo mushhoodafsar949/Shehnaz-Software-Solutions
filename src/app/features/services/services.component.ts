@@ -170,7 +170,7 @@ export class ServicesComponent {
 
   testimonials = [
     {
-      quote: 'Shehnaz Software Solutions delivered our platform ahead of schedule and exceeded all expectations. Their team is truly world-class.',
+      quote: 'Nest Tech Solutions delivered our platform ahead of schedule and exceeded all expectations. Their team is truly world-class.',
       author: 'Sarah Johnson',
       company: 'TechStart Inc.',
       photo: 'assets/home/testimonial1.jpg'

@@ -8,6 +8,6 @@ import { SharedModule } from './shared/shared.module';
   standalone: false
 })
 export class AppComponent {
-  protected title = 'shehnaz-software-solutions';
+  protected title = 'nest-tech-solutions';
   currentYear = new Date().getFullYear();
 }

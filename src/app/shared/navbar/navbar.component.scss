@@ -42,8 +42,12 @@
 
 .navbar-logo {
   height: 45px;
-  width: auto;
+  width: 45px;
   margin-right: 12px;
+  object-fit: cover;
+  border-radius: 50%;
+  clip-path: circle(50%);
+  background: transparent;
 }
 
 .brand-name {

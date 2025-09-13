@@ -1,6 +1,6 @@
-# Shehnaz Software Solutions (3S) Website
+# Nest Tech Solutions (NTS) Website
 
-This is a modern Angular website for Shehnaz Software Solutions (3S), following best frontend architecture and scalable folder structure.
+This is a modern Angular website for Nest Tech Solutions (NTS), following best frontend architecture and scalable folder structure.
 
 ## Folder Structure
 
@@ -32,4 +32,4 @@ npm start
 
 ---
 
-Built with ❤️ by Shehnaz Software Solutions (3S)
+Built with ❤️ by Nest Tech Solutions (NTS)

@@ -11,6 +11,8 @@ interface TeamMember {
   description: string;
   icon: string;
   skills: string[];
+  linkedinUrl?: string;
+  image?: string;
 }
 
 interface Project {
@@ -57,60 +59,49 @@ export class AboutComponent implements OnInit, OnDestroy {
   
   teamMembers: TeamMember[] = [
     {
-      name: 'Mushhood Afsar',
-      role: 'CEO & Lead Developer',
-      description: 'Visionary leader with 8+ years of experience in full-stack development and business strategy. Passionate about creating innovative solutions that drive business growth.',
+      name: 'Mir Mushhood Afsar',
+      role: 'CEO & Founder',
+      description: 'Visionary leader with 5+ years of experience in full-stack development and business strategy. Passionate about creating innovative solutions that drive business growth and digital transformation.',
       icon: 'person',
-      skills: ['Angular', 'React', 'Node.js', 'Python', 'AWS']
+      skills: ['Angular', 'React', 'Node.js', 'Python', 'AWS', 'Leadership'],
+      linkedinUrl: 'https://www.linkedin.com/in/mushhood-afsar/',
+      image: 'assets/home/Mushhood2.jpg'
     },
     {
-      name: 'Ahmed Hassan',
-      role: 'Senior Frontend Developer',
-      description: 'Expert in modern frontend technologies with a keen eye for user experience. Specializes in creating responsive and accessible web applications.',
-      icon: 'code',
-      skills: ['Angular', 'React', 'Vue.js', 'TypeScript', 'CSS3']
-    },
-    {
-      name: 'Fatima Ali',
-      role: 'Senior Backend Developer',
-      description: 'Backend specialist with deep expertise in scalable architecture and database design. Ensures robust and efficient server-side solutions.',
-      icon: 'storage',
-      skills: ['Node.js', 'Python', 'Java', 'PostgreSQL', 'MongoDB']
-    },
-    {
-      name: 'Omar Khan',
-      role: 'Mobile App Developer',
-      description: 'Mobile development expert creating native and cross-platform applications. Focuses on performance and user engagement.',
+      name: 'Jahanzaib Sohail',
+      role: 'Co-founder & Lead iOS Developer',
+      description: 'Expert iOS developer and co-founder with extensive experience in native app development. Specializes in creating high-performance mobile applications with seamless user experiences.',
       icon: 'smartphone',
-      skills: ['React Native', 'Flutter', 'iOS', 'Android', 'Firebase']
+      skills: ['Swift', 'iOS', 'Objective-C', 'Xcode', 'App Store', 'Mobile Architecture'],
+      linkedinUrl: 'https://www.linkedin.com/in/jahanzeb-sohail-047/',
+      image: 'assets/Team/Jahanzaib.jpeg'
     },
     {
-      name: 'Aisha Malik',
-      role: 'UI/UX Designer',
-      description: 'Creative designer with a passion for user-centered design. Creates beautiful and intuitive interfaces that enhance user experience.',
-      icon: 'palette',
-      skills: ['Figma', 'Adobe XD', 'Sketch', 'Prototyping', 'User Research']
-    },
-    {
-      name: 'Zainab Rehman',
-      role: 'DevOps Engineer',
-      description: 'DevOps specialist ensuring smooth deployment and infrastructure management. Maintains high availability and performance standards.',
+      name: 'Abbas Raza',
+      role: 'Lead DevOps Engineer',
+      description: 'DevOps specialist with deep expertise in cloud infrastructure, automation, and deployment pipelines. Ensures scalable, secure, and efficient development operations.',
       icon: 'cloud',
-      skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Linux']
+      skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Linux', 'Infrastructure'],
+      linkedinUrl: 'https://www.linkedin.com/in/abbas-raza-564b57b2/',
+      image: 'assets/Team/Abbas.jpeg'
     },
     {
-      name: 'Hassan Raza',
-      role: 'QA Engineer',
-      description: 'Quality assurance expert ensuring software reliability and performance. Implements comprehensive testing strategies.',
-      icon: 'bug_report',
-      skills: ['Selenium', 'Jest', 'Cypress', 'Manual Testing', 'Automation']
+      name: 'Muhammad Usama',
+      role: 'Lead Flutter Developer',
+      description: 'Cross-platform mobile development expert specializing in Flutter. Creates beautiful, high-performance mobile applications for both iOS and Android platforms.',
+      icon: 'flutter_dash',
+      skills: ['Flutter', 'Dart', 'Firebase', 'Mobile Development', 'Cross-platform', 'UI/UX'],
+      linkedinUrl: 'https://www.linkedin.com/in/muhammad-usama-330044212/',
+      image: 'https://ui-avatars.com/api/?name=Muhammad+Usama&size=400&background=166534&color=ffffff&font-size=0.35&bold=true&format=png'
     },
     {
-      name: 'Nadia Ahmed',
-      role: 'Project Manager',
-      description: 'Experienced project manager coordinating development teams and ensuring timely delivery of high-quality solutions.',
-      icon: 'assignment',
-      skills: ['Agile', 'Scrum', 'JIRA', 'Team Leadership', 'Client Communication']
+      name: 'Anayat Ullah',
+      role: 'Lead Sales & Business Development',
+      description: 'Strategic business development leader focused on growth, client relationships, and market expansion. Drives revenue growth through innovative sales strategies and partnerships.',
+      icon: 'business_center',
+      skills: ['Sales Strategy', 'Business Development', 'Client Relations', 'Market Analysis', 'Negotiation', 'Growth'],
+      linkedinUrl: 'https://www.linkedin.com/in/anayat-ullah-8647b7162/',
+      image: 'assets/Team/Anayat.jpeg'
     }
   ];
 
@@ -296,6 +287,17 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   goToSlide(index: number) {
     this.currentSlideIndex = index;
+  }
+
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    if (target) {
+      target.style.display = 'none';
+      const fallback = target.nextElementSibling as HTMLElement;
+      if (fallback) {
+        fallback.style.display = 'flex';
+      }
+    }
   }
 
   navigateToServices() {

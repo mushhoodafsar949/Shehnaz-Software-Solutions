@@ -80,7 +80,7 @@ export class BookingDialogComponent {
     // Email to client
     const clientEmail = {
       to: this.data.scheduleData.email,
-      subject: 'Meeting Confirmed - Shehnaz Software Solutions',
+      subject: 'Meeting Confirmed - Nest Tech Solutions',
       body: `
         Dear ${this.data.scheduleData.name},
         
@@ -95,7 +95,7 @@ export class BookingDialogComponent {
         We look forward to discussing your project!
         
         Best regards,
-        Shehnaz Software Solutions Team
+        Nest Tech Solutions Team
       `
     };
     

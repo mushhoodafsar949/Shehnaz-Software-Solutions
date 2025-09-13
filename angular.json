@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shehnaz-software-solutions": {
+    "nest-tech-solutions": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -86,10 +86,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shehnaz-software-solutions:build:production"
+              "buildTarget": "nest-tech-solutions:build:production"
             },
             "development": {
-              "buildTarget": "shehnaz-software-solutions:build:development"
+              "buildTarget": "nest-tech-solutions:build:development"
             }
           },
           "defaultConfiguration": "development"
