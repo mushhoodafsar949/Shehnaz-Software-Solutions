@@ -2,9 +2,10 @@
 
 ## Quick Fix for Current Issue
 
-The "Page not found" error is happening because Netlify needs to be configured properly for Angular SPA routing.
+**IMPORTANT: Node.js Version Issue**
+Netlify is currently using Node.js v18, but Angular 20 requires Node.js v20+. Until Netlify updates, use Manual Deployment.
 
-### Option 1: Manual Deployment (Immediate Fix)
+### Option 1: Manual Deployment (RECOMMENDED - Immediate Fix)
 
 1. **Build the project** (already done):
    ```bash
@@ -29,7 +30,7 @@ The "Page not found" error is happening because Netlify needs to be configured p
 2. **Configure Netlify Build Settings**:
    - Build command: `npm run build`
    - Publish directory: `dist/nest-tech-solutions/browser`
-   - Node version: 18
+   - Node version: 20 (minimum required by Angular CLI)
 
 ### Files Added for Netlify Support:
 
@@ -39,8 +40,12 @@ The "Page not found" error is happening because Netlify needs to be configured p
 
 ### Troubleshooting:
 
-If you still get 404 errors:
+**Node.js Version Issue (Current Problem):**
+- Error: "Node.js version v18.20.8 detected. The Angular CLI requires a minimum Node.js version of v20.19"
+- **Solution**: Use Manual Deployment (Option 1) until Netlify supports Node.js 20+
+- Files added: `.nvmrc` and updated `netlify.toml` for future compatibility
 
+**If you still get 404 errors after deployment:**
 1. **Check publish directory**: Must be `dist/nest-tech-solutions/browser`
 2. **Verify _redirects file**: Should be in the root of published directory
 3. **Clear cache**: In Netlify dashboard, go to Deploys > Trigger deploy > Clear cache and deploy
