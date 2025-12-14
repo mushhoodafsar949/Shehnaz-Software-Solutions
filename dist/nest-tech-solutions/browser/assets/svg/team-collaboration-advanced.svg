@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="teamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <radialGradient id="avatarGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc">
+    <animate attributeName="fill" values="#f8fafc;#f1f5f9;#f8fafc" dur="15s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Floating Collaboration Icons -->
+  <g opacity="0.3">
+    <text x="60" y="40" font-family="Arial, sans-serif" font-size="12" fill="#22c55e" transform="rotate(10)">
+      💬
+      <animateTransform attributeName="transform" type="rotate" values="10;20;10" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/>
+    </text>
+    <text x="320" y="60" font-family="Arial, sans-serif" font-size="10" fill="#166534" transform="rotate(-15)">
+      🔗
+      <animateTransform attributeName="transform" type="rotate" values="-15;-5;-15" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite"/>
+    </text>
+    <text x="40" y="220" font-family="Arial, sans-serif" font-size="8" fill="#4ade80" transform="rotate(25)">
+      ⚡
+      <animateTransform attributeName="transform" type="rotate" values="25;35;25" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Team Members with Advanced Avatars -->
+  <!-- Developer -->
+  <g transform="translate(80, 70)">
+    <!-- Avatar Glow -->
+    <circle cx="0" cy="0" r="35" fill="url(#avatarGlow)" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Avatar Circle -->
+    <circle cx="0" cy="0" r="25" fill="url(#teamGradient)" filter="url(#glow)">
+      <animate attributeName="r" values="23;27;23" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="0.5s" fill="freeze"/>
+    </circle>
+    
+    <!-- Face -->
+    <circle cx="0" cy="-5" r="8" fill="white"/>
+    <circle cx="-3" cy="-7" r="1.5" fill="#1e293b"/>
+    <circle cx="3" cy="-7" r="1.5" fill="#1e293b"/>
+    <path d="M -4 -2 Q 0 2 4 -2" stroke="#1e293b" stroke-width="1" fill="none"/>
+    
+    <!-- Body -->
+    <path d="M -12 10 Q 0 5 12 10" stroke="white" stroke-width="3" fill="none"/>
+    
+    <!-- Typing Animation -->
+    <g transform="translate(-15, 15)" opacity="0.8">
+      <rect x="0" y="0" width="30" height="20" rx="3" fill="#1e293b"/>
+      <rect x="2" y="2" width="26" height="16" rx="2" fill="#0f172a"/>
+      <g font-family="monospace" font-size="3" fill="#22c55e">
+        <text x="4" y="7">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="2s" fill="freeze"/>
+          const code =
+        </text>
+        <text x="4" y="11">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="2.5s" fill="freeze"/>
+          'awesome';
+        </text>
+        <text x="4" y="15">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="3s" fill="freeze"/>
+          console.log();
+        </text>
+      </g>
+      <!-- Cursor -->
+      <rect x="18" y="13" width="1" height="3" fill="#22c55e">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" begin="3.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle" font-weight="bold">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1s" fill="freeze"/>
+      Developer
+    </text>
+    
+    <!-- Status Indicator -->
+    <circle cx="20" cy="-20" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="20" y="-17" font-family="Arial, sans-serif" font-size="3" fill="white" text-anchor="middle">●</text>
+  </g>
+
+  <!-- Designer -->
+  <g transform="translate(200, 70)">
+    <!-- Avatar Glow -->
+    <circle cx="0" cy="0" r="35" fill="url(#avatarGlow)" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Avatar Circle -->
+    <circle cx="0" cy="0" r="25" fill="url(#teamGradient)" filter="url(#glow)">
+      <animate attributeName="r" values="24;28;24" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1s" fill="freeze"/>
+    </circle>
+    
+    <!-- Face -->
+    <circle cx="0" cy="-5" r="8" fill="white"/>
+    <circle cx="-3" cy="-7" r="1.5" fill="#1e293b"/>
+    <circle cx="3" cy="-7" r="1.5" fill="#1e293b"/>
+    <path d="M -4 -2 Q 0 2 4 -2" stroke="#1e293b" stroke-width="1" fill="none"/>
+    
+    <!-- Body -->
+    <path d="M -12 10 Q 0 5 12 10" stroke="white" stroke-width="3" fill="none"/>
+    
+    <!-- Design Tools Animation -->
+    <g transform="translate(-15, 15)" opacity="0.8">
+      <rect x="0" y="0" width="30" height="20" rx="3" fill="#8b5cf6"/>
+      <text x="15" y="12" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle" font-weight="bold">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="2s" fill="freeze"/>
+        Figma
+      </text>
+      
+      <!-- Design Elements -->
+      <rect x="5" y="5" width="8" height="4" rx="2" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8;0.8;0.8" dur="1s" begin="2.5s" fill="freeze"/>
+      </rect>
+      <circle cx="22" cy="7" r="2" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8;0.8;0.8" dur="1s" begin="3s" fill="freeze"/>
+      </circle>
+    </g>
+    
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle" font-weight="bold">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1.5s" fill="freeze"/>
+      Designer
+    </text>
+    
+    <!-- Status Indicator -->
+    <circle cx="20" cy="-20" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Manager -->
+  <g transform="translate(320, 70)">
+    <!-- Avatar Glow -->
+    <circle cx="0" cy="0" r="35" fill="url(#avatarGlow)" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Avatar Circle -->
+    <circle cx="0" cy="0" r="25" fill="url(#teamGradient)" filter="url(#glow)">
+      <animate attributeName="r" values="25;29;25" dur="4s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1.5s" fill="freeze"/>
+    </circle>
+    
+    <!-- Face -->
+    <circle cx="0" cy="-5" r="8" fill="white"/>
+    <circle cx="-3" cy="-7" r="1.5" fill="#1e293b"/>
+    <circle cx="3" cy="-7" r="1.5" fill="#1e293b"/>
+    <path d="M -4 -2 Q 0 2 4 -2" stroke="#1e293b" stroke-width="1" fill="none"/>
+    
+    <!-- Body -->
+    <path d="M -12 10 Q 0 5 12 10" stroke="white" stroke-width="3" fill="none"/>
+    
+    <!-- Management Dashboard -->
+    <g transform="translate(-15, 15)" opacity="0.8">
+      <rect x="0" y="0" width="30" height="20" rx="3" fill="#f59e0b"/>
+      <text x="15" y="8" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle" font-weight="bold">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="2.5s" fill="freeze"/>
+        Dashboard
+      </text>
+      
+      <!-- Progress Bars -->
+      <rect x="3" y="10" width="24" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+      <rect x="3" y="10" width="0" height="2" rx="1" fill="white">
+        <animate attributeName="width" values="0;18;18" dur="2s" begin="3s" fill="freeze"/>
+      </rect>
+      
+      <rect x="3" y="14" width="24" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+      <rect x="3" y="14" width="0" height="2" rx="1" fill="white">
+        <animate attributeName="width" values="0;15;15" dur="2s" begin="3.5s" fill="freeze"/>
+      </rect>
+    </g>
+    
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle" font-weight="bold">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="2s" fill="freeze"/>
+      Manager
+    </text>
+    
+    <!-- Status Indicator -->
+    <circle cx="20" cy="-20" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Connection Lines with Data Flow -->
+  <g opacity="0.7">
+    <line x1="105" y1="70" x2="175" y2="70" stroke="#22c55e" stroke-width="2">
+      <animate attributeName="stroke-dasharray" values="0,100;50,50;100,0" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="225" y1="70" x2="295" y2="70" stroke="#22c55e" stroke-width="2">
+      <animate attributeName="stroke-dasharray" values="0,100;50,50;100,0" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Data Packets -->
+    <circle cx="0" cy="0" r="2" fill="#4ade80">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 105,70 L 175,70"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="2" fill="#4ade80">
+      <animateMotion dur="2s" repeatCount="indefinite" begin="1s" path="M 225,70 L 295,70"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Collaboration Tools -->
+  <g transform="translate(120, 150)">
+    <text x="80" y="0" font-family="Arial, sans-serif" font-size="10" fill="#166534" text-anchor="middle" font-weight="bold">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="4s" fill="freeze"/>
+      Collaboration Tools
+    </text>
+    
+    <!-- Tool Cards -->
+    <!-- Slack -->
+    <g transform="translate(0, 15)">
+      <rect x="0" y="0" width="40" height="30" rx="5" fill="#4a154b">
+        <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="4.5s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1.1;1" dur="0.5s" begin="4.5s" fill="freeze"/>
+      </rect>
+      <text x="20" y="20" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">Slack</text>
+      
+      <!-- Message Animation -->
+      <g transform="translate(5, 5)" opacity="0.8">
+        <rect x="0" y="0" width="8" height="2" rx="1" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5s" fill="freeze"/>
+        </rect>
+        <rect x="0" y="4" width="12" height="2" rx="1" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.2s" fill="freeze"/>
+        </rect>
+        <rect x="0" y="8" width="6" height="2" rx="1" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.4s" fill="freeze"/>
+        </rect>
+      </g>
+      
+      <!-- Notification Dot -->
+      <circle cx="35" cy="5" r="3" fill="#ef4444">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1s" begin="5.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="35" y="7" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">3</text>
+    </g>
+
+    <!-- GitHub -->
+    <g transform="translate(50, 15)">
+      <rect x="0" y="0" width="40" height="30" rx="5" fill="#24292e">
+        <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="4.7s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1.1;1" dur="0.5s" begin="4.7s" fill="freeze"/>
+      </rect>
+      <text x="20" y="20" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">GitHub</text>
+      
+      <!-- Commit Activity -->
+      <g transform="translate(5, 5)" opacity="0.8">
+        <circle cx="5" cy="3" r="1" fill="#22c55e">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.5s" fill="freeze"/>
+        </circle>
+        <circle cx="15" cy="3" r="1" fill="#22c55e">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.7s" fill="freeze"/>
+        </circle>
+        <circle cx="25" cy="3" r="1" fill="#22c55e">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.9s" fill="freeze"/>
+        </circle>
+        <line x1="5" y1="3" x2="15" y2="3" stroke="#22c55e" stroke-width="1"/>
+        <line x1="15" y1="3" x2="25" y2="3" stroke="#22c55e" stroke-width="1"/>
+      </g>
+    </g>
+
+    <!-- Figma -->
+    <g transform="translate(100, 15)">
+      <rect x="0" y="0" width="40" height="30" rx="5" fill="#f24e1e">
+        <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="4.9s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1.1;1" dur="0.5s" begin="4.9s" fill="freeze"/>
+      </rect>
+      <text x="20" y="20" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">Figma</text>
+      
+      <!-- Design Elements -->
+      <g transform="translate(8, 5)" opacity="0.8">
+        <rect x="0" y="0" width="6" height="4" rx="2" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.5s" fill="freeze"/>
+        </rect>
+        <circle cx="15" cy="2" r="2" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.7s" fill="freeze"/>
+        </circle>
+        <polygon points="20,0 26,2 20,4" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.9s" fill="freeze"/>
+        </polygon>
+      </g>
+    </g>
+
+    <!-- Jira -->
+    <g transform="translate(150, 15)">
+      <rect x="0" y="0" width="40" height="30" rx="5" fill="#0052cc">
+        <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.1s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0;1.1;1" dur="0.5s" begin="5.1s" fill="freeze"/>
+      </rect>
+      <text x="20" y="20" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">Jira</text>
+      
+      <!-- Task Board -->
+      <g transform="translate(5, 5)" opacity="0.8">
+        <rect x="0" y="0" width="8" height="6" rx="1" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.5s" fill="freeze"/>
+        </rect>
+        <rect x="10" y="0" width="8" height="6" rx="1" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.7s" fill="freeze"/>
+        </rect>
+        <rect x="20" y="0" width="8" height="6" rx="1" fill="white">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.5s" begin="5.9s" fill="freeze"/>
+        </rect>
+      </g>
+    </g>
+  </g>
+
+  <!-- Workflow Metrics -->
+  <g transform="translate(50, 220)" opacity="0.8">
+    <rect x="0" y="0" width="300" height="50" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1"/>
+    <text x="150" y="15" font-family="Arial, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="bold">
+      Team Performance Metrics
+    </text>
+    
+    <!-- Velocity -->
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="7" fill="#cbd5e1">Velocity</text>
+    <rect x="20" y="35" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="20" y="35" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;48;48" dur="2s" begin="6s" fill="freeze"/>
+    </rect>
+    <text x="85" y="38" font-family="Arial, sans-serif" font-size="6" fill="#22c55e">85%</text>
+    
+    <!-- Quality -->
+    <text x="110" y="30" font-family="Arial, sans-serif" font-size="7" fill="#cbd5e1">Quality</text>
+    <rect x="110" y="35" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="110" y="35" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;54;54" dur="2s" begin="6.5s" fill="freeze"/>
+    </rect>
+    <text x="175" y="38" font-family="Arial, sans-serif" font-size="6" fill="#22c55e">92%</text>
+    
+    <!-- Satisfaction -->
+    <text x="200" y="30" font-family="Arial, sans-serif" font-size="7" fill="#cbd5e1">Satisfaction</text>
+    <rect x="200" y="35" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="200" y="35" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;57;57" dur="2s" begin="7s" fill="freeze"/>
+    </rect>
+    <text x="265" y="38" font-family="Arial, sans-serif" font-size="6" fill="#22c55e">96%</text>
+  </g>
+</svg>

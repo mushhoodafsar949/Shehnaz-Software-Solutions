@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">Analytics Dashboard</text>
+    <text x="0" y="60" fill="#64748b" font-family="Arial" font-size="16">Healthcare Metrics Overview</text>
+  </g>
+  
+  <!-- Main Stats Grid -->
+  <g transform="translate(40, 120)">
+    <!-- Patient Demographics -->
+    <rect width="220" height="200" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Patient Demographics</text>
+    <!-- Pie Chart -->
+    <circle cx="110" cy="120" r="60" fill="none" stroke="#e2e8f0" stroke-width="20"/>
+    <path d="M 110 120 L 110 60 A 60 60 0 0 1 162 150 Z" fill="#6366f1"/>
+    <path d="M 110 120 L 162 150 A 60 60 0 0 1 58 150 Z" fill="#8b5cf6"/>
+    <path d="M 110 120 L 58 150 A 60 60 0 0 1 110 60 Z" fill="#d946ef"/>
+    
+    <!-- Treatment Success -->
+    <rect x="240" width="220" height="200" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="260" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Treatment Success</text>
+    <!-- Bar Chart -->
+    <g transform="translate(260, 60)">
+      <rect width="30" height="120" fill="#f1f5f9"/>
+      <rect width="30" height="90" fill="#6366f1"/>
+      <rect x="40" width="30" height="120" fill="#f1f5f9"/>
+      <rect x="40" width="30" height="100" fill="#8b5cf6"/>
+      <rect x="80" width="30" height="120" fill="#f1f5f9"/>
+      <rect x="80" width="30" height="80" fill="#d946ef"/>
+      <rect x="120" width="30" height="120" fill="#f1f5f9"/>
+      <rect x="120" width="30" height="95" fill="#6366f1"/>
+    </g>
+    
+    <!-- Patient Satisfaction -->
+    <rect x="480" width="220" height="200" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="500" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Patient Satisfaction</text>
+    <!-- Line Chart -->
+    <g transform="translate(500, 60)">
+      <path d="M 0 120 L 180 120" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M 0 80 L 180 80" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M 0 40 L 180 40" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M 0 100 L 45 60 L 90 80 L 135 30 L 180 50" stroke="#6366f1" stroke-width="3" fill="none"/>
+      <circle cx="45" cy="60" r="4" fill="#6366f1"/>
+      <circle cx="90" cy="80" r="4" fill="#6366f1"/>
+      <circle cx="135" cy="30" r="4" fill="#6366f1"/>
+      <circle cx="180" cy="50" r="4" fill="#6366f1"/>
+    </g>
+  </g>
+  
+  <!-- Detailed Stats -->
+  <g transform="translate(40, 340)">
+    <rect width="720" height="220" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Department Performance</text>
+    
+    <!-- Table Headers -->
+    <g transform="translate(20, 60)">
+      <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">Department</text>
+      <text x="200" y="20" fill="#64748b" font-family="Arial" font-size="14">Patients</text>
+      <text x="400" y="20" fill="#64748b" font-family="Arial" font-size="14">Success Rate</text>
+      <text x="600" y="20" fill="#64748b" font-family="Arial" font-size="14">Satisfaction</text>
+    </g>
+    
+    <!-- Table Rows -->
+    <g transform="translate(20, 90)">
+      <!-- Row 1 -->
+      <text x="0" y="20" fill="#1e293b" font-family="Arial" font-size="14">Cardiology</text>
+      <text x="200" y="20" fill="#1e293b" font-family="Arial" font-size="14">245</text>
+      <text x="400" y="20" fill="#1e293b" font-family="Arial" font-size="14">92%</text>
+      <text x="600" y="20" fill="#1e293b" font-family="Arial" font-size="14">4.8/5</text>
+      
+      <!-- Row 2 -->
+      <text x="0" y="50" fill="#1e293b" font-family="Arial" font-size="14">Neurology</text>
+      <text x="200" y="50" fill="#1e293b" font-family="Arial" font-size="14">189</text>
+      <text x="400" y="50" fill="#1e293b" font-family="Arial" font-size="14">88%</text>
+      <text x="600" y="50" fill="#1e293b" font-family="Arial" font-size="14">4.6/5</text>
+      
+      <!-- Row 3 -->
+      <text x="0" y="80" fill="#1e293b" font-family="Arial" font-size="14">Pediatrics</text>
+      <text x="200" y="80" fill="#1e293b" font-family="Arial" font-size="14">312</text>
+      <text x="400" y="80" fill="#1e293b" font-family="Arial" font-size="14">95%</text>
+      <text x="600" y="80" fill="#1e293b" font-family="Arial" font-size="14">4.9/5</text>
+    </g>
+  </g>
+</svg>

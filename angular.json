@@ -42,12 +42,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "outputPath": "dist/nest-tech-solutions/browser",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -57,8 +57,12 @@
               "src/robots.txt"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/lara-light-indigo/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles.scss"
-            ]
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -89,7 +93,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "nest-tech-solutions:build:production"
@@ -101,7 +105,10 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "nest-tech-solutions:build"
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",

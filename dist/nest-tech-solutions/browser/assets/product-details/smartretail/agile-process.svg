@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">SmartRetail Pro - Agile Development Process</text>
+  
+  <!-- Sprint Planning -->
+  <g transform="translate(50, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Sprint Planning</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Store Analysis -->
+      <rect width="200" height="60" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Store Analysis</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Peak Hours & Traffic</text>
+      
+      <!-- Inventory Planning -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Inventory Planning</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Stock Optimization</text>
+      </g>
+      
+      <!-- Resource Allocation -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Resource Allocation</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Staff Scheduling</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Daily Operations -->
+  <g transform="translate(350, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Daily Operations</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Sales Monitoring -->
+      <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Sales Monitoring</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Real-time Tracking</text>
+      
+      <!-- Stock Updates -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Stock Updates</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Inventory Sync</text>
+      </g>
+      
+      <!-- Customer Service -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Customer Service</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Support & Feedback</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Development -->
+  <g transform="translate(650, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Development</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- POS Updates -->
+      <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">POS Updates</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Payment Systems</text>
+      
+      <!-- IoT Integration -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">IoT Integration</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Sensor Networks</text>
+      </g>
+      
+      <!-- Analytics -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Analytics</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Business Intelligence</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Review -->
+  <g transform="translate(950, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Review</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Store Performance -->
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Store Performance</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">KPI Analysis</text>
+      
+      <!-- System Health -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">System Health</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Uptime & Issues</text>
+      </g>
+      
+      <!-- Customer Feedback -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Customer Feedback</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Satisfaction Metrics</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Retrospective -->
+  <g transform="translate(50, 450)">
+    <rect width="1150" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="575" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Sprint Retrospective</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Store Operations -->
+      <rect width="250" height="200" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Store Operations</text>
+      <g transform="translate(20, 60)">
+        <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Sales Performance</text>
+        <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Inventory Turnover</text>
+        <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Staff Efficiency</text>
+      </g>
+      
+      <!-- Technical Performance -->
+      <g transform="translate(300, 0)">
+        <rect width="250" height="200" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Technical Performance</text>
+        <g transform="translate(20, 60)">
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• System Response Time</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• IoT Device Health</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Data Accuracy</text>
+        </g>
+      </g>
+      
+      <!-- Customer Experience -->
+      <g transform="translate(600, 0)">
+        <rect width="250" height="200" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Customer Experience</text>
+        <g transform="translate(20, 60)">
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Checkout Speed</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Service Quality</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Store Layout</text>
+        </g>
+      </g>
+      
+      <!-- Action Items -->
+      <g transform="translate(900, 0)">
+        <rect width="250" height="200" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Action Items</text>
+        <g transform="translate(20, 60)">
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Process Improvements</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• System Updates</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Training Needs</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

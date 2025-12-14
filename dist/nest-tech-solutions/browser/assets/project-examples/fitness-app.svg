@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone Frame -->
+  <rect x="250" y="50" width="300" height="500" rx="30" fill="#212529"/>
+  <rect x="260" y="60" width="280" height="480" rx="25" fill="#ffffff"/>
+  
+  <!-- Status Bar -->
+  <rect x="260" y="60" width="280" height="30" rx="25" fill="#f8f9fa"/>
+  <circle cx="280" cy="75" r="5" fill="#212529"/>
+  <text x="510" y="78" font-family="Arial" font-size="12" fill="#212529" text-anchor="end">9:41</text>
+  
+  <!-- App Header -->
+  <text x="280" y="120" font-family="Arial" font-size="20" font-weight="bold" fill="#212529">FitTrack Pro</text>
+  
+  <!-- Activity Ring -->
+  <circle cx="400" cy="200" r="60" fill="none" stroke="#e9ecef" stroke-width="10"/>
+  <path d="M400 140 A60 60 0 1 1 340 200" stroke="#28a745" stroke-width="10" fill="none"/>
+  <text x="400" y="190" font-family="Arial" font-size="24" fill="#212529" text-anchor="middle">75%</text>
+  <text x="400" y="210" font-family="Arial" font-size="12" fill="#6c757d" text-anchor="middle">Daily Goal</text>
+  
+  <!-- Stats Grid -->
+  <g transform="translate(280, 280)">
+    <!-- Steps -->
+    <rect width="115" height="80" rx="10" fill="#f8f9fa"/>
+    <text x="10" y="30" font-family="Arial" font-size="12" fill="#6c757d">Steps</text>
+    <text x="10" y="55" font-family="Arial" font-size="18" fill="#212529">8,547</text>
+  </g>
+  
+  <g transform="translate(405, 280)">
+    <!-- Calories -->
+    <rect width="115" height="80" rx="10" fill="#f8f9fa"/>
+    <text x="10" y="30" font-family="Arial" font-size="12" fill="#6c757d">Calories</text>
+    <text x="10" y="55" font-family="Arial" font-size="18" fill="#212529">425</text>
+  </g>
+  
+  <!-- Workout Section -->
+  <text x="280" y="400" font-family="Arial" font-size="16" font-weight="bold" fill="#212529">Today's Workout</text>
+  
+  <!-- Workout Card -->
+  <rect x="280" y="420" width="240" height="80" rx="10" fill="#f8f9fa"/>
+  <text x="300" y="445" font-family="Arial" font-size="14" fill="#212529">HIIT Training</text>
+  <text x="300" y="465" font-family="Arial" font-size="12" fill="#6c757d">45 min • 350 cal</text>
+  <rect x="480" y="440" width="20" height="20" rx="5" fill="#28a745"/>
+  <path d="M485 450 L490 455 L495 445" stroke="#ffffff" stroke-width="2" fill="none"/>
+  
+  <!-- Navigation Bar -->
+  <rect x="260" y="510" width="280" height="30" rx="25" fill="#f8f9fa"/>
+  <circle cx="320" cy="525" r="3" fill="#212529"/>
+  <circle cx="400" cy="525" r="3" fill="#212529"/>
+  <circle cx="480" cy="525" r="3" fill="#212529"/>
+</svg>

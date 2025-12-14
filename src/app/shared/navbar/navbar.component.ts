@@ -1,73 +1,83 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterModule, RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { CommonModule, ViewportScroller } from '@angular/common';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ThemeService, Theme } from '../../core/theme.service';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { DialogService } from 'primeng/dynamicdialog';
 import { QuoteDialogComponent } from '../quote-dialog/quote-dialog.component';
+import { ThemeService } from '../../core/theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink,
-    RouterLinkActive,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
     RouterModule,
-    MatDialogModule
-  ]
+    ButtonModule,
+    RippleModule
+  ],
+  providers: [DialogService],
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-  @Input() drawer!: MatSidenav;
+export class NavbarComponent implements OnInit, OnDestroy {
+  isScrolled = false;
+  currentTheme = 'light';
   menuOpen = false;
-  currentTheme: Theme = 'light';
+  private themeSubscription?: Subscription;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    if (window.innerWidth > 960) {
+      this.menuOpen = false;
+    }
+  }
 
   constructor(
-    private themeService: ThemeService,
-    private dialog: MatDialog,
-    private router: Router,
-    private viewportScroller: ViewportScroller
+    private dialogService: DialogService,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit() {
-    this.themeService.theme$.subscribe(theme => {
+    this.themeSubscription = this.themeService.theme$.subscribe(theme => {
       this.currentTheme = theme;
     });
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+  ngOnDestroy() {
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+    }
   }
 
   toggleTheme() {
     this.themeService.toggleTheme();
   }
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
   openQuoteDialog() {
-    this.viewportScroller.scrollToPosition([0, 0]);
-    this.router.navigate(['/quote']);
-  }
-
-  openQuoteDialogModal() {
-    const dialogRef = this.dialog.open(QuoteDialogComponent, {
-      width: '90vw',
-      maxWidth: '1200px',
-      height: '90vh',
-      maxHeight: '90vh',
-      panelClass: 'quote-dialog-panel',
-      data: {}
+    this.dialogService.open(QuoteDialogComponent, {
+      header: 'Get a Quote',
+      width: '90%',
+      maximizable: true,
+      style: { maxWidth: '1200px' },
+      contentStyle: { height: '85vh', overflow: 'auto' },
+      baseZIndex: 10000,
+      dismissableMask: true
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Quote dialog closed');
-    });
+    this.closeMenu();
   }
-} 
+}

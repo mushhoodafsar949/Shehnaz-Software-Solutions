@@ -1,0 +1,86 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mobileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8bc34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cddc39;stop-opacity:1" />
+    </linearGradient>
+    <filter id="mobileGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#mobileGradient)" filter="url(#mobileGlow)" opacity="0.95"/>
+  
+  <!-- Mobile devices -->
+  <g transform="translate(50, 50)">
+    <!-- Main phone -->
+    <rect x="-8" y="-25" width="16" height="40" rx="4" fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Screen -->
+    <rect x="-6" y="-20" width="12" height="28" rx="2" fill="#e8f5e8"/>
+    
+    <!-- Home button -->
+    <circle cx="0" cy="18" r="2" fill="#ffffff" stroke="url(#mobileGradient)" stroke-width="1"/>
+    
+    <!-- App icons on screen -->
+    <rect x="-4" y="-16" width="2.5" height="2.5" rx="0.5" fill="url(#mobileGradient)"/>
+    <rect x="-0.5" y="-16" width="2.5" height="2.5" rx="0.5" fill="#ff5722"/>
+    <rect x="3" y="-16" width="2.5" height="2.5" rx="0.5" fill="#2196f3"/>
+    
+    <rect x="-4" y="-12" width="2.5" height="2.5" rx="0.5" fill="#9c27b0"/>
+    <rect x="-0.5" y="-12" width="2.5" height="2.5" rx="0.5" fill="#ff9800"/>
+    <rect x="3" y="-12" width="2.5" height="2.5" rx="0.5" fill="#e91e63"/>
+    
+    <!-- Side phones -->
+    <g transform="translate(-20, 0) rotate(-15)" opacity="0.7">
+      <rect x="-6" y="-20" width="12" height="32" rx="3" fill="#ffffff"/>
+      <rect x="-4" y="-16" width="8" height="22" rx="1" fill="#e8f5e8"/>
+      <circle cx="0" cy="14" r="1.5" fill="url(#mobileGradient)"/>
+    </g>
+    
+    <g transform="translate(20, 0) rotate(15)" opacity="0.7">
+      <rect x="-6" y="-20" width="12" height="32" rx="3" fill="#ffffff"/>
+      <rect x="-4" y="-16" width="8" height="22" rx="1" fill="#e8f5e8"/>
+      <circle cx="0" cy="14" r="1.5" fill="url(#mobileGradient)"/>
+    </g>
+    
+    <!-- Cross-platform indicators -->
+    <g transform="translate(0, -35)">
+      <!-- iOS -->
+      <circle cx="-10" cy="0" r="4" fill="#ffffff" opacity="0.9"/>
+      <path d="M -12,-1 Q -12,-3 -10,-3 Q -8,-3 -8,-1 Q -8,1 -10,3 Q -12,1 -12,-1 Z" fill="url(#mobileGradient)"/>
+      
+      <!-- Android -->
+      <circle cx="10" cy="0" r="4" fill="#ffffff" opacity="0.9"/>
+      <path d="M 8,-2 L 8,0 L 12,0 L 12,-2 Q 12,-3 10,-3 Q 8,-3 8,-2 Z" fill="url(#mobileGradient)"/>
+      <circle cx="9" cy="1" r="0.5" fill="url(#mobileGradient)"/>
+      <circle cx="11" cy="1" r="0.5" fill="url(#mobileGradient)"/>
+    </g>
+    
+    <!-- Development tools -->
+    <g transform="translate(0, 32)">
+      <!-- React Native -->
+      <circle cx="-8" cy="0" r="3" fill="#61dafb" opacity="0.8"/>
+      <text x="-8" y="1" text-anchor="middle" font-family="Arial" font-size="3" fill="#ffffff">RN</text>
+      
+      <!-- Flutter -->
+      <circle cx="0" cy="0" r="3" fill="#02569b" opacity="0.8"/>
+      <text x="0" y="1" text-anchor="middle" font-family="Arial" font-size="2.5" fill="#ffffff">FL</text>
+      
+      <!-- Native -->
+      <circle cx="8" cy="0" r="3" fill="#ff6b35" opacity="0.8"/>
+      <text x="8" y="1" text-anchor="middle" font-family="Arial" font-size="2.5" fill="#ffffff">NT</text>
+    </g>
+    
+    <!-- Connection lines -->
+    <line x1="-20" y1="0" x2="-8" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+    <line x1="20" y1="0" x2="8" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  </g>
+</svg>
+

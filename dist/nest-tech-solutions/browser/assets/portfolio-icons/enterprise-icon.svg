@@ -1,0 +1,82 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="enterpriseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#673ab7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9c27b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3f51b5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="enterpriseGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main circle -->
+  <circle cx="40" cy="40" r="38" fill="url(#enterpriseGradient)" filter="url(#enterpriseGlow)" opacity="0.9"/>
+  
+  <!-- Enterprise building and network -->
+  <g transform="translate(40, 40)">
+    <!-- Main enterprise building -->
+    <rect x="-12" y="-8" width="24" height="16" fill="#ffffff" opacity="0.9" rx="2"/>
+    
+    <!-- Building windows -->
+    <rect x="-9" y="-6" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="-5" y="-6" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="-1" y="-6" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="3" y="-6" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="7" y="-6" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    
+    <rect x="-9" y="-2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="-5" y="-2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="-1" y="-2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="3" y="-2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="7" y="-2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    
+    <rect x="-9" y="2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="-5" y="2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="-1" y="2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="3" y="2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    <rect x="7" y="2" width="2" height="2" fill="url(#enterpriseGradient)"/>
+    
+    <!-- Satellite offices/departments -->
+    <rect x="-28" y="-4" width="8" height="8" fill="#ffffff" opacity="0.8" rx="1"/>
+    <rect x="20" y="-4" width="8" height="8" fill="#ffffff" opacity="0.8" rx="1"/>
+    <rect x="-28" y="10" width="8" height="8" fill="#ffffff" opacity="0.8" rx="1"/>
+    <rect x="20" y="10" width="8" height="8" fill="#ffffff" opacity="0.8" rx="1"/>
+    
+    <!-- Department icons -->
+    <text x="-24" y="1" text-anchor="middle" font-family="Arial" font-size="6" fill="url(#enterpriseGradient)">HR</text>
+    <text x="24" y="1" text-anchor="middle" font-family="Arial" font-size="6" fill="url(#enterpriseGradient)">IT</text>
+    <text x="-24" y="15" text-anchor="middle" font-family="Arial" font-size="6" fill="url(#enterpriseGradient)">FIN</text>
+    <text x="24" y="15" text-anchor="middle" font-family="Arial" font-size="6" fill="url(#enterpriseGradient)">OPS</text>
+    
+    <!-- Network connections -->
+    <line x1="-20" y1="0" x2="-12" y2="0" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    <line x1="12" y1="0" x2="20" y2="0" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    <line x1="-20" y1="14" x2="-12" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    <line x1="20" y1="14" x2="12" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Data flow indicators -->
+    <circle cx="-16" cy="0" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="16" cy="0" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Cloud integration -->
+    <g transform="translate(0, -20)" opacity="0.8">
+      <path d="M -8,-2 Q -10,-6 -6,-6 Q -4,-8 0,-6 Q 4,-8 6,-6 Q 10,-6 8,-2 Z" fill="#ffffff"/>
+      <text x="0" y="-1" text-anchor="middle" font-family="Arial" font-size="4" fill="url(#enterpriseGradient)">CLOUD</text>
+    </g>
+    
+    <!-- Security shield -->
+    <g transform="translate(0, 20)" opacity="0.8">
+      <path d="M -4,-4 L 0,-6 L 4,-4 L 4,2 Q 4,4 0,4 Q -4,4 -4,2 Z" fill="#ffffff"/>
+      <path d="M -2,-2 L 0,0 L 3,-3" stroke="url(#enterpriseGradient)" stroke-width="1" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dashboard Background -->
+  <rect x="50" y="50" width="700" height="500" rx="10" fill="#f8f9fa"/>
+  
+  <!-- Header -->
+  <rect x="70" y="70" width="660" height="60" rx="5" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+  <text x="90" y="105" font-family="Arial" font-size="20" fill="#212529">E-commerce Dashboard</text>
+  
+  <!-- Main Stats Cards -->
+  <g transform="translate(70, 150)">
+    <!-- Sales Card -->
+    <rect width="200" height="100" rx="5" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial" font-size="14" fill="#6c757d">Total Sales</text>
+    <text x="20" y="70" font-family="Arial" font-size="24" fill="#212529">$124,500</text>
+    <path d="M160 40 L180 20 L200 35" stroke="#28a745" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(290, 150)">
+    <!-- Orders Card -->
+    <rect width="200" height="100" rx="5" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial" font-size="14" fill="#6c757d">Orders</text>
+    <text x="20" y="70" font-family="Arial" font-size="24" fill="#212529">1,240</text>
+    <path d="M160 40 L180 25 L200 40" stroke="#007bff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(510, 150)">
+    <!-- Customers Card -->
+    <rect width="200" height="100" rx="5" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial" font-size="14" fill="#6c757d">Customers</text>
+    <text x="20" y="70" font-family="Arial" font-size="24" fill="#212529">850</text>
+    <path d="M160 20 L180 40 L200 30" stroke="#17a2b8" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Chart Area -->
+  <rect x="70" y="270" width="420" height="260" rx="5" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+  <text x="90" y="300" font-family="Arial" font-size="16" fill="#212529">Sales Overview</text>
+  
+  <!-- Sample Line Chart -->
+  <path d="M90 480 L140 400 L190 440 L240 380 L290 420 L340 360 L390 400 L440 350" 
+        stroke="#007bff" stroke-width="2" fill="none"/>
+  <circle cx="140" cy="400" r="4" fill="#007bff"/>
+  <circle cx="190" cy="440" r="4" fill="#007bff"/>
+  <circle cx="240" cy="380" r="4" fill="#007bff"/>
+  <circle cx="290" cy="420" r="4" fill="#007bff"/>
+  <circle cx="340" cy="360" r="4" fill="#007bff"/>
+  <circle cx="390" cy="400" r="4" fill="#007bff"/>
+  <circle cx="440" cy="350" r="4" fill="#007bff"/>
+  
+  <!-- Recent Orders Table -->
+  <rect x="510" y="270" width="220" height="260" rx="5" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+  <text x="530" y="300" font-family="Arial" font-size="16" fill="#212529">Recent Orders</text>
+  
+  <!-- Table Headers -->
+  <line x1="510" y1="320" x2="730" y2="320" stroke="#e9ecef" stroke-width="1"/>
+  <text x="530" y="315" font-family="Arial" font-size="12" fill="#6c757d">Order ID</text>
+  <text x="630" y="315" font-family="Arial" font-size="12" fill="#6c757d">Amount</text>
+  
+  <!-- Table Rows -->
+  <g transform="translate(530, 340)">
+    <text font-family="Arial" font-size="12" fill="#212529">#12345</text>
+    <text x="100" font-family="Arial" font-size="12" fill="#212529">$230</text>
+  </g>
+  <g transform="translate(530, 370)">
+    <text font-family="Arial" font-size="12" fill="#212529">#12346</text>
+    <text x="100" font-family="Arial" font-size="12" fill="#212529">$180</text>
+  </g>
+  <g transform="translate(530, 400)">
+    <text font-family="Arial" font-size="12" fill="#212529">#12347</text>
+    <text x="100" font-family="Arial" font-size="12" fill="#212529">$350</text>
+  </g>
+</svg>

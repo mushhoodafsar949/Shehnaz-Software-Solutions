@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">HealthConnect Pro - System Architecture</text>
+  
+  <!-- Frontend Layer -->
+  <g transform="translate(50, 100)">
+    <rect width="1100" height="150" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Frontend Layer</text>
+    
+    <!-- Components -->
+    <g transform="translate(20, 60)">
+      <!-- Angular SPA -->
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Angular 17 SPA</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">SSR + PWA</text>
+      
+      <!-- State Management -->
+      <g transform="translate(220, 0)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">NgRx Store</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">State Management</text>
+      </g>
+      
+      <!-- Real-time -->
+      <g transform="translate(440, 0)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">WebSocket + WebRTC</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Real-time Communication</text>
+      </g>
+      
+      <!-- UI Components -->
+      <g transform="translate(660, 0)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">PrimeNG + TailwindCSS</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">UI Framework</text>
+      </g>
+      
+      <!-- Analytics -->
+      <g transform="translate(880, 0)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Analytics + Monitoring</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Performance Tracking</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- API Gateway Layer -->
+  <g transform="translate(50, 280)">
+    <rect width="1100" height="100" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">API Gateway</text>
+    
+    <!-- Components -->
+    <g transform="translate(20, 20)">
+      <!-- Auth -->
+      <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Authentication</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">JWT + OAuth2</text>
+      
+      <!-- Rate Limiting -->
+      <g transform="translate(220, 0)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Rate Limiting</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Request Throttling</text>
+      </g>
+      
+      <!-- Load Balancing -->
+      <g transform="translate(440, 0)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Load Balancing</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Traffic Distribution</text>
+      </g>
+      
+      <!-- Caching -->
+      <g transform="translate(660, 0)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Caching</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Redis Cache</text>
+      </g>
+      
+      <!-- Logging -->
+      <g transform="translate(880, 0)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Logging</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">ELK Stack</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Microservices Layer -->
+  <g transform="translate(50, 410)">
+    <rect width="1100" height="200" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Microservices Layer</text>
+    
+    <!-- Services -->
+    <g transform="translate(20, 60)">
+      <!-- Patient Service -->
+      <rect width="200" height="120" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Patient Service</text>
+      <text x="100" y="50" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node.js + Express</text>
+      <text x="100" y="70" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Patient Management</text>
+      <text x="100" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Medical Records</text>
+      
+      <!-- Telemedicine Service -->
+      <g transform="translate(220, 0)">
+        <rect width="200" height="120" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Telemedicine Service</text>
+        <text x="100" y="50" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">WebRTC Signaling</text>
+        <text x="100" y="70" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Video Consultations</text>
+        <text x="100" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Chat System</text>
+      </g>
+      
+      <!-- AI Service -->
+      <g transform="translate(440, 0)">
+        <rect width="200" height="120" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">AI Service</text>
+        <text x="100" y="50" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">TensorFlow</text>
+        <text x="100" y="70" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Diagnostic Assistance</text>
+        <text x="100" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Image Analysis</text>
+      </g>
+      
+      <!-- Analytics Service -->
+      <g transform="translate(660, 0)">
+        <rect width="200" height="120" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Analytics Service</text>
+        <text x="100" y="50" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Data Processing</text>
+        <text x="100" y="70" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Reporting</text>
+        <text x="100" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Insights Generation</text>
+      </g>
+      
+      <!-- Notification Service -->
+      <g transform="translate(880, 0)">
+        <rect width="200" height="120" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Notification Service</text>
+        <text x="100" y="50" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Push Notifications</text>
+        <text x="100" y="70" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Email/SMS</text>
+        <text x="100" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Alerts</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Data Layer -->
+  <g transform="translate(50, 640)">
+    <rect width="1100" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Data Layer</text>
+    
+    <!-- Databases -->
+    <g transform="translate(20, 40)">
+      <!-- MongoDB -->
+      <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">MongoDB</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Primary Database</text>
+      
+      <!-- Redis -->
+      <g transform="translate(220, 0)">
+        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Redis</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Caching Layer</text>
+      </g>
+      
+      <!-- Elasticsearch -->
+      <g transform="translate(440, 0)">
+        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Elasticsearch</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Search Engine</text>
+      </g>
+      
+      <!-- MinIO -->
+      <g transform="translate(660, 0)">
+        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">MinIO</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Object Storage</text>
+      </g>
+      
+      <!-- Time Series DB -->
+      <g transform="translate(880, 0)">
+        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="30" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">InfluxDB</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Time Series Data</text>
+      </g>
+    </g>
+  </g>
+</svg>

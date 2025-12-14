@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="50%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" font-family="Arial, sans-serif" font-size="16" fill="#166534" text-anchor="middle" font-weight="bold">AI &amp; Machine Learning</text>
+  
+  <!-- Neural Network -->
+  <g transform="translate(100, 60)">
+    <!-- Input Layer -->
+    <circle cx="0" cy="20" r="8" fill="url(#aiGradient)"/>
+    <circle cx="0" cy="50" r="8" fill="url(#aiGradient)"/>
+    <circle cx="0" cy="80" r="8" fill="url(#aiGradient)"/>
+    <circle cx="0" cy="110" r="8" fill="url(#aiGradient)"/>
+    
+    <!-- Hidden Layer 1 -->
+    <circle cx="60" cy="10" r="8" fill="url(#aiGradient)"/>
+    <circle cx="60" cy="35" r="8" fill="url(#aiGradient)"/>
+    <circle cx="60" cy="60" r="8" fill="url(#aiGradient)"/>
+    <circle cx="60" cy="85" r="8" fill="url(#aiGradient)"/>
+    <circle cx="60" cy="110" r="8" fill="url(#aiGradient)"/>
+    <circle cx="60" cy="135" r="8" fill="url(#aiGradient)"/>
+    
+    <!-- Hidden Layer 2 -->
+    <circle cx="120" cy="20" r="8" fill="url(#aiGradient)"/>
+    <circle cx="120" cy="50" r="8" fill="url(#aiGradient)"/>
+    <circle cx="120" cy="80" r="8" fill="url(#aiGradient)"/>
+    <circle cx="120" cy="110" r="8" fill="url(#aiGradient)"/>
+    
+    <!-- Output Layer -->
+    <circle cx="180" cy="40" r="8" fill="url(#aiGradient)"/>
+    <circle cx="180" cy="70" r="8" fill="url(#aiGradient)"/>
+    <circle cx="180" cy="100" r="8" fill="url(#aiGradient)"/>
+    
+    <!-- Connections (sample) -->
+    <line x1="8" y1="20" x2="52" y2="10" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+    <line x1="8" y1="20" x2="52" y2="35" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+    <line x1="8" y1="50" x2="52" y2="60" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+    <line x1="68" y1="35" x2="112" y2="20" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+    <line x1="68" y1="60" x2="112" y2="50" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+    <line x1="128" y1="50" x2="172" y2="70" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+  </g>
+  
+  <!-- AI Applications -->
+  <g transform="translate(320, 80)">
+    <!-- Computer Vision -->
+    <rect x="0" y="0" width="40" height="30" rx="4" fill="#1e293b"/>
+    <rect x="3" y="3" width="34" height="24" rx="2" fill="#22c55e"/>
+    <text x="20" y="18" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Vision</text>
+    
+    <!-- NLP -->
+    <rect x="0" y="40" width="40" height="30" rx="4" fill="#1e293b"/>
+    <rect x="3" y="43" width="34" height="24" rx="2" fill="#3b82f6"/>
+    <text x="20" y="58" font-family="Arial" font-size="8" fill="white" text-anchor="middle">NLP</text>
+    
+    <!-- Prediction -->
+    <rect x="0" y="80" width="40" height="30" rx="4" fill="#1e293b"/>
+    <rect x="3" y="83" width="34" height="24" rx="2" fill="#f59e0b"/>
+    <text x="20" y="98" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Predict</text>
+  </g>
+  
+  <!-- Data Flow -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="40" width="30" height="20" rx="3" fill="#64748b"/>
+    <text x="15" y="53" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Data</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 85 90 L 95 90" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+  
+  <!-- Capabilities -->
+  <g transform="translate(50, 220)">
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="#166534" font-weight="bold">Capabilities:</text>
+    <text x="0" y="15" font-family="Arial" font-size="10" fill="#64748b">• Custom AI models</text>
+    <text x="0" y="28" font-family="Arial" font-size="10" fill="#64748b">• Data analysis</text>
+    <text x="0" y="41" font-family="Arial" font-size="10" fill="#64748b">• Computer vision</text>
+    <text x="200" y="15" font-family="Arial" font-size="10" fill="#64748b">• Natural language processing</text>
+    <text x="200" y="28" font-family="Arial" font-size="10" fill="#64748b">• Predictive analytics</text>
+    <text x="200" y="41" font-family="Arial" font-size="10" fill="#64748b">• Machine learning ops</text>
+  </g>
+</svg>

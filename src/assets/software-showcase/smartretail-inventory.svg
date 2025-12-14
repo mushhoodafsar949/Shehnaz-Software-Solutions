@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">Inventory Management</text>
+    <text x="0" y="60" fill="#64748b" font-family="Arial" font-size="16">Real-time stock tracking and analytics</text>
+  </g>
+  
+  <!-- Warehouse Layout -->
+  <g transform="translate(40, 120)">
+    <rect width="720" height="320" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Grid -->
+    <g transform="translate(40, 40)">
+      <!-- Row 1 -->
+      <g>
+        <rect width="100" height="100" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">A1</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">85% Full</text>
+      </g>
+      <g transform="translate(120, 0)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.2" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">A2</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">92% Full</text>
+      </g>
+      <g transform="translate(240, 0)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">A3</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">78% Full</text>
+      </g>
+      <g transform="translate(360, 0)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.3" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">A4</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">95% Full</text>
+      </g>
+      
+      <!-- Row 2 -->
+      <g transform="translate(0, 120)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.2" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">B1</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">65% Full</text>
+      </g>
+      <g transform="translate(120, 120)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">B2</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">88% Full</text>
+      </g>
+      <g transform="translate(240, 120)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.3" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">B3</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">72% Full</text>
+      </g>
+      <g transform="translate(360, 120)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="12" text-anchor="middle">B4</text>
+        <text x="50" y="70" fill="#64748b" font-family="Arial" font-size="10" text-anchor="middle">81% Full</text>
+      </g>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(520, 40)">
+      <text x="0" y="20" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Storage Status</text>
+      
+      <g transform="translate(0, 40)">
+        <rect width="20" height="20" fill="#FF5722" opacity="0.1"/>
+        <text x="30" y="15" fill="#64748b" font-family="Arial" font-size="12">60-79% Full</text>
+      </g>
+      
+      <g transform="translate(0, 70)">
+        <rect width="20" height="20" fill="#FF5722" opacity="0.2"/>
+        <text x="30" y="15" fill="#64748b" font-family="Arial" font-size="12">80-89% Full</text>
+      </g>
+      
+      <g transform="translate(0, 100)">
+        <rect width="20" height="20" fill="#FF5722" opacity="0.3"/>
+        <text x="30" y="15" fill="#64748b" font-family="Arial" font-size="12">90-100% Full</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Bottom Stats -->
+  <g transform="translate(40, 460)">
+    <rect width="720" height="100" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Total Items -->
+    <g transform="translate(40, 20)">
+      <text x="0" y="20" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Total Items</text>
+      <text x="0" y="50" fill="#FF5722" font-family="Arial" font-size="24">12,450</text>
+    </g>
+    
+    <!-- Low Stock -->
+    <g transform="translate(240, 20)">
+      <text x="0" y="20" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Low Stock Alerts</text>
+      <text x="0" y="50" fill="#EF4444" font-family="Arial" font-size="24">23</text>
+    </g>
+    
+    <!-- Reorder -->
+    <g transform="translate(440, 20)">
+      <text x="0" y="20" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Pending Reorders</text>
+      <text x="0" y="50" fill="#FF5722" font-family="Arial" font-size="24">8</text>
+    </g>
+  </g>
+</svg>

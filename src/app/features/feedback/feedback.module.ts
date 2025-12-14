@@ -11,8 +11,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [FeedbackComponent],
-  imports: [CommonModule, SharedModule, FormsModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    RouterModule.forChild(routes),
+    FeedbackComponent
+  ],
   providers: [FeedbackService]
 })
 export class FeedbackModule {} 

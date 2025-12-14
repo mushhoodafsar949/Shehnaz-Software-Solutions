@@ -1,100 +1,157 @@
-<div class="booking-summary">
-  <!-- Success Message -->
-  <div class="success-message" *ngIf="showSuccess">
-    <div class="success-icon">
-      <mat-icon>check_circle</mat-icon>
+<div class="booking-dialog-header">
+  <h2 class="dialog-title">
+    <i class="pi pi-calendar-plus title-icon"></i>
+    Schedule a Meeting
+  </h2>
+  <p class="dialog-subtitle">Book a consultation with our software development experts</p>
+</div>
+
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+  <div class="meeting-info">
+    <div class="info-grid">
+      <div class="info-item">
+        <i class="pi pi-clock info-icon"></i>
+        <div class="info-content">
+          <span class="info-label">Duration</span>
+          <span class="info-value">30 minutes</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="pi pi-video info-icon"></i>
+        <div class="info-content">
+          <span class="info-label">Platform</span>
+          <span class="info-value">Google Meet</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="pi pi-calendar info-icon"></i>
+        <div class="info-content">
+          <span class="info-label">Available</span>
+          <span class="info-value">Mon-Fri, 9AM-6PM</span>
+        </div>
+      </div>
     </div>
-    <h4>Meeting Scheduled Successfully!</h4>
-    <p>Check your email for the Google Meet link. We look forward to meeting with you!</p>
-    <div class="success-details">
-      <p><strong>Date:</strong> {{ data.selectedDate.fullDate | date:'EEEE, MMMM d, y' }}</p>
-      <p><strong>Time:</strong> {{ data.selectedTimeSlot.time }}</p>
-      <p><strong>Duration:</strong> 30 minutes</p>
-    </div>
-    <button mat-raised-button color="primary" (click)="close()" class="close-btn">
-      <mat-icon>close</mat-icon>
-      Close
-    </button>
   </div>
 
-  <!-- Booking Form (shown when not in success state) -->
-  <div *ngIf="!showSuccess">
-    <div class="summary-header">
-      <div class="summary-icon">
-        <mat-icon>event_available</mat-icon>
-      </div>
-      <h4>Meeting Confirmation</h4>
-      <p>Please review your meeting details and fill out the form below</p>
+  <div class="form-grid">
+    <div class="form-field">
+      <span class="p-float-label">
+        <input pInputText 
+               id="name" 
+               formControlName="name" 
+               class="w-full" />
+        <label for="name">Full Name *</label>
+      </span>
     </div>
-    
-    <div class="summary-details">
-      <div class="detail-item">
-        <div class="detail-icon">
-          <mat-icon>calendar_today</mat-icon>
-        </div>
-        <div class="detail-content">
-          <span class="detail-label">Date</span>
-          <span class="detail-value">{{ data.selectedDate.fullDate | date:'EEEE, MMMM d, y' }}</span>
-        </div>
-      </div>
-      <div class="detail-item">
-        <div class="detail-icon">
-          <mat-icon>schedule</mat-icon>
-        </div>
-        <div class="detail-content">
-          <span class="detail-label">Time</span>
-          <span class="detail-value">{{ data.selectedTimeSlot.time }}</span>
-        </div>
-      </div>
-      <div class="detail-item">
-        <div class="detail-icon">
-          <mat-icon>timer</mat-icon>
-        </div>
-        <div class="detail-content">
-          <span class="detail-label">Duration</span>
-          <span class="detail-value">30 minutes</span>
-        </div>
-      </div>
-      <div class="detail-item">
-        <div class="detail-icon">
-          <span class="google-meet-icon">G</span>
-        </div>
-        <div class="detail-content">
-          <span class="detail-label">Platform</span>
-          <span class="detail-value">Google Meet</span>
-        </div>
-      </div>
+
+    <div class="form-field">
+      <span class="p-float-label">
+        <input pInputText 
+               id="email" 
+               formControlName="email" 
+               type="email" 
+               class="w-full" />
+        <label for="email">Email Address *</label>
+      </span>
     </div>
-    
-    <form (ngSubmit)="scheduleMeeting()" #scheduleForm="ngForm" class="schedule-form">
-      <div class="form-header">
-        <h5>Your Information</h5>
-        <p>We'll send the meeting link to your email</p>
-      </div>
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Your Name *</mat-label>
-        <input matInput name="scheduleName" [(ngModel)]="data.scheduleData.name" required />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Email Address *</mat-label>
-        <input matInput name="scheduleEmail" [(ngModel)]="data.scheduleData.email" type="email" required />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Company Name</mat-label>
-        <input matInput name="scheduleCompany" [(ngModel)]="data.scheduleData.company" />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Project Brief (Optional)</mat-label>
-        <textarea matInput name="scheduleMessage" [(ngModel)]="data.scheduleData.message" rows="3" placeholder="Brief description of your project or what you'd like to discuss"></textarea>
-      </mat-form-field>
-      <div class="dialog-actions">
-        <button mat-stroked-button color="primary" type="button" (click)="close()">Cancel</button>
-        <button mat-raised-button color="primary" class="schedule-btn" type="submit" [disabled]="!scheduleForm.valid || isScheduling">
-          <mat-icon *ngIf="!isScheduling">schedule</mat-icon>
-          <span *ngIf="isScheduling" class="loading-text">Scheduling...</span>
-          {{ isScheduling ? '' : 'Schedule Meeting' }}
-        </button>
-      </div>
-    </form>
+
+    <div class="form-field">
+      <span class="p-float-label">
+        <input pInputText 
+               id="company" 
+               formControlName="company" 
+               class="w-full" />
+        <label for="company">Company Name</label>
+      </span>
+    </div>
+
+    <div class="form-field">
+      <span class="p-float-label">
+        <input pInputText 
+               id="phone" 
+               formControlName="phone" 
+               type="tel" 
+               class="w-full" />
+        <label for="phone">Phone Number</label>
+      </span>
+    </div>
   </div>
-</div> 
+
+  <div class="form-field">
+    <label for="service" class="field-label">Service Interest *</label>
+    <p-selectButton id="service" 
+                    [options]="services" 
+                    formControlName="service"
+                    optionLabel="name" 
+                    optionValue="code"
+                    [multiple]="false"
+                    class="w-full service-selector">
+    </p-selectButton>
+  </div>
+
+  <div class="form-field">
+    <label for="timeSlot" class="field-label">Preferred Time Slot *</label>
+    <p-selectButton id="timeSlot" 
+                    [options]="timeSlots" 
+                    formControlName="preferredTime"
+                    optionLabel="name" 
+                    optionValue="value"
+                    [multiple]="false"
+                    class="w-full time-selector">
+    </p-selectButton>
+  </div>
+
+  <div class="form-field">
+    <span class="p-float-label">
+      <textarea pInputTextarea 
+                id="message" 
+                formControlName="message"
+                [rows]="4" 
+                [autoResize]="true"
+                class="w-full"
+                placeholder="Tell us about your project, goals, or any specific topics you'd like to discuss...">
+      </textarea>
+      <label for="message">Meeting Agenda / Project Details</label>
+    </span>
+  </div>
+
+  <div class="meeting-benefits">
+    <h4>What to expect in this meeting:</h4>
+    <ul class="benefits-list">
+      <li>
+        <i class="pi pi-check-circle benefit-icon"></i>
+        <span>Free consultation and project assessment</span>
+      </li>
+      <li>
+        <i class="pi pi-check-circle benefit-icon"></i>
+        <span>Technology recommendations tailored to your needs</span>
+      </li>
+      <li>
+        <i class="pi pi-check-circle benefit-icon"></i>
+        <span>Timeline and budget estimation</span>
+      </li>
+      <li>
+        <i class="pi pi-check-circle benefit-icon"></i>
+        <span>Next steps and project roadmap discussion</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-actions">
+    <button pButton pRipple 
+            type="button" 
+            label="Cancel" 
+            icon="pi pi-times"
+            class="p-button-outlined p-button-secondary"
+            (click)="onCancel()">
+    </button>
+    <button pButton pRipple 
+            type="submit" 
+            label="Schedule Meeting" 
+            icon="pi pi-calendar-plus"
+            class="p-button-primary"
+            [loading]="isSubmitting"
+            [disabled]="!bookingForm.valid || isSubmitting">
+    </button>
+  </div>
+</form> 

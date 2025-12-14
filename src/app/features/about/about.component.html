@@ -1,275 +1,291 @@
-<!-- ABOUT HERO SECTION (remove card background, keep content as is) -->
-<section class="about-hero-section" style="background: none; box-shadow: none; position: relative; overflow: hidden;">
-  <div class="hero-v2-background">
-    <div class="hero-v2-lightray one"></div>
-    <div class="hero-v2-lightray two"></div>
-    <div class="hero-v2-lightray three"></div>
+<!-- Hero Section -->
+<section class="about-hero-section">
+  <div class="hero-background">
+    <div class="hero-lightray one"></div>
+    <div class="hero-lightray two"></div>
+    <div class="hero-lightray three"></div>
   </div>
-  <div class="hero-content-card">
+  <div class="hero-content-card" @fadeIn>
     <div class="hero-content">
-      <div class="hero-company-name">About Us</div>
-      <h1 class="hero-headline">
-        Empowering <span class="highlight">Innovation</span>,<br>
-        Delivering <span class="highlight">Excellence</span>
+      <div class="company-tagline" @slideUp>Our Story</div>
+      <h1 class="hero-headline" @slideUp>
+        Pioneering the Future of
+        <br>
+        <span class="highlight">Digital Innovation.</span>
       </h1>
-      <p class="hero-description">
-        Your trusted software partner for digital transformation. We combine cutting-edge technology with proven expertise to deliver solutions that drive real business growth.
+      <p class="hero-description" @slideUp>
+        Since 2019, Nest Tech Solutions has been at the forefront of digital transformation, crafting innovative solutions that empower businesses to thrive in the digital age.
       </p>
-      <div class="hero-actions">
-        <!-- Buttons removed as requested -->
+      <div class="hero-actions" @slideUp>
+        <button pButton pRipple type="button" 
+                label="Discover Our Journey" 
+                class="p-button-raised p-button-lg"
+                (click)="scrollToHistory()"></button>
+        <button pButton pRipple type="button" 
+                label="Meet Our Team" 
+                class="p-button-outlined p-button-lg"
+                (click)="scrollToTeam()"></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CEO HERO SECTION SIDE-BY-SIDE RELIABLE -->
-<section class="ceo-hero-section" style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: stretch; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto 48px auto; background: var(--background-card); border-radius: 24px; box-shadow: var(--shadow-lg); overflow: hidden;">
-  <!-- Left: CEO Image with overlay and name/title/tagline -->
-  <div style="flex: 1 1 50%; min-width: 320px; max-width: 600px; position: relative; display: flex; align-items: stretch; justify-content: center; background: #101828;">
-    <div style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; aspect-ratio: 4/5; max-width: 600px; overflow: hidden;">
-      <img src="assets/home/Mushhood2.jpg" alt="Mir Mushhood Afsar" loading="lazy" width="600" height="750" style="width: 100%; height: 100%; object-fit: cover; object-position: center; filter: grayscale(0.05) brightness(0.98) contrast(1.05); border: none; border-radius: 0; max-width: 100%; max-height: 100%; background: #222;" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mir+Mushhood+Afsar&size=600';">
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(20,30,48,0.62) 60%, rgba(25,118,210,0.18) 100%); z-index: 2;"></div>
-      <div style="position: absolute; top: 50%; left: 0; width: 100%; transform: translateY(-50%); z-index: 3; padding: 32px 32px 24px 32px; display: flex; flex-direction: column; align-items: flex-start;">
-        <h2 style="font-size: 2.3rem; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 0.2em; text-shadow: 0 4px 32px rgba(0,0,0,0.55);">Mir Mushhood Afsar</h2>
-        <div style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.5em; text-shadow: 0 2px 12px rgba(0,0,0,0.45);">Chief Executive Officer</div>
-        <div style="font-size: 1.08rem; color: #e0e0e0; font-weight: 400; margin-bottom: 0.7em; text-shadow: 0 1px 8px rgba(0,0,0,0.35);">Full Stack Developer | Researcher | Leader</div>
-        <div style="margin-top: 1.2em; display: flex; gap: 1.1em;">
-          <a href="https://www.linkedin.com/in/mushhood-afsar/" target="_blank" aria-label="LinkedIn" style="width: 32px; height: 32px; border-radius: 50%; background: #0077b5; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width: 18px; height: 18px; display: block; filter: brightness(0) invert(1);" />
-          </a>
-          <a href="https://scholar.google.com/citations?user=xIxjGS0AAAAJ&hl=en" target="_blank" aria-label="Google Scholar" style="width: 32px; height: 32px; border-radius: 50%; background: #4285F4; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar" style="width: 18px; height: 18px; display: block; filter: brightness(0) invert(1);" />
-          </a>
-          <a href="https://github.com/mushhoodafsar949" target="_blank" aria-label="GitHub" style="width: 32px; height: 32px; border-radius: 50%; background: #181717; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="width: 18px; height: 18px; display: block; filter: brightness(0) invert(1);" />
-          </a>
+<!-- Company History & Milestones -->
+<section class="history-section" @fadeIn id="history-section">
+  <div class="history-container">
+    <h2>Our Journey Through Innovation</h2>
+    <p class="section-subtitle">From startup to industry leader - the story of Nest Tech Solutions</p>
+    
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let milestone of companyTimeline; let i = index" 
+           [class.left]="i % 2 === 0" [class.right]="i % 2 === 1" @scaleIn>
+        <div class="timeline-marker">
+          <div class="timeline-year">{{milestone.year}}</div>
+          <div class="timeline-icon">
+            <i [class]="milestone.icon"></i>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <h3>{{milestone.title}}</h3>
+          <p>{{milestone.description}}</p>
+          <div class="timeline-metrics" *ngIf="milestone.metrics">
+            <span *ngFor="let metric of milestone.metrics" class="metric-chip">{{metric}}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Right: CEO Summary and Vision/Mission/Aim -->
-  <div style="flex: 1 1 50%; min-width: 320px; max-width: 600px; padding: 20px 32px 32px 32px; display: flex; flex-direction: column; justify-content: center; background: var(--background-card); border-left: 2px solid var(--accent-color); position: relative;">
-    <div style="margin-bottom: 1.3em; font-size: 1.18rem; color: var(--text-primary); font-weight: 800; border-left: 5px solid var(--accent-color); padding-left: 18px; line-height: 1.6; background: linear-gradient(90deg,rgba(0,255,231,0.07) 0%,rgba(25,118,210,0.03) 100%); box-shadow: 0 2px 12px rgba(0,255,231,0.04); margin-top: 8px; text-align: justify;">
-      <p>"As CEO of Nest Tech Solutions, I am driven by a relentless curiosity and a passion for building digital products that make a difference. With a strong educational background in Computer Science and over 5 years of professional experience as a software engineer, I believe in the power of technology to transform lives. I strive to lead with empathy, vision, and integrity— inspiring teams, solving real-world problems, and delivering excellence one line of code at a time." — Mir Mushhood Afsar</p>
-    </div>
-    <!-- Decorative accent below CEO summary -->
-    <div style="display: flex; align-items: center; justify-content: center; margin: 1.1em 0 1.3em 0; position: relative;">
-      <span style="display: inline-block; width: 48px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--accent-color), transparent); margin-right: 18px; box-shadow: 0 0 8px var(--accent-color, #00ffe7);"></span>
-      <span style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), var(--primary-color)); box-shadow: 0 2px 12px rgba(0,255,231,0.12);">
-        <mat-icon style="color: var(--text-primary); font-size: 1.5rem;">star</mat-icon>
-      </span>
-      <span style="display: inline-block; width: 48px; height: 4px; border-radius: 2px; background: linear-gradient(270deg, var(--accent-color), transparent); margin-left: 18px; box-shadow: 0 0 8px var(--accent-color, #00ffe7);"></span>
-    </div>
-    <div style="margin-bottom: 1.1em; font-size: 1.13rem; color: var(--text-primary); text-align: justify;">
-      <div style="margin-bottom: 0.7em; display: flex; align-items: flex-start;">
-        <span style="font-weight: 800; color: var(--primary-color); min-width: 80px;">Vision:</span>
-        <span style="margin-left: 10px; color: var(--text-primary);">Lead digital transformation by making advanced technology accessible and impactful.</span>
+</section>
+
+<!-- Company Stats -->
+<section class="stats-section" @fadeIn>
+  <div class="stats-grid">
+    <div class="stat-item" @slideInLeft>
+      <i class="pi pi-calendar"></i>
+      <div class="stat-content">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years of Excellence</div>
       </div>
-      <div style="margin-bottom: 0.7em; display: flex; align-items: flex-start;">
-        <span style="font-weight: 800; color: var(--primary-color); min-width: 80px;">Mission:</span>
-        <span style="margin-left: 10px; color: var(--text-primary);">Deliver innovative, reliable software that empowers organizations to achieve and excel.</span>
+    </div>
+    <div class="stat-item" @slideInLeft>
+      <i class="pi pi-users"></i>
+      <div class="stat-content">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Projects Delivered</div>
       </div>
-      <div style="margin-bottom: 0.7em; display: flex; align-items: flex-start;">
-        <span style="font-weight: 800; color: var(--primary-color); min-width: 80px;">Aim:</span>
-        <span style="margin-left: 10px; color: var(--text-primary);">Foster a culture of learning, creativity, and excellence to solve real-world problems.</span>
+    </div>
+    <div class="stat-item" @slideInLeft>
+      <i class="pi pi-globe"></i>
+      <div class="stat-content">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+    </div>
+    <div class="stat-item" @slideInLeft>
+      <i class="pi pi-star"></i>
+      <div class="stat-content">
+        <div class="stat-number">4.9/5</div>
+        <div class="stat-label">Client Satisfaction</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPANY STORY SECTION -->
-<section class="about-story-section" @fadeIn>
-  <div class="story-content" style="background: none; box-shadow: none; border: none;">
-    <div class="story-text">
-      <h2>Our Story</h2>
-      <p class="story-lead">From a small startup with big dreams to a trusted technology partner, our journey is a testament to the power of innovation, perseverance, and unwavering commitment to excellence.</p>
-      <p>In 2019, Nest Tech Solutions (NTS) was born from a simple yet powerful vision: to democratize technology and make cutting-edge software solutions accessible to businesses of all sizes. What started as a team of passionate developers working from a small office has grown into a dynamic force in the digital transformation landscape.</p>
-      <p>Our founders believed that every business, regardless of size, deserves access to world-class technology solutions. This belief drove us to create innovative, scalable, and cost-effective software that empowers businesses to compete in the digital age. We've helped startups launch their first products, SMEs scale their operations, and enterprises modernize their legacy systems.</p>
-      <p>Today, we stand proud as a team of 15+ dedicated professionals, having delivered over 150 successful projects across diverse industries. Our commitment to quality, transparency, and customer success remains the cornerstone of everything we do. We're not just developers – we're your strategic partners in digital transformation.</p>
-    </div>
-    <div class="story-image">
-      <div class="story-image-placeholder">
-        <mat-icon>rocket_launch</mat-icon>
-        <span>Our Journey</span>
+<!-- Vision & Mission -->
+<section class="vision-mission-section" @fadeIn>
+  <div class="vision-mission-container">
+    <div class="vision-mission-grid">
+      <div class="vision-card" @scaleIn>
+        <div class="vm-icon">
+          <i class="pi pi-eye"></i>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To be the global leader in digital innovation, transforming how businesses operate and grow through cutting-edge technology solutions that create lasting impact.</p>
+      </div>
+      <div class="mission-card" @scaleIn>
+        <div class="vm-icon">
+          <i class="pi pi-heart"></i>
+        </div>
+        <h3>Our Mission</h3>
+        <p>Empowering businesses worldwide with innovative, scalable, and secure digital solutions while fostering a culture of excellence, creativity, and continuous learning.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUES SECTION -->
- <section style="background: none; box-shadow: none; border: none; margin-top: 20px;">
-  <h2 style="text-align: center; margin-bottom: 20px; font-size: xx-large;">Our Core Values</h2>
-  <div class="values-grid" style="background: none; box-shadow: none; border: none;">
-    <div class="value-item" @scaleIn>
-      <div class="value-icon">
-        <mat-icon>verified</mat-icon>
+<!-- Company Culture -->
+<section class="culture-section" @fadeIn>
+  <h2>Our Culture & Values</h2>
+  <p class="section-subtitle">The principles that guide our daily work and long-term vision</p>
+  
+  <div class="culture-grid">
+    <div class="culture-card" *ngFor="let culture of companyCulture" @scaleIn>
+      <div class="culture-icon">
+        <i [class]="culture.icon"></i>
       </div>
-      <h3>Integrity</h3>
-      <p>We believe in honesty, transparency, and ethical business practices in everything we do.</p>
-    </div>
-    <div class="value-item" @scaleIn>
-      <div class="value-icon">
-        <mat-icon>lightbulb</mat-icon>
+      <h3>{{culture.title}}</h3>
+      <p>{{culture.description}}</p>
+      <div class="culture-practices">
+        <span *ngFor="let practice of culture.practices" class="practice-tag">{{practice}}</span>
       </div>
-      <h3>Innovation</h3>
-      <p>We embrace new ideas and technologies to deliver cutting-edge solutions that drive growth.</p>
-    </div>
-    <div class="value-item" @scaleIn>
-      <div class="value-icon">
-        <mat-icon>people</mat-icon>
-      </div>
-      <h3>Customer Focus</h3>
-      <p>Our clients' success is our top priority. We build lasting partnerships based on trust.</p>
-    </div>
-    <div class="value-item" @scaleIn>
-      <div class="value-icon">
-        <mat-icon>group_work</mat-icon>
-      </div>
-      <h3>Teamwork</h3>
-      <p>We achieve more together, valuing every team member's contribution and expertise.</p>
-    </div>
-    <div class="value-item" @scaleIn>
-      <div class="value-icon">
-        <mat-icon>star</mat-icon>
-      </div>
-      <h3>Excellence</h3>
-      <p>We strive for the highest standards in everything we do, from code quality to client service.</p>
-    </div>
-    <div class="value-item" @scaleIn>
-      <div class="value-icon">
-        <mat-icon>trending_up</mat-icon>
-      </div>
-      <h3>Growth</h3>
-      <p>We continuously learn, adapt, and evolve to stay ahead of technology trends and market needs.</p>
     </div>
   </div>
- </section>
+</section>
 
-<!-- TEAM SECTION -->
-<section style="background: none; box-shadow: none; border: none; margin-top: 40px;">
-  <h2 style="text-align: center; margin-bottom: 20px; font-size: xx-large;">Meet Our Team</h2>
-  <div class="team-carousel-container" style="background: none; box-shadow: none; border: none;">
-    <button class="carousel-btn prev-btn" (click)="previousSlide()">
-      <mat-icon>chevron_left</mat-icon>
-    </button>
-    
-    <div class="team-carousel">
-      <div class="team-slide" *ngFor="let member of teamMembers; let i = index" 
-           [class.active]="i === currentSlideIndex"
-           [style.transform]="'translateX(' + (i - currentSlideIndex) * 100 + '%)'">
-        <div class="member-card">
-          <div class="member-avatar">
-            <img *ngIf="member.image; else iconFallback" 
-                 [src]="member.image" 
-                 [alt]="member.name"
-                 class="member-photo"
-                 loading="lazy"
-                 width="200"
-                 height="200"
-                 (error)="onImageError($event)">
-            <ng-template #iconFallback>
-              <mat-icon>{{ member.icon }}</mat-icon>
-            </ng-template>
+<!-- Team Leadership Carousel -->
+<section class="team-section" @fadeIn id="team-section">
+  <h2>Meet Our Leadership Team</h2>
+  <p class="section-subtitle">Visionary leaders driving innovation and excellence at Nest Tech Solutions</p>
+  
+  <p-carousel [value]="teamMembers" 
+             [numVisible]="3" 
+             [numScroll]="1" 
+             [circular]="true"
+             [autoplayInterval]="5000"
+             [responsiveOptions]="teamCarouselResponsive"
+             styleClass="team-carousel">
+    <ng-template let-member pTemplate="item">
+      <div class="team-member-card" 
+           [class.ceo-card]="member.role.includes('CEO')" 
+           [class.anayat-card]="member.name.includes('Anayat')" 
+           @scaleIn>
+        <div class="member-image-container">
+          <img [src]="member.image" 
+               [alt]="member.name"
+               (error)="onImageError($event)"
+               loading="lazy"
+               class="member-image">
+          <div class="member-avatar" style="display: none;">
+            <i [class]="member.icon"></i>
           </div>
-          <h3>{{ member.name }}</h3>
-          <p class="member-role">{{ member.role }}</p>
-          <p class="member-desc">{{ member.description }}</p>
-          <div class="member-skills">
-            <span class="skill-tag" *ngFor="let skill of member.skills">{{ skill }}</span>
-          </div>
-          <div class="member-links" *ngIf="member.linkedinUrl">
-            <a [href]="member.linkedinUrl" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-              <svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-              <span>Connect on LinkedIn</span>
+          <div class="member-overlay">
+            <a *ngIf="member.linkedinUrl" 
+               [href]="member.linkedinUrl" 
+               target="_blank" 
+               class="linkedin-link">
+              <i class="pi pi-linkedin"></i>
             </a>
           </div>
         </div>
+        <div class="member-info">
+          <h3>{{member.name}}</h3>
+          <p class="member-role">{{member.role}}</p>
+          <p class="member-description">{{member.description}}</p>
+          <div class="member-skills">
+            <p-chip *ngFor="let skill of member.skills.slice(0, 3); trackBy: trackByString"
+                    [label]="skill"
+                    styleClass="skill-chip"></p-chip>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>
+
+<!-- Roadmap & Future Goals -->
+<section class="roadmap-section" @fadeIn>
+  <h2>Our Vision Roadmap</h2>
+  <p class="section-subtitle">Strategic goals and initiatives shaping our future</p>
+  
+  <div class="roadmap-timeline">
+    <div class="roadmap-item" *ngFor="let item of roadmapItems; let i = index" @scaleIn>
+      <div class="roadmap-quarter">{{item.period}}</div>
+      <div class="roadmap-content">
+        <div class="roadmap-icon">
+          <i [class]="item.icon"></i>
+        </div>
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
+        <div class="roadmap-goals">
+          <div class="goal-item" *ngFor="let goal of item.goals">
+            <i class="pi pi-check-circle"></i>
+            <span>{{goal}}</span>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <button class="carousel-btn next-btn" (click)="nextSlide()">
-      <mat-icon>chevron_right</mat-icon>
-    </button>
-  </div> 
-  <div class="carousel-indicators">
-    <button class="indicator" 
-            *ngFor="let member of teamMembers; let i = index"
-            [class.active]="i === currentSlideIndex"
-            (click)="goToSlide(i)">
-    </button>
   </div>
 </section>
 
-<!-- PROJECTS SHOWCASE SECTION -->
-<section style="background: none; box-shadow: none; border: none; margin-top: 40px;">
-  <h2 style="text-align: center; margin-bottom: 20px; font-size: xx-large;">Our Project Portfolio</h2>
-  <p class="projects-subtitle">Delivering innovative solutions across diverse industries with measurable impact</p>
+<!-- Achievements & Awards -->
+<section class="achievements-section" @fadeIn>
+  <h2>Recognition & Achievements</h2>
+  <p class="section-subtitle">Celebrating our milestones and industry recognition</p>
+  
+  <div class="achievements-grid">
+    <div class="achievement-card" *ngFor="let achievement of achievements" @scaleIn>
+      <div class="achievement-icon">
+        <i [class]="achievement.icon"></i>
+      </div>
+      <div class="achievement-content">
+        <h3>{{achievement.title}}</h3>
+        <p class="achievement-year">{{achievement.year}}</p>
+        <p class="achievement-description">{{achievement.description}}</p>
+        <div class="achievement-metrics" *ngIf="achievement.metrics">
+          <span *ngFor="let metric of achievement.metrics" class="metric-badge">{{metric}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories -->
+<section class="success-section" @fadeIn>
+  <h2>Client Success Stories</h2>
+  <p class="section-subtitle">Transforming businesses across industries with innovative solutions</p>
   
   <div class="projects-grid">
-    <div class="project-card" *ngFor="let project of projects" @scaleIn>
-      <div class="project-header">
-        <div class="project-icon">
-          <mat-icon>{{ project.icon }}</mat-icon>
+    <p-card *ngFor="let project of projects; trackBy: trackByProjectIndex"
+            styleClass="project-card"
+            @scaleIn>
+      <ng-template pTemplate="header">
+        <div class="project-header">
+          <div class="project-icon">
+            <i [class]="'pi ' + project.icon"></i>
+          </div>
+          <p-tag [value]="project.category" 
+                 [severity]="getProjectSeverity(project.category)">
+          </p-tag>
         </div>
-        <div class="project-category">{{ project.category }}</div>
+      </ng-template>
+
+      <div class="project-content">
+        <h3>{{project.name}}</h3>
+        <p class="project-description">{{project.description}}</p>
+
+        <div class="project-metrics">
+          <div class="metric-item">
+            <span class="metric-label">Investment</span>
+            <span class="metric-value">{{project.budget}}</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Timeline</span>
+            <span class="metric-value">{{project.timeline}}</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Team Size</span>
+            <span class="metric-value">{{project.teamSize}}</span>
+          </div>
+        </div>
+
+        <div class="project-results">
+          <h4>Key Achievements</h4>
+          <div class="results-list">
+            <div class="result-item" *ngFor="let impact of project.impact.slice(0, 2); trackBy: trackByString">
+              <i class="pi pi-check-circle"></i>
+              <span>{{impact}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-tech">
+          <div class="tech-chips">
+            <p-chip *ngFor="let tech of project.techStack.slice(0, 4); trackBy: trackByString"
+                    [label]="tech"
+                    styleClass="tech-chip"></p-chip>
+          </div>
+        </div>
       </div>
-      
-      <h3>{{ project.name }}</h3>
-      <p class="project-description">{{ project.description }}</p>
-      
-      <div class="project-details">
-        <div class="detail-item">
-          <span class="detail-label">Budget:</span>
-          <span class="detail-value">{{ project.budget }}</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Timeline:</span>
-          <span class="detail-value">{{ project.timeline }}</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Team Size:</span>
-          <span class="detail-value">{{ project.teamSize }}</span>
-        </div>
-      </div>
-      
-      <div class="project-impact">
-        <h4>Impact & Results</h4>
-        <ul>
-          <li *ngFor="let impact of project.impact">{{ impact }}</li>
-        </ul>
-      </div>
-      
-      <div class="tech-stack">
-        <h4>Technology Stack</h4>
-        <div class="tech-tags">
-          <span class="tech-tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
-        </div>
-      </div>
-    </div>
+    </p-card>
   </div>
 </section>
-
-<!-- ACHIEVEMENTS SECTION -->
-<section style="background: none; box-shadow: none; border: none; margin-top: 40px;">
-  <h2 style="text-align: center; margin-bottom: 20px; font-size: xx-large;">Our Achievements</h2>
-  <div class="achievements-grid">
-    <div class="achievement-item" @fadeInUp>
-      <div class="achievement-number">150+</div>
-      <div class="achievement-label">Projects Delivered</div>
-    </div>
-    <div class="achievement-item" @fadeInUp>
-      <div class="achievement-number">98%</div>
-      <div class="achievement-label">Client Satisfaction</div>
-    </div>
-    <div class="achievement-item" @fadeInUp>
-      <div class="achievement-number">5+</div>
-      <div class="achievement-label">Years Experience</div>
-    </div>
-    <div class="achievement-item" @fadeInUp>
-      <div class="achievement-number">24/7</div>
-      <div class="achievement-label">Support Available</div>
-    </div>
-  </div>
-</section> 

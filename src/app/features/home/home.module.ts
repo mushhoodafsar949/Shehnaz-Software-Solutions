@@ -1,15 +1,31 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../../shared/shared.module';
-import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
-const routes: Routes = [
-  { path: '', component: HomeComponent }
-];
+// PrimeNG Imports
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { RippleModule } from 'primeng/ripple';
+import { ChipModule } from 'primeng/chip';
+import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, MatCardModule, HomeComponent, RouterModule.forChild(routes)]
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      { path: '', component: HomeComponent }
+    ]),
+    ButtonModule,
+    CardModule,
+    RippleModule,
+    ChipModule,
+    CarouselModule,
+    TagModule,
+    DividerModule
+  ]
 })
-export class HomeModule {} 
+export class HomeModule { }

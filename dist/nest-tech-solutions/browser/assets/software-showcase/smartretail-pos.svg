@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- POS Screen -->
+  <g transform="translate(40, 40)">
+    <rect width="480" height="520" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="480" height="60" fill="#FF5722" rx="10"/>
+    <text x="20" y="38" fill="white" font-family="Arial" font-size="24">Point of Sale</text>
+    
+    <!-- Cart Items -->
+    <g transform="translate(20, 80)">
+      <!-- Item 1 -->
+      <rect width="440" height="60" fill="#FBE9E7" rx="5"/>
+      <text x="20" y="25" fill="#1e293b" font-family="Arial" font-size="16">Product A</text>
+      <text x="20" y="45" fill="#64748b" font-family="Arial" font-size="14">Qty: 2</text>
+      <text x="380" y="35" fill="#FF5722" font-family="Arial" font-size="16" text-anchor="end">$24.99</text>
+      
+      <!-- Item 2 -->
+      <g transform="translate(0, 70)">
+        <rect width="440" height="60" fill="#FBE9E7" rx="5"/>
+        <text x="20" y="25" fill="#1e293b" font-family="Arial" font-size="16">Product B</text>
+        <text x="20" y="45" fill="#64748b" font-family="Arial" font-size="14">Qty: 1</text>
+        <text x="380" y="35" fill="#FF5722" font-family="Arial" font-size="16" text-anchor="end">$19.99</text>
+      </g>
+      
+      <!-- Item 3 -->
+      <g transform="translate(0, 140)">
+        <rect width="440" height="60" fill="#FBE9E7" rx="5"/>
+        <text x="20" y="25" fill="#1e293b" font-family="Arial" font-size="16">Product C</text>
+        <text x="20" y="45" fill="#64748b" font-family="Arial" font-size="14">Qty: 3</text>
+        <text x="380" y="35" fill="#FF5722" font-family="Arial" font-size="16" text-anchor="end">$34.99</text>
+      </g>
+    </g>
+    
+    <!-- Total -->
+    <g transform="translate(20, 360)">
+      <rect width="440" height="80" fill="#FF5722" opacity="0.1" rx="5"/>
+      <text x="20" y="35" fill="#1e293b" font-family="Arial" font-size="18">Total</text>
+      <text x="380" y="50" fill="#FF5722" font-family="Arial" font-size="24" font-weight="bold" text-anchor="end">$79.97</text>
+    </g>
+    
+    <!-- Payment Buttons -->
+    <g transform="translate(20, 460)">
+      <rect width="210" height="40" fill="#FF5722" rx="5"/>
+      <text x="105" y="25" fill="white" font-family="Arial" font-size="14" text-anchor="middle">Cash Payment</text>
+      
+      <rect x="230" width="210" height="40" fill="#FF5722" rx="5"/>
+      <text x="335" y="25" fill="white" font-family="Arial" font-size="14" text-anchor="middle">Card Payment</text>
+    </g>
+  </g>
+  
+  <!-- Side Panel -->
+  <g transform="translate(540, 40)">
+    <!-- Quick Actions -->
+    <rect width="220" height="240" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Quick Actions</text>
+    
+    <!-- Action Buttons -->
+    <g transform="translate(20, 60)">
+      <rect width="180" height="40" fill="#FF5722" opacity="0.1" rx="5"/>
+      <text x="90" y="25" fill="#FF5722" font-family="Arial" font-size="14" text-anchor="middle">Scan Item</text>
+      
+      <rect y="50" width="180" height="40" fill="#FF5722" opacity="0.1" rx="5"/>
+      <text x="90" y="75" fill="#FF5722" font-family="Arial" font-size="14" text-anchor="middle">Add Discount</text>
+      
+      <rect y="100" width="180" height="40" fill="#FF5722" opacity="0.1" rx="5"/>
+      <text x="90" y="125" fill="#FF5722" font-family="Arial" font-size="14" text-anchor="middle">Void Item</text>
+      
+      <rect y="150" width="180" height="40" fill="#FF5722" opacity="0.1" rx="5"/>
+      <text x="90" y="175" fill="#FF5722" font-family="Arial" font-size="14" text-anchor="middle">Print Receipt</text>
+    </g>
+    
+    <!-- Recent Transactions -->
+    <g transform="translate(0, 260)">
+      <rect width="220" height="260" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+      <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Recent</text>
+      
+      <!-- Transaction List -->
+      <g transform="translate(20, 60)">
+        <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">Order #1234</text>
+        <text x="140" y="20" fill="#FF5722" font-family="Arial" font-size="14">$45.99</text>
+        
+        <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">Order #1233</text>
+        <text x="140" y="50" fill="#FF5722" font-family="Arial" font-size="14">$32.50</text>
+        
+        <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">Order #1232</text>
+        <text x="140" y="80" fill="#FF5722" font-family="Arial" font-size="14">$78.25</text>
+      </g>
+    </g>
+  </g>
+</svg>

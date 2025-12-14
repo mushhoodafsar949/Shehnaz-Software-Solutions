@@ -1,31 +1,43 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../../shared/shared.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact.component';
-import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatDialogModule } from '@angular/material/dialog';
+import { BookingDialogComponent } from './booking-dialog.component';
 
-const routes: Routes = [
-  { path: '', component: ContactComponent }
-];
+// PrimeNG Imports
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { RippleModule } from 'primeng/ripple';
+import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
-  declarations: [ContactComponent],
+  declarations: [ContactComponent, BookingDialogComponent],
   imports: [
-    CommonModule, 
-    SharedModule, 
-    FormsModule, 
-    RouterModule.forChild(routes),
-    MatIconModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDialogModule
-  ]
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      { path: '', component: ContactComponent }
+    ]),
+    ButtonModule,
+    InputTextModule,
+    InputTextareaModule,
+    SelectButtonModule,
+    DialogModule,
+    DynamicDialogModule,
+    RippleModule,
+    CardModule,
+    DividerModule,
+    ToastModule
+  ],
+  providers: [MessageService]
 })
-export class ContactModule {} 
+export class ContactModule { }

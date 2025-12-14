@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Header -->
+  <rect x="40" y="40" width="720" height="80" fill="#6366f1" rx="10"/>
+  <text x="70" y="85" fill="white" font-family="Arial" font-size="24">HealthConnect Dashboard</text>
+  
+  <!-- Main Stats -->
+  <g transform="translate(60, 160)">
+    <!-- Patients Card -->
+    <rect width="200" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#4b5563" font-family="Arial" font-size="16">Total Patients</text>
+    <text x="20" y="80" fill="#1e293b" font-family="Arial" font-size="32" font-weight="bold">1,234</text>
+    
+    <!-- Appointments Card -->
+    <rect x="240" width="200" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="260" y="40" fill="#4b5563" font-family="Arial" font-size="16">Today's Appointments</text>
+    <text x="260" y="80" fill="#1e293b" font-family="Arial" font-size="32" font-weight="bold">28</text>
+    
+    <!-- Revenue Card -->
+    <rect x="480" width="200" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="500" y="40" fill="#4b5563" font-family="Arial" font-size="16">Monthly Revenue</text>
+    <text x="500" y="80" fill="#1e293b" font-family="Arial" font-size="32" font-weight="bold">$52K</text>
+  </g>
+  
+  <!-- Chart Area -->
+  <g transform="translate(60, 320)">
+    <rect width="440" height="240" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#4b5563" font-family="Arial" font-size="18">Patient Visits</text>
+    <!-- Chart Lines -->
+    <path d="M 40 180 L 40 60 L 400 60" stroke="#e2e8f0" stroke-width="1" fill="none"/>
+    <path d="M 40 180 L 120 140 L 200 160 L 280 100 L 360 120" stroke="#6366f1" stroke-width="3" fill="none"/>
+    <!-- Data Points -->
+    <circle cx="120" cy="140" r="4" fill="#6366f1"/>
+    <circle cx="200" cy="160" r="4" fill="#6366f1"/>
+    <circle cx="280" cy="100" r="4" fill="#6366f1"/>
+    <circle cx="360" cy="120" r="4" fill="#6366f1"/>
+  </g>
+  
+  <!-- Side Panel -->
+  <g transform="translate(520, 320)">
+    <rect width="220" height="240" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#4b5563" font-family="Arial" font-size="18">Recent Activity</text>
+    <!-- Activity Items -->
+    <g transform="translate(20, 60)">
+      <circle cx="8" cy="8" r="4" fill="#10b981"/>
+      <text x="24" y="12" fill="#4b5563" font-family="Arial" font-size="14">New patient registered</text>
+    </g>
+    <g transform="translate(20, 90)">
+      <circle cx="8" cy="8" r="4" fill="#6366f1"/>
+      <text x="24" y="12" fill="#4b5563" font-family="Arial" font-size="14">Appointment scheduled</text>
+    </g>
+    <g transform="translate(20, 120)">
+      <circle cx="8" cy="8" r="4" fill="#f59e0b"/>
+      <text x="24" y="12" fill="#4b5563" font-family="Arial" font-size="14">Lab results updated</text>
+    </g>
+  </g>
+</svg>

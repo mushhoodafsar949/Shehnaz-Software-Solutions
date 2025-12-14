@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="dataGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="400" fill="#f8fafc"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" fill="#166534" text-anchor="middle" font-weight="bold">Data Pipeline Architecture</text>
+  
+  <!-- Data Sources -->
+  <rect x="50" y="100" width="80" height="40" rx="6" fill="#3b82f6"/>
+  <text x="90" y="125" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Data Sources</text>
+  
+  <!-- ETL -->
+  <rect x="200" y="100" width="120" height="80" rx="8" fill="url(#dataGradient)"/>
+  <text x="260" y="135" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">ETL Engine</text>
+  <text x="260" y="155" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Extract • Transform • Load</text>
+  
+  <!-- Data Warehouse -->
+  <rect x="400" y="100" width="100" height="80" rx="8" fill="#8b5cf6"/>
+  <text x="450" y="135" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Data Warehouse</text>
+  <text x="450" y="155" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Analytics Ready</text>
+  
+  <!-- Analytics -->
+  <rect x="580" y="100" width="80" height="80" rx="8" fill="#10b981"/>
+  <text x="620" y="135" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Analytics</text>
+  <text x="620" y="155" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Dashboards &amp; BI</text>
+  
+  <!-- Arrows -->
+  <path d="M 135 120 L 195 120" stroke="#22c55e" stroke-width="3" fill="none"/>
+  <path d="M 325 140 L 395 140" stroke="#22c55e" stroke-width="3" fill="none"/>
+  <path d="M 505 140 L 575 140" stroke="#22c55e" stroke-width="3" fill="none"/>
+  
+  <!-- Benefits -->
+  <g transform="translate(100, 250)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#166534" font-weight="bold">Features:</text>
+    <text x="0" y="20" font-family="Arial" font-size="12" fill="#64748b">• Real-time processing • Data quality assurance • Scalable architecture</text>
+    <text x="0" y="35" font-family="Arial" font-size="12" fill="#64748b">• Error handling • Data lineage tracking • Automated scheduling</text>
+  </g>
+</svg>

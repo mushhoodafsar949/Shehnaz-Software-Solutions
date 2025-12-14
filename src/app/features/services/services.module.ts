@@ -9,7 +9,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  // declarations: [ServicesComponent],
-  imports: [CommonModule, SharedModule, RouterModule.forChild(routes), ServicesComponent]
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    ServicesComponent
+  ]
 })
 export class ServicesModule {} 

@@ -1,339 +1,238 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Modern Professional Styling */
 
-* {
+/* Light Theme (Default) */
+:root, .light-theme {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  
+  /* Base Colors */
+  --primary-color: #166534;
+  --primary-color-light: #22c55e;
+  --primary-color-text: #ffffff;
+  
+  /* Surface Colors */
+  --surface-ground: #ffffff;
+  --surface-section: #f8fafc;
+  --surface-card: #ffffff;
+  --surface-card-rgb: 255, 255, 255;
+  --surface-overlay: #ffffff;
+  --surface-border: #e2e8f0;
+  --surface-hover: #f1f5f9;
+  
+  /* Text Colors */
+  --text-color: #1e293b;
+  --text-secondary-color: #64748b;
+  --text-color-secondary: #64748b;
+  
+  /* Shadows */
+  --card-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+                 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+                 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  --card-shadow-hover: 0 4px 5px -2px rgba(0, 0, 0, 0.2),
+                      0 7px 10px 1px rgba(0, 0, 0, 0.14),
+                      0 2px 16px 1px rgba(0, 0, 0, 0.12);
+  
+  /* Additional Properties */
+  --focus-ring: 0 0 0 0.2rem rgba(22, 101, 52, 0.2);
+  --maskbg: rgba(0, 0, 0, 0.4);
+  --highlight-bg: #dcfce7;
+  --highlight-text-color: #166534;
+}
+
+/* Dark Theme */
+.dark-theme {
+  /* Base Colors */
+  --primary-color: #22c55e;
+  --primary-color-light: #4ade80;
+  --primary-color-text: #1e293b;
+  
+  /* Surface Colors */
+  --surface-ground: #0f172a;
+  --surface-section: #1e293b;
+  --surface-card: #1e293b;
+  --surface-card-rgb: 30, 41, 59;
+  --surface-overlay: #1e293b;
+  --surface-border: #334155;
+  --surface-hover: #475569;
+  
+  /* Text Colors */
+  --text-color: #f8fafc;
+  --text-secondary-color: #cbd5e1;
+  --text-color-secondary: #cbd5e1;
+  
+  /* Shadows */
+  --card-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.4),
+                 0 1px 1px 0 rgba(0, 0, 0, 0.28),
+                 0 1px 3px 0 rgba(0, 0, 0, 0.24);
+  --card-shadow-hover: 0 4px 5px -2px rgba(0, 0, 0, 0.4),
+                      0 7px 10px 1px rgba(0, 0, 0, 0.28),
+                      0 2px 16px 1px rgba(0, 0, 0, 0.24);
+  
+  /* Additional Properties */
+  --focus-ring: 0 0 0 0.2rem rgba(34, 197, 94, 0.2);
+  --maskbg: rgba(0, 0, 0, 0.6);
+  --highlight-bg: #14532d;
+  --highlight-text-color: #22c55e;
+}
+
+/* Global Styles */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: var(--font-family);
+  background-color: var(--surface-ground);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  color: #1e293b;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-// CSS Variables for Light Theme
-:root {
-  --primary-color: #1976d2;
-  --primary-light: #42a5f5;
-  --primary-dark: #1565c0;
-  --secondary-color: #ff6b35;
-  --secondary-light: #ff8a65;
-  --secondary-dark: #e64a19;
-  
-  --background-primary: #ffffff;
-  --background-secondary: #f8fafc;
-  --background-tertiary: #f1f5f9;
-  --background-card: #ffffff;
-  --background-overlay: rgba(0, 0, 0, 0.5);
-  
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
-  --text-inverse: #ffffff;
-  
-  --border-color: #e2e8f0;
-  --border-light: #f1f5f9;
-  --border-dark: #cbd5e1;
-  
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-  
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --error-color: #ef4444;
-  --info-color: #3b82f6;
-}
-
-// CSS Variables for Dark Theme
-.dark-theme {
-  --primary-color: #3b82f6;
-  --primary-light: #60a5fa;
-  --primary-dark: #2563eb;
-  --secondary-color: #f97316;
-  --secondary-light: #fb923c;
-  --secondary-dark: #ea580c;
-  
-  --background-primary: #0f172a;
-  --background-secondary: #1e293b;
-  --background-tertiary: #334155;
-  --background-card: #1e293b;
-  --background-overlay: rgba(0, 0, 0, 0.7);
-  
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-inverse: #0f172a;
-  
-  --border-color: #334155;
-  --border-light: #475569;
-  --border-dark: #64748b;
-  
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
-  
-  --success-color: #22c55e;
-  --warning-color: #fbbf24;
-  --error-color: #f87171;
-  --info-color: #60a5fa;
-}
-
-// Apply CSS variables to body
-body {
-  background-color: var(--background-primary);
-  color: var(--text-primary);
-}
-
-// Dialog backdrop styles
-.dialog-backdrop {
-  background-color: var(--background-overlay);
-  backdrop-filter: blur(4px);
-}
-
-// Quote Dialog Panel Styles
-.quote-dialog-panel {
-  .mat-mdc-dialog-container {
-    .mat-mdc-dialog-surface {
-      background: transparent;
-      box-shadow: none;
-      border-radius: 0;
-      padding: 0;
-    }
-  }
-}
-
-// Consultation Dialog Panel Styles
-.consultation-dialog-panel {
-  .mat-mdc-dialog-container {
-    .mat-mdc-dialog-surface {
-      background: var(--background-primary);
-      box-shadow: var(--shadow-xl);
-      border-radius: 16px;
-      padding: 0;
-      overflow: hidden;
-    }
-  }
-  
-  .mat-mdc-dialog-content {
-    padding: 0;
-    margin: 0;
-    max-height: none;
-  }
-  
-  .mat-mdc-dialog-actions {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-// Global dark mode styles for common elements
-.dark-theme {
-  // Material Design components
-  .mat-mdc-card {
-    background-color: var(--background-card);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-  }
-  
-  .mat-mdc-form-field {
-    .mat-mdc-form-field-flex {
-      background-color: var(--background-secondary);
-    }
-    
-    .mat-mdc-text-field-wrapper {
-      background-color: var(--background-secondary);
-    }
-    
-    .mat-mdc-form-field-label {
-      color: var(--text-secondary);
-    }
-    
-    .mat-mdc-input-element {
-      color: var(--text-primary);
-    }
-  }
-  
-  .mat-mdc-button {
-    &.mat-stroked-button {
-      border-color: var(--border-color);
-      color: var(--text-primary);
-    }
-  }
-  
-  .mat-mdc-dialog-container {
-    .mat-mdc-dialog-surface {
-      background-color: var(--background-card);
-      color: var(--text-primary);
-    }
-  }
-  
-  // Custom components
-  .section {
-    background-color: var(--background-primary);
-  }
-  
-  .card {
-    background-color: var(--background-card);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-md);
-  }
-  
-  .btn {
-    &.btn-primary {
-      background-color: var(--primary-color);
-      color: var(--text-inverse);
-      
-      &:hover {
-        background-color: var(--primary-dark);
-      }
-    }
-    
-    &.btn-secondary {
-      background-color: var(--secondary-color);
-      color: var(--text-inverse);
-      
-      &:hover {
-        background-color: var(--secondary-dark);
-      }
-    }
-  }
-  
-  // Text colors
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-primary);
-  }
-  
-  p {
-    color: var(--text-secondary);
-  }
-  
-  // Links
-  a {
-    color: var(--primary-color);
-    
-    &:hover {
-      color: var(--primary-light);
-    }
-  }
-  
-  // Form elements
-  input, textarea, select {
-    background-color: var(--background-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    
-    &:focus {
-      border-color: var(--primary-color);
-    }
-  }
-  
-  // Tables
-  table {
-    background-color: var(--background-card);
-    
-    th, td {
-      border-color: var(--border-color);
-    }
-  }
-  
-  // Material Design specific dark theme overrides
-  .mat-mdc-chip {
-    background-color: var(--background-tertiary);
-    color: var(--text-primary);
-    
-    &.mat-mdc-chip-selected {
-      background-color: var(--primary-color);
-      color: var(--text-inverse);
-    }
-  }
-  
-  .mat-mdc-divider {
-    border-color: var(--border-color);
-  }
-  
-  .mat-mdc-progress-bar {
-    .mdc-linear-progress__bar-inner {
-      border-color: var(--primary-color);
-    }
-    
-    .mdc-linear-progress__buffer-bar {
-      background-color: var(--background-tertiary);
-    }
-  }
-  
-  .mat-mdc-tooltip {
-    background-color: var(--background-card);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-  }
-}
-
-// Smooth transitions for theme switching
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-// Utility classes for theme-aware styling
-.bg-primary {
-  background-color: var(--background-primary);
-}
-
-.bg-secondary {
-  background-color: var(--background-secondary);
-}
-
-.bg-card {
-  background-color: var(--background-card);
-}
-
-.text-primary {
-  color: var(--text-primary);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
-
-.text-muted {
-  color: var(--text-muted);
-}
-
-.border-color {
-  border-color: var(--border-color);
-}
-
-.shadow-sm {
-  box-shadow: var(--shadow-sm);
-}
-
-.shadow-md {
-  box-shadow: var(--shadow-md);
-}
-
-.shadow-lg {
-  box-shadow: var(--shadow-lg);
-}
-
-// Ensure router outlet content starts at top
-router-outlet + * {
-  display: block;
+/* Layout */
+.app-container {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-// Force scroll to top for all route changes
-.router-outlet-container {
-  scroll-behavior: smooth;
+.main-content {
+  flex: 1;
+  padding-top: 64px; /* Height of navbar */
+  background-color: var(--surface-ground);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+}
+
+/* PrimeNG Component Customizations */
+.p-component {
+  font-family: var(--font-family);
+}
+
+.p-button {
+  &.p-button-lg {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+
+  &.p-button-rounded {
+    border-radius: 2rem;
+  }
+}
+
+.p-card {
+  background: var(--surface-card);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+  }
+}
+
+.p-dialog {
+  .p-dialog-header {
+    padding: 1.5rem;
+    background: var(--surface-card);
+    color: var(--text-color);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .p-dialog-content {
+    padding: 1.5rem;
+    background: var(--surface-card);
+  }
+
+  .p-dialog-footer {
+    padding: 1.5rem;
+    background: var(--surface-card);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}
+
+.p-inputtext,
+.p-dropdown,
+.p-multiselect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--primary-color);
+  }
+
+  &:focus {
+    box-shadow: var(--focus-ring);
+    border-color: var(--primary-color);
+  }
+}
+
+.p-float-label {
+  input:focus ~ label,
+  input.p-filled ~ label,
+  textarea:focus ~ label,
+  textarea.p-filled ~ label,
+  .p-inputwrapper-focus ~ label,
+  .p-inputwrapper-filled ~ label {
+    top: -0.75rem;
+    font-size: 0.875rem;
+    padding: 0 0.25rem;
+    background: var(--surface-card);
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 56px;
+  }
 }

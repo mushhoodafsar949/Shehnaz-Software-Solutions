@@ -1,0 +1,247 @@
+.service-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--surface-ground);
+}
+
+// Hero Section
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--primary-color-light) 0%, var(--primary-color) 100%);
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  color: white;
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .service-icon {
+    margin-bottom: 1.5rem;
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .service-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+}
+
+// Technologies Section
+.technologies-section {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+
+  .tech-chips {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    ::ng-deep .p-chip {
+      background: var(--primary-color-lighter);
+      color: var(--primary-color-text);
+    }
+  }
+}
+
+// Features Section
+.features-section {
+  margin-bottom: 3rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--surface-card);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    i {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--text-color);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Projects Section
+.projects-section {
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+
+  .project-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    ::ng-deep .p-card {
+      background: var(--surface-card);
+      border-radius: 1rem;
+      box-shadow: var(--card-shadow);
+
+      .p-card-body {
+        padding: 2rem;
+      }
+
+      .p-card-content {
+        padding: 0;
+      }
+    }
+  }
+
+  .project-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-text {
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-secondary-color);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .project-details {
+    h3 {
+      color: var(--text-color);
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: var(--text-secondary-color);
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0;
+
+      li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary-color);
+
+        &:before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .project-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .project-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .testimonial {
+    background: var(--surface-hover);
+    padding: 2rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: 2rem;
+
+    blockquote {
+      margin: 0;
+      font-style: italic;
+      color: var(--text-secondary-color);
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      footer {
+        cite {
+          display: flex;
+          flex-direction: column;
+          
+          strong {
+            color: var(--text-color);
+          }
+
+          span {
+            color: var(--text-secondary-color);
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

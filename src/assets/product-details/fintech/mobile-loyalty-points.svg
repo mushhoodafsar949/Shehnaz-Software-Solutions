@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700">
+  <defs>
+    <linearGradient id="gradientLoyalty" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e7d32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Phone Frame -->
+  <rect width="400" height="700" fill="#1a1a1a" rx="40"/>
+  <rect x="20" y="40" width="360" height="620" fill="#ffffff" rx="30"/>
+  
+  <!-- Status Bar -->
+  <rect x="20" y="40" width="360" height="30" fill="#4caf50"/>
+  <text x="200" y="60" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">9:41 AM</text>
+  
+  <!-- Header -->
+  <rect x="20" y="70" width="360" height="60" fill="url(#gradientLoyalty)"/>
+  <text x="200" y="100" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Loyalty Points</text>
+  
+  <!-- Points Balance Card -->
+  <rect x="40" y="150" width="320" height="140" fill="url(#gradientLoyalty)" rx="12"/>
+  <circle cx="200" cy="220" r="40" fill="#ffffff" opacity="0.2"/>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)" text-anchor="middle">Total Points</text>
+  <text x="200" y="235" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">8,450</text>
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">Available for redemption</text>
+  <text x="200" y="275" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">~ $84.50 value</text>
+  
+  <!-- Points History -->
+  <text x="40" y="330" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a237e">Recent Activity</text>
+  
+  <!-- Activity Item 1 -->
+  <rect x="40" y="350" width="320" height="60" fill="#f8f9fa" rx="8"/>
+  <circle cx="70" cy="380" r="20" fill="#4caf50"/>
+  <text x="70" y="386" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">+</text>
+  <text x="100" y="370" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e">Transaction Bonus</text>
+  <text x="100" y="390" font-family="Arial, sans-serif" font-size="11" fill="#666">Today - 2:30 PM</text>
+  <text x="340" y="380" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4caf50" text-anchor="end">+250</text>
+  
+  <!-- Activity Item 2 -->
+  <rect x="40" y="420" width="320" height="60" fill="#ffffff" rx="8"/>
+  <circle cx="70" cy="450" r="20" fill="#ff9800"/>
+  <text x="70" y="456" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">*</text>
+  <text x="100" y="440" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e">Referral Reward</text>
+  <text x="100" y="460" font-family="Arial, sans-serif" font-size="11" fill="#666">Yesterday - 5:15 PM</text>
+  <text x="340" y="450" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4caf50" text-anchor="end">+500</text>
+  
+  <!-- Activity Item 3 -->
+  <rect x="40" y="490" width="320" height="60" fill="#f8f9fa" rx="8"/>
+  <circle cx="70" cy="520" r="20" fill="#3949ab"/>
+  <text x="70" y="526" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
+  <text x="100" y="510" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e">Spin &amp; Win</text>
+  <text x="100" y="530" font-family="Arial, sans-serif" font-size="11" fill="#666">2 days ago - 10:20 AM</text>
+  <text x="340" y="520" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4caf50" text-anchor="end">+100</text>
+  
+  <!-- Redeem Section -->
+  <text x="40" y="590" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a237e">Redeem Points</text>
+  
+  <rect x="40" y="610" width="320" height="80" fill="#e8f5e9" rx="8"/>
+  <rect x="60" y="630" width="60" height="50" fill="#4caf50" rx="4"/>
+  <text x="90" y="660" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">GIFT</text>
+  <text x="140" y="645" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e">Voucher</text>
+  <text x="140" y="665" font-family="Arial, sans-serif" font-size="12" fill="#666">500 points</text>
+  
+  <rect x="220" y="630" width="60" height="50" fill="#ff9800" rx="4"/>
+  <text x="250" y="660" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">CASH</text>
+  <text x="290" y="645" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e">Cashback</text>
+  <text x="290" y="665" font-family="Arial, sans-serif" font-size="12" fill="#666">1000 points</text>
+</svg>
+

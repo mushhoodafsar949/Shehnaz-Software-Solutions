@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Blockchain Network -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">Blockchain Network</text>
+    <text x="0" y="60" fill="#64748b" font-family="Arial" font-size="16">Decentralized Transaction Network</text>
+  </g>
+  
+  <!-- Blockchain Visualization -->
+  <g transform="translate(40, 120)">
+    <!-- Block 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="160" height="200" fill="white" stroke="#2196F3" stroke-width="2" rx="10"/>
+      <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Block #1</text>
+      <text x="20" y="70" fill="#64748b" font-family="Arial" font-size="12">Hash:</text>
+      <text x="20" y="90" fill="#2196F3" font-family="Arial" font-size="12">0x8f4a...</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="12">Transactions:</text>
+      <text x="20" y="140" fill="#1e293b" font-family="Arial" font-size="12">23</text>
+      <text x="20" y="170" fill="#64748b" font-family="Arial" font-size="12">Timestamp:</text>
+      <text x="20" y="190" fill="#1e293b" font-family="Arial" font-size="12">12:30:45</text>
+    </g>
+    
+    <!-- Connection 1 -->
+    <path d="M160 100h80" stroke="#2196F3" stroke-width="2"/>
+    <circle cx="200" cy="100" r="5" fill="#2196F3"/>
+    
+    <!-- Block 2 -->
+    <g transform="translate(240, 0)">
+      <rect width="160" height="200" fill="white" stroke="#2196F3" stroke-width="2" rx="10"/>
+      <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Block #2</text>
+      <text x="20" y="70" fill="#64748b" font-family="Arial" font-size="12">Hash:</text>
+      <text x="20" y="90" fill="#2196F3" font-family="Arial" font-size="12">0x3e2b...</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="12">Transactions:</text>
+      <text x="20" y="140" fill="#1e293b" font-family="Arial" font-size="12">18</text>
+      <text x="20" y="170" fill="#64748b" font-family="Arial" font-size="12">Timestamp:</text>
+      <text x="20" y="190" fill="#1e293b" font-family="Arial" font-size="12">12:31:15</text>
+    </g>
+    
+    <!-- Connection 2 -->
+    <path d="M400 100h80" stroke="#2196F3" stroke-width="2"/>
+    <circle cx="440" cy="100" r="5" fill="#2196F3"/>
+    
+    <!-- Block 3 -->
+    <g transform="translate(480, 0)">
+      <rect width="160" height="200" fill="white" stroke="#2196F3" stroke-width="2" rx="10"/>
+      <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="14" font-weight="bold">Block #3</text>
+      <text x="20" y="70" fill="#64748b" font-family="Arial" font-size="12">Hash:</text>
+      <text x="20" y="90" fill="#2196F3" font-family="Arial" font-size="12">0x9f1c...</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="12">Transactions:</text>
+      <text x="20" y="140" fill="#1e293b" font-family="Arial" font-size="12">31</text>
+      <text x="20" y="170" fill="#64748b" font-family="Arial" font-size="12">Timestamp:</text>
+      <text x="20" y="190" fill="#1e293b" font-family="Arial" font-size="12">12:31:45</text>
+    </g>
+  </g>
+  
+  <!-- Network Nodes -->
+  <g transform="translate(40, 360)">
+    <rect width="720" height="200" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Network Nodes</text>
+    
+    <!-- Node Grid -->
+    <g transform="translate(20, 60)">
+      <!-- Node 1 -->
+      <circle cx="60" cy="60" r="30" fill="#2196F3" opacity="0.1"/>
+      <circle cx="60" cy="60" r="10" fill="#2196F3"/>
+      <text x="60" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node 1</text>
+      
+      <!-- Node 2 -->
+      <circle cx="180" cy="60" r="30" fill="#2196F3" opacity="0.1"/>
+      <circle cx="180" cy="60" r="10" fill="#2196F3"/>
+      <text x="180" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node 2</text>
+      
+      <!-- Node 3 -->
+      <circle cx="300" cy="60" r="30" fill="#2196F3" opacity="0.1"/>
+      <circle cx="300" cy="60" r="10" fill="#2196F3"/>
+      <text x="300" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node 3</text>
+      
+      <!-- Node 4 -->
+      <circle cx="420" cy="60" r="30" fill="#2196F3" opacity="0.1"/>
+      <circle cx="420" cy="60" r="10" fill="#2196F3"/>
+      <text x="420" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node 4</text>
+      
+      <!-- Node 5 -->
+      <circle cx="540" cy="60" r="30" fill="#2196F3" opacity="0.1"/>
+      <circle cx="540" cy="60" r="10" fill="#2196F3"/>
+      <text x="540" y="90" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node 5</text>
+      
+      <!-- Connections -->
+      <path d="M90 60h60M210 60h60M330 60h60M450 60h60" stroke="#2196F3" stroke-width="2" opacity="0.5"/>
+      <path d="M60 90l120-30M180 90l120-30M300 90l120-30M420 90l120-30" stroke="#2196F3" stroke-width="1" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

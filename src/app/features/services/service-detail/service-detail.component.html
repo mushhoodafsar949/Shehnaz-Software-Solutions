@@ -1,0 +1,92 @@
+<div class="service-detail-container" *ngIf="service">
+  <!-- Hero Section -->
+  <section class="hero-section" @fadeIn>
+    <div class="hero-content">
+      <div class="service-icon">
+        <img [src]="'assets/service-icons/' + service.icon + '.svg'" 
+             [alt]="service.title + ' icon'"
+             width="80"
+             height="80">
+      </div>
+      <h1>{{service.title}}</h1>
+      <p class="service-description">{{service.description}}</p>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="technologies-section" @fadeIn>
+    <h2>Technologies We Use</h2>
+    <div class="tech-chips">
+      <p-chip *ngFor="let tech of service.technologies" [label]="tech"></p-chip>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" @fadeIn>
+    <h2>Our Capabilities</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of service.features">
+        <i class="pi pi-check-circle"></i>
+        <p>{{feature}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Examples Section -->
+  <section class="projects-section" @fadeIn>
+    <h2>Success Stories</h2>
+    <div class="project-cards">
+      <p-card *ngFor="let project of service.projects" class="project-card">
+        <div class="project-content">
+          <div class="project-text">
+            <h3 class="project-title">{{project.title}}</h3>
+            <p class="project-description">{{project.description}}</p>
+            
+            <div class="project-details">
+              <div class="challenge-solution">
+                <h3>Challenge</h3>
+                <p>{{project.challenge}}</p>
+                
+                <h3>Solution</h3>
+                <p>{{project.solution}}</p>
+              </div>
+              
+              <div class="results">
+                <h3>Key Results</h3>
+                <ul>
+                  <li *ngFor="let result of project.results">{{result}}</li>
+                </ul>
+              </div>
+              
+              <div class="project-tech">
+                <h3>Technologies Used</h3>
+                <div class="tech-chips">
+                  <p-chip *ngFor="let tech of project.technologies" [label]="tech"></p-chip>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-visual">
+            <img [src]="project.imageUrl" 
+                 [alt]="project.title + ' visualization'"
+                 class="project-image"
+                 loading="lazy">
+          </div>
+        </div>
+
+        <div class="testimonial" *ngIf="project.testimonial">
+          <blockquote>
+            <p>"{{project.testimonial.quote}}"</p>
+            <footer>
+              <cite>
+                <strong>{{project.testimonial.author}}</strong>
+                <span>{{project.testimonial.position}}</span>
+              </cite>
+            </footer>
+          </blockquote>
+        </div>
+      </p-card>
+    </div>
+  </section>
+</div>

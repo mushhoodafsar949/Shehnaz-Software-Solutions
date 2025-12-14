@@ -1,330 +1,325 @@
-<div class="quote-page-container" [class.dark-theme]="currentTheme === 'dark'">
-  <!-- Hero Section -->
-  <section class="hero-v2-section">
-    <div class="hero-v2-background">
-      <div class="hero-v2-lightray one"></div>
-      <div class="hero-v2-lightray two"></div>
-      <div class="hero-v2-lightray three"></div>
+<div class="quote-container">
+  <!-- Enhanced Hero Section -->
+  <section class="quote-hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="pi pi-calculator"></i>
+        <span>Free Quote Calculator</span>
+      </div>
+      <h1>Get a <span class="gradient-text">Custom Quote</span></h1>
+      <p>Transform your vision into reality with our comprehensive software solutions. Get a detailed, personalized estimate in just a few clicks.</p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">24h</span>
+          <span class="stat-label">Response Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Consultation</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-v2-content-card" @fadeIn>
-      <div class="hero-v2-content">
-        <div class="hero-v2-company-name" @slideUp>Nest Tech Solutions</div>
-        <h1 class="hero-v2-headline" @slideUp>
-          Get Your Custom Quote
-          <br>
-          <span class="highlight">Tailored for Success.</span>
-        </h1>
-        <p class="hero-v2-description" @slideUp>
-          Choose from our comprehensive range of software development services and get instant pricing estimates tailored to your project requirements.
-        </p>
-        <div class="hero-v2-stats" @slideUp>
-          <div class="stat-item">
-            <div class="stat-number">8+</div>
-            <div class="stat-label">Services</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Pricing Tiers</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Support</div>
-          </div>
+    
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <div class="progress-steps">
+        <div class="step active">
+          <div class="step-number">1</div>
+          <span>Services</span>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <span>Details</span>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <span>Contact</span>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <span>Review</span>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="quote-content">
-    <!-- Pricing Tiers Section -->
-    <div class="tiers-section">
-      <h2 class="section-title">
-        <mat-icon>layers</mat-icon>
-        Choose Your Package Tier
-      </h2>
-      <p class="section-description">Select the package tier that best fits your project requirements and budget.</p>
-      <div class="tiers-grid">
-        <div 
-          *ngFor="let tier of pricingTiers" 
-          class="tier-card"
-          [class.selected]="selectedTier === tier"
-          (click)="onTierChange(tier)"
-        >
-          <div class="tier-header">
-            <h3 class="tier-name">{{ tier.name }}</h3>
-            <div class="tier-multiplier">{{ tier.multiplier }}x</div>
-          </div>
-          <div class="tier-features">
-            <div *ngFor="let feature of tier.features" class="tier-feature">
-              <mat-icon class="feature-icon">check_circle</mat-icon>
-              {{ feature }}
+  <!-- Enhanced Quote Form -->
+  <div class="quote-form-container">
+    <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" class="quote-form">
+      <!-- Services Selection -->
+      <section class="services-section">
+        <h2>
+          <i class="pi pi-layers"></i>
+          Select Services
+        </h2>
+        
+        <div class="services-grid">
+          <p-card *ngFor="let service of services" styleClass="service-card">
+            <div class="service-header">
+              <h3>{{service.name}}</h3>
+              <p-chip [label]="service.complexity" 
+                     [style]="{'background-color': getComplexityColor(service.complexity)}">
+              </p-chip>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Custom Requirements Section for Enterprise -->
-    <div class="custom-requirements-section" *ngIf="showCustomRequirements">
-      <h2 class="section-title">
-        <mat-icon>edit</mat-icon>
-        Custom Requirements
-      </h2>
-      <p class="section-description">Tell us about your specific project requirements and any additional services you need.</p>
-      <div class="custom-requirements-content">
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Describe your project requirements</mat-label>
-          <textarea 
-            matInput 
-            [(ngModel)]="customRequirements"
-            rows="6"
-            placeholder="Please describe your project in detail, including specific features, integrations, technologies, or any other requirements you have..."
-          ></textarea>
-        </mat-form-field>
-        <div class="additional-services">
-          <h4>Additional Services (Optional)</h4>
-          <p>Select any additional services you might need:</p>
-          <div class="additional-services-grid">
-            <mat-checkbox class="additional-service-item">
-              <div class="service-checkbox-content">
-                <div class="service-name">DevOps & CI/CD Setup</div>
-                <div class="service-description">Automated deployment pipelines and infrastructure management</div>
-              </div>
-            </mat-checkbox>
-            <mat-checkbox class="additional-service-item">
-              <div class="service-checkbox-content">
-                <div class="service-name">Performance Testing</div>
-                <div class="service-description">Load testing, stress testing, and performance optimization</div>
-              </div>
-            </mat-checkbox>
-            <mat-checkbox class="additional-service-item">
-              <div class="service-checkbox-content">
-                <div class="service-name">Security Audit</div>
-                <div class="service-description">Comprehensive security assessment and penetration testing</div>
-              </div>
-            </mat-checkbox>
-            <mat-checkbox class="additional-service-item">
-              <div class="service-checkbox-content">
-                <div class="service-name">Data Analytics</div>
-                <div class="service-description">Business intelligence and data visualization solutions</div>
-              </div>
-            </mat-checkbox>
-            <mat-checkbox class="additional-service-item">
-              <div class="service-checkbox-content">
-                <div class="service-name">Third-party Integrations</div>
-                <div class="service-description">Integration with external APIs and services</div>
-              </div>
-            </mat-checkbox>
-            <mat-checkbox class="additional-service-item">
-              <div class="service-checkbox-content">
-                <div class="service-name">Training & Documentation</div>
-                <div class="service-description">User training and comprehensive documentation</div>
-              </div>
-            </mat-checkbox>
-          </div>
-        </div>
-      </div>
-    </div>
+            <p class="service-description">{{service.description}}</p>
 
-    <!-- Services Selection Section -->
-    <div class="services-section">
-      <h2 class="section-title">
-        <mat-icon>list_alt</mat-icon>
-        Select Services
-      </h2>
-      <p class="section-description">Choose the services you need for your project. Click on any service to select or deselect it.</p>
-      <div class="services-grid">
-        <div 
-          *ngFor="let service of services" 
-          class="service-card"
-          [class.selected]="service.selected"
-          (click)="toggleService(service)"
-        >
-          <div class="service-header">
-            <div class="service-icon">
-              <mat-icon [style.color]="getComplexityColor(service.complexity)">
-                {{ getCategoryIcon(service.category) }}
-              </mat-icon>
+            <div class="service-features">
+              <ul>
+                <li *ngFor="let feature of service.features">
+                  <i class="pi pi-check"></i>
+                  {{feature}}
+                </li>
+              </ul>
             </div>
-            <div class="service-info">
-              <h3 class="service-name">{{ service.name }}</h3>
-              <p class="service-description">{{ service.description }}</p>
+
+            <div class="service-controls">
+              <p-checkbox [formControlName]="service.id" 
+                         [binary]="true" 
+                         [label]="'Select ' + service.name">
+              </p-checkbox>
+
+              <div class="quantity-control" *ngIf="quoteForm.get(service.id)?.value">
+                <label>Quantity:</label>
+                <p-inputNumber [formControlName]="service.id + '_quantity'"
+                             [showButtons]="true" 
+                             [min]="1" 
+                             buttonLayout="horizontal"
+                             spinnerMode="horizontal"
+                             decrementButtonClass="p-button-secondary"
+                             incrementButtonClass="p-button-secondary">
+                </p-inputNumber>
+              </div>
+
+              <div class="timeline-control" *ngIf="quoteForm.get(service.id)?.value">
+                <label>Timeline (weeks):</label>
+                <p-slider [formControlName]="service.id + '_weeks'"
+                         [min]="4" 
+                         [max]="24">
+                </p-slider>
+                <span class="timeline-value">{{quoteForm.get(service.id + '_weeks')?.value}} weeks</span>
+              </div>
             </div>
+
             <div class="service-price">
-              <div class="base-price">{{ formatCurrency(service.basePrice) }}</div>
-              <div class="adjusted-price" *ngIf="selectedTier.multiplier !== 1">
-                {{ formatCurrency(getServicePrice(service)) }}
-              </div>
+              <span>Starting from</span>
+              <strong>${{service.basePrice.toLocaleString()}}</strong>
             </div>
+          </p-card>
+        </div>
+      </section>
+
+      <!-- Additional Services -->
+      <section class="additional-services-section">
+        <h2>
+          <i class="pi pi-plus-circle"></i>
+          Additional Services
+        </h2>
+
+        <div class="additional-services-grid">
+          <div *ngFor="let service of additionalServices" class="additional-service-item">
+            <p-checkbox [formControlName]="service.id"
+                       [binary]="true"
+                       [label]="service.name">
+            </p-checkbox>
+            <span class="price">${{service.price.toLocaleString()}}</span>
           </div>
-          <div class="service-details">
-            <div class="service-meta">
-              <mat-chip-set>
-                <mat-chip class="complexity-chip" [style.background-color]="getComplexityColor(service.complexity)">
-                  {{ service.complexity | titlecase }}
-                </mat-chip>
-                <mat-chip class="time-chip">
-                  <mat-icon>schedule</mat-icon>
-                  {{ service.estimatedTime }}
-                </mat-chip>
-              </mat-chip-set>
-            </div>
-            <!-- Week Range Selection -->
-            <div class="week-range-section" *ngIf="service.selected">
-              <h4 class="week-range-title">Project Duration: {{ service.weekRange }} weeks</h4>
-              <mat-slider 
-                [min]="1" 
-                [max]="52" 
-                [step]="1"
-                (valueChange)="updateWeekRange(service, $event)"
-                (click)="$event.stopPropagation()"
-                class="week-slider"
-              >
-                <input matSliderThumb [value]="service.weekRange">
-              </mat-slider>
-              <div class="week-labels">
-                <span>1 week</span>
-                <span>26 weeks</span>
-                <span>52 weeks</span>
-              </div>
-            </div>
-            <!-- Feature Lists -->
-            <mat-expansion-panel 
-              class="features-panel"
-              (click)="$event.stopPropagation()"
-              *ngIf="service.selected"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <mat-icon>featured_play_list</mat-icon>
-                  Features ({{ service.features.length }} included)
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="features-content">
-                <div class="included-features">
-                  <h5 class="features-subtitle">
-                    <mat-icon class="included-icon">check_circle</mat-icon>
-                    Included Features
-                  </h5>
-                  <div class="feature-list">
-                    <div *ngFor="let feature of service.features" class="feature-item included">
-                      <mat-icon class="feature-icon">check</mat-icon>
-                      <div class="feature-details">
-                        <div class="feature-name">{{ feature }}</div>
-                      </div>
-                    </div>
-                  </div>
+        </div>
+      </section>
+
+      <!-- Custom Requirements -->
+      <section class="requirements-section">
+        <h2>
+          <i class="pi pi-pencil"></i>
+          Project Details
+        </h2>
+
+        <div class="form-field">
+          <span class="p-float-label">
+            <textarea pInputTextarea formControlName="customRequirements"
+                      [rows]="5" [autoResize]="true"></textarea>
+            <label>Describe your project requirements</label>
+          </span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <span class="p-float-label">
+              <p-dropdown formControlName="budget"
+                         [options]="budgetOptions"
+                         optionLabel="label"
+                         optionValue="value"
+                         [showClear]="true">
+              </p-dropdown>
+              <label>Budget Range</label>
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="p-float-label">
+              <p-dropdown formControlName="timeline"
+                         [options]="timelineOptions"
+                         optionLabel="label"
+                         optionValue="value"
+                         [showClear]="true">
+              </p-dropdown>
+              <label>Project Timeline</label>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Information -->
+      <section class="contact-section">
+        <h2>
+          <i class="pi pi-user"></i>
+          Contact Information
+        </h2>
+
+        <div class="form-row">
+          <div class="form-field">
+            <span class="p-float-label">
+              <input pInputText formControlName="name" type="text" />
+              <label>Full Name</label>
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="p-float-label">
+              <input pInputText formControlName="email" type="email" />
+              <label>Email Address</label>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <span class="p-float-label">
+              <input pInputText formControlName="company" type="text" />
+              <label>Company Name</label>
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="p-float-label">
+              <input pInputText formControlName="phone" type="tel" />
+              <label>Phone Number</label>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit Section -->
+      <section class="submit-section">
+        <div class="quote-summary-mobile">
+          <h3>Estimated Total</h3>
+          <div class="total-amount">${{calculateTotal().toLocaleString()}}</div>
+          <p class="disclaimer">*Final price may vary based on detailed requirements analysis</p>
+          <div class="savings-indicator" *ngIf="getDiscount() > 0">
+            <i class="pi pi-star"></i>
+            <span>You're saving ${{ getDiscount().toLocaleString() }} with bundle discount!</span>
+          </div>
+        </div>
+
+        <button pButton pRipple type="submit" 
+                label="Submit Quote Request" 
+                icon="pi pi-send"
+                [loading]="isSubmitting"
+                [disabled]="!quoteForm.valid || isSubmitting">
+        </button>
+      </section>
+    </form>
+    
+    <!-- Live Quote Summary Sidebar -->
+    <div class="quote-summary-sidebar">
+      <div class="summary-card">
+        <div class="summary-header">
+          <h3>Quote Summary</h3>
+          <div class="summary-status">
+            <div class="status-indicator live"></div>
+            <span>Live Calculation</span>
+          </div>
+        </div>
+        
+        <!-- Selected Services -->
+        <div class="selected-services" *ngIf="getSelectedServices().length > 0">
+          <h4>Selected Services</h4>
+          <div class="service-list">
+            <div class="service-item" *ngFor="let service of getSelectedServices()">
+              <div class="service-info">
+                <h5>{{ service.name }}</h5>
+                <div class="service-details">
+                  <span class="quantity">Qty: {{ getServiceQuantity(service.id) }}</span>
+                  <span class="timeline">{{ getServiceWeeks(service.id) }} weeks</span>
                 </div>
               </div>
-            </mat-expansion-panel>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Summary Section -->
-    <div class="summary-section" *ngIf="selectedServices.length > 0">
-      <h2 class="section-title">
-        <mat-icon>calculate</mat-icon>
-        Quote Summary
-      </h2>
-      <div class="summary-content">
-        <div class="summary-details">
-          <div class="summary-item">
-            <span class="summary-label">Selected Package:</span>
-            <span class="summary-value">{{ selectedTier.name }}</span>
-          </div>
-          <div class="summary-item">
-            <span class="summary-label">Services Selected:</span>
-            <span class="summary-value">{{ selectedServices.length }}</span>
-          </div>
-          <div class="summary-item">
-            <span class="summary-label">Estimated Timeline:</span>
-            <span class="summary-value">{{ projectTimeline }}</span>
-          </div>
-          <div class="summary-item">
-            <span class="summary-label">Total Weeks:</span>
-            <span class="summary-value">{{ getMaxWeeks() }} weeks</span>
-          </div>
-        </div>
-        <div class="pricing-breakdown">
-          <div class="breakdown-item">
-            <span class="breakdown-label">Subtotal:</span>
-            <span class="breakdown-value">{{ formatCurrency(getSubtotal()) }}</span>
-          </div>
-          <div class="discount-section">
-            <button 
-              mat-button 
-              class="discount-toggle"
-              (click)="showDiscountInput = !showDiscountInput"
-            >
-              <mat-icon>local_offer</mat-icon>
-              Add Discount
-            </button>
-            <div class="discount-input" *ngIf="showDiscountInput">
-              <mat-form-field appearance="outline">
-                <mat-label>Discount Percentage</mat-label>
-                <input 
-                  matInput 
-                  type="number" 
-                  [(ngModel)]="discountPercentage"
-                  min="0" 
-                  max="50"
-                  placeholder="0"
-                >
-                <span matSuffix>%</span>
-              </mat-form-field>
+              <div class="service-price">
+                ${{ (service.basePrice * getServiceQuantity(service.id)).toLocaleString() }}
+              </div>
             </div>
           </div>
-          <div class="breakdown-item discount" *ngIf="discountPercentage > 0">
-            <span class="breakdown-label">Discount ({{ discountPercentage }}%):</span>
-            <span class="breakdown-value discount-value">-{{ formatCurrency(getDiscountAmount()) }}</span>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="breakdown-item total">
-            <span class="breakdown-label">Total:</span>
-            <span class="breakdown-value total-value">{{ getTotalFormatted() }}</span>
+        </div>
+        
+        <!-- Additional Services -->
+        <div class="selected-additional" *ngIf="getSelectedAdditionalServices().length > 0">
+          <h4>Additional Services</h4>
+          <div class="additional-list">
+            <div class="additional-item" *ngFor="let service of getSelectedAdditionalServices()">
+              <span>{{ service.name }}</span>
+              <span>${{ service.price.toLocaleString() }}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Empty State -->
-    <div class="empty-state" *ngIf="selectedServices.length === 0">
-      <mat-icon class="empty-icon">shopping_cart</mat-icon>
-      <h3>No Services Selected</h3>
-      <p>Choose from our comprehensive range of software development services to get your personalized quote.</p>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="action-section" *ngIf="selectedServices.length > 0">
-      <div class="action-buttons">
-        <button 
-          mat-stroked-button 
-          class="download-btn"
-          (click)="downloadPDF()"
-        >
-          <mat-icon>picture_as_pdf</mat-icon>
-          Download PDF
-        </button>
-        <button 
-          mat-stroked-button 
-          class="download-btn"
-          (click)="downloadExcel()"
-        >
-          <mat-icon>table_chart</mat-icon>
-          Download Excel
-        </button>
-        <button 
-          mat-raised-button 
-          color="primary" 
-          class="contact-btn"
-          (click)="contactUs()"
-        >
-          <mat-icon>send</mat-icon>
-          Contact Us
+        
+        <!-- Price Breakdown -->
+        <div class="price-breakdown">
+          <div class="breakdown-item">
+            <span>Subtotal</span>
+            <span>${{ getSubtotal().toLocaleString() }}</span>
+          </div>
+          <div class="breakdown-item discount" *ngIf="getDiscount() > 0">
+            <span>Bundle Discount ({{ getDiscountPercentage() }}%)</span>
+            <span>-${{ getDiscount().toLocaleString() }}</span>
+          </div>
+          <div class="breakdown-item total">
+            <span>Estimated Total</span>
+            <span>${{ calculateTotal().toLocaleString() }}</span>
+          </div>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <i class="pi pi-shield"></i>
+            <span>Fixed Price Guarantee</span>
+          </div>
+          <div class="trust-item">
+            <i class="pi pi-clock"></i>
+            <span>On-Time Delivery</span>
+          </div>
+          <div class="trust-item">
+            <i class="pi pi-heart"></i>
+            <span>100% Satisfaction</span>
+          </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <button pButton pRipple 
+                type="button" 
+                label="Get Detailed Proposal" 
+                icon="pi pi-file-pdf"
+                class="p-button-primary w-full summary-cta"
+                (click)="generateProposal()"
+                [disabled]="calculateTotal() === 0">
         </button>
       </div>
     </div>
   </div>
 </div>
+
+<p-toast position="top-right"></p-toast>

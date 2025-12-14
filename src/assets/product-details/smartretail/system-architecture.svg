@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">SmartRetail Pro - System Architecture</text>
+  
+  <!-- Store Layer -->
+  <g transform="translate(50, 100)">
+    <rect width="1100" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Store Systems</text>
+    
+    <!-- POS Terminals -->
+    <g transform="translate(20, 60)">
+      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">POS Terminals</text>
+    </g>
+    
+    <!-- Inventory Scanners -->
+    <g transform="translate(240, 60)">
+      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Inventory Scanners</text>
+    </g>
+    
+    <!-- Digital Displays -->
+    <g transform="translate(460, 60)">
+      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Digital Signage</text>
+    </g>
+    
+    <!-- Security Cameras -->
+    <g transform="translate(680, 60)">
+      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Systems</text>
+    </g>
+    
+    <!-- IoT Sensors -->
+    <g transform="translate(900, 60)">
+      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">IoT Sensors</text>
+    </g>
+  </g>
+  
+  <!-- Edge Computing Layer -->
+  <g transform="translate(50, 240)">
+    <rect width="1100" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="10"/>
+    <text x="20" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Edge Computing Layer</text>
+    <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">Local Data Processing • Real-time Analytics • Offline Operations • Data Synchronization</text>
+  </g>
+  
+  <!-- Core Services -->
+  <g transform="translate(50, 340)">
+    <rect width="1100" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Core Services</text>
+    
+    <!-- Store Operations -->
+    <g transform="translate(20, 70)">
+      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Store Operations</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Sales Processing</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Payment Gateway</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Staff Management</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Store Analytics</text>
+    </g>
+    
+    <!-- Inventory Management -->
+    <g transform="translate(290, 70)">
+      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Inventory Management</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Stock Tracking</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Auto Reordering</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Supplier Integration</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Warehouse Mgmt</text>
+    </g>
+    
+    <!-- Customer Intelligence -->
+    <g transform="translate(560, 70)">
+      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Customer Intelligence</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Loyalty Program</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Behavior Analysis</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Personalization</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Campaign Mgmt</text>
+    </g>
+    
+    <!-- Security & Compliance -->
+    <g transform="translate(830, 70)">
+      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Security & Compliance</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Fraud Detection</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Access Control</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Video Analytics</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Audit Logging</text>
+    </g>
+  </g>
+  
+  <!-- Integration Layer -->
+  <g transform="translate(50, 640)">
+    <rect width="1100" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="10"/>
+    <text x="550" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Integration Layer (ESB + API Gateway)</text>
+  </g>
+  
+  <!-- Data Layer -->
+  <g transform="translate(50, 720)">
+    <rect width="1100" height="60" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Data Layer</text>
+    
+    <!-- Databases -->
+    <g transform="translate(200, 0)">
+      <text x="0" y="35" fill="#64748b" font-family="Arial" font-size="14">PostgreSQL</text>
+      <text x="200" y="35" fill="#64748b" font-family="Arial" font-size="14">MongoDB</text>
+      <text x="400" y="35" fill="#64748b" font-family="Arial" font-size="14">Redis</text>
+      <text x="600" y="35" fill="#64748b" font-family="Arial" font-size="14">Elasticsearch</text>
+      <text x="800" y="35" fill="#64748b" font-family="Arial" font-size="14">TimescaleDB</text>
+    </g>
+  </g>
+</svg>

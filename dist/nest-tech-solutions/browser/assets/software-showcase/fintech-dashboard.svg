@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <rect width="720" height="80" fill="#2196F3" rx="10"/>
+    <text x="40" y="50" fill="white" font-family="Arial" font-size="24">Financial Dashboard</text>
+    
+    <!-- Account Balance -->
+    <g transform="translate(500, 20)">
+      <text x="0" y="20" fill="white" font-family="Arial" font-size="14">Total Balance</text>
+      <text x="0" y="45" fill="white" font-family="Arial" font-size="24" font-weight="bold">$128,450.00</text>
+    </g>
+  </g>
+  
+  <!-- Market Overview -->
+  <g transform="translate(40, 140)">
+    <rect width="460" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Market Overview</text>
+    
+    <!-- Chart -->
+    <g transform="translate(20, 60)">
+      <path d="M0 180h420M0 0v180" stroke="#e2e8f0" stroke-width="1"/>
+      <!-- Grid Lines -->
+      <path d="M0 45h420M0 90h420M0 135h420" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+      
+      <!-- Chart Lines -->
+      <path d="M0 160 L70 120 L140 140 L210 80 L280 100 L350 60 L420 90" 
+            stroke="#2196F3" stroke-width="3" fill="none"/>
+      <path d="M0 140 L70 100 L140 120 L210 60 L280 80 L350 40 L420 70" 
+            stroke="#64B5F6" stroke-width="2" fill="none" opacity="0.5"/>
+      
+      <!-- Data Points -->
+      <circle cx="70" cy="120" r="4" fill="#2196F3"/>
+      <circle cx="140" cy="140" r="4" fill="#2196F3"/>
+      <circle cx="210" cy="80" r="4" fill="#2196F3"/>
+      <circle cx="280" cy="100" r="4" fill="#2196F3"/>
+      <circle cx="350" cy="60" r="4" fill="#2196F3"/>
+      <circle cx="420" cy="90" r="4" fill="#2196F3"/>
+    </g>
+  </g>
+  
+  <!-- Portfolio -->
+  <g transform="translate(520, 140)">
+    <rect width="240" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Portfolio</text>
+    
+    <!-- Assets -->
+    <g transform="translate(20, 60)">
+      <!-- Stocks -->
+      <rect width="200" height="40" rx="5" fill="#E3F2FD"/>
+      <text x="10" y="25" fill="#1e293b" font-family="Arial" font-size="14">Stocks</text>
+      <text x="150" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="end">45%</text>
+      
+      <!-- Crypto -->
+      <g transform="translate(0, 50)">
+        <rect width="200" height="40" rx="5" fill="#E3F2FD"/>
+        <text x="10" y="25" fill="#1e293b" font-family="Arial" font-size="14">Crypto</text>
+        <text x="150" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="end">30%</text>
+      </g>
+      
+      <!-- Bonds -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="40" rx="5" fill="#E3F2FD"/>
+        <text x="10" y="25" fill="#1e293b" font-family="Arial" font-size="14">Bonds</text>
+        <text x="150" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="end">25%</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Recent Transactions -->
+  <g transform="translate(40, 440)">
+    <rect width="720" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Recent Transactions</text>
+    
+    <!-- Transaction List -->
+    <g transform="translate(20, 60)">
+      <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">Buy AAPL</text>
+      <text x="200" y="20" fill="#64748b" font-family="Arial" font-size="14">100 shares</text>
+      <text x="400" y="20" fill="#10B981" font-family="Arial" font-size="14">+$15,420.00</text>
+      
+      <text x="0" y="45" fill="#64748b" font-family="Arial" font-size="14">Sell BTC</text>
+      <text x="200" y="45" fill="#64748b" font-family="Arial" font-size="14">2.5 BTC</text>
+      <text x="400" y="45" fill="#EF4444" font-family="Arial" font-size="14">-$42,150.00</text>
+    </g>
+  </g>
+</svg>

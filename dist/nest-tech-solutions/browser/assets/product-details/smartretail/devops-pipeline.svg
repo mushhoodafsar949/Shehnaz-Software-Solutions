@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">SmartRetail Pro - DevOps Pipeline</text>
+  
+  <!-- Development Stage -->
+  <g transform="translate(50, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Development</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Version Control -->
+      <rect width="200" height="80" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Azure DevOps</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Git Repositories</text>
+      
+      <!-- IDE -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">VS Code + Extensions</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">IoT Development</text>
+      </g>
+      
+      <!-- Code Quality -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Code Analysis</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">SonarCloud</text>
+      </g>
+      
+      <!-- Security Scan -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Scanning</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Dependency Check</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Testing Stage -->
+  <g transform="translate(350, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Testing</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Unit Tests -->
+      <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Unit Testing</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Jest + Cypress</text>
+      
+      <!-- Integration Tests -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Integration Tests</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">IoT Device Testing</text>
+      </g>
+      
+      <!-- E2E Tests -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">E2E Testing</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Playwright</text>
+      </g>
+      
+      <!-- Load Tests -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Load Testing</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Artillery</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Deployment Stage -->
+  <g transform="translate(650, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Deployment</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Edge Deploy -->
+      <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Edge Deployment</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Azure IoT Edge</text>
+      
+      <!-- Cloud Deploy -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Cloud Deployment</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Azure AKS</text>
+      </g>
+      
+      <!-- Store Deploy -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Store Systems</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">POS Updates</text>
+      </g>
+      
+      <!-- Backup -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Backup & DR</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Geo-Redundancy</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Monitoring Stage -->
+  <g transform="translate(950, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Monitoring</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Store Monitoring -->
+      <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Store Monitoring</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Azure Monitor</text>
+      
+      <!-- IoT Monitoring -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">IoT Monitoring</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">IoT Hub</text>
+      </g>
+      
+      <!-- Alerting -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Alerting</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Azure Alerts</text>
+      </g>
+      
+      <!-- Analytics -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Analytics</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Power BI</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g transform="translate(0, 0)" stroke="#64748b" stroke-width="2" fill="none">
+    <!-- Dev to Test -->
+    <path d="M300 400 L350 400"/>
+    <polygon points="345,395 355,400 345,405" fill="#64748b"/>
+    
+    <!-- Test to Deploy -->
+    <path d="M600 400 L650 400"/>
+    <polygon points="645,395 655,400 645,405" fill="#64748b"/>
+    
+    <!-- Deploy to Monitor -->
+    <path d="M900 400 L950 400"/>
+    <polygon points="945,395 955,400 945,405" fill="#64748b"/>
+  </g>
+</svg>

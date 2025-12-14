@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">HealthConnect Pro - Agile Development Process</text>
+  
+  <!-- Sprint Planning -->
+  <g transform="translate(50, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Sprint Planning</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Backlog Refinement -->
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Backlog Refinement</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Story Points & Priorities</text>
+      
+      <!-- Sprint Goals -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Sprint Goals</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">2-Week Sprints</text>
+      </g>
+      
+      <!-- Capacity Planning -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Capacity Planning</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Team Availability</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Daily Scrum -->
+  <g transform="translate(350, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Daily Scrum</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Status Updates -->
+      <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Status Updates</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">15-min Standup</text>
+      
+      <!-- Blockers -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Blockers</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Issue Resolution</text>
+      </g>
+      
+      <!-- Collaboration -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Collaboration</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Team Sync</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Development -->
+  <g transform="translate(650, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Development</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Feature Development -->
+      <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Feature Development</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">User Stories</text>
+      
+      <!-- Code Review -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Code Review</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Pair Programming</text>
+      </g>
+      
+      <!-- Testing -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Testing</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">TDD Approach</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Sprint Review -->
+  <g transform="translate(950, 100)">
+    <rect width="250" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Sprint Review</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Demo -->
+      <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Demo</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Stakeholder Review</text>
+      
+      <!-- Feedback -->
+      <g transform="translate(0, 80)">
+        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Feedback</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Improvement Points</text>
+      </g>
+      
+      <!-- Release Planning -->
+      <g transform="translate(0, 160)">
+        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Release Planning</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Next Steps</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Sprint Retrospective -->
+  <g transform="translate(50, 450)">
+    <rect width="1150" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="575" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Sprint Retrospective</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- What Went Well -->
+      <rect width="250" height="200" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">What Went Well</text>
+      <g transform="translate(20, 60)">
+        <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Team Collaboration</text>
+        <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Code Quality</text>
+        <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Sprint Velocity</text>
+      </g>
+      
+      <!-- What Could Be Better -->
+      <g transform="translate(300, 0)">
+        <rect width="250" height="200" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Areas for Improvement</text>
+        <g transform="translate(20, 60)">
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Documentation</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Test Coverage</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Story Estimation</text>
+        </g>
+      </g>
+      
+      <!-- Action Items -->
+      <g transform="translate(600, 0)">
+        <rect width="250" height="200" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Action Items</text>
+        <g transform="translate(20, 60)">
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Update Wiki</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Add E2E Tests</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Planning Workshop</text>
+        </g>
+      </g>
+      
+      <!-- Team Health -->
+      <g transform="translate(900, 0)">
+        <rect width="250" height="200" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Team Health</text>
+        <g transform="translate(20, 60)">
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Morale: High</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Burnout: Low</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Engagement: High</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g transform="translate(0, 0)" stroke="#64748b" stroke-width="2" fill="none">
+    <!-- Planning to Daily -->
+    <path d="M300 250 L350 250"/>
+    <polygon points="345,245 355,250 345,255" fill="#64748b"/>
+    
+    <!-- Daily to Development -->
+    <path d="M600 250 L650 250"/>
+    <polygon points="645,245 655,250 645,255" fill="#64748b"/>
+    
+    <!-- Development to Review -->
+    <path d="M900 250 L950 250"/>
+    <polygon points="945,245 955,250 945,255" fill="#64748b"/>
+  </g>
+</svg>

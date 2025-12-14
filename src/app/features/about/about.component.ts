@@ -1,9 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ConsultationDialogComponent } from '../../shared/consultation-dialog/consultation-dialog.component';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+import { ChipModule } from 'primeng/chip';
+import { RippleModule } from 'primeng/ripple';
+import { TagModule } from 'primeng/tag';
 
 interface TeamMember {
   name: string;
@@ -27,266 +34,407 @@ interface Project {
   techStack: string[];
 }
 
+interface CompanyTimeline {
+  year: string;
+  title: string;
+  description: string;
+  icon: string;
+  metrics?: string[];
+}
+
+interface CompanyCulture {
+  title: string;
+  description: string;
+  icon: string;
+  practices: string[];
+}
+
+interface RoadmapItem {
+  period: string;
+  title: string;
+  description: string;
+  icon: string;
+  goals: string[];
+}
+
+interface Achievement {
+  title: string;
+  year: string;
+  description: string;
+  icon: string;
+  metrics?: string[];
+}
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  standalone: false,
+  providers: [DialogService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    ButtonModule,
+    CardModule,
+    CarouselModule,
+    ChipModule,
+    RippleModule,
+    TagModule,
+    DynamicDialogModule
+  ],
   animations: [
     trigger('fadeIn', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
-        animate('0.8s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+        style({ opacity: 0 }),
+        animate('900ms 200ms cubic-bezier(.35,0,.25,1)', style({ opacity: 1 }))
+      ])
+    ]),
+    trigger('slideUp', [
+      transition(':enter', [
+        style({ transform: 'translateY(40px)', opacity: 0 }),
+        animate('900ms 400ms cubic-bezier(.35,0,.25,1)', style({ transform: 'none', opacity: 1 }))
+      ])
+    ]),
+    trigger('slideInLeft', [
+      transition(':enter', [
+        style({ transform: 'translateX(-60px)', opacity: 0 }),
+        animate('800ms 300ms cubic-bezier(.35,0,.25,1)', style({ transform: 'none', opacity: 1 }))
       ])
     ]),
     trigger('scaleIn', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'scale(0.8)' }),
-        animate('0.6s ease-out', style({ opacity: 1, transform: 'scale(1)' }))
-      ])
-    ]),
-    trigger('fadeInUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(40px)' }),
-        animate('0.8s 0.1s cubic-bezier(.35,0,.25,1)', style({ opacity: 1, transform: 'translateY(0)' }))
+        style({ transform: 'scale(0.8)', opacity: 0 }),
+        animate('700ms 200ms cubic-bezier(.35,0,.25,1)', style({ transform: 'scale(1)', opacity: 1 }))
       ])
     ])
   ]
 })
 export class AboutComponent implements OnInit, OnDestroy {
-  currentSlideIndex = 0;
-  private autoSlideInterval: any;
+  
+  companyTimeline: CompanyTimeline[] = [
+    {
+      year: '2019',
+      title: 'Foundation & Vision',
+      description: 'Nest Tech Solutions was founded with a vision to revolutionize digital transformation. Started as a small team of passionate developers with big dreams.',
+      icon: 'pi pi-flag',
+      metrics: ['5 Team Members', 'First Office', 'Vision Established']
+    },
+    {
+      year: '2020',
+      title: 'First Major Breakthrough',
+      description: 'Landed our first enterprise client and delivered a transformative e-commerce platform that increased their revenue by 300%. This marked our entry into serious business.',
+      icon: 'pi pi-trophy',
+      metrics: ['50+ Projects', '10 Team Members', 'Enterprise Clients']
+    },
+    {
+      year: '2021',
+      title: 'Global Expansion',
+      description: 'Expanded operations internationally, serving clients across 15+ countries. Established our reputation for delivering world-class solutions on time and within budget.',
+      icon: 'pi pi-globe',
+      metrics: ['15+ Countries', '25 Team Members', 'Global Recognition']
+    },
+    {
+      year: '2022',
+      title: 'Innovation Leadership',
+      description: 'Launched our AI/ML division and cloud-native solutions practice. Became industry leaders in cutting-edge technology adoption and implementation.',
+      icon: 'pi pi-cog',
+      metrics: ['AI/ML Division', 'Cloud Expertise', 'Tech Innovation']
+    },
+    {
+      year: '2023',
+      title: 'Industry Recognition',
+      description: 'Received multiple industry awards and certifications. Achieved ISO certification and became an AWS Advanced Partner, validating our commitment to excellence.',
+      icon: 'pi pi-star',
+      metrics: ['ISO Certified', 'AWS Partner', 'Industry Awards']
+    },
+    {
+      year: '2024',
+      title: 'Scaling New Heights',
+      description: 'Crossed 500+ successful projects milestone. Established centers of excellence for emerging technologies and strengthened our global delivery capabilities.',
+      icon: 'pi pi-chart-line',
+      metrics: ['500+ Projects', '50+ Team Members', 'Centers of Excellence']
+    }
+  ];
+
+  companyCulture: CompanyCulture[] = [
+    {
+      title: 'Innovation First',
+      description: 'We foster a culture of continuous innovation, encouraging creative thinking and embracing emerging technologies to solve complex challenges.',
+      icon: 'pi pi-lightbulb',
+      practices: ['Hackathons', 'Innovation Lab', 'R&D Time', 'Tech Talks']
+    },
+    {
+      title: 'Collaborative Excellence',
+      description: 'Teamwork and collaboration are at our core. We believe great solutions emerge when diverse minds work together towards common goals.',
+      icon: 'pi pi-users',
+      practices: ['Cross-functional Teams', 'Peer Reviews', 'Knowledge Sharing', 'Mentorship']
+    },
+    {
+      title: 'Continuous Learning',
+      description: 'We invest in our people through continuous learning opportunities, certifications, and skill development programs to stay ahead of the curve.',
+      icon: 'pi pi-book',
+      practices: ['Training Programs', 'Certifications', 'Conferences', 'Online Learning']
+    },
+    {
+      title: 'Work-Life Balance',
+      description: 'We promote a healthy work-life balance with flexible working arrangements, wellness programs, and supportive team environment.',
+      icon: 'pi pi-heart',
+      practices: ['Flexible Hours', 'Remote Work', 'Wellness Programs', 'Team Events']
+    },
+    {
+      title: 'Quality Obsession',
+      description: 'Quality is non-negotiable. We maintain the highest standards in everything we do, from code quality to client communication.',
+      icon: 'pi pi-shield',
+      practices: ['Code Reviews', 'Testing Standards', 'Quality Gates', 'Best Practices']
+    },
+    {
+      title: 'Client Success',
+      description: 'Our clients\' success is our success. We go above and beyond to ensure every project delivers exceptional value and measurable results.',
+      icon: 'pi pi-thumbs-up',
+      practices: ['Client Focus', 'Success Metrics', 'Regular Check-ins', 'Feedback Loops']
+    }
+  ];
+
+  roadmapItems: RoadmapItem[] = [
+    {
+      period: 'Q1 2025',
+      title: 'AI-Powered Solutions',
+      description: 'Launch comprehensive AI and machine learning solutions division with focus on predictive analytics and automation.',
+      icon: 'pi pi-android',
+      goals: ['AI Lab Setup', 'ML Model Development', 'Automation Tools', 'Predictive Analytics']
+    },
+    {
+      period: 'Q2 2025',
+      title: 'Global Market Expansion',
+      description: 'Establish regional offices in North America and Europe to better serve our growing international client base.',
+      icon: 'pi pi-globe',
+      goals: ['US Office', 'European Hub', 'Regional Teams', 'Local Partnerships']
+    },
+    {
+      period: 'Q3 2025',
+      title: 'Next-Gen Platform',
+      description: 'Develop proprietary development platform combining low-code capabilities with enterprise-grade security and scalability.',
+      icon: 'pi pi-desktop',
+      goals: ['Platform Development', 'Low-Code Tools', 'Security Framework', 'Scalability Features']
+    },
+    {
+      period: 'Q4 2025',
+      title: 'Sustainability Initiative',
+      description: 'Launch green technology initiative focusing on carbon-neutral solutions and sustainable software development practices.',
+      icon: 'pi pi-leaf',
+      goals: ['Green Tech', 'Carbon Neutral', 'Sustainable Practices', 'Environmental Impact']
+    }
+  ];
+
+  achievements: Achievement[] = [
+    {
+      title: 'ISO 27001 Certification',
+      year: '2023',
+      description: 'Achieved ISO 27001 certification for information security management, demonstrating our commitment to data protection and security.',
+      icon: 'pi pi-shield',
+      metrics: ['Security Standards', 'Data Protection', 'Risk Management']
+    },
+    {
+      title: 'AWS Advanced Partner',
+      year: '2023',
+      description: 'Became an AWS Advanced Consulting Partner, validating our cloud expertise and ability to deliver enterprise-grade solutions.',
+      icon: 'pi pi-cloud',
+      metrics: ['Cloud Expertise', 'Enterprise Solutions', 'AWS Certified']
+    },
+    {
+      title: 'Tech Innovation Award',
+      year: '2023',
+      description: 'Received the Technology Innovation Award for our groundbreaking AI-powered healthcare solution that improved patient outcomes by 40%.',
+      icon: 'pi pi-trophy',
+      metrics: ['Innovation Excellence', 'Healthcare Impact', '40% Improvement']
+    },
+    {
+      title: 'Client Satisfaction Excellence',
+      year: '2024',
+      description: 'Achieved 98% client satisfaction rate with zero project failures, maintaining our reputation for reliable delivery.',
+      icon: 'pi pi-star',
+      metrics: ['98% Satisfaction', 'Zero Failures', 'Reliable Delivery']
+    },
+    {
+      title: 'Top Employer Recognition',
+      year: '2024',
+      description: 'Recognized as Top Employer in Tech by leading industry publications for our exceptional workplace culture and employee benefits.',
+      icon: 'pi pi-users',
+      metrics: ['Top Employer', 'Great Culture', 'Employee Benefits']
+    },
+    {
+      title: '500+ Projects Milestone',
+      year: '2024',
+      description: 'Successfully delivered over 500 projects across 25+ countries, establishing ourselves as a global technology partner.',
+      icon: 'pi pi-chart-line',
+      metrics: ['500+ Projects', '25+ Countries', 'Global Reach']
+    }
+  ];
   
   teamMembers: TeamMember[] = [
     {
       name: 'Mir Mushhood Afsar',
       role: 'CEO & Founder',
       description: 'Visionary leader with 5+ years of experience in full-stack development and business strategy. Passionate about creating innovative solutions that drive business growth and digital transformation.',
-      icon: 'person',
-      skills: ['Angular', 'React', 'Node.js', 'Python', 'AWS', 'Leadership'],
+      icon: 'pi pi-user',
+      skills: ['Strategic Leadership', 'Digital Transformation', 'Business Development', 'Full-Stack Development', 'Team Building', 'Client Relations'],
       linkedinUrl: 'https://www.linkedin.com/in/mushhood-afsar/',
       image: 'assets/home/Mushhood2.jpg'
     },
     {
+      name: 'Anayat Ullah',
+      role: 'Co-founder & VP Sales',
+      description: 'Strategic business development leader focused on growth, client relationships, and market expansion. Drives revenue growth through innovative sales strategies and strategic partnerships.',
+      icon: 'pi pi-briefcase',
+      skills: ['Business Development', 'Strategic Sales', 'Client Relationship Management', 'Market Analysis', 'Partnership Development', 'Revenue Growth'],
+      linkedinUrl: 'https://www.linkedin.com/in/anayat-ullah-8647b7162/',
+      image: 'assets/Team/Anayat.jpeg'
+    },
+    {
       name: 'Jahanzaib Sohail',
-      role: 'Co-founder & Lead iOS Developer',
-      description: 'Expert iOS developer and co-founder with extensive experience in native app development. Specializes in creating high-performance mobile applications with seamless user experiences.',
-      icon: 'smartphone',
-      skills: ['Swift', 'iOS', 'Objective-C', 'Xcode', 'App Store', 'Mobile Architecture'],
+      role: 'CTO',
+      description: 'Expert iOS developer and technology strategist with extensive experience in mobile app architecture and development. Leads our technical innovation and mobile excellence initiatives.',
+      icon: 'pi pi-mobile',
+      skills: ['iOS Development', 'Mobile Architecture', 'Technical Strategy', 'Team Leadership', 'Innovation Management', 'Product Development'],
       linkedinUrl: 'https://www.linkedin.com/in/jahanzeb-sohail-047/',
       image: 'assets/Team/Jahanzaib.jpeg'
     },
     {
       name: 'Abbas Raza',
-      role: 'Lead DevOps Engineer',
+      role: 'Head of DevOps & Infrastructure',
       description: 'DevOps specialist with deep expertise in cloud infrastructure, automation, and deployment pipelines. Ensures scalable, secure, and efficient development operations.',
-      icon: 'cloud',
-      skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Linux', 'Infrastructure'],
+      icon: 'pi pi-cloud',
+      skills: ['AWS Cloud', 'DevOps Automation', 'Infrastructure Management', 'Security Implementation', 'Scalability Design', 'CI/CD Pipelines'],
       linkedinUrl: 'https://www.linkedin.com/in/abbas-raza-564b57b2/',
       image: 'assets/Team/Abbas.jpeg'
     },
     {
       name: 'Muhammad Usama',
-      role: 'Lead Flutter Developer',
-      description: 'Cross-platform mobile development expert specializing in Flutter. Creates beautiful, high-performance mobile applications for both iOS and Android platforms.',
-      icon: 'flutter_dash',
-      skills: ['Flutter', 'Dart', 'Firebase', 'Mobile Development', 'Cross-platform', 'UI/UX'],
+      role: 'Lead Mobile Developer',
+      description: 'Cross-platform mobile development expert specializing in Flutter and React Native. Creates beautiful, high-performance mobile applications for both iOS and Android platforms.',
+      icon: 'pi pi-mobile',
+      skills: ['Flutter Development', 'Cross-Platform Mobile', 'UI/UX Implementation', 'Performance Optimization', 'Mobile Testing', 'App Store Deployment'],
       linkedinUrl: 'https://www.linkedin.com/in/muhammad-usama-330044212/',
       image: 'https://ui-avatars.com/api/?name=Muhammad+Usama&size=400&background=166534&color=ffffff&font-size=0.35&bold=true&format=png'
-    },
-    {
-      name: 'Anayat Ullah',
-      role: 'Lead Sales & Business Development',
-      description: 'Strategic business development leader focused on growth, client relationships, and market expansion. Drives revenue growth through innovative sales strategies and partnerships.',
-      icon: 'business_center',
-      skills: ['Sales Strategy', 'Business Development', 'Client Relations', 'Market Analysis', 'Negotiation', 'Growth'],
-      linkedinUrl: 'https://www.linkedin.com/in/anayat-ullah-8647b7162/',
-      image: 'assets/Team/Anayat.jpeg'
     }
   ];
 
   projects: Project[] = [
     {
-      name: 'SecurePay Pro',
+      name: 'FinTech Trading Platform',
       category: 'FinTech',
-      description: 'A comprehensive digital banking platform with real-time fraud detection, AI-powered risk assessment, and seamless payment processing for 2M+ users.',
-      icon: 'account_balance',
-      budget: '$450,000',
-      timeline: '8 months',
-      teamSize: '12 developers',
+      description: 'A comprehensive trading platform with real-time market data, advanced charting, and automated trading capabilities. Built for institutional and retail traders.',
+      icon: 'pi-chart-line',
+      budget: '$150K - $300K',
+      timeline: '8-12 months',
+      teamSize: '6-8 developers',
       impact: [
-        'Reduced fraud incidents by 85% using AI algorithms',
-        'Increased transaction volume by 300%',
-        'Achieved 99.9% uptime with zero security breaches',
-        'Saved $2M annually in operational costs'
+        'Increased trading volume by 250%',
+        'Reduced transaction processing time by 60%',
+        'Enhanced user engagement by 180%',
+        'Achieved 99.9% uptime reliability'
       ],
-      techStack: ['Angular', 'Node.js', 'Python', 'TensorFlow', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'Kubernetes']
+      techStack: ['Angular', 'Node.js', 'WebSocket', 'MongoDB', 'Redis', 'Docker', 'AWS']
     },
     {
-      name: 'HealthCare AI Assistant',
+      name: 'HealthConnect Telemedicine',
       category: 'Healthcare',
-      description: 'Intelligent healthcare management system with AI-powered diagnosis assistance, patient monitoring, and predictive analytics for early disease detection.',
-      icon: 'local_hospital',
-      budget: '$380,000',
-      timeline: '10 months',
-      teamSize: '10 developers',
+      description: 'A HIPAA-compliant telemedicine platform connecting patients with healthcare providers through secure video consultations and medical record management.',
+      icon: 'pi-heart',
+      budget: '$200K - $400K',
+      timeline: '10-14 months',
+      teamSize: '8-10 developers',
       impact: [
-        'Improved diagnosis accuracy by 92%',
-        'Reduced patient wait times by 60%',
-        'Detected early-stage diseases in 15,000+ patients',
-        'Decreased hospital readmission rates by 40%'
+        'Served 50,000+ patients remotely',
+        'Reduced appointment wait time by 70%',
+        'Improved patient satisfaction by 95%',
+        'Streamlined medical record access'
       ],
-      techStack: ['React', 'Python', 'TensorFlow', 'PyTorch', 'MongoDB', 'Apache Kafka', 'Azure', 'MLflow', 'FastAPI']
+      techStack: ['React', 'Python', 'PostgreSQL', 'WebRTC', 'Socket.IO', 'AWS', 'Docker']
     },
     {
-      name: 'EcoMart Marketplace',
+      name: 'SmartRetail E-Commerce',
       category: 'E-Commerce',
-      description: 'Advanced e-commerce platform with AI-powered product recommendations, dynamic pricing, and automated inventory management for 500+ vendors.',
-      icon: 'shopping_cart',
-      budget: '$320,000',
-      timeline: '6 months',
-      teamSize: '8 developers',
+      description: 'An AI-powered e-commerce platform with personalized recommendations, inventory management, and multi-channel sales integration.',
+      icon: 'pi-shopping-cart',
+      budget: '$100K - $250K',
+      timeline: '6-10 months',
+      teamSize: '5-7 developers',
       impact: [
-        'Increased conversion rates by 45%',
-        'Reduced cart abandonment by 35%',
-        'Optimized inventory turnover by 50%',
-        'Generated $15M in additional revenue'
+        'Increased conversion rate by 120%',
+        'Reduced cart abandonment by 45%',
+        'Improved inventory turnover by 80%',
+        'Generated $2M+ in additional revenue'
       ],
-      techStack: ['Vue.js', 'Node.js', 'Python', 'Scikit-learn', 'Elasticsearch', 'Redis', 'AWS', 'Stripe API', 'RabbitMQ']
+      techStack: ['Vue.js', 'Laravel', 'MySQL', 'Elasticsearch', 'Redis', 'Stripe', 'GCP']
     },
     {
-      name: 'AI-Powered Trading Bot',
-      category: 'FinTech',
-      description: 'Advanced algorithmic trading system with deep learning models for market prediction, risk management, and automated portfolio optimization.',
-      icon: 'trending_up',
-      budget: '$280,000',
-      timeline: '7 months',
-      teamSize: '6 developers',
-      impact: [
-        'Achieved 23% annual return on investment',
-        'Reduced trading risks by 65%',
-        'Processed 10M+ market data points daily',
-        'Generated $8M in trading profits'
-      ],
-      techStack: ['Python', 'TensorFlow', 'PyTorch', 'Pandas', 'NumPy', 'Redis', 'PostgreSQL', 'Docker', 'AWS']
-    },
-    {
-      name: 'MediScan AI',
-      category: 'Healthcare',
-      description: 'AI-powered medical imaging analysis platform for early detection of diseases using deep learning and computer vision technologies.',
-      icon: 'medical_services',
-      budget: '$410,000',
-      timeline: '9 months',
-      teamSize: '11 developers',
-      impact: [
-        'Detected cancer with 96% accuracy',
-        'Reduced diagnosis time by 80%',
-        'Analyzed 50,000+ medical images',
-        'Saved 2,000+ lives through early detection'
-      ],
-      techStack: ['Python', 'TensorFlow', 'OpenCV', 'Django', 'PostgreSQL', 'Docker', 'AWS', 'NVIDIA GPU', 'DICOM']
-    },
-    {
-      name: 'Enterprise Resource Manager',
+      name: 'Enterprise CRM Solution',
       category: 'Enterprise',
-      description: 'A robust ERP solution for large organizations, featuring real-time analytics, workflow automation, and seamless integration with legacy systems.',
-      icon: 'business',
-      budget: '$600,000',
-      timeline: '14 months',
-      teamSize: '18 developers',
+      description: 'A scalable CRM system designed for large enterprises with advanced analytics, workflow automation, and multi-team collaboration features.',
+      icon: 'pi-users',
+      budget: '$300K - $500K',
+      timeline: '12-18 months',
+      teamSize: '10-12 developers',
       impact: [
-        'Streamlined business operations across 5 departments',
-        'Reduced manual workload by 60%',
-        'Enabled real-time decision making with advanced dashboards',
-        'Integrated with 10+ legacy systems'
+        'Improved sales efficiency by 200%',
+        'Enhanced customer retention by 85%',
+        'Automated 70% of routine tasks',
+        'Reduced operational costs by $1.5M annually'
       ],
-      techStack: ['Angular', '.NET Core', 'C#', 'SQL Server', 'Azure', 'Docker', 'Kubernetes']
+      techStack: ['Angular', 'Java Spring', 'PostgreSQL', 'Kubernetes', 'Apache Kafka', 'Microservices']
+    }
+  ];
+
+  teamCarouselResponsive = [
+    {
+      breakpoint: '1024px',
+      numVisible: 2,
+      numScroll: 1
     },
     {
-      name: 'Enterprise HR Portal',
-      category: 'Enterprise Solutions',
-      description: 'A robust HR management platform built with Angular and .NET Core, streamlining employee onboarding, payroll, and performance reviews for large organizations.',
-      icon: 'business_center',
-      budget: '$600,000',
-      timeline: '10 months',
-      teamSize: '14 developers',
-      impact: [
-        'Automated HR workflows, reducing manual effort by 70%',
-        'Integrated payroll and benefits, saving $1.2M annually',
-        'Improved employee satisfaction scores by 30%'
-      ],
-      techStack: ['Angular', '.NET Core', 'SQL Server', 'Azure', 'Docker', 'CI/CD']
-    },
-    {
-      name: 'Smart Healthcare Dashboard',
-      category: 'Healthcare',
-      description: 'A real-time analytics dashboard for hospitals, built with Angular and ASP.NET, providing actionable insights for patient care and resource allocation.',
-      icon: 'monitor_heart',
-      budget: '$350,000',
-      timeline: '7 months',
-      teamSize: '8 developers',
-      impact: [
-        'Reduced ER wait times by 40% through predictive analytics',
-        'Enabled real-time monitoring of 500+ beds',
-        'Improved patient outcomes and operational efficiency'
-      ],
-      techStack: ['Angular', 'ASP.NET', 'SignalR', 'Azure', 'Power BI']
-    },
-    {
-      name: 'E-Learning Platform',
-      category: 'Education',
-      description: 'A scalable e-learning solution using Angular and .NET, supporting thousands of concurrent users with interactive courses, live sessions, and progress tracking.',
-      icon: 'school',
-      budget: '$420,000',
-      timeline: '9 months',
-      teamSize: '10 developers',
-      impact: [
-        'Onboarded 50,000+ students in the first year',
-        'Increased course completion rates by 55%',
-        'Enabled seamless live video and chat integration'
-      ],
-      techStack: ['Angular', '.NET', 'Azure', 'WebRTC', 'Redis', 'Docker']
+      breakpoint: '768px',
+      numVisible: 1,
+      numScroll: 1
     }
   ];
 
   constructor(
     private router: Router, 
     private viewportScroller: ViewportScroller,
-    private dialog: MatDialog
+    private dialogService: DialogService
   ) {}
 
   ngOnInit() {
-    this.startAutoSlide();
+    // Component initialization
   }
 
   ngOnDestroy() {
-    this.stopAutoSlide();
+    // Cleanup if needed
   }
 
-  startAutoSlide() {
-    this.autoSlideInterval = setInterval(() => {
-      this.nextSlide();
-    }, 20000); // 20 seconds
-  }
-
-  stopAutoSlide() {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
+  scrollToHistory() {
+    const element = document.getElementById('history-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
-  nextSlide() {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.teamMembers.length;
+  scrollToTeam() {
+    const element = document.getElementById('team-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
-  previousSlide() {
-    this.currentSlideIndex = this.currentSlideIndex === 0 
-      ? this.teamMembers.length - 1 
-      : this.currentSlideIndex - 1;
-  }
-
-  goToSlide(index: number) {
-    this.currentSlideIndex = index;
+  getProjectSeverity(category: string): "success" | "info" | "secondary" | "contrast" | "warning" | "danger" | undefined {
+    switch (category) {
+      case 'FinTech': return 'success';
+      case 'Healthcare': return 'info';
+      case 'E-Commerce': return 'warning';
+      case 'Enterprise': return 'secondary';
+      default: return 'secondary';
+    }
   }
 
   onImageError(event: Event) {
@@ -305,33 +453,33 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.router.navigate(['/services']);
   }
 
+  // TrackBy functions for optimized *ngFor loops
+  trackByMemberIndex(index: number, member: TeamMember): number {
+    return index;
+  }
+
+  trackByProjectIndex(index: number, project: Project): number {
+    return index;
+  }
+
+  trackByString(index: number, item: string): string {
+    return item;
+  }
+
   openConsultationDialog() {
-    console.log('Opening consultation dialog...');
-    const dialogRef = this.dialog.open(ConsultationDialogComponent, {
-      width: '90vw',
-      maxWidth: '1200px',
-      height: '85vh',
-      maxHeight: '85vh',
-      panelClass: 'consultation-dialog-panel',
-      disableClose: false,
-      autoFocus: false,
-      hasBackdrop: true,
-      backdropClass: 'dialog-backdrop',
-      data: {}
-    });
-
-    console.log('Dialog opened:', dialogRef);
-
-    dialogRef.afterOpened().subscribe(() => {
-      console.log('Dialog after opened');
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed with result:', result);
+    this.dialogService.open(ConsultationDialogComponent, {
+      header: 'Request a Consultation',
+      width: '90%',
+      maximizable: true,
+      style: { maxWidth: '1200px' },
+      contentStyle: { height: '85vh', overflow: 'auto' },
+      baseZIndex: 10000,
+      dismissableMask: true
+    }).onClose.subscribe(result => {
       if (result && result.action === 'getQuote') {
         this.viewportScroller.scrollToPosition([0, 0]);
         this.router.navigate(['/quote']);
       }
     });
   }
-} 
+}

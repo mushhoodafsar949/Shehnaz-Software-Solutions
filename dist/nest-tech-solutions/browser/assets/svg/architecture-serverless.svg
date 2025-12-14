@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="serverlessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" fill="#166534" text-anchor="middle" font-weight="bold">Serverless Architecture (AWS)</text>
+  
+  <!-- API Gateway -->
+  <g transform="translate(350, 80)">
+    <rect x="0" y="0" width="100" height="50" rx="8" fill="url(#serverlessGradient)"/>
+    <text x="50" y="30" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">API Gateway</text>
+  </g>
+  
+  <!-- Lambda Functions -->
+  <g transform="translate(150, 200)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#ff9900"/>
+    <text x="40" y="25" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Lambda</text>
+    <text x="40" y="40" font-family="Arial" font-size="9" fill="white" text-anchor="middle">Auth Function</text>
+  </g>
+  
+  <g transform="translate(280, 200)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#ff9900"/>
+    <text x="40" y="25" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Lambda</text>
+    <text x="40" y="40" font-family="Arial" font-size="9" fill="white" text-anchor="middle">API Function</text>
+  </g>
+  
+  <g transform="translate(440, 200)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#ff9900"/>
+    <text x="40" y="25" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Lambda</text>
+    <text x="40" y="40" font-family="Arial" font-size="9" fill="white" text-anchor="middle">Data Function</text>
+  </g>
+  
+  <g transform="translate(570, 200)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#ff9900"/>
+    <text x="40" y="25" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">Lambda</text>
+    <text x="40" y="40" font-family="Arial" font-size="9" fill="white" text-anchor="middle">Email Function</text>
+  </g>
+  
+  <!-- DynamoDB -->
+  <g transform="translate(200, 350)">
+    <rect x="0" y="0" width="100" height="60" rx="8" fill="#3f48cc"/>
+    <text x="50" y="30" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">DynamoDB</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="white" text-anchor="middle">NoSQL Database</text>
+  </g>
+  
+  <!-- S3 -->
+  <g transform="translate(350, 350)">
+    <rect x="0" y="0" width="100" height="60" rx="8" fill="#569a31"/>
+    <text x="50" y="30" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">S3</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Object Storage</text>
+  </g>
+  
+  <!-- SES -->
+  <g transform="translate(500, 350)">
+    <rect x="0" y="0" width="100" height="60" rx="8" fill="#dd344c"/>
+    <text x="50" y="30" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">SES</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Email Service</text>
+  </g>
+  
+  <!-- Connection Lines -->
+  <line x1="400" y1="130" x2="190" y2="200" stroke="#22c55e" stroke-width="2"/>
+  <line x1="400" y1="130" x2="320" y2="200" stroke="#22c55e" stroke-width="2"/>
+  <line x1="400" y1="130" x2="480" y2="200" stroke="#22c55e" stroke-width="2"/>
+  <line x1="400" y1="130" x2="610" y2="200" stroke="#22c55e" stroke-width="2"/>
+  
+  <line x1="320" y1="260" x2="250" y2="350" stroke="#64748b" stroke-width="2"/>
+  <line x1="480" y1="260" x2="400" y2="350" stroke="#64748b" stroke-width="2"/>
+  <line x1="610" y1="260" x2="550" y2="350" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Benefits -->
+  <g transform="translate(50, 460)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#166534" font-weight="bold">Serverless Benefits:</text>
+    <text x="0" y="20" font-family="Arial" font-size="12" fill="#64748b">• No server management</text>
+    <text x="0" y="35" font-family="Arial" font-size="12" fill="#64748b">• Auto-scaling</text>
+    <text x="0" y="50" font-family="Arial" font-size="12" fill="#64748b">• Pay per execution</text>
+    <text x="250" y="20" font-family="Arial" font-size="12" fill="#64748b">• High availability</text>
+    <text x="250" y="35" font-family="Arial" font-size="12" fill="#64748b">• Event-driven</text>
+    <text x="250" y="50" font-family="Arial" font-size="12" fill="#64748b">• Reduced operational overhead</text>
+    <text x="500" y="20" font-family="Arial" font-size="12" fill="#64748b">• Fast deployment</text>
+    <text x="500" y="35" font-family="Arial" font-size="12" fill="#64748b">• Cost-effective</text>
+    <text x="500" y="50" font-family="Arial" font-size="12" fill="#64748b">• Built-in monitoring</text>
+  </g>
+</svg>

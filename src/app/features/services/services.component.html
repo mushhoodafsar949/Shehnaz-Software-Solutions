@@ -1,123 +1,302 @@
-<!-- Animated background layer -->
-<div class="hero-v2-background">
-
-</div>
-
-<!-- HERO SECTION -->
-<section class="hero-v2-section">
-  <div class="hero-v2-background">
-    <div class="hero-v2-lightray one"></div>
-    <div class="hero-v2-lightray two"></div>
-    <div class="hero-v2-lightray three"></div>
+<!-- Hero Section -->
+<section class="solutions-hero-section">
+  <div class="hero-background">
+    <div class="hero-lightray one"></div>
+    <div class="hero-lightray two"></div>
+    <div class="hero-lightray three"></div>
   </div>
-  <div class="hero-v2-content-card" @fadeIn>
-    <div class="hero-v2-content">
-      <div class="hero-v2-company-name" @slideUp>Nest Tech Solutions</div>
-      <h1 class="hero-v2-headline" @slideUp>
-        Our Expertise,
+  <div class="hero-content-card" @fadeIn>
+    <div class="hero-content">
+      <div class="company-tagline" @slideUp>Our Solutions</div>
+      <h1 class="hero-headline" @slideUp>
+        Transformative Technology
         <br>
-        <span class="highlight">Your Advantage.</span>
+        <span class="highlight">Solutions That Scale.</span>
       </h1>
-      <p class="hero-v2-description" @slideUp>
-        We deliver tailored software solutions for ambitious businesses, transforming ideas into powerful digital experiences.
+      <p class="hero-description" @slideUp>
+        From concept to deployment, we deliver cutting-edge solutions that drive business growth, enhance efficiency, and create lasting competitive advantages.
       </p>
-      <div class="hero-v2-actions" @slideUp>
-        <button mat-raised-button color="primary" class="hero-v2-cta-primary" (click)="openConsultationDialog()">Request a Consultation</button>
+      <div class="hero-actions" @slideUp>
+        <button pButton pRipple type="button" 
+                label="Explore Solutions" 
+                class="p-button-raised p-button-lg"
+                (click)="scrollToSolutions()"></button>
+        <button pButton pRipple type="button" 
+                label="Get Consultation" 
+                class="p-button-outlined p-button-lg"
+                (click)="openConsultationDialog()"></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICE SPOTLIGHTS -->
-<section class="services-grid-section" @fadeIn>
-  <div class="services-grid">
-    <div class="service-spotlight" *ngFor="let s of services; let i = index" [ngClass]="{alt: i % 2 !== 0}" @scaleIn>
-      <div class="service-icon-header">
-        <app-smart-service-logo [service]="s.title"></app-smart-service-logo>
-      </div>
-      <div class="service-content">
-        <h2>{{s.title}}</h2>
-        <p class="service-description">{{s.desc}}</p>
-        <div class="service-features">
-          <h3>Key Features:</h3>
-          <ul>
-            <li *ngFor="let f of s.features">{{f}}</li>
-          </ul>
+<!-- Solution Categories -->
+<section class="solutions-categories" @fadeIn>
+  <div class="categories-container">
+    <h2>Our Core Solutions</h2>
+    <p class="section-subtitle">Comprehensive technology solutions designed to accelerate your digital transformation</p>
+    
+    <div class="categories-grid">
+      <div class="category-card" *ngFor="let category of solutionCategories; trackBy: trackByIndex" @scaleIn>
+        <div class="category-icon">
+          <i [class]="category.icon"></i>
+        </div>
+        <h3>{{category.title}}</h3>
+        <p>{{category.description}}</p>
+        <div class="category-metrics">
+          <span class="metric">{{category.projects}} Projects</span>
+          <span class="metric">{{category.expertise}} Expertise</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE US / TRUST SECTION -->
-<section class="trust-section redesigned-section" @fadeIn>
-  <h2 class="section-title">Why Choose Nest Tech Solutions?</h2>
-  <div class="trust-cards-grid">
-    <div class="trust-card" *ngFor="let t of trustPoints">
-      <div class="trust-card-icon"><app-smart-service-logo [service]="t.title"></app-smart-service-logo></div>
-      <div class="trust-card-content">
-        <h3>{{t.title}}</h3>
-        <p>{{t.desc}}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS OVERVIEW -->
-<section class="process-overview redesigned-section" @fadeIn>
-  <h2 class="section-title">Our Process</h2>
-  <div class="process-cards-grid">
-    <div class="process-card" *ngFor="let step of processSteps; let i = index">
-      <div class="process-card-number">{{i + 1}}</div>
-      <div class="process-card-content">
-        <h3>{{step.title}}</h3>
-        <p>{{step.desc}}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TECHNOLOGIES SECTION -->
-<section class="technologies-section redesigned-section" @fadeIn>
-  <h2 class="section-title">Technologies We Master</h2>
-  <div class="tech-cards-grid">
-    <div class="tech-card" *ngFor="let cat of technologyCategories">
-      <h3>{{cat.title}}</h3>
-      <div class="tech-items-list">
-        <span class="tech-item" *ngFor="let item of cat.items">{{item}}</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta-section redesigned-section" @fadeIn>
-  <div class="cta-container">
-    <div class="cta-content">
-      <h2 class="cta-title">Ready to Transform Your Business?</h2>
-      <p class="cta-description">Let's discuss how we can help you achieve your digital goals and drive real results for your organization.</p>
-      <div class="cta-actions">
-        <button mat-stroked-button class="cta-secondary-btn" (click)="navigateToContact()">
-          <mat-icon>schedule</mat-icon>
-          Schedule a Call
-        </button>
-      </div>
-      <div class="cta-benefits">
-        <div class="benefit-item">
-          <mat-icon>check_circle</mat-icon>
-          <span>Free Consultation</span>
+<!-- Detailed Solutions -->
+<section class="detailed-solutions" @fadeIn id="solutions-section">
+  <div class="solutions-container">
+    <h2>Professional Solutions Portfolio</h2>
+    <p class="section-subtitle">End-to-end solutions tailored to your industry and business needs</p>
+    
+    <div class="solutions-grid">
+      <div class="solution-card" *ngFor="let solution of detailedSolutions; let i = index" 
+           [class.reverse]="i % 2 === 1" @scaleIn>
+        <div class="solution-visual">
+          <div class="solution-icon-large">
+            <img [src]="'assets/service-icons/' + solution.icon + '.svg'" 
+                 [alt]="solution.title + ' icon'" 
+                 class="solution-svg-icon"
+                 loading="lazy">
+          </div>
+          <div class="solution-stats">
+            <div class="stat-item">
+              <span class="stat-number">{{solution.projects}}</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">{{solution.satisfaction}}</span>
+              <span class="stat-label">Satisfaction</span>
+            </div>
+          </div>
         </div>
-        <div class="benefit-item">
-          <mat-icon>check_circle</mat-icon>
-          <span>No Commitment</span>
-        </div>
-        <div class="benefit-item">
-          <mat-icon>check_circle</mat-icon>
-          <span>Expert Team</span>
+        
+        <div class="solution-content">
+          <div class="solution-header">
+            <h3>{{solution.title}}</h3>
+            <p class="solution-subtitle">{{solution.subtitle}}</p>
+          </div>
+          
+          <p class="solution-description">{{solution.description}}</p>
+          
+          <div class="solution-features">
+            <h4>Key Capabilities</h4>
+            <ul>
+              <li *ngFor="let feature of solution.keyFeatures.slice(0, 4); trackBy: trackByString">
+                <i class="pi pi-check-circle"></i>
+                {{feature}}
+              </li>
+            </ul>
+          </div>
+          
+          <div class="solution-technologies">
+            <h4>Technologies</h4>
+            <div class="tech-stack">
+              <span class="tech-badge" *ngFor="let tech of solution.technologies.slice(0, 5); trackBy: trackByString">
+                {{tech}}
+              </span>
+            </div>
+          </div>
+          
+          <div class="solution-actions">
+            <button pButton pRipple type="button" 
+                    label="View Case Studies" 
+                    class="p-button-raised"
+                    [routerLink]="['/services', solution.id]"></button>
+            <button pButton pRipple type="button" 
+                    label="Request Quote" 
+                    class="p-button-outlined"
+                    (click)="openConsultationDialog()"></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER --> 
+<!-- Industry Expertise -->
+<section class="industry-expertise" @fadeIn>
+  <div class="expertise-container">
+    <h2>Industry Expertise</h2>
+    <p class="section-subtitle">Deep domain knowledge across key industries</p>
+    
+    <div class="industries-grid">
+      <div class="industry-card" *ngFor="let industry of industries; trackBy: trackByIndex" @scaleIn>
+        <div class="industry-icon">
+          <i [class]="industry.icon"></i>
+        </div>
+        <h3>{{industry.name}}</h3>
+        <p>{{industry.description}}</p>
+        <div class="industry-solutions">
+          <span *ngFor="let solution of industry.solutions; trackBy: trackByString" class="solution-tag">
+            {{solution}}
+          </span>
+        </div>
+        <div class="industry-metrics">
+          <div class="metric-item">
+            <span class="metric-value">{{industry.projects}}</span>
+            <span class="metric-label">Projects</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">{{industry.experience}}</span>
+            <span class="metric-label">Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Development Process -->
+<section class="development-process" @fadeIn>
+  <div class="process-container">
+    <h2>Our Development Process</h2>
+    <p class="section-subtitle">Proven methodology ensuring successful project delivery</p>
+    
+    <div class="process-timeline">
+      <div class="process-step" *ngFor="let step of processSteps; let i = index" @scaleIn>
+        <div class="step-number">{{i + 1}}</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <i [class]="step.icon"></i>
+          </div>
+          <h3>{{step.title}}</h3>
+          <p>{{step.description}}</p>
+          <div class="step-deliverables">
+            <h4>Key Deliverables</h4>
+            <ul>
+              <li *ngFor="let deliverable of step.deliverables; trackBy: trackByString">{{deliverable}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technology Stack -->
+<section class="technology-stack" @fadeIn>
+  <div class="tech-container">
+    <h2>Technology Excellence</h2>
+    <p class="section-subtitle">Cutting-edge technologies and frameworks powering our solutions</p>
+    
+    <div class="tech-categories">
+      <div class="tech-category" *ngFor="let category of technologyCategories; trackBy: trackByIndex" @scaleIn>
+        <div class="tech-category-header">
+          <h3>{{category.title}}</h3>
+          <span class="tech-count">{{category.items.length}}+ Technologies</span>
+        </div>
+        <div class="tech-items">
+          <div class="tech-item" *ngFor="let item of category.items; trackBy: trackByString">
+            <span class="tech-name">{{item}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-us" @fadeIn>
+  <div class="why-container">
+    <h2>Why Choose Nest Tech Solutions?</h2>
+    <p class="section-subtitle">The advantages that set us apart in the technology landscape</p>
+    
+    <div class="advantages-grid">
+      <div class="advantage-card" *ngFor="let advantage of competitiveAdvantages; trackBy: trackByIndex" @scaleIn>
+        <div class="advantage-icon">
+          <i [class]="advantage.icon"></i>
+        </div>
+        <h3>{{advantage.title}}</h3>
+        <p>{{advantage.description}}</p>
+        <div class="advantage-metrics" *ngIf="advantage.metrics">
+          <div class="metric" *ngFor="let metric of advantage.metrics; trackBy: trackByMetric">
+            <span class="metric-value">{{metric.value}}</span>
+            <span class="metric-label">{{metric.label}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Client Success Stories -->
+<section class="client-success" @fadeIn>
+  <div class="success-container">
+    <h2>Client Success Stories</h2>
+    <p class="section-subtitle">Real results from our technology partnerships</p>
+    
+    <div class="success-grid">
+      <div class="success-card" *ngFor="let story of successStories; trackBy: trackByIndex" @scaleIn>
+        <div class="success-header">
+          <div class="client-info">
+            <h3>{{story.client}}</h3>
+            <span class="industry">{{story.industry}}</span>
+          </div>
+          <div class="project-type">
+            <span class="type-badge">{{story.solutionType}}</span>
+          </div>
+        </div>
+        
+        <p class="success-challenge">{{story.challenge}}</p>
+        
+        <div class="success-results">
+          <h4>Results Achieved</h4>
+          <div class="results-grid">
+            <div class="result-item" *ngFor="let result of story.results; trackBy: trackByString">
+              <i class="pi pi-arrow-up"></i>
+              <span>{{result}}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="success-technologies">
+          <span *ngFor="let tech of story.technologies.slice(0, 3); trackBy: trackByString" class="tech-used">
+            {{tech}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section" @fadeIn>
+  <div class="cta-content">
+    <h2>Ready to Transform Your Business?</h2>
+    <p>Let's discuss how our solutions can accelerate your digital transformation and drive measurable results.</p>
+    <div class="cta-actions">
+      <button pButton pRipple type="button" 
+              label="Start Your Project" 
+              class="p-button-raised p-button-lg"
+              (click)="openConsultationDialog()"></button>
+      <button pButton pRipple type="button" 
+              label="Schedule Consultation" 
+              class="p-button-outlined p-button-lg"
+              (click)="navigateToContact()"></button>
+    </div>
+    <div class="cta-benefits">
+      <div class="benefit-item">
+        <i class="pi pi-check-circle"></i>
+        <span>Free Initial Consultation</span>
+      </div>
+      <div class="benefit-item">
+        <i class="pi pi-check-circle"></i>
+        <span>Custom Solution Architecture</span>
+      </div>
+      <div class="benefit-item">
+        <i class="pi pi-check-circle"></i>
+        <span>No Commitment Required</span>
+      </div>
+    </div>
+  </div>
+</section>

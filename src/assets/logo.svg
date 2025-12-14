@@ -1,24 +1,78 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1976d2;" />
-      <stop offset="100%" style="stop-color:#42a5f5;" />
+    <!-- Main gradient for the nest -->
+    <linearGradient id="nestGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#42a5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1565c0;stop-opacity:1" />
     </linearGradient>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap');
-    </style>
+    
+    <!-- Tech accent gradient -->
+    <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8a65;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow -->
+    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
   </defs>
-  <rect width="200" height="200" rx="40" ry="40" fill="url(#logo-gradient)" />
-  <text
-     x="50%"
-     y="50%"
-     dominant-baseline="middle"
-     text-anchor="middle"
-     fill="white"
-     font-size="90"
-     font-family="'Poppins', sans-serif"
-     font-weight="700"
-     letter-spacing="-5">
-    NTS
-  </text>
-</svg> 
+  
+  <!-- Background circle with subtle gradient -->
+  <circle cx="60" cy="60" r="58" fill="url(#nestGradient)" filter="url(#dropshadow)" opacity="0.95"/>
+  
+  <!-- Nest structure - representing foundation and growth -->
+  <g transform="translate(60, 60)">
+    <!-- Base nest circle -->
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Nest layers - representing scalable architecture -->
+    <path d="M -35 -10 Q -35 -25 -20 -25 L 20 -25 Q 35 -25 35 -10 L 35 10 Q 35 25 20 25 L -20 25 Q -35 25 -35 10 Z" 
+          fill="#ffffff" opacity="0.9" filter="url(#glow)"/>
+    
+    <!-- Inner tech elements -->
+    <g opacity="0.8">
+      <!-- Code brackets representing software development -->
+      <text x="-25" y="5" font-family="monospace" font-size="16" font-weight="bold" fill="url(#techGradient)">&lt;</text>
+      <text x="15" y="5" font-family="monospace" font-size="16" font-weight="bold" fill="url(#techGradient)">/&gt;</text>
+      
+      <!-- Central tech symbol - stylized "N" for Nest -->
+      <path d="M -15 -8 L -15 8 M -15 -8 L 5 8 M 5 -8 L 5 8" 
+            stroke="url(#nestGradient)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- Tech nodes/connections - representing network and connectivity -->
+    <g opacity="0.6">
+      <circle cx="-25" cy="-15" r="2" fill="#ffffff"/>
+      <circle cx="25" cy="-15" r="2" fill="#ffffff"/>
+      <circle cx="-25" cy="15" r="2" fill="#ffffff"/>
+      <circle cx="25" cy="15" r="2" fill="#ffffff"/>
+      
+      <!-- Connection lines -->
+      <line x1="-25" y1="-15" x2="0" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="25" y1="-15" x2="0" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="-25" y1="15" x2="0" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="25" y1="15" x2="0" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+    </g>
+    
+    <!-- Growth elements - small ascending dots -->
+    <g opacity="0.7">
+      <circle cx="0" cy="-35" r="1.5" fill="url(#techGradient)"/>
+      <circle cx="5" cy="-30" r="1" fill="url(#techGradient)"/>
+      <circle cx="-5" cy="-30" r="1" fill="url(#techGradient)"/>
+    </g>
+  </g>
+  
+  <!-- Outer ring for premium feel -->
+  <circle cx="60" cy="60" r="58" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+</svg>

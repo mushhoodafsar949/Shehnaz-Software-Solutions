@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="400" fill="#f8fafc"/>
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" fill="#166534" text-anchor="middle" font-weight="bold">Zero Trust Security Architecture</text>
+  
+  <!-- Zero Trust Core -->
+  <circle cx="400" cy="150" r="60" fill="url(#securityGradient)"/>
+  <text x="400" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Zero Trust</text>
+  <text x="400" y="160" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Never Trust, Always Verify</text>
+  
+  <!-- Security Layers -->
+  <rect x="150" y="80" width="100" height="40" rx="6" fill="#ef4444"/>
+  <text x="200" y="105" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Identity Verification</text>
+  
+  <rect x="550" y="80" width="100" height="40" rx="6" fill="#3b82f6"/>
+  <text x="600" y="105" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Device Security</text>
+  
+  <rect x="150" y="220" width="100" height="40" rx="6" fill="#f59e0b"/>
+  <text x="200" y="245" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Network Segmentation</text>
+  
+  <rect x="550" y="220" width="100" height="40" rx="6" fill="#8b5cf6"/>
+  <text x="600" y="245" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Data Protection</text>
+  
+  <!-- Connection Lines -->
+  <line x1="250" y1="100" x2="350" y2="130" stroke="#ef4444" stroke-width="2"/>
+  <line x1="550" y1="100" x2="450" y2="130" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="250" y1="240" x2="350" y2="210" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="550" y1="240" x2="450" y2="210" stroke="#8b5cf6" stroke-width="2"/>
+  
+  <!-- Principles -->
+  <g transform="translate(100, 320)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#166534" font-weight="bold">Principles:</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" fill="#64748b">• Verify explicitly • Least privilege • Assume breach</text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="12" fill="#64748b">• Continuous monitoring • Multi-factor auth • End-to-end encryption</text>
+  </g>
+</svg>

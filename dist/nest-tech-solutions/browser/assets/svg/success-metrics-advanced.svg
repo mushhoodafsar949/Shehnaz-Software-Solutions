@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="metricsGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <radialGradient id="dashboardGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc">
+    <animate attributeName="fill" values="#f8fafc;#f1f5f9;#f8fafc" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Floating Data Elements -->
+  <g opacity="0.3">
+    <text x="50" y="50" font-family="Arial, sans-serif" font-size="10" fill="#22c55e" transform="rotate(15)">
+      📊
+      <animateTransform attributeName="transform" type="rotate" values="15;25;15" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/>
+    </text>
+    <text x="320" y="80" font-family="Arial, sans-serif" font-size="8" fill="#166534" transform="rotate(-10)">
+      📈
+      <animateTransform attributeName="transform" type="rotate" values="-10;0;-10" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite"/>
+    </text>
+    <circle cx="30" cy="220" r="3" fill="#4ade80">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,-5; 0,0" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="350" y="200" width="4" height="4" rx="2" fill="#22c55e">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Main Dashboard -->
+  <g transform="translate(50, 50)">
+    <!-- Dashboard Frame with Glow -->
+    <rect x="0" y="0" width="300" height="180" rx="12" fill="url(#screenGradient)" filter="url(#glow)">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="0.5s" fill="freeze"/>
+    </rect>
+    
+    <!-- Screen Glow Effect -->
+    <rect x="0" y="0" width="300" height="180" rx="12" fill="url(#dashboardGlow)" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Header Bar -->
+    <rect x="8" y="8" width="284" height="30" rx="6" fill="url(#metricsGradient)">
+      <animate attributeName="fill" values="url(#metricsGradient);#22c55e;url(#metricsGradient)" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="150" y="26" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1s" fill="freeze"/>
+      Success Analytics Dashboard
+    </text>
+    
+    <!-- Real-time Indicator -->
+    <circle cx="270" cy="23" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="270" y="26" font-family="Arial, sans-serif" font-size="3" fill="white" text-anchor="middle">LIVE</text>
+
+    <!-- Metric Cards Row 1 -->
+    <g transform="translate(20, 50)">
+      <!-- Projects Completed -->
+      <rect x="0" y="0" width="60" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1.5s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0.8;1;1" dur="0.5s" begin="1.5s" fill="freeze"/>
+      </rect>
+      <text x="30" y="15" font-family="Arial, sans-serif" font-size="16" fill="#22c55e" text-anchor="middle" font-weight="bold">
+        <animate attributeName="opacity" values="0;1;1;1" dur="2s" begin="2s" fill="freeze"/>
+        <animate attributeName="fill" values="#64748b;#22c55e;#22c55e" dur="2s" begin="2s" fill="freeze">500+</animate>
+      </text>
+      <text x="30" y="26" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Projects</text>
+      <text x="30" y="34" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Completed</text>
+      
+      <!-- Growth Arrow -->
+      <polygon points="50,8 55,5 55,11" fill="#10b981">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="2.5s" fill="freeze"/>
+      </polygon>
+      <text x="52" y="4" font-family="Arial, sans-serif" font-size="4" fill="#10b981" text-anchor="middle">+18%</text>
+
+      <!-- Client Satisfaction -->
+      <rect x="70" y="0" width="60" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1.7s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0.8;1;1" dur="0.5s" begin="1.7s" fill="freeze"/>
+      </rect>
+      <text x="100" y="15" font-family="Arial, sans-serif" font-size="16" fill="#22c55e" text-anchor="middle" font-weight="bold">
+        <animate attributeName="opacity" values="0;1;1;1" dur="2s" begin="2.2s" fill="freeze"/>
+        98%
+      </text>
+      <text x="100" y="26" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Client</text>
+      <text x="100" y="34" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Satisfaction</text>
+      
+      <!-- Star Rating -->
+      <g transform="translate(80, 5)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="6" fill="#f59e0b">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.2s" begin="2.5s" fill="freeze"/>
+          ★
+        </text>
+        <text x="6" y="0" font-family="Arial, sans-serif" font-size="6" fill="#f59e0b">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.2s" begin="2.7s" fill="freeze"/>
+          ★
+        </text>
+        <text x="12" y="0" font-family="Arial, sans-serif" font-size="6" fill="#f59e0b">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.2s" begin="2.9s" fill="freeze"/>
+          ★
+        </text>
+        <text x="18" y="0" font-family="Arial, sans-serif" font-size="6" fill="#f59e0b">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.2s" begin="3.1s" fill="freeze"/>
+          ★
+        </text>
+        <text x="24" y="0" font-family="Arial, sans-serif" font-size="6" fill="#f59e0b">
+          <animate attributeName="opacity" values="0;1;1;1" dur="0.2s" begin="3.3s" fill="freeze"/>
+          ★
+        </text>
+      </g>
+
+      <!-- Response Time -->
+      <rect x="140" y="0" width="60" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="1.9s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0.8;1;1" dur="0.5s" begin="1.9s" fill="freeze"/>
+      </rect>
+      <text x="170" y="15" font-family="Arial, sans-serif" font-size="16" fill="#22c55e" text-anchor="middle" font-weight="bold">
+        <animate attributeName="opacity" values="0;1;1;1" dur="2s" begin="2.4s" fill="freeze"/>
+        24h
+      </text>
+      <text x="170" y="26" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Response</text>
+      <text x="170" y="34" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Time</text>
+      
+      <!-- Clock Icon -->
+      <circle cx="185" cy="8" r="6" fill="#3b82f6" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8;0.8;0.8" dur="1s" begin="2.8s" fill="freeze"/>
+      </circle>
+      <line x1="185" y1="8" x2="185" y2="5" stroke="white" stroke-width="1"/>
+      <line x1="185" y1="8" x2="187" y2="8" stroke="white" stroke-width="1"/>
+
+      <!-- Team Size -->
+      <rect x="210" y="0" width="60" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="2.1s" fill="freeze"/>
+        <animateTransform attributeName="transform" type="scale" values="0.8;1;1" dur="0.5s" begin="2.1s" fill="freeze"/>
+      </rect>
+      <text x="240" y="15" font-family="Arial, sans-serif" font-size="16" fill="#22c55e" text-anchor="middle" font-weight="bold">
+        <animate attributeName="opacity" values="0;1;1;1" dur="2s" begin="2.6s" fill="freeze"/>
+        50+
+      </text>
+      <text x="240" y="26" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Team</text>
+      <text x="240" y="34" font-family="Arial, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">Members</text>
+    </g>
+
+    <!-- Live Chart Area -->
+    <g transform="translate(20, 105)">
+      <rect x="0" y="0" width="260" height="60" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="3s" fill="freeze"/>
+      </rect>
+      
+      <text x="130" y="12" font-family="Arial, sans-serif" font-size="8" fill="#166534" text-anchor="middle" font-weight="bold">
+        Live Performance Metrics
+      </text>
+      
+      <!-- Animated Bar Chart -->
+      <g transform="translate(20, 20)">
+        <!-- Month Labels -->
+        <text x="15" y="45" font-family="Arial, sans-serif" font-size="5" fill="#64748b" text-anchor="middle">Jan</text>
+        <text x="35" y="45" font-family="Arial, sans-serif" font-size="5" fill="#64748b" text-anchor="middle">Feb</text>
+        <text x="55" y="45" font-family="Arial, sans-serif" font-size="5" fill="#64748b" text-anchor="middle">Mar</text>
+        <text x="75" y="45" font-family="Arial, sans-serif" font-size="5" fill="#64748b" text-anchor="middle">Apr</text>
+        <text x="95" y="45" font-family="Arial, sans-serif" font-size="5" fill="#64748b" text-anchor="middle">May</text>
+        <text x="115" y="45" font-family="Arial, sans-serif" font-size="5" fill="#64748b" text-anchor="middle">Jun</text>
+        
+        <!-- Animated Bars -->
+        <rect x="10" y="30" width="10" height="0" rx="1" fill="#22c55e">
+          <animate attributeName="height" values="0;8;8" dur="1s" begin="3.5s" fill="freeze"/>
+          <animate attributeName="y" values="38;30;30" dur="1s" begin="3.5s" fill="freeze"/>
+        </rect>
+        <rect x="30" y="25" width="10" height="0" rx="1" fill="#22c55e">
+          <animate attributeName="height" values="0;13;13" dur="1s" begin="3.7s" fill="freeze"/>
+          <animate attributeName="y" values="38;25;25" dur="1s" begin="3.7s" fill="freeze"/>
+        </rect>
+        <rect x="50" y="20" width="10" height="0" rx="1" fill="#22c55e">
+          <animate attributeName="height" values="0;18;18" dur="1s" begin="3.9s" fill="freeze"/>
+          <animate attributeName="y" values="38;20;20" dur="1s" begin="3.9s" fill="freeze"/>
+        </rect>
+        <rect x="70" y="15" width="10" height="0" rx="1" fill="#22c55e">
+          <animate attributeName="height" values="0;23;23" dur="1s" begin="4.1s" fill="freeze"/>
+          <animate attributeName="y" values="38;15;15" dur="1s" begin="4.1s" fill="freeze"/>
+        </rect>
+        <rect x="90" y="10" width="10" height="0" rx="1" fill="#22c55e">
+          <animate attributeName="height" values="0;28;28" dur="1s" begin="4.3s" fill="freeze"/>
+          <animate attributeName="y" values="38;10;10" dur="1s" begin="4.3s" fill="freeze"/>
+        </rect>
+        <rect x="110" y="8" width="10" height="0" rx="1" fill="#22c55e">
+          <animate attributeName="height" values="0;30;30" dur="1s" begin="4.5s" fill="freeze"/>
+          <animate attributeName="y" values="38;8;8" dur="1s" begin="4.5s" fill="freeze"/>
+        </rect>
+        
+        <!-- Trend Line -->
+        <polyline points="15,35 35,30 55,25 75,20 95,15 115,10" 
+                  stroke="#166534" stroke-width="2" fill="none" opacity="0">
+          <animate attributeName="opacity" values="0;1;1" dur="1s" begin="5s" fill="freeze"/>
+        </polyline>
+        
+        <!-- Data Points -->
+        <g opacity="0">
+          <animate attributeName="opacity" values="0;1;1" dur="1s" begin="5.2s" fill="freeze"/>
+          <circle cx="15" cy="35" r="2" fill="#166534"/>
+          <circle cx="35" cy="30" r="2" fill="#166534"/>
+          <circle cx="55" cy="25" r="2" fill="#166534"/>
+          <circle cx="75" cy="20" r="2" fill="#166534"/>
+          <circle cx="95" cy="15" r="2" fill="#166534"/>
+          <circle cx="115" cy="10" r="2" fill="#166534"/>
+        </g>
+        
+        <!-- Growth Percentage -->
+        <text x="150" y="20" font-family="Arial, sans-serif" font-size="12" fill="#10b981" font-weight="bold">
+          <animate attributeName="opacity" values="0;1;1" dur="1s" begin="5.5s" fill="freeze"/>
+          ↗ +35%
+        </text>
+        <text x="150" y="30" font-family="Arial, sans-serif" font-size="6" fill="#64748b">Growth</text>
+        
+        <!-- Real-time Updates -->
+        <g transform="translate(180, 5)">
+          <circle cx="0" cy="0" r="2" fill="#10b981">
+            <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+          </circle>
+          <text x="5" y="2" font-family="Arial, sans-serif" font-size="4" fill="#10b981">Live Updates</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Side Performance Panel -->
+  <g transform="translate(20, 20)" opacity="0.8">
+    <rect x="0" y="0" width="80" height="120" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="1">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="6s" fill="freeze"/>
+    </rect>
+    <text x="40" y="15" font-family="Arial, sans-serif" font-size="8" fill="#22c55e" text-anchor="middle" font-weight="bold">
+      KPI Monitor
+    </text>
+    
+    <!-- On-time Delivery -->
+    <text x="10" y="30" font-family="Arial, sans-serif" font-size="6" fill="#cbd5e1">On-time</text>
+    <rect x="10" y="35" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="10" y="35" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;57;57" dur="2s" begin="6.5s" fill="freeze"/>
+    </rect>
+    <text x="72" y="38" font-family="Arial, sans-serif" font-size="5" fill="#22c55e">95%</text>
+    
+    <!-- Budget Adherence -->
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="6" fill="#cbd5e1">Budget</text>
+    <rect x="10" y="55" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="10" y="55" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;59;59" dur="2s" begin="7s" fill="freeze"/>
+    </rect>
+    <text x="72" y="58" font-family="Arial, sans-serif" font-size="5" fill="#22c55e">98%</text>
+    
+    <!-- Client Retention -->
+    <text x="10" y="70" font-family="Arial, sans-serif" font-size="6" fill="#cbd5e1">Retention</text>
+    <rect x="10" y="75" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="10" y="75" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;54;54" dur="2s" begin="7.5s" fill="freeze"/>
+    </rect>
+    <text x="72" y="78" font-family="Arial, sans-serif" font-size="5" fill="#22c55e">90%</text>
+    
+    <!-- Quality Score -->
+    <text x="10" y="90" font-family="Arial, sans-serif" font-size="6" fill="#cbd5e1">Quality</text>
+    <rect x="10" y="95" width="60" height="4" rx="2" fill="#374151"/>
+    <rect x="10" y="95" width="0" height="4" rx="2" fill="#22c55e">
+      <animate attributeName="width" values="0;58;58" dur="2s" begin="8s" fill="freeze"/>
+    </rect>
+    <text x="72" y="98" font-family="Arial, sans-serif" font-size="5" fill="#22c55e">4.9★</text>
+    
+    <!-- Overall Health -->
+    <g transform="translate(25, 105)">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#374151" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#22c55e" stroke-width="2" 
+              stroke-dasharray="0 50" transform="rotate(-90)">
+        <animate attributeName="stroke-dasharray" values="0 50;47 3;47 3" dur="3s" begin="8.5s" fill="freeze"/>
+      </circle>
+      <text x="0" y="2" font-family="Arial, sans-serif" font-size="5" fill="#22c55e" text-anchor="middle" font-weight="bold">94%</text>
+      <text x="0" y="18" font-family="Arial, sans-serif" font-size="4" fill="#cbd5e1" text-anchor="middle">Health</text>
+    </g>
+  </g>
+
+  <!-- Service Labels -->
+  <g transform="translate(50, 260)" opacity="0.9">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="#166534" font-weight="bold">
+      <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="9s" fill="freeze"/>
+      Success Metrics & Analytics
+    </text>
+    <g transform="translate(0, 18)" font-family="Arial, sans-serif" font-size="9" fill="#64748b">
+      <text x="0" y="0">
+        <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="9.5s" fill="freeze"/>
+        • Real-time Dashboards • Performance KPIs • Client Satisfaction • Growth Analytics
+      </text>
+    </g>
+  </g>
+
+  <!-- Data Stream Animation -->
+  <g opacity="0.4">
+    <circle cx="0" cy="0" r="1" fill="#4ade80">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 30,150 Q 100,120 200,150 Q 300,180 370,150"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="1" fill="#22c55e">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M 30,150 Q 100,180 200,150 Q 300,120 370,150"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

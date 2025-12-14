@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">HealthConnect Pro - DevOps Pipeline</text>
+  
+  <!-- Development Stage -->
+  <g transform="translate(50, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Development</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Git -->
+      <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Git Version Control</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Feature Branches</text>
+      
+      <!-- IDE -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">VS Code + Extensions</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Development Environment</text>
+      </g>
+      
+      <!-- Local Testing -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Local Testing</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Jest + Cypress</text>
+      </g>
+      
+      <!-- Code Review -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Code Review</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Pull Requests</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- CI Stage -->
+  <g transform="translate(350, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Continuous Integration</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Build -->
+      <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Build Pipeline</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">GitHub Actions</text>
+      
+      <!-- Unit Tests -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Unit Tests</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Coverage Reports</text>
+      </g>
+      
+      <!-- Integration Tests -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Integration Tests</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">E2E Testing</text>
+      </g>
+      
+      <!-- Code Quality -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Code Quality</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">SonarQube Analysis</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- CD Stage -->
+  <g transform="translate(650, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Continuous Deployment</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Docker Build -->
+      <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Docker Build</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Container Images</text>
+      
+      <!-- Registry -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Container Registry</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Amazon ECR</text>
+      </g>
+      
+      <!-- Kubernetes -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Kubernetes</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Container Orchestration</text>
+      </g>
+      
+      <!-- ArgoCD -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">ArgoCD</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">GitOps Deployment</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Operations Stage -->
+  <g transform="translate(950, 100)">
+    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Operations</text>
+    
+    <!-- Components -->
+    <g transform="translate(25, 70)">
+      <!-- Monitoring -->
+      <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Monitoring</text>
+      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Prometheus + Grafana</text>
+      
+      <!-- Logging -->
+      <g transform="translate(0, 100)">
+        <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Logging</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">ELK Stack</text>
+      </g>
+      
+      <!-- Alerting -->
+      <g transform="translate(0, 200)">
+        <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Alerting</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">PagerDuty</text>
+      </g>
+      
+      <!-- Backup -->
+      <g transform="translate(0, 300)">
+        <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Backup & DR</text>
+        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Multi-Region Backup</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g transform="translate(0, 0)" stroke="#64748b" stroke-width="2" fill="none">
+    <!-- Dev to CI -->
+    <path d="M300 400 L350 400"/>
+    <polygon points="345,395 355,400 345,405" fill="#64748b"/>
+    
+    <!-- CI to CD -->
+    <path d="M600 400 L650 400"/>
+    <polygon points="645,395 655,400 645,405" fill="#64748b"/>
+    
+    <!-- CD to Ops -->
+    <path d="M900 400 L950 400"/>
+    <polygon points="945,395 955,400 945,405" fill="#64748b"/>
+  </g>
+</svg>

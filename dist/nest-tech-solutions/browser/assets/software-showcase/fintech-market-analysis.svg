@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">Market Analysis</text>
+    <text x="0" y="60" fill="#64748b" font-family="Arial" font-size="16">Real-time market insights and predictions</text>
+  </g>
+  
+  <!-- Main Chart -->
+  <g transform="translate(40, 120)">
+    <rect width="720" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Chart Title -->
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Market Trends</text>
+    
+    <!-- Chart Area -->
+    <g transform="translate(40, 60)">
+      <!-- Grid -->
+      <path d="M0 0v180M0 180h640" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M0 45h640M0 90h640M0 135h640" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+      
+      <!-- Main Trend Line -->
+      <path d="M0 90 C160 120, 320 60, 480 30 S640 60, 640 90" 
+            stroke="#2196F3" stroke-width="3" fill="none"/>
+      
+      <!-- Area Under Curve -->
+      <path d="M0 90 C160 120, 320 60, 480 30 S640 60, 640 90 L640 180 L0 180 Z" 
+            fill="#2196F3" opacity="0.1"/>
+      
+      <!-- Prediction Line -->
+      <path d="M640 90 L720 60" stroke="#2196F3" stroke-width="2" stroke-dasharray="4,4"/>
+      
+      <!-- Data Points -->
+      <circle cx="0" cy="90" r="4" fill="#2196F3"/>
+      <circle cx="160" cy="120" r="4" fill="#2196F3"/>
+      <circle cx="320" cy="60" r="4" fill="#2196F3"/>
+      <circle cx="480" cy="30" r="4" fill="#2196F3"/>
+      <circle cx="640" cy="90" r="4" fill="#2196F3"/>
+    </g>
+  </g>
+  
+  <!-- Market Indicators -->
+  <g transform="translate(40, 420)">
+    <!-- RSI -->
+    <rect width="230" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">RSI</text>
+    <text x="180" y="40" fill="#10B981" font-family="Arial" font-size="16">65.4</text>
+    <rect x="20" y="60" width="190" height="6" fill="#f1f5f9" rx="3"/>
+    <rect x="20" y="60" width="124" height="6" fill="#10B981" rx="3"/>
+    
+    <!-- MACD -->
+    <g transform="translate(250, 0)">
+      <rect width="230" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+      <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">MACD</text>
+      <text x="180" y="40" fill="#2196F3" font-family="Arial" font-size="16">12.8</text>
+      <path d="M20 80h190M20 100h190M20 120h190" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M20 90l30 20l30-40l30 30l30-10l40 20" stroke="#2196F3" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Volume -->
+    <g transform="translate(500, 0)">
+      <rect width="230" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+      <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Volume</text>
+      <text x="140" y="40" fill="#64748b" font-family="Arial" font-size="16">1.2M</text>
+      <rect x="20" y="60" width="30" height="60" fill="#2196F3" opacity="0.2"/>
+      <rect x="60" y="70" width="30" height="50" fill="#2196F3" opacity="0.3"/>
+      <rect x="100" y="50" width="30" height="70" fill="#2196F3" opacity="0.4"/>
+      <rect x="140" y="40" width="30" height="80" fill="#2196F3" opacity="0.5"/>
+      <rect x="180" y="55" width="30" height="65" fill="#2196F3" opacity="0.6"/>
+    </g>
+  </g>
+</svg>

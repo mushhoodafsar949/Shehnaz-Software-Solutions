@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">Supply Chain Management</text>
+    <text x="0" y="60" fill="#64748b" font-family="Arial" font-size="16">End-to-end supply chain visibility</text>
+  </g>
+  
+  <!-- Supply Chain Flow -->
+  <g transform="translate(40, 120)">
+    <rect width="720" height="200" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Flow Steps -->
+    <g transform="translate(40, 40)">
+      <!-- Supplier -->
+      <g>
+        <rect width="100" height="100" fill="#FF5722" opacity="0.1" rx="10"/>
+        <text x="50" y="45" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Supplier</text>
+        <text x="50" y="65" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">12 Active</text>
+        <text x="50" y="85" fill="#10B981" font-family="Arial" font-size="12" text-anchor="middle">On Track</text>
+      </g>
+      
+      <!-- Arrow 1 -->
+      <path d="M110 50h40" stroke="#FF5722" stroke-width="2"/>
+      <polygon points="150,50 140,45 140,55" fill="#FF5722"/>
+      
+      <!-- Manufacturing -->
+      <g transform="translate(160, 0)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.2" rx="10"/>
+        <text x="50" y="45" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Production</text>
+        <text x="50" y="65" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">85% Capacity</text>
+        <text x="50" y="85" fill="#10B981" font-family="Arial" font-size="12" text-anchor="middle">Optimal</text>
+      </g>
+      
+      <!-- Arrow 2 -->
+      <path d="M270 50h40" stroke="#FF5722" stroke-width="2"/>
+      <polygon points="310,50 300,45 300,55" fill="#FF5722"/>
+      
+      <!-- Distribution -->
+      <g transform="translate(320, 0)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.3" rx="10"/>
+        <text x="50" y="45" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Distribution</text>
+        <text x="50" y="65" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">8 Centers</text>
+        <text x="50" y="85" fill="#EF4444" font-family="Arial" font-size="12" text-anchor="middle">Delayed</text>
+      </g>
+      
+      <!-- Arrow 3 -->
+      <path d="M430 50h40" stroke="#FF5722" stroke-width="2"/>
+      <polygon points="470,50 460,45 460,55" fill="#FF5722"/>
+      
+      <!-- Retail -->
+      <g transform="translate(480, 0)">
+        <rect width="100" height="100" fill="#FF5722" opacity="0.4" rx="10"/>
+        <text x="50" y="45" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Retail</text>
+        <text x="50" y="65" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">24 Stores</text>
+        <text x="50" y="85" fill="#10B981" font-family="Arial" font-size="12" text-anchor="middle">Stocked</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(40, 340)">
+    <!-- Inventory Levels -->
+    <rect width="350" height="220" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Inventory Levels</text>
+    
+    <!-- Bar Chart -->
+    <g transform="translate(20, 60)">
+      <!-- Grid -->
+      <path d="M0 140h310M0 105h310M0 70h310M0 35h310" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+      
+      <!-- Bars -->
+      <g transform="translate(20, 0)">
+        <rect width="40" height="100" y="40" fill="#FF5722" opacity="0.2"/>
+        <text x="20" y="155" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Raw</text>
+      </g>
+      
+      <g transform="translate(90, 0)">
+        <rect width="40" height="80" y="60" fill="#FF5722" opacity="0.4"/>
+        <text x="20" y="155" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">WIP</text>
+      </g>
+      
+      <g transform="translate(160, 0)">
+        <rect width="40" height="120" y="20" fill="#FF5722" opacity="0.6"/>
+        <text x="20" y="155" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Finished</text>
+      </g>
+      
+      <g transform="translate(230, 0)">
+        <rect width="40" height="90" y="50" fill="#FF5722" opacity="0.8"/>
+        <text x="20" y="155" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Transit</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- KPIs -->
+  <g transform="translate(410, 340)">
+    <rect width="350" height="220" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Key Metrics</text>
+    
+    <!-- KPI Grid -->
+    <g transform="translate(20, 70)">
+      <!-- Order Fulfillment -->
+      <text x="0" y="0" fill="#64748b" font-family="Arial" font-size="14">Order Fulfillment Rate</text>
+      <text x="280" y="0" fill="#10B981" font-family="Arial" font-size="14">96%</text>
+      
+      <!-- Lead Time -->
+      <text x="0" y="40" fill="#64748b" font-family="Arial" font-size="14">Average Lead Time</text>
+      <text x="280" y="40" fill="#FF5722" font-family="Arial" font-size="14">4.2 days</text>
+      
+      <!-- Inventory Turnover -->
+      <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">Inventory Turnover</text>
+      <text x="280" y="80" fill="#10B981" font-family="Arial" font-size="14">12x/year</text>
+      
+      <!-- Cost -->
+      <text x="0" y="120" fill="#64748b" font-family="Arial" font-size="14">Logistics Cost</text>
+      <text x="280" y="120" fill="#FF5722" font-family="Arial" font-size="14">$1.2M</text>
+    </g>
+  </g>
+</svg>

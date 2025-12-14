@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="cicdGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" fill="#166534" text-anchor="middle" font-weight="bold">CI/CD Pipeline Architecture</text>
+  
+  <!-- Pipeline Stages -->
+  <!-- Source -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#24292e"/>
+    <text x="40" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Source</text>
+    <text x="40" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Git Repository</text>
+  </g>
+  
+  <!-- Build -->
+  <g transform="translate(170, 100)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#f97316"/>
+    <text x="40" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Build</text>
+    <text x="40" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Compile & Package</text>
+  </g>
+  
+  <!-- Test -->
+  <g transform="translate(290, 100)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#3b82f6"/>
+    <text x="40" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Test</text>
+    <text x="40" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Unit & Integration</text>
+  </g>
+  
+  <!-- Security Scan -->
+  <g transform="translate(410, 100)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#ef4444"/>
+    <text x="40" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Security</text>
+    <text x="40" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Vulnerability Scan</text>
+  </g>
+  
+  <!-- Deploy Staging -->
+  <g transform="translate(530, 100)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#8b5cf6"/>
+    <text x="40" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Deploy</text>
+    <text x="40" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Staging</text>
+  </g>
+  
+  <!-- Deploy Production -->
+  <g transform="translate(650, 100)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#cicdGradient)"/>
+    <text x="40" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Deploy</text>
+    <text x="40" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Production</text>
+  </g>
+  
+  <!-- Pipeline Flow Arrows -->
+  <path d="M 135 130 L 165 130" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 255 130 L 285 130" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 375 130 L 405 130" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 495 130 L 525 130" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 615 130 L 645 130" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Tools -->
+  <g transform="translate(50, 220)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#166534" font-weight="bold">Tools Used:</text>
+    <text x="0" y="20" font-family="Arial" font-size="12" fill="#64748b">• Jenkins/GitHub Actions</text>
+    <text x="0" y="35" font-family="Arial" font-size="12" fill="#64748b">• Docker containers</text>
+    <text x="0" y="50" font-family="Arial" font-size="12" fill="#64748b">• Automated testing</text>
+    <text x="250" y="20" font-family="Arial" font-size="12" fill="#64748b">• SonarQube (Quality)</text>
+    <text x="250" y="35" font-family="Arial" font-size="12" fill="#64748b">• OWASP (Security)</text>
+    <text x="250" y="50" font-family="Arial" font-size="12" fill="#64748b">• Kubernetes deployment</text>
+    <text x="500" y="20" font-family="Arial" font-size="12" fill="#64748b">• Monitoring & alerts</text>
+    <text x="500" y="35" font-family="Arial" font-size="12" fill="#64748b">• Rollback capabilities</text>
+    <text x="500" y="50" font-family="Arial" font-size="12" fill="#64748b">• Infrastructure as Code</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 700">
+  <defs>
+    <linearGradient id="gradientStocks" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3949ab;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a237e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Phone Frame -->
+  <rect width="400" height="700" fill="#1a1a1a" rx="40"/>
+  <rect x="20" y="40" width="360" height="620" fill="#ffffff" rx="30"/>
+  
+  <!-- Status Bar -->
+  <rect x="20" y="40" width="360" height="30" fill="#1a237e"/>
+  <text x="200" y="60" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">9:41 AM</text>
+  
+  <!-- Header -->
+  <rect x="20" y="70" width="360" height="60" fill="#1a237e"/>
+  <text x="200" y="100" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Stocks &amp; Funds</text>
+  
+  <!-- Portfolio Value Card -->
+  <rect x="40" y="150" width="320" height="100" fill="url(#gradientStocks)" rx="12"/>
+  <text x="200" y="180" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.8)" text-anchor="middle">Total Portfolio Value</text>
+  <text x="200" y="215" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">$45,230</text>
+  <text x="200" y="235" font-family="Arial, sans-serif" font-size="14" fill="#4caf50" text-anchor="middle">+2.4% Today</text>
+  
+  <!-- Stocks Section -->
+  <text x="40" y="290" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a237e">Stocks</text>
+  
+  <!-- Stock Item 1 -->
+  <rect x="40" y="310" width="320" height="70" fill="#f8f9fa" rx="8"/>
+  <circle cx="70" cy="345" r="20" fill="#3949ab"/>
+  <text x="70" y="351" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">A</text>
+  <text x="100" y="335" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e">AAPL</text>
+  <text x="100" y="355" font-family="Arial, sans-serif" font-size="12" fill="#666">Apple Inc.</text>
+  <text x="320" y="335" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e" text-anchor="end">$175.50</text>
+  <text x="320" y="355" font-family="Arial, sans-serif" font-size="12" fill="#4caf50" text-anchor="end">+1.2%</text>
+  
+  <!-- Stock Item 2 -->
+  <rect x="40" y="390" width="320" height="70" fill="#ffffff" rx="8"/>
+  <circle cx="70" cy="425" r="20" fill="#4caf50"/>
+  <text x="70" y="431" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">G</text>
+  <text x="100" y="415" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e">GOOGL</text>
+  <text x="100" y="435" font-family="Arial, sans-serif" font-size="12" fill="#666">Alphabet Inc.</text>
+  <text x="320" y="415" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e" text-anchor="end">$142.30</text>
+  <text x="320" y="435" font-family="Arial, sans-serif" font-size="12" fill="#4caf50" text-anchor="end">+0.8%</text>
+  
+  <!-- Mutual Funds Section -->
+  <text x="40" y="500" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a237e">Mutual Funds</text>
+  
+  <!-- Fund Item 1 -->
+  <rect x="40" y="520" width="320" height="80" fill="#f8f9fa" rx="8"/>
+  <rect x="60" y="540" width="50" height="50" fill="#3949ab" rx="4"/>
+  <text x="85" y="570" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">MF</text>
+  <text x="120" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e">Growth Fund</text>
+  <text x="120" y="565" font-family="Arial, sans-serif" font-size="12" fill="#666">Equity • High Risk</text>
+  <text x="320" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e" text-anchor="end">$12,450</text>
+  <text x="320" y="565" font-family="Arial, sans-serif" font-size="12" fill="#4caf50" text-anchor="end">+5.2%</text>
+  
+  <!-- Fund Item 2 -->
+  <rect x="40" y="610" width="320" height="80" fill="#ffffff" rx="8"/>
+  <rect x="60" y="630" width="50" height="50" fill="#4caf50" rx="4"/>
+  <text x="85" y="660" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">MF</text>
+  <text x="120" y="635" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e">Balanced Fund</text>
+  <text x="120" y="655" font-family="Arial, sans-serif" font-size="12" fill="#666">Mixed • Medium Risk</text>
+  <text x="320" y="635" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a237e" text-anchor="end">$8,920</text>
+  <text x="320" y="655" font-family="Arial, sans-serif" font-size="12" fill="#4caf50" text-anchor="end">+3.1%</text>
+  
+  <!-- Bottom Navigation -->
+  <rect x="20" y="630" width="360" height="30" fill="#f8f9fa"/>
+  <circle cx="100" cy="645" r="8" fill="#3949ab"/>
+  <circle cx="200" cy="645" r="8" fill="#ccc"/>
+  <circle cx="300" cy="645" r="8" fill="#ccc"/>
+</svg>
+

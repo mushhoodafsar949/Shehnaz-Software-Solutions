@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="innovationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="50%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" font-family="Arial, sans-serif" font-size="16" fill="#166534" text-anchor="middle" font-weight="bold">Innovation Lab</text>
+  
+  <!-- Lab Equipment -->
+  <g transform="translate(150, 60)">
+    <!-- Light Bulb -->
+    <circle cx="0" cy="0" r="20" fill="url(#innovationGradient)" opacity="0.8"/>
+    <path d="M -8 15 Q 0 20 8 15" stroke="#f59e0b" stroke-width="3" fill="none"/>
+    <rect x="-3" y="18" width="6" height="8" rx="1" fill="#64748b"/>
+    <text x="0" y="35" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">Ideas</text>
+  </g>
+  
+  <!-- Research Equipment -->
+  <g transform="translate(80, 120)">
+    <!-- Microscope -->
+    <rect x="0" y="0" width="30" height="40" rx="3" fill="#1e293b"/>
+    <circle cx="15" cy="10" r="8" fill="#22c55e"/>
+    <rect x="12" y="25" width="6" height="15" fill="#64748b"/>
+    <text x="15" y="50" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">Research</text>
+  </g>
+  
+  <!-- Computer Setup -->
+  <g transform="translate(250, 110)">
+    <rect x="0" y="0" width="60" height="40" rx="4" fill="#1e293b"/>
+    <rect x="3" y="3" width="54" height="34" rx="2" fill="#22c55e"/>
+    <text x="30" y="23" font-family="Arial" font-size="8" fill="white" text-anchor="middle">AI Model</text>
+    <text x="30" y="55" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">Development</text>
+  </g>
+  
+  <!-- Prototype -->
+  <g transform="translate(320, 60)">
+    <rect x="0" y="0" width="25" height="35" rx="3" fill="#3b82f6"/>
+    <circle cx="12.5" cy="10" r="4" fill="white"/>
+    <rect x="8" y="18" width="9" height="3" rx="1" fill="white"/>
+    <rect x="8" y="24" width="9" height="3" rx="1" fill="white"/>
+    <text x="12.5" y="45" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">Prototype</text>
+  </g>
+  
+  <!-- Process Flow -->
+  <g transform="translate(50, 180)">
+    <!-- Step 1: Ideation -->
+    <rect x="0" y="0" width="60" height="30" rx="4" fill="#f1f5f9"/>
+    <text x="30" y="20" font-family="Arial" font-size="10" fill="#166534" text-anchor="middle" font-weight="bold">Ideation</text>
+    
+    <!-- Arrow -->
+    <path d="M 65 15 L 75 15" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2: Research -->
+    <rect x="80" y="0" width="60" height="30" rx="4" fill="#f1f5f9"/>
+    <text x="110" y="20" font-family="Arial" font-size="10" fill="#166534" text-anchor="middle" font-weight="bold">Research</text>
+    
+    <!-- Arrow -->
+    <path d="M 145 15 L 155 15" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3: Prototype -->
+    <rect x="160" y="0" width="60" height="30" rx="4" fill="#f1f5f9"/>
+    <text x="190" y="20" font-family="Arial" font-size="10" fill="#166534" text-anchor="middle" font-weight="bold">Prototype</text>
+    
+    <!-- Arrow -->
+    <path d="M 225 15 L 235 15" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4: Deploy -->
+    <rect x="240" y="0" width="60" height="30" rx="4" fill="#f1f5f9"/>
+    <text x="270" y="20" font-family="Arial" font-size="10" fill="#166534" text-anchor="middle" font-weight="bold">Deploy</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+  
+  <!-- Innovation Areas -->
+  <g transform="translate(50, 240)">
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="#166534" font-weight="bold">Focus Areas:</text>
+    <text x="0" y="15" font-family="Arial" font-size="10" fill="#64748b">• Emerging technologies</text>
+    <text x="0" y="28" font-family="Arial" font-size="10" fill="#64748b">• R&amp;D initiatives</text>
+    <text x="0" y="41" font-family="Arial" font-size="10" fill="#64748b">• Future tech exploration</text>
+    <text x="200" y="15" font-family="Arial" font-size="10" fill="#64748b">• Innovation partnerships</text>
+    <text x="200" y="28" font-family="Arial" font-size="10" fill="#64748b">• Technology incubation</text>
+    <text x="200" y="41" font-family="Arial" font-size="10" fill="#64748b">• Proof of concepts</text>
+  </g>
+</svg>

@@ -1,31 +1,44 @@
-<nav class="navbar">
+<nav class="navbar" [class.scrolled]="isScrolled">
   <div class="navbar-container">
     <div class="navbar-brand">
-      <a routerLink="/" class="navbar-logo-link">
-        <img src="assets/logo.jpg" alt="Nest Tech Solutions Logo" class="navbar-logo" width="40" height="40">
+      <a routerLink="/" class="navbar-logo-link" (click)="closeMenu()">
+        <img src="assets/logo.svg" alt="Nest Tech Solutions Logo" class="navbar-logo" width="40" height="40">
         <span class="brand-name">Nest Tech Solutions</span>
       </a>
     </div>
 
     <div class="navbar-menu-container" [class.is-open]="menuOpen">
       <div class="navbar-menu">
-        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="navbar-item">Home</a>
-        <a routerLink="/about" routerLinkActive="active-link" class="navbar-item">About</a>
-        <a routerLink="/services" routerLinkActive="active-link" class="navbar-item">Services</a>
-        <a routerLink="/contact" routerLinkActive="active-link" class="navbar-item">Contact</a>
-        <a routerLink="/feedback" routerLinkActive="active-link" class="navbar-item">Feedback</a>
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="navbar-item" (click)="closeMenu()">Home</a>
+        <a routerLink="/about" routerLinkActive="active-link" class="navbar-item" (click)="closeMenu()">Company</a>
+        <a routerLink="/services" routerLinkActive="active-link" class="navbar-item" (click)="closeMenu()">Solutions</a>
+        <a routerLink="/contact" routerLinkActive="active-link" class="navbar-item" (click)="closeMenu()">Connect</a>
+        <a routerLink="/feedback" routerLinkActive="active-link" class="navbar-item" (click)="closeMenu()">Reviews</a>
       </div>
       
       <div class="navbar-actions">
-        <button class="theme-toggle-btn" (click)="toggleTheme()" [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' mode'">
-          <mat-icon>{{ currentTheme === 'light' ? 'dark_mode' : 'light_mode' }}</mat-icon>
+        <button pButton pRipple 
+                type="button"
+                class="theme-toggle-btn p-button-rounded p-button-text" 
+                (click)="toggleTheme()" 
+                [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' mode'"
+                [attr.title]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' mode'">
+          <i [class]="currentTheme === 'light' ? 'pi pi-sun' : 'pi pi-moon'"></i>
         </button>
-        <button class="navbar-cta" mat-raised-button color="primary" (click)="openQuoteDialog()">Get a Quote</button>
+        <button pButton pRipple 
+                type="button"
+                label="Start Project"
+                class="navbar-cta p-button-raised" 
+                (click)="openQuoteDialog()">
+        </button>
       </div>
     </div>
 
-    <button class="hamburger-menu" (click)="toggleMenu()">
-      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+    <button pButton pRipple 
+            type="button"
+            class="hamburger-menu p-button-rounded p-button-text" 
+            (click)="toggleMenu()">
+      <i [class]="menuOpen ? 'pi pi-times' : 'pi pi-bars'"></i>
     </button>
   </div>
 </nav> 

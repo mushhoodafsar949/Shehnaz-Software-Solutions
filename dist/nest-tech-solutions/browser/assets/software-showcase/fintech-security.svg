@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Security Shield -->
+  <g transform="translate(300, 100)">
+    <!-- Shield Base -->
+    <path d="M100,20 L180,60 V180 C180,240 100,280 100,280 C100,280 20,240 20,180 V60 L100,20z" 
+          fill="#2196F3" opacity="0.1" stroke="#2196F3" stroke-width="4"/>
+    
+    <!-- Checkmark -->
+    <path d="M60,140 L90,170 L140,100" 
+          fill="none" stroke="#2196F3" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Security Features -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">Security Features</text>
+    
+    <!-- Feature List -->
+    <g transform="translate(0, 60)">
+      <!-- Two-Factor Authentication -->
+      <g transform="translate(0, 0)">
+        <circle cx="20" cy="20" r="15" fill="#2196F3" opacity="0.1"/>
+        <text x="50" y="25" fill="#1e293b" font-family="Arial" font-size="16">Two-Factor Authentication</text>
+        <path d="M15,20 L25,20 M20,15 L20,25" stroke="#2196F3" stroke-width="2"/>
+      </g>
+      
+      <!-- Encryption -->
+      <g transform="translate(0, 50)">
+        <circle cx="20" cy="20" r="15" fill="#2196F3" opacity="0.1"/>
+        <text x="50" y="25" fill="#1e293b" font-family="Arial" font-size="16">End-to-End Encryption</text>
+        <path d="M15,20 C15,15 25,15 25,20" stroke="#2196F3" stroke-width="2" fill="none"/>
+      </g>
+      
+      <!-- Biometric -->
+      <g transform="translate(0, 100)">
+        <circle cx="20" cy="20" r="15" fill="#2196F3" opacity="0.1"/>
+        <text x="50" y="25" fill="#1e293b" font-family="Arial" font-size="16">Biometric Authentication</text>
+        <circle cx="20" cy="20" r="8" stroke="#2196F3" stroke-width="2" fill="none"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Security Metrics -->
+  <g transform="translate(40, 400)">
+    <rect width="720" height="160" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Uptime -->
+    <g transform="translate(40, 40)">
+      <text x="0" y="0" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">System Uptime</text>
+      <text x="0" y="30" fill="#10B981" font-family="Arial" font-size="24">99.99%</text>
+    </g>
+    
+    <!-- Response Time -->
+    <g transform="translate(240, 40)">
+      <text x="0" y="0" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Avg Response Time</text>
+      <text x="0" y="30" fill="#2196F3" font-family="Arial" font-size="24">124ms</text>
+    </g>
+    
+    <!-- Threat Detection -->
+    <g transform="translate(440, 40)">
+      <text x="0" y="0" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Threats Blocked</text>
+      <text x="0" y="30" fill="#EF4444" font-family="Arial" font-size="24">1.2M+</text>
+    </g>
+  </g>
+  
+  <!-- Encryption Animation -->
+  <g transform="translate(500, 100)">
+    <!-- Data Packets -->
+    <g>
+      <rect x="0" y="0" width="40" height="40" fill="#2196F3" opacity="0.1" rx="5"/>
+      <text x="20" y="25" fill="#2196F3" font-family="Arial" font-size="12" text-anchor="middle">01</text>
+    </g>
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="40" height="40" fill="#2196F3" opacity="0.2" rx="5"/>
+      <text x="20" y="25" fill="#2196F3" font-family="Arial" font-size="12" text-anchor="middle">10</text>
+    </g>
+    <g transform="translate(120, 0)">
+      <rect x="0" y="0" width="40" height="40" fill="#2196F3" opacity="0.3" rx="5"/>
+      <text x="20" y="25" fill="#2196F3" font-family="Arial" font-size="12" text-anchor="middle">11</text>
+    </g>
+    
+    <!-- Encryption Lines -->
+    <path d="M20,50 C20,80 100,80 100,110 C100,140 20,140 20,170" 
+          stroke="#2196F3" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+    <path d="M80,50 C80,80 160,80 160,110 C160,140 80,140 80,170" 
+          stroke="#2196F3" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+    <path d="M140,50 C140,80 220,80 220,110 C220,140 140,140 140,170" 
+          stroke="#2196F3" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  </g>
+</svg>

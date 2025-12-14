@@ -1,0 +1,59 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="healthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8bc34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2196f3;stop-opacity:1" />
+    </linearGradient>
+    <filter id="healthGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main circle -->
+  <circle cx="40" cy="40" r="38" fill="url(#healthGradient)" filter="url(#healthGlow)" opacity="0.9"/>
+  
+  <!-- Medical cross and AI elements -->
+  <g transform="translate(40, 40)">
+    <!-- Main medical cross -->
+    <rect x="-3" y="-15" width="6" height="30" fill="#ffffff" rx="1"/>
+    <rect x="-15" y="-3" width="30" height="6" fill="#ffffff" rx="1"/>
+    
+    <!-- AI brain pattern around cross -->
+    <g opacity="0.8">
+      <!-- Neural network nodes -->
+      <circle cx="-20" cy="-15" r="2" fill="#ffffff"/>
+      <circle cx="20" cy="-15" r="2" fill="#ffffff"/>
+      <circle cx="-20" cy="15" r="2" fill="#ffffff"/>
+      <circle cx="20" cy="15" r="2" fill="#ffffff"/>
+      <circle cx="-25" cy="0" r="1.5" fill="#ffffff"/>
+      <circle cx="25" cy="0" r="1.5" fill="#ffffff"/>
+      
+      <!-- Connection lines representing AI processing -->
+      <path d="M -20,-15 Q -10,-8 0,0 Q 10,-8 20,-15" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.6"/>
+      <path d="M -20,15 Q -10,8 0,0 Q 10,8 20,15" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.6"/>
+      <line x1="-25" y1="0" x2="-15" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      <line x1="25" y1="0" x2="15" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+    </g>
+    
+    <!-- Heart pulse line -->
+    <g transform="translate(0, 22)">
+      <path d="M -15,0 L -10,0 L -8,-4 L -5,8 L -2,-6 L 2,4 L 5,-2 L 8,0 L 15,0" 
+            stroke="#ffffff" stroke-width="2" fill="none" opacity="0.9"/>
+    </g>
+    
+    <!-- DNA helix elements -->
+    <g transform="translate(-30, 0)" opacity="0.7">
+      <path d="M 0,-10 Q 2,-5 0,0 Q -2,5 0,10" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+      <path d="M 4,-10 Q 2,-5 4,0 Q 6,5 4,10" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+    </g>
+    <g transform="translate(30, 0)" opacity="0.7">
+      <path d="M 0,-10 Q 2,-5 0,0 Q -2,5 0,10" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+      <path d="M -4,-10 Q -2,-5 -4,0 Q -6,5 -4,10" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,129 +1,808 @@
-<!-- Company Logo Background -->
-<div class="feedback-modern-wrapper">
-  <div class="feedback-modern-card">
-    <div class="feedback-modern-columns">
-      <!-- Left: Illustration/Animated SVG -->
-      <div class="feedback-modern-illustration">
-
-        <div class="feedback-modern-illustration-text">
-          <div class="logo-3s">
-            <img src="assets/logo.jpg" alt="Nest Tech Solutions Logo" class="feedback-logo" loading="lazy" width="60" height="60">
-          </div>
-          <h2>We Love Your Feedback!</h2>
-          <p>Help us improve and grow by sharing your thoughts.</p>
+<!-- Modern Hero Section with Dynamic Stats -->
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="pi pi-star-fill"></i>
+          <span>Trusted by 500+ Companies</span>
         </div>
-      </div>
-      <!-- Right: Form -->
-      <div class="feedback-modern-form-container">
-        <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm" class="feedback-modern-form">
-          <h1 class="form-title">Share Your Experience</h1>
-          <div class="form-row">
-            <mat-form-field appearance="outline" class="modern-field">
-              <mat-icon matPrefix>person</mat-icon>
-              <input matInput name="name" [(ngModel)]="feedback.name" placeholder="Your Name" required />
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="modern-field">
-              <mat-icon matPrefix>email</mat-icon>
-              <input matInput name="email" [(ngModel)]="feedback.email" type="email" placeholder="Email Address" required />
-            </mat-form-field>
-          </div>
-          <mat-form-field appearance="outline" class="modern-field">
-            <mat-icon matPrefix>subject</mat-icon>
-            <input matInput name="subject" [(ngModel)]="feedback.subject" placeholder="Subject" required />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="modern-field">
-            <mat-icon matPrefix>chat</mat-icon>
-            <textarea matInput name="message" [(ngModel)]="feedback.message" rows="4" placeholder="Your Message" required></textarea>
-          </mat-form-field>
-          <div class="form-row">
-            <mat-form-field appearance="outline" class="modern-field">
-              <mat-icon matPrefix>vpn_key</mat-icon>
-              <input matInput name="token" [(ngModel)]="feedback.token" placeholder="Feedback Token" required />
-            </mat-form-field>
-            <div *ngIf="tokenError" class="token-error">{{ tokenError }}</div>
-          </div>
-          <div class="modern-rating">
-            <label class="rating-label">Rate Us</label>
-            <div class="rating-stars">
-              <button type="button" *ngFor="let star of [1,2,3,4,5]" class="star-btn" [class.active]="feedback.rating >= star" (click)="setRating(star)">
-                <mat-icon>{{ feedback.rating >= star ? 'star' : 'star_outline' }}</mat-icon>
-              </button>
+        <h1 class="hero-title">
+          Share Your <span class="gradient-text">Experience</span>
+        </h1>
+        <p class="hero-subtitle">
+          Join our community of satisfied clients. Your feedback drives innovation 
+          and helps us deliver exceptional software solutions that exceed expectations.
+        </p>
+        
+        <!-- Live Stats Counter -->
+        <div class="hero-stats" [@statsAnimation]>
+          <div class="stat-item" *ngFor="let stat of liveStats; trackBy: trackByStatId">
+            <div class="stat-icon">
+              <i [class]="stat.icon"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number" [attr.data-target]="stat.value">{{ stat.displayValue }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+              <span class="stat-trend" [class.positive]="stat.trend > 0" [class.negative]="stat.trend < 0">
+                <i [class]="stat.trend > 0 ? 'pi pi-arrow-up' : 'pi pi-arrow-down'"></i>
+                {{ Math.abs(stat.trend) }}%
+              </span>
             </div>
           </div>
-          <button mat-raised-button color="primary" class="modern-submit-btn" type="submit" [disabled]="!feedbackForm.valid || isSubmitting">
-            <mat-icon *ngIf="!isSubmitting">send</mat-icon>
-            <span *ngIf="isSubmitting" class="loading-text">Sending...</span>
-            {{ isSubmitting ? '' : 'Send Feedback' }}
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
 
-<!-- FEEDBACK DISPLAY SECTION -->
-<section class="feedback-display-section">
-  <div class="display-container">
-    <div class="section-header">
-      <h2>Why Your Feedback Matters</h2>
-      <p>Help us deliver exceptional software solutions</p>
-    </div>
-    <div class="feedback-benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <mat-icon>trending_up</mat-icon>
-        </div>
-        <div class="benefit-content">
-          <h4>Continuous Improvement</h4>
-          <p>Your insights help us enhance our development processes and deliver better solutions.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <mat-icon>lightbulb</mat-icon>
-        </div>
-        <div class="benefit-content">
-          <h4>Innovation Drive</h4>
-          <p>Your feedback inspires new features and technologies that benefit all our clients.</p>
+        <!-- Quick Action Buttons -->
+        <div class="hero-actions">
+          <button pButton pRipple 
+                  type="button" 
+                  label="Quick Feedback" 
+                  icon="pi pi-comment"
+                  class="p-button-primary p-button-lg"
+                  (click)="openQuickFeedback()">
+          </button>
+          <button pButton pRipple 
+                  type="button" 
+                  label="View All Reviews" 
+                  icon="pi pi-eye"
+                  class="p-button-outlined p-button-lg"
+                  (click)="scrollToReviews()">
+          </button>
         </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <mat-icon>support_agent</mat-icon>
-        </div>
-        <div class="benefit-content">
-          <h4>Better Support</h4>
-          <p>Your suggestions help us provide more responsive and effective customer service.</p>
+      
+      <!-- Interactive Feedback Widget -->
+      <div class="hero-widget">
+        <div class="widget-card" [@cardHover]>
+          <div class="widget-header">
+            <div class="widget-title">
+              <img src="assets/logo.svg" alt="Nest Tech Solutions" class="widget-logo">
+              <div>
+                <h3>Feedback Center</h3>
+                <p>Choose your feedback type</p>
+              </div>
+            </div>
+            <div class="widget-status">
+              <div class="status-indicator active"></div>
+              <span>Live</span>
+            </div>
+          </div>
+          
+          <!-- Feedback Type Selector -->
+          <div class="feedback-types">
+            <div class="type-card" 
+                 *ngFor="let type of feedbackTypes; trackBy: trackByTypeId" 
+                 [class.active]="selectedFeedbackType === type.id"
+                 (click)="selectFeedbackType(type.id)"
+                 [@typeSelection]>
+              <div class="type-icon">
+                <i [class]="type.icon"></i>
+              </div>
+              <div class="type-content">
+                <h4>{{ type.title }}</h4>
+                <p>{{ type.description }}</p>
+                <span class="type-count">{{ type.count }} submissions</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <mat-icon>handshake</mat-icon>
-        </div>
-        <div class="benefit-content">
-          <h4>Stronger Partnership</h4>
-          <p>Your feedback strengthens our relationship and ensures we meet your exact needs.</p>
-        </div>
-      </div>
-    </div>
-    <div class="empty-state" *ngIf="feedbacks.length === 0">
-      <div class="empty-icon">
-        <mat-icon>chat_bubble_outline</mat-icon>
-      </div>
-      <h3>Be the First to Share</h3>
-      <p>Your feedback will help us improve and serve you better</p>
     </div>
   </div>
 </section>
 
-<!-- SUCCESS MESSAGE -->
-<div class="success-overlay" *ngIf="showSuccess">
-  <div class="success-card">
-    <div class="success-icon">
-      <mat-icon>check_circle</mat-icon>
+<!-- Advanced Feedback Collection Section -->
+<section class="feedback-collection-section" *ngIf="selectedFeedbackType">
+  <div class="collection-container">
+    <div class="section-header">
+      <h2>{{ getCurrentFeedbackType()?.title }} Form</h2>
+      <p>{{ getCurrentFeedbackType()?.longDescription }}</p>
     </div>
-    <h3>Thank You!</h3>
-    <p>Your feedback has been submitted successfully. We'll review it and get back to you soon.</p>
-    <button mat-raised-button color="primary" (click)="closeSuccess()">Close</button>
+
+    <!-- Dynamic Form Based on Type -->
+    <div class="dynamic-form-container">
+      <form #dynamicForm="ngForm" (ngSubmit)="submitAdvancedFeedback()" class="advanced-form">
+        
+        <!-- Personal Information -->
+        <div class="form-section">
+          <h3><i class="pi pi-user"></i> Contact Information</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <span class="p-float-label">
+                <input pInputText 
+                       id="clientName" 
+                       name="clientName" 
+                       [(ngModel)]="advancedFeedback.clientName" 
+                       class="w-full" 
+                       required />
+                <label for="clientName">Full Name *</label>
+              </span>
+            </div>
+            
+            <div class="form-field">
+              <span class="p-float-label">
+                <input pInputText 
+                       id="clientEmail" 
+                       name="clientEmail" 
+                       [(ngModel)]="advancedFeedback.clientEmail" 
+                       type="email" 
+                       class="w-full" 
+                       required />
+                <label for="clientEmail">Email Address *</label>
+              </span>
+            </div>
+
+            <div class="form-field">
+              <span class="p-float-label">
+                <input pInputText 
+                       id="company" 
+                       name="company" 
+                       [(ngModel)]="advancedFeedback.company" 
+                       class="w-full" />
+                <label for="company">Company/Organization</label>
+              </span>
+            </div>
+
+            <div class="form-field">
+              <span class="p-float-label">
+                <p-dropdown id="industry"
+                           name="industry"
+                           [(ngModel)]="advancedFeedback.industry"
+                           [options]="industries"
+                           optionLabel="label"
+                           optionValue="value"
+                           placeholder="Select Industry"
+                           class="w-full">
+                </p-dropdown>
+                <label for="industry">Industry</label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Specific (if project feedback) -->
+        <div class="form-section" *ngIf="selectedFeedbackType === 'project'">
+          <h3><i class="pi pi-briefcase"></i> Project Details</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <span class="p-float-label">
+                <input pInputText 
+                       id="projectName" 
+                       name="projectName" 
+                       [(ngModel)]="advancedFeedback.projectName" 
+                       class="w-full" 
+                       required />
+                <label for="projectName">Project Name *</label>
+              </span>
+            </div>
+
+            <div class="form-field">
+              <span class="p-float-label">
+                <p-calendar id="completionDate"
+                           name="completionDate"
+                           [(ngModel)]="advancedFeedback.completionDate"
+                           dateFormat="mm/dd/yy"
+                           placeholder="Select Date"
+                           class="w-full">
+                </p-calendar>
+                <label for="completionDate">Project Completion Date</label>
+              </span>
+            </div>
+
+            <div class="form-field">
+              <span class="p-float-label">
+                <p-multiSelect id="services"
+                              name="services"
+                              [(ngModel)]="advancedFeedback.servicesUsed"
+                              [options]="serviceOptions"
+                              optionLabel="label"
+                              optionValue="value"
+                              placeholder="Select Services"
+                              class="w-full">
+                </p-multiSelect>
+                <label for="services">Services Used</label>
+              </span>
+            </div>
+
+            <div class="form-field">
+              <span class="p-float-label">
+                <p-dropdown id="projectSize"
+                           name="projectSize"
+                           [(ngModel)]="advancedFeedback.projectSize"
+                           [options]="projectSizes"
+                           optionLabel="label"
+                           optionValue="value"
+                           placeholder="Select Size"
+                           class="w-full">
+                </p-dropdown>
+                <label for="projectSize">Project Size</label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="form-section">
+          <h3><i class="pi pi-star"></i> Rate Your Experience</h3>
+          <div class="rating-grid">
+            <div class="rating-item" *ngFor="let ratingCategory of ratingCategories">
+              <label class="rating-label">{{ ratingCategory.name }}</label>
+              <p-rating [(ngModel)]="advancedFeedback.ratings[ratingCategory.key]" 
+                        [name]="'rating_' + ratingCategory.key"
+                        [stars]="5" 
+                        [cancel]="false"
+                        class="custom-rating">
+              </p-rating>
+              <span class="rating-description">{{ ratingCategory.description }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Feedback -->
+        <div class="form-section">
+          <h3><i class="pi pi-comment"></i> Detailed Feedback</h3>
+          
+          <div class="form-field">
+            <span class="p-float-label">
+              <textarea pInputTextarea 
+                        id="highlights" 
+                        name="highlights" 
+                        [(ngModel)]="advancedFeedback.highlights" 
+                        [rows]="3" 
+                        [autoResize]="true"
+                        class="w-full">
+              </textarea>
+              <label for="highlights">What did we do well?</label>
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="p-float-label">
+              <textarea pInputTextarea 
+                        id="improvements" 
+                        name="improvements" 
+                        [(ngModel)]="advancedFeedback.improvements" 
+                        [rows]="3" 
+                        [autoResize]="true"
+                        class="w-full">
+              </textarea>
+              <label for="improvements">What could we improve?</label>
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="p-float-label">
+              <textarea pInputTextarea 
+                        id="recommendation" 
+                        name="recommendation" 
+                        [(ngModel)]="advancedFeedback.recommendation" 
+                        [rows]="2" 
+                        [autoResize]="true"
+                        class="w-full">
+              </textarea>
+              <label for="recommendation">Would you recommend us to others? Why?</label>
+            </span>
+          </div>
+        </div>
+
+        <!-- Permissions and Publishing -->
+        <div class="form-section">
+          <h3><i class="pi pi-shield"></i> Privacy & Publishing</h3>
+          
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <p-checkbox inputId="allowPublish" 
+                          name="allowPublish" 
+                          [(ngModel)]="advancedFeedback.allowPublish" 
+                          [binary]="true">
+              </p-checkbox>
+              <label for="allowPublish">Allow us to publish this feedback as a testimonial</label>
+            </div>
+
+            <div class="checkbox-item">
+              <p-checkbox inputId="showCompany" 
+                          name="showCompany" 
+                          [(ngModel)]="advancedFeedback.showCompany" 
+                          [binary]="true">
+              </p-checkbox>
+              <label for="showCompany">Display company name in testimonial</label>
+            </div>
+
+            <div class="checkbox-item">
+              <p-checkbox inputId="contactForCase" 
+                          name="contactForCase" 
+                          [(ngModel)]="advancedFeedback.contactForCase" 
+                          [binary]="true">
+              </p-checkbox>
+              <label for="contactForCase">Contact me for potential case study</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Section -->
+        <div class="form-submit">
+          <div class="submit-info">
+            <i class="pi pi-info-circle"></i>
+            <span>Your feedback helps us improve and may be featured on our website (with your permission)</span>
+          </div>
+          
+          <div class="submit-actions">
+            <button pButton pRipple 
+                    type="button" 
+                    label="Save as Draft" 
+                    icon="pi pi-save"
+                    class="p-button-secondary"
+                    (click)="saveDraft()">
+            </button>
+            
+            <button pButton pRipple 
+                    type="submit" 
+                    label="Submit Feedback" 
+                    icon="pi pi-send"
+                    class="p-button-primary submit-btn"
+                    [loading]="isSubmitting"
+                    [disabled]="!dynamicForm.valid || isSubmitting">
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-</div> 
+</section>
+
+<!-- Impact & Benefits Section -->
+<section class="impact-section">
+  <div class="impact-container">
+    <div class="section-header">
+      <h2>Your Feedback Creates Real Impact</h2>
+      <p>See how client insights drive our continuous improvement and innovation</p>
+    </div>
+    
+    <div class="impact-grid">
+      <div class="impact-card" *ngFor="let impact of impactMetrics; let i = index" [@impactAnimation]="{value: '', params: {delay: i * 100}}">
+        <div class="impact-visual">
+          <div class="impact-chart">
+            <p-progressBar [value]="impact.progress" 
+                          [style]="{'height': '8px'}"
+                          [showValue]="false">
+            </p-progressBar>
+          </div>
+          <div class="impact-icon">
+            <i [class]="impact.icon"></i>
+          </div>
+        </div>
+        <div class="impact-content">
+          <h3>{{ impact.title }}</h3>
+          <p>{{ impact.description }}</p>
+          <div class="impact-stats">
+            <span class="stat-value">{{ impact.value }}</span>
+            <span class="stat-label">{{ impact.metric }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Advanced Reviews & Testimonials Section -->
+<section class="reviews-section" #reviewsSection>
+  <div class="reviews-container">
+    <div class="section-header">
+      <h2>Client Success Stories</h2>
+      <p>Discover how we've helped businesses achieve their goals through innovative software solutions</p>
+      
+      <!-- Advanced Filters -->
+      <div class="review-filters">
+        <div class="filter-group">
+          <div class="filter-item">
+            <p-dropdown [(ngModel)]="reviewFilters.industry"
+                       [options]="industryFilters"
+                       optionLabel="label"
+                       optionValue="value"
+                       placeholder="All Industries"
+                       [showClear]="true"
+                       (onChange)="filterReviews()">
+            </p-dropdown>
+          </div>
+          
+          <div class="filter-item">
+            <p-dropdown [(ngModel)]="reviewFilters.rating"
+                       [options]="ratingFilters"
+                       optionLabel="label"
+                       optionValue="value"
+                       placeholder="All Ratings"
+                       [showClear]="true"
+                       (onChange)="filterReviews()">
+            </p-dropdown>
+          </div>
+          
+          <div class="filter-item">
+            <p-dropdown [(ngModel)]="reviewFilters.service"
+                       [options]="serviceFilters"
+                       optionLabel="label"
+                       optionValue="value"
+                       placeholder="All Services"
+                       [showClear]="true"
+                       (onChange)="filterReviews()">
+            </p-dropdown>
+          </div>
+          
+          <div class="filter-item">
+            <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input pInputText 
+                     [(ngModel)]="reviewFilters.search"
+                     placeholder="Search reviews..."
+                     (input)="searchReviews($event)"
+                     class="search-input" />
+            </span>
+          </div>
+        </div>
+        
+        <div class="view-controls">
+          <div class="button-group">
+            <button pButton pRipple 
+                    type="button"
+                    icon="pi pi-th-large"
+                    [class.active]="viewMode === 'grid'"
+                    (click)="setViewMode('grid')"
+                    class="p-button-outlined view-btn">
+            </button>
+            <button pButton pRipple 
+                    type="button"
+                    icon="pi pi-list"
+                    [class.active]="viewMode === 'list'"
+                    (click)="setViewMode('list')"
+                    class="p-button-outlined view-btn">
+            </button>
+          </div>
+          
+          <p-dropdown [(ngModel)]="sortOption"
+                     [options]="sortOptions"
+                     optionLabel="label"
+                     optionValue="value"
+                     (onChange)="sortReviews()"
+                     class="sort-dropdown">
+          </p-dropdown>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Reviews Display -->
+    <div class="reviews-display" [class.list-view]="viewMode === 'list'" [class.grid-view]="viewMode === 'grid'">
+      <div class="review-card" 
+           *ngFor="let review of filteredReviews; trackBy: trackByReviewId; let i = index" 
+           [@reviewAnimation]="{value: '', params: {delay: i * 50}}">
+        
+        <!-- Enhanced Review Header -->
+        <div class="review-header">
+          <div class="review-avatar">
+            <img *ngIf="review.avatar" [src]="review.avatar" [alt]="review.name" class="avatar-img">
+            <div *ngIf="!review.avatar" class="avatar-placeholder">
+              {{ getInitials(review.name) }}
+            </div>
+          </div>
+          
+          <div class="review-info">
+            <div class="reviewer-details">
+              <h4>{{ review.name }}</h4>
+              <span class="reviewer-role" *ngIf="review.position">{{ review.position }}</span>
+              <span class="reviewer-company" *ngIf="review.company">{{ review.company }}</span>
+            </div>
+            
+            <div class="review-rating">
+              <p-rating [ngModel]="review.rating" 
+                        [readonly]="true" 
+                        [stars]="5" 
+                        [cancel]="false">
+              </p-rating>
+              <span class="rating-score">{{ review.rating }}/5</span>
+            </div>
+          </div>
+          
+          <div class="review-actions">
+            <button pButton pRipple 
+                    type="button"
+                    icon="pi pi-heart"
+                    [class.liked]="review.isLiked"
+                    class="p-button-text like-btn"
+                    (click)="toggleLike(review)">
+            </button>
+            <span class="like-count">{{ review.likes || 0 }}</span>
+            
+            <button pButton pRipple 
+                    type="button"
+                    icon="pi pi-share-alt"
+                    class="p-button-text share-btn"
+                    (click)="shareReview(review)">
+            </button>
+          </div>
+        </div>
+        
+        <!-- Enhanced Review Content -->
+        <div class="review-content">
+          <div class="review-project" *ngIf="review.projectName">
+            <i class="pi pi-briefcase"></i>
+            <span>Project: {{ review.projectName }}</span>
+          </div>
+          
+          <h5 class="review-title">{{ review.subject }}</h5>
+          
+          <div class="review-text" [class.expanded]="review.expanded">
+            <p>{{ review.message }}</p>
+          </div>
+          
+          <button *ngIf="review.message.length > 200" 
+                  pButton pRipple 
+                  type="button"
+                  [label]="review.expanded ? 'Show Less' : 'Read More'"
+                  class="p-button-text expand-btn"
+                  (click)="toggleExpand(review)">
+          </button>
+          
+          <!-- Review Metrics (for project reviews) -->
+          <div class="review-metrics" *ngIf="review.metrics">
+            <div class="metric-item" *ngFor="let metric of review.metrics">
+              <span class="metric-label">{{ metric.label }}</span>
+              <div class="metric-bar">
+                <div class="metric-fill" [style.width.%]="metric.value * 20"></div>
+              </div>
+              <span class="metric-value">{{ metric.value }}/5</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Enhanced Review Footer -->
+        <div class="review-footer">
+          <div class="review-meta">
+            <span class="review-date">
+              <i class="pi pi-calendar"></i>
+              {{ review.date | date:'mediumDate' }}
+            </span>
+            
+            <span class="review-verified" *ngIf="review.verified">
+              <i class="pi pi-check-circle"></i>
+              Verified Client
+            </span>
+          </div>
+          
+          <div class="review-tags">
+            <span *ngFor="let tag of review.tags" 
+                  class="review-tag"
+                  [class]="'tag-' + tag.type">
+              {{ tag.name }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Load More / Pagination -->
+    <div class="reviews-pagination" *ngIf="totalReviews > displayedReviews">
+      <button pButton pRipple 
+              type="button"
+              label="Load More Reviews"
+              icon="pi pi-chevron-down"
+              class="p-button-outlined load-more-btn"
+              (click)="loadMoreReviews()"
+              [loading]="loadingMoreReviews">
+      </button>
+      
+      <p class="pagination-info">
+        Showing {{ displayedReviews }} of {{ totalReviews }} reviews
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Analytics Dashboard (Admin View) -->
+<section class="analytics-section" *ngIf="showAnalytics">
+  <div class="analytics-container">
+    <div class="section-header">
+      <h2>Feedback Analytics</h2>
+      <p>Insights and trends from client feedback</p>
+    </div>
+    
+    <div class="analytics-grid">
+      <!-- Rating Distribution -->
+      <div class="analytics-card">
+        <h3>Rating Distribution</h3>
+        <p-chart type="doughnut" 
+                 [data]="ratingChartData" 
+                 [options]="chartOptions"
+                 class="rating-chart">
+        </p-chart>
+      </div>
+      
+      <!-- Feedback Trends -->
+      <div class="analytics-card">
+        <h3>Feedback Trends</h3>
+        <p-chart type="line" 
+                 [data]="trendsChartData" 
+                 [options]="chartOptions"
+                 class="trends-chart">
+        </p-chart>
+      </div>
+      
+      <!-- Key Metrics -->
+      <div class="analytics-card">
+        <h3>Key Metrics</h3>
+        <div class="metrics-list">
+          <div class="metric" *ngFor="let metric of keyMetrics">
+            <span class="metric-label">{{ metric.label }}</span>
+            <span class="metric-value" [class]="metric.trend">{{ metric.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Success Modal -->
+<p-dialog [(visible)]="showSuccessModal" 
+          [modal]="true" 
+          [closable]="false"
+          [draggable]="false"
+          [resizable]="false"
+          styleClass="success-dialog"
+          [style]="{width: '500px'}">
+  <div class="success-content">
+    <div class="success-animation">
+      <div class="success-checkmark">
+        <i class="pi pi-check"></i>
+      </div>
+      <div class="success-confetti"></div>
+    </div>
+    
+    <h2>Thank You for Your Feedback!</h2>
+    
+    <div class="success-details">
+      <p>Your feedback has been submitted successfully. Here's what happens next:</p>
+      
+      <div class="next-steps">
+        <div class="step-item">
+          <div class="step-icon">
+            <i class="pi pi-clock"></i>
+          </div>
+          <div class="step-content">
+            <h4>Review Process</h4>
+            <p>Our team will review your feedback within 24 hours</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-icon">
+            <i class="pi pi-send"></i>
+          </div>
+          <div class="step-content">
+            <h4>Follow-up</h4>
+            <p>We'll reach out if we need any clarification</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-icon">
+            <i class="pi pi-star"></i>
+          </div>
+          <div class="step-content">
+            <h4>Implementation</h4>
+            <p>Your suggestions help shape our future updates</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="success-actions">
+      <button pButton pRipple 
+              type="button" 
+              label="Submit Another" 
+              icon="pi pi-plus"
+              class="p-button-outlined"
+              (click)="submitAnother()">
+      </button>
+      
+      <button pButton pRipple 
+              type="button" 
+              label="View All Reviews" 
+              icon="pi pi-eye"
+              class="p-button-primary"
+              (click)="viewAllReviews()">
+      </button>
+    </div>
+  </div>
+</p-dialog>
+
+<!-- Quick Feedback Modal -->
+<p-dialog [(visible)]="showQuickFeedback" 
+          [modal]="true" 
+          [closable]="true"
+          [draggable]="false"
+          [resizable]="false"
+          styleClass="quick-feedback-dialog"
+          header="Quick Feedback"
+          [style]="{width: '600px'}">
+  <div class="quick-feedback-content">
+    <div class="quick-rating">
+      <h3>How would you rate your experience?</h3>
+      <div class="emoji-rating">
+        <div class="emoji-option" 
+             *ngFor="let emoji of emojiRatings; let i = index" 
+             [class.selected]="quickFeedback.rating === i + 1"
+             (click)="setQuickRating(i + 1)">
+          <div class="emoji">{{ emoji.emoji }}</div>
+          <span class="emoji-label">{{ emoji.label }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="quick-comment" *ngIf="quickFeedback.rating > 0">
+      <span class="p-float-label">
+        <textarea pInputTextarea 
+                  id="quickComment" 
+                  [(ngModel)]="quickFeedback.comment" 
+                  [rows]="3" 
+                  [autoResize]="true"
+                  class="w-full" 
+                  placeholder="Tell us more about your experience (optional)">
+        </textarea>
+      </span>
+    </div>
+  </div>
+  
+  <ng-template pTemplate="footer">
+    <button pButton pRipple 
+            type="button" 
+            label="Skip" 
+            class="p-button-text"
+            (click)="closeQuickFeedback()">
+    </button>
+    
+    <button pButton pRipple 
+            type="button" 
+            label="Submit" 
+            icon="pi pi-send"
+            class="p-button-primary"
+            [disabled]="quickFeedback.rating === 0"
+            (click)="submitQuickFeedback()">
+    </button>
+  </ng-template>
+</p-dialog>
+
+<!-- Feedback Share Modal -->
+<p-dialog [(visible)]="showShareModal" 
+          [modal]="true" 
+          [closable]="true"
+          [draggable]="false"
+          [resizable]="false"
+          styleClass="share-modal"
+          header="Share Review"
+          [style]="{width: '400px'}">
+  <div class="share-options">
+    <button pButton pRipple 
+            type="button" 
+            label="Copy Link" 
+            icon="pi pi-copy"
+            class="p-button-outlined w-full mb-2"
+            (click)="copyReviewLink()">
+    </button>
+    
+    <button pButton pRipple 
+            type="button" 
+            label="Share on LinkedIn" 
+            icon="pi pi-linkedin"
+            class="p-button-outlined w-full mb-2"
+            (click)="shareOnLinkedIn()">
+    </button>
+    
+    <button pButton pRipple 
+            type="button" 
+            label="Share on Twitter" 
+            icon="pi pi-twitter"
+            class="p-button-outlined w-full"
+            (click)="shareOnTwitter()">
+    </button>
+  </div>
+</p-dialog>
+
+<!-- Toast for notifications -->
+<p-toast position="top-right"></p-toast> 

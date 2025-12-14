@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">FinTech Suite - Sprint Workflow</text>
+  
+  <!-- Sprint Planning Phase -->
+  <g transform="translate(50, 100)">
+    <rect width="200" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="100" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Sprint Planning</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- Backlog Refinement -->
+      <rect width="160" height="80" fill="url(#grad1)" opacity="0.15" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Backlog Refinement</text>
+      <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Feature Prioritization</text>
+      <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Estimation</text>
+      
+      <!-- Sprint Goals -->
+      <g transform="translate(0, 100)">
+        <rect width="160" height="80" fill="url(#grad1)" opacity="0.15" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Sprint Goals</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Web Portal Features</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Mobile App Features</text>
+      </g>
+      
+      <!-- Task Breakdown -->
+      <g transform="translate(0, 200)">
+        <rect width="160" height="80" fill="url(#grad1)" opacity="0.15" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Task Breakdown</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">API Development</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">UI Components</text>
+      </g>
+      
+      <!-- Resource Allocation -->
+      <g transform="translate(0, 300)">
+        <rect width="160" height="80" fill="url(#grad1)" opacity="0.15" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Resource Allocation</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Frontend Team</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Backend Team</text>
+      </g>
+      
+      <!-- Risk Assessment -->
+      <g transform="translate(0, 400)">
+        <rect width="160" height="80" fill="url(#grad1)" opacity="0.15" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Risk Assessment</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Security Review</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Compliance Check</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Development Phase -->
+  <g transform="translate(300, 100)">
+    <rect width="200" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="100" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Development</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- Code Development -->
+      <rect width="160" height="80" fill="url(#grad2)" opacity="0.15" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Code Development</text>
+      <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Angular Web App</text>
+      <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Flutter Mobile</text>
+      
+      <!-- Code Review -->
+      <g transform="translate(0, 100)">
+        <rect width="160" height="80" fill="url(#grad2)" opacity="0.15" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Code Review</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Peer Review</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Quality Check</text>
+      </g>
+      
+      <!-- Unit Testing -->
+      <g transform="translate(0, 200)">
+        <rect width="160" height="80" fill="url(#grad2)" opacity="0.15" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Unit Testing</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Jest Tests</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Coverage 80%+</text>
+      </g>
+      
+      <!-- Integration -->
+      <g transform="translate(0, 300)">
+        <rect width="160" height="80" fill="url(#grad2)" opacity="0.15" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Integration</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">API Integration</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Payment Gateways</text>
+      </g>
+      
+      <!-- Daily Standups -->
+      <g transform="translate(0, 400)">
+        <rect width="160" height="80" fill="url(#grad2)" opacity="0.15" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Daily Standups</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Progress Updates</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Blockers Review</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Testing Phase -->
+  <g transform="translate(550, 100)">
+    <rect width="200" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="100" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Testing</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- QA Testing -->
+      <rect width="160" height="80" fill="url(#grad3)" opacity="0.15" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">QA Testing</text>
+      <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Functional Tests</text>
+      <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Regression Tests</text>
+      
+      <!-- Security Testing -->
+      <g transform="translate(0, 100)">
+        <rect width="160" height="80" fill="url(#grad3)" opacity="0.15" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Security Testing</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Penetration Tests</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Vulnerability Scan</text>
+      </g>
+      
+      <!-- Performance Testing -->
+      <g transform="translate(0, 200)">
+        <rect width="160" height="80" fill="url(#grad3)" opacity="0.15" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Performance Testing</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Load Testing</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Stress Testing</text>
+      </g>
+      
+      <!-- UAT -->
+      <g transform="translate(0, 300)">
+        <rect width="160" height="80" fill="url(#grad3)" opacity="0.15" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">User Acceptance</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Stakeholder Review</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Feedback Collection</text>
+      </g>
+      
+      <!-- Bug Fixes -->
+      <g transform="translate(0, 400)">
+        <rect width="160" height="80" fill="url(#grad3)" opacity="0.15" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Bug Fixes</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Issue Resolution</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Re-testing</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Deployment Phase -->
+  <g transform="translate(800, 100)">
+    <rect width="200" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="100" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Deployment</text>
+    
+    <g transform="translate(20, 70)">
+      <!-- Staging Deploy -->
+      <rect width="160" height="80" fill="url(#grad4)" opacity="0.15" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Staging Deploy</text>
+      <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Pre-production</text>
+      <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Smoke Tests</text>
+      
+      <!-- Production Deploy -->
+      <g transform="translate(0, 100)">
+        <rect width="160" height="80" fill="url(#grad4)" opacity="0.15" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Production Deploy</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Zero Downtime</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Rollback Ready</text>
+      </g>
+      
+      <!-- Monitoring -->
+      <g transform="translate(0, 200)">
+        <rect width="160" height="80" fill="url(#grad4)" opacity="0.15" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Monitoring</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Health Checks</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Performance Metrics</text>
+      </g>
+      
+      <!-- Post-Deploy -->
+      <g transform="translate(0, 300)">
+        <rect width="160" height="80" fill="url(#grad4)" opacity="0.15" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Post-Deploy</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Verification</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Documentation</text>
+      </g>
+      
+      <!-- Sprint Review -->
+      <g transform="translate(0, 400)">
+        <rect width="160" height="80" fill="url(#grad4)" opacity="0.15" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="80" y="30" fill="#1e293b" font-family="Arial" font-size="13" text-anchor="middle" font-weight="600">Sprint Review</text>
+        <text x="80" y="50" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Demo to Stakeholders</text>
+        <text x="80" y="65" fill="#64748b" font-family="Arial" font-size="11" text-anchor="middle">Feedback Collection</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Retrospective Phase -->
+  <g transform="translate(1050, 100)">
+    <rect width="100" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="50" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Retro</text>
+    
+    <g transform="translate(10, 70)">
+      <!-- What Went Well -->
+      <rect width="80" height="100" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="40" y="25" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">What Went</text>
+      <text x="40" y="40" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">Well</text>
+      
+      <!-- What to Improve -->
+      <g transform="translate(0, 120)">
+        <rect width="80" height="100" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="40" y="25" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">What to</text>
+        <text x="40" y="40" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">Improve</text>
+      </g>
+      
+      <!-- Action Items -->
+      <g transform="translate(0, 240)">
+        <rect width="80" height="100" fill="#6366f1" opacity="0.2" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="40" y="25" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">Action</text>
+        <text x="40" y="40" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">Items</text>
+      </g>
+      
+      <!-- Velocity -->
+      <g transform="translate(0, 360)">
+        <rect width="80" height="100" fill="#2563eb" opacity="0.2" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="40" y="25" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">Velocity</text>
+        <text x="40" y="40" fill="#1e293b" font-family="Arial" font-size="11" text-anchor="middle" font-weight="600">Tracking</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+      </marker>
+    </defs>
+    <!-- Planning to Development -->
+    <path d="M250 400 L300 400"/>
+    <!-- Development to Testing -->
+    <path d="M500 400 L550 400"/>
+    <!-- Testing to Deployment -->
+    <path d="M750 400 L800 400"/>
+    <!-- Deployment to Retro -->
+    <path d="M1000 400 L1050 400"/>
+  </g>
+</svg>
+

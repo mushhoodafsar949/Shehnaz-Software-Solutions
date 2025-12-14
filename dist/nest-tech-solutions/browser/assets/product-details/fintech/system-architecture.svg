@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Title -->
+  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">FinTech Suite - System Architecture</text>
+  
+  <!-- Client Layer -->
+  <g transform="translate(50, 100)">
+    <rect width="1100" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Client Applications</text>
+    
+    <!-- Web App -->
+    <g transform="translate(20, 60)">
+      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Web Trading Platform</text>
+    </g>
+    
+    <!-- Mobile App -->
+    <g transform="translate(240, 60)">
+      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Mobile Apps (iOS/Android)</text>
+    </g>
+    
+    <!-- API Clients -->
+    <g transform="translate(460, 60)">
+      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">API Integration Clients</text>
+    </g>
+    
+    <!-- Admin Dashboard -->
+    <g transform="translate(680, 60)">
+      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Admin Dashboard</text>
+    </g>
+  </g>
+  
+  <!-- Load Balancer -->
+  <g transform="translate(50, 240)">
+    <rect width="1100" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="10"/>
+    <text x="550" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Load Balancer + SSL Termination</text>
+  </g>
+  
+  <!-- Core Services -->
+  <g transform="translate(50, 320)">
+    <rect width="1100" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Core Services</text>
+    
+    <!-- Trading Engine -->
+    <g transform="translate(20, 70)">
+      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Trading Engine</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Order Matching</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Price Discovery</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Risk Management</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Position Tracking</text>
+    </g>
+    
+    <!-- Blockchain Network -->
+    <g transform="translate(290, 70)">
+      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Blockchain Network</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Smart Contracts</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Transaction Validation</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Asset Tokenization</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Consensus Protocol</text>
+    </g>
+    
+    <!-- Analytics Engine -->
+    <g transform="translate(560, 70)">
+      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Analytics Engine</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Market Analysis</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• ML Predictions</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Risk Analytics</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Portfolio Analysis</text>
+    </g>
+    
+    <!-- User Services -->
+    <g transform="translate(830, 70)">
+      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">User Services</text>
+      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Account Management</text>
+      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• KYC/AML</text>
+      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Wallet Management</text>
+      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Authentication</text>
+    </g>
+  </g>
+  
+  <!-- Data Layer -->
+  <g transform="translate(50, 620)">
+    <rect width="1100" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Data Layer</text>
+    
+    <!-- Time Series DB -->
+    <g transform="translate(20, 60)">
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">InfluxDB</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Market Data</text>
+    </g>
+    
+    <!-- Blockchain DB -->
+    <g transform="translate(240, 60)">
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Ethereum Network</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Smart Contracts</text>
+    </g>
+    
+    <!-- User DB -->
+    <g transform="translate(460, 60)">
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">PostgreSQL</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">User Data</text>
+    </g>
+    
+    <!-- Cache -->
+    <g transform="translate(680, 60)">
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Redis Cluster</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Real-time Data</text>
+    </g>
+    
+    <!-- Analytics DB -->
+    <g transform="translate(900, 60)">
+      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">ClickHouse</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Analytics Data</text>
+    </g>
+  </g>
+</svg>

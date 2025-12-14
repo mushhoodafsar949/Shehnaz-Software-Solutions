@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { trigger, transition, style, animate, keyframes } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
+import { PerformanceService } from '../../core/performance.service';
+import { environment } from '../../../environments/environment';
+
+// PrimeNG Imports
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { RippleModule } from 'primeng/ripple';
+import { ChipModule } from 'primeng/chip';
+import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
+import { DividerModule } from 'primeng/divider';
+import { SoftwareShowcaseComponent } from './software-showcase.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [
       transition(':enter', [
@@ -70,25 +80,117 @@ import { ViewportScroller } from '@angular/common';
     ])
   ],
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule, MatButtonModule]
+  imports: [
+    CommonModule,
+    ButtonModule,
+    CardModule,
+    RippleModule,
+    ChipModule,
+    CarouselModule,
+    TagModule,
+    DividerModule,
+    SoftwareShowcaseComponent
+  ]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterViewInit {
   ceoImagePath = '../../../assets/home/mushhood.png';
   imageLoaded = false;
   imageError = false;
-  
+
+  features = [
+    {
+      icon: 'pi pi-bolt',
+      title: 'Innovation',
+      description: 'Cutting-edge solutions using the latest technologies'
+    },
+    {
+      icon: 'pi pi-chart-line',
+      title: 'Growth',
+      description: 'Scalable solutions that grow with your business'
+    },
+    {
+      icon: 'pi pi-cog',
+      title: 'Efficiency',
+      description: 'Optimized processes and automated workflows'
+    },
+    {
+      icon: 'pi pi-rocket',
+      title: 'Speed',
+      description: 'Fast development and deployment cycles'
+    }
+  ];
+
+  services = [
+    {
+      icon: 'pi pi-desktop',
+      title: 'Web Development',
+      description: 'Modern, responsive web applications built with cutting-edge frameworks'
+    },
+    {
+      icon: 'pi pi-cloud',
+      title: 'Cloud Solutions',
+      description: 'Scalable cloud infrastructure and DevOps automation'
+    },
+    {
+      icon: 'pi pi-shield',
+      title: 'Security',
+      description: 'Enterprise-grade security and compliance solutions'
+    },
+    {
+      icon: 'pi pi-chart-bar',
+      title: 'Analytics',
+      description: 'Data-driven insights and business intelligence'
+    }
+  ];
+
+  testimonials = [
+    {
+      quote: 'Nest Tech Solutions delivered our platform ahead of schedule and exceeded all expectations. Their team is truly world-class.',
+      author: 'Sarah Johnson',
+      company: 'TechStart Inc.',
+      rating: 5
+    },
+    {
+      quote: 'The best software partner we have ever worked with. Their cloud migration expertise helped us scale 10x faster than expected.',
+      author: 'Ahmed Rahman',
+      company: 'FinTech Solutions',
+      rating: 5
+    },
+    {
+      quote: 'Their analytics platform transformed our decision-making process. ROI was achieved within the first quarter.',
+      author: 'Priya Sharma',
+      company: 'DataCorp',
+      rating: 5
+    }
+  ];
+
   constructor(
     private router: Router,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private performanceService: PerformanceService
   ) {}
-  
-  onImageError(event: any) {
-    console.error('Failed to load CEO image:', event.target.src);
-    this.imageError = true;
-    event.target.style.display = 'none';
+
+  ngOnInit(): void {
+    this.performanceService.markStart('home-component-init');
+  }
+
+  ngAfterViewInit(): void {
+    this.performanceService.markEnd('home-component-init');
+    
+    if (!environment.production) {
+      setTimeout(() => {
+        this.performanceService.reportPerformance();
+      }, 2000);
+    }
   }
   
-  onImageLoad(event: any) {
+  onImageError(event: Event) {
+    console.error('Failed to load CEO image:', (event.target as HTMLImageElement).src);
+    this.imageError = true;
+    (event.target as HTMLElement).style.display = 'none';
+  }
+  
+  onImageLoad(event: Event) {
     console.log('CEO image loaded successfully');
     this.imageLoaded = true;
   }
@@ -102,4 +204,4 @@ export class HomeComponent {
     this.viewportScroller.scrollToPosition([0, 0]);
     this.router.navigate(['/quote']);
   }
-} 
+}

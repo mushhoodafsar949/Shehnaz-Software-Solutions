@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Video Call Interface -->
+  <g transform="translate(40, 40)">
+    <!-- Main Video Window -->
+    <rect width="480" height="360" fill="#1e293b" rx="10"/>
+    <text x="220" y="180" fill="white" font-family="Arial" font-size="24" text-anchor="middle">Dr. Sarah Wilson</text>
+    <circle cx="240" cy="120" r="50" fill="#6366f1"/>
+    <text x="240" y="135" fill="white" font-family="Arial" font-size="36" text-anchor="middle">SW</text>
+    
+    <!-- Patient Video -->
+    <rect x="320" y="240" width="140" height="100" fill="#374151" rx="5"/>
+    <text x="390" y="290" fill="white" font-family="Arial" font-size="14" text-anchor="middle">You</text>
+    
+    <!-- Controls -->
+    <g transform="translate(120, 320)">
+      <!-- Mute -->
+      <circle cx="40" cy="0" r="20" fill="#6366f1"/>
+      <text x="40" y="5" fill="white" font-family="Arial" font-size="14" text-anchor="middle">🎤</text>
+      
+      <!-- Video -->
+      <circle cx="120" cy="0" r="20" fill="#6366f1"/>
+      <text x="120" y="5" fill="white" font-family="Arial" font-size="14" text-anchor="middle">📹</text>
+      
+      <!-- End Call -->
+      <circle cx="200" cy="0" r="20" fill="#ef4444"/>
+      <text x="200" y="5" fill="white" font-family="Arial" font-size="14" text-anchor="middle">📞</text>
+    </g>
+  </g>
+  
+  <!-- Chat and Notes -->
+  <g transform="translate(540, 40)">
+    <rect width="220" height="520" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Chat Header -->
+    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Consultation Notes</text>
+    
+    <!-- Messages -->
+    <g transform="translate(20, 60)">
+      <!-- Doctor's Message -->
+      <rect width="180" height="60" fill="#f1f5f9" rx="10"/>
+      <text x="10" y="20" fill="#64748b" font-family="Arial" font-size="12">Dr. Wilson</text>
+      <text x="10" y="40" fill="#1e293b" font-family="Arial" font-size="14">How have you been feeling since last week?</text>
+      
+      <!-- Patient's Message -->
+      <rect y="70" width="180" height="60" fill="#ede9fe" rx="10"/>
+      <text x="10" y="90" fill="#64748b" font-family="Arial" font-size="12">You</text>
+      <text x="10" y="110" fill="#1e293b" font-family="Arial" font-size="14">Much better, the medication helped.</text>
+    </g>
+    
+    <!-- Input Area -->
+    <g transform="translate(20, 460)">
+      <rect width="180" height="40" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="20"/>
+      <text x="20" y="25" fill="#94a3b8" font-family="Arial" font-size="14">Type a message...</text>
+    </g>
+  </g>
+  
+  <!-- Patient Info Panel -->
+  <g transform="translate(40, 420)">
+    <rect width="480" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
+    
+    <!-- Vital Signs -->
+    <text x="20" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Current Vital Signs</text>
+    <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">Heart Rate: 72 bpm</text>
+    <text x="20" y="80" fill="#64748b" font-family="Arial" font-size="14">Blood Pressure: 120/80</text>
+    <text x="20" y="100" fill="#64748b" font-family="Arial" font-size="14">Temperature: 98.6°F</text>
+    
+    <!-- Prescription -->
+    <text x="240" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Current Medication</text>
+    <text x="240" y="60" fill="#64748b" font-family="Arial" font-size="14">Amoxicillin 500mg</text>
+    <text x="240" y="80" fill="#64748b" font-family="Arial" font-size="14">3 times daily</text>
+    <text x="240" y="100" fill="#64748b" font-family="Arial" font-size="14">5 days remaining</text>
+  </g>
+</svg>
