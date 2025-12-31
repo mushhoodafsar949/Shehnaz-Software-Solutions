@@ -1,48 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, delay } from 'rxjs';
-
-interface AdvancedFeedback {
-  id?: string;
-  clientName: string;
-  clientEmail: string;
-  company?: string;
-  industry?: string;
-  projectName?: string;
-  completionDate?: Date;
-  servicesUsed?: string[];
-  projectSize?: string;
-  ratings: { [key: string]: number };
-  highlights: string;
-  improvements: string;
-  recommendation: string;
-  allowPublish: boolean;
-  showCompany: boolean;
-  contactForCase: boolean;
-  type?: string;
-  date?: Date;
-}
-
-interface Review {
-  id: string;
-  name: string;
-  email: string;
-  company?: string;
-  position?: string;
-  avatar?: string;
-  rating: number;
-  subject: string;
-  message: string;
-  projectName?: string;
-  date: Date;
-  tags: { name: string; type: string }[];
-  verified: boolean;
-  likes?: number;
-  isLiked?: boolean;
-  expanded?: boolean;
-  metrics?: { label: string; value: number }[];
-  industry?: string;
-  services?: string[];
-}
+import { AdvancedFeedback, Review, ReviewTag, ReviewMetric } from './feedback.types';
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +16,7 @@ export class FeedbackService {
       avatar: '',
       rating: 5,
       subject: 'Outstanding E-commerce Platform Development',
-      message: 'Nest Tech Solutions exceeded our expectations in every way. They delivered a robust, scalable e-commerce platform that has increased our sales by 150%. The team was professional, responsive, and truly understood our business needs. The code quality is exceptional, and the ongoing support has been fantastic. I would highly recommend them for any serious software development project.',
+      message: 'Nest Tech AI Solutions exceeded our expectations in every way. They delivered a robust, scalable e-commerce platform that has increased our sales by 150%. The team was professional, responsive, and truly understood our business needs. The code quality is exceptional, and the ongoing support has been fantastic. I would highly recommend them for any serious software development project.',
       projectName: 'E-commerce Platform Rebuild',
       date: new Date('2024-01-15'),
       tags: [
@@ -89,7 +47,7 @@ export class FeedbackService {
       avatar: '',
       rating: 5,
       subject: 'Revolutionary Healthcare Management System',
-      message: 'The healthcare management system developed by Nest Tech Solutions has transformed our operations. Patient scheduling is now seamless, and our staff productivity has increased significantly. The HIPAA compliance was handled perfectly, and the system integrates beautifully with our existing infrastructure.',
+      message: 'The healthcare management system developed by Nest Tech AI Solutions has transformed our operations. Patient scheduling is now seamless, and our staff productivity has increased significantly. The HIPAA compliance was handled perfectly, and the system integrates beautifully with our existing infrastructure.',
       projectName: 'Healthcare Management System',
       date: new Date('2024-01-10'),
       tags: [
@@ -120,7 +78,7 @@ export class FeedbackService {
       avatar: '',
       rating: 4,
       subject: 'Solid Financial Dashboard Development',
-      message: 'Great experience working with Nest Tech Solutions on our financial dashboard. The real-time analytics and reporting features are exactly what we needed. The team was knowledgeable about financial regulations and security requirements. Minor delays in delivery, but the quality made up for it.',
+      message: 'Great experience working with Nest Tech AI Solutions on our financial dashboard. The real-time analytics and reporting features are exactly what we needed. The team was knowledgeable about financial regulations and security requirements. Minor delays in delivery, but the quality made up for it.',
       projectName: 'Financial Analytics Dashboard',
       date: new Date('2024-01-05'),
       tags: [
@@ -151,7 +109,7 @@ export class FeedbackService {
       avatar: '',
       rating: 5,
       subject: 'MVP Development That Secured Our Funding',
-      message: 'Nest Tech Solutions helped us build an MVP that directly contributed to securing our Series A funding. Their understanding of startup needs and ability to work within tight budgets while maintaining quality is remarkable. The product they delivered was investor-ready and technically sound.',
+      message: 'Nest Tech AI Solutions helped us build an MVP that directly contributed to securing our Series A funding. Their understanding of startup needs and ability to work within tight budgets while maintaining quality is remarkable. The product they delivered was investor-ready and technically sound.',
       projectName: 'SaaS MVP Development',
       date: new Date('2023-12-28'),
       tags: [
@@ -265,15 +223,27 @@ export class FeedbackService {
     return of(feedback).pipe(delay(300));
   }
 
-  postFeedback(feedback: any): Observable<any> {
-    const newFeedback = {
-      ...feedback,
+  postFeedback(feedback: Partial<Review>): Observable<Review> {
+    const newFeedback: Review = {
       id: Date.now().toString(),
+      name: feedback.name || 'Anonymous',
+      email: feedback.email || '',
+      company: feedback.company,
+      position: feedback.position,
+      avatar: feedback.avatar,
+      rating: feedback.rating || 0,
+      subject: feedback.subject || '',
+      message: feedback.message || '',
+      projectName: feedback.projectName,
       date: new Date(),
+      tags: feedback.tags || [],
       verified: false,
       likes: 0,
       isLiked: false,
-      expanded: false
+      expanded: false,
+      metrics: feedback.metrics,
+      industry: feedback.industry,
+      services: feedback.services
     };
     this.feedbacks.unshift(newFeedback);
     return of(newFeedback).pipe(delay(1000)); // Simulate submission delay
@@ -329,7 +299,7 @@ export class FeedbackService {
     return of(filtered).pipe(delay(400));
   }
 
-  filterFeedbacks(filters: any): Observable<Review[]> {
+  filterFeedbacks(filters: Partial<{ industry: string; rating: string; service: string; verified: boolean }>): Observable<Review[]> {
     let filtered = [...this.feedbacks];
 
     if (filters.industry) {
@@ -342,7 +312,7 @@ export class FeedbackService {
     }
 
     if (filters.service) {
-      filtered = filtered.filter(f => f.services?.includes(filters.service));
+      filtered = filtered.filter(f => f.services?.includes(filters.service as string));
     }
 
     if (filters.verified !== undefined) {
@@ -377,8 +347,8 @@ export class FeedbackService {
     return parts.join('\n\n');
   }
 
-  private generateTagsFromFeedback(feedback: AdvancedFeedback): { name: string; type: string }[] {
-    const tags: { name: string; type: string }[] = [];
+  private generateTagsFromFeedback(feedback: AdvancedFeedback): ReviewTag[] {
+    const tags: ReviewTag[] = [];
     
     const overallRating = this.calculateOverallRating(feedback.ratings);
     
@@ -411,7 +381,7 @@ export class FeedbackService {
     return tags;
   }
 
-  private formatMetrics(ratings: { [key: string]: number }): { label: string; value: number }[] {
+  private formatMetrics(ratings: { [key: string]: number }): ReviewMetric[] {
     return Object.entries(ratings).map(([key, value]) => ({
       label: this.formatMetricLabel(key),
       value: value

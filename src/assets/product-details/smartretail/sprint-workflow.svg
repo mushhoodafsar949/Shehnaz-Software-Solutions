@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#bgGrad)" rx="16"/>
+  
+  <text x="600" y="45" fill="#0f172a" font-family="system-ui, sans-serif" font-size="24" font-weight="700" text-anchor="middle">SmartRetail Sprint Workflow</text>
+  
+  <!-- Sprint Phases -->
+  <g transform="translate(50, 80)">
+    <!-- Planning -->
+    <g>
+      <rect width="200" height="180" fill="#fff" stroke="#3b82f6" stroke-width="2" rx="12"/>
+      <rect width="200" height="45" fill="#3b82f6" rx="12 12 0 0"/>
+      <text x="100" y="30" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Sprint Planning</text>
+      <text x="20" y="75" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Backlog Grooming</text>
+      <text x="20" y="100" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Story Estimation</text>
+      <text x="20" y="125" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Sprint Goals</text>
+      <text x="20" y="150" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Task Assignment</text>
+    </g>
+    
+    <!-- Development -->
+    <g transform="translate(250, 0)">
+      <rect width="200" height="180" fill="#fff" stroke="#10b981" stroke-width="2" rx="12"/>
+      <rect width="200" height="45" fill="#10b981" rx="12 12 0 0"/>
+      <text x="100" y="30" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Development</text>
+      <text x="20" y="75" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Feature Dev</text>
+      <text x="20" y="100" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Unit Testing</text>
+      <text x="20" y="125" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Code Reviews</text>
+      <text x="20" y="150" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Daily Standups</text>
+    </g>
+    
+    <!-- Testing -->
+    <g transform="translate(500, 0)">
+      <rect width="200" height="180" fill="#fff" stroke="#f59e0b" stroke-width="2" rx="12"/>
+      <rect width="200" height="45" fill="#f59e0b" rx="12 12 0 0"/>
+      <text x="100" y="30" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Testing &amp; QA</text>
+      <text x="20" y="75" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Integration Tests</text>
+      <text x="20" y="100" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• POS Testing</text>
+      <text x="20" y="125" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Load Testing</text>
+      <text x="20" y="150" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Bug Fixes</text>
+    </g>
+    
+    <!-- Deployment -->
+    <g transform="translate(750, 0)">
+      <rect width="200" height="180" fill="#fff" stroke="#ef4444" stroke-width="2" rx="12"/>
+      <rect width="200" height="45" fill="#ef4444" rx="12 12 0 0"/>
+      <text x="100" y="30" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Deployment</text>
+      <text x="20" y="75" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Staging Deploy</text>
+      <text x="20" y="100" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Store Rollout</text>
+      <text x="20" y="125" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Monitoring</text>
+      <text x="20" y="150" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Rollback Plan</text>
+    </g>
+    
+    <!-- Review -->
+    <g transform="translate(1000, 0)">
+      <rect width="150" height="180" fill="#fff" stroke="#8b5cf6" stroke-width="2" rx="12"/>
+      <rect width="150" height="45" fill="#8b5cf6" rx="12 12 0 0"/>
+      <text x="75" y="30" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Review</text>
+      <text x="15" y="75" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Demo</text>
+      <text x="15" y="100" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Retrospective</text>
+      <text x="15" y="125" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Metrics</text>
+      <text x="15" y="150" fill="#374151" font-family="system-ui, sans-serif" font-size="12">• Next Sprint</text>
+    </g>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(50, 300)">
+    <rect width="1100" height="120" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="12"/>
+    <text x="550" y="35" fill="#0f172a" font-family="system-ui, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Sprint Metrics</text>
+    
+    <g transform="translate(100, 60)">
+      <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="22" font-weight="700">92%</text>
+      <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Completion Rate</text>
+    </g>
+    
+    <g transform="translate(300, 60)">
+      <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="22" font-weight="700">80%</text>
+      <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Code Coverage</text>
+    </g>
+    
+    <g transform="translate(500, 60)">
+      <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="22" font-weight="700">&lt;6h</text>
+      <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">PR Review Time</text>
+    </g>
+    
+    <g transform="translate(700, 60)">
+      <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="22" font-weight="700">99.5%</text>
+      <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Uptime</text>
+    </g>
+    
+    <g transform="translate(900, 60)">
+      <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="22" font-weight="700">35</text>
+      <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Story Points/Sprint</text>
+    </g>
+  </g>
+  
+  <!-- Tools -->
+  <g transform="translate(50, 450)">
+    <rect width="1100" height="100" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="12"/>
+    <text x="550" y="35" fill="#0f172a" font-family="system-ui, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Development Tools</text>
+    
+    <g transform="translate(80, 55)">
+      <rect width="120" height="35" fill="#f0fdf4" stroke="#10b981" rx="6"/>
+      <text x="60" y="23" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Jira</text>
+    </g>
+    
+    <g transform="translate(230, 55)">
+      <rect width="120" height="35" fill="#dbeafe" stroke="#3b82f6" rx="6"/>
+      <text x="60" y="23" fill="#3b82f6" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">GitHub</text>
+    </g>
+    
+    <g transform="translate(380, 55)">
+      <rect width="120" height="35" fill="#fef3c7" stroke="#f59e0b" rx="6"/>
+      <text x="60" y="23" fill="#d97706" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Jenkins</text>
+    </g>
+    
+    <g transform="translate(530, 55)">
+      <rect width="120" height="35" fill="#ede9fe" stroke="#8b5cf6" rx="6"/>
+      <text x="60" y="23" fill="#7c3aed" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Docker</text>
+    </g>
+    
+    <g transform="translate(680, 55)">
+      <rect width="120" height="35" fill="#fce7f3" stroke="#ec4899" rx="6"/>
+      <text x="60" y="23" fill="#db2777" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Slack</text>
+    </g>
+    
+    <g transform="translate(830, 55)">
+      <rect width="120" height="35" fill="#fee2e2" stroke="#ef4444" rx="6"/>
+      <text x="60" y="23" fill="#dc2626" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Grafana</text>
+    </g>
+    
+    <g transform="translate(980, 55)">
+      <rect width="90" height="35" fill="#f0fdf4" stroke="#10b981" rx="6"/>
+      <text x="45" y="23" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="500" text-anchor="middle">Figma</text>
+    </g>
+  </g>
+</svg>
+

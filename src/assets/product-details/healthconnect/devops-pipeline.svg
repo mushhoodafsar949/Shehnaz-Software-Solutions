@@ -140,7 +140,7 @@
       <!-- Backup -->
       <g transform="translate(0, 300)">
         <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Backup & DR</text>
+        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Backup &amp; DR</text>
         <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Multi-Region Backup</text>
       </g>
     </g>

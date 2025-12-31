@@ -89,7 +89,7 @@
       <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
     </rect>
     <text x="150" y="60" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">
-      Nest Tech Solutions
+      Nest Tech AI Solutions
       <animate attributeName="opacity" values="0;1;1;1" dur="1s" begin="0.5s" fill="freeze"/>
     </text>
 

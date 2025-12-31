@@ -16,7 +16,7 @@
       <!-- Store Analysis -->
       <rect width="200" height="60" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
       <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Store Analysis</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Peak Hours & Traffic</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Peak Hours &amp; Traffic</text>
       
       <!-- Inventory Planning -->
       <g transform="translate(0, 80)">
@@ -57,7 +57,7 @@
       <g transform="translate(0, 160)">
         <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
         <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Customer Service</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Support & Feedback</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Support &amp; Feedback</text>
       </g>
     </g>
   </g>
@@ -106,7 +106,7 @@
       <g transform="translate(0, 80)">
         <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
         <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">System Health</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Uptime & Issues</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Uptime &amp; Issues</text>
       </g>
       
       <!-- Customer Feedback -->

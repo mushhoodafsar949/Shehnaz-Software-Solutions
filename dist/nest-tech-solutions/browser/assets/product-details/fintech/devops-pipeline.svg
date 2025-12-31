@@ -1,163 +1,275 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="devGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="devGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="devGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="devGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
   <!-- Background -->
-  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  <rect x="0" y="0" width="1200" height="900" fill="#1a237e" rx="20"/>
   
   <!-- Title -->
-  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">FinTech Suite - DevOps Pipeline</text>
+  <text x="600" y="40" fill="#ffffff" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle">FinTech Suite - DevOps Pipeline</text>
   
   <!-- Development Stage -->
   <g transform="translate(50, 100)">
-    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Development</text>
+    <rect width="220" height="700" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="110" y="35" fill="#ffffff" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Development</text>
     
-    <!-- Components -->
-    <g transform="translate(25, 70)">
-      <!-- Version Control -->
-      <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">GitLab Enterprise</text>
-      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Protected Branches</text>
-      
-      <!-- IDE -->
-      <g transform="translate(0, 100)">
-        <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">WebStorm + Plugins</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Smart Contracts IDE</text>
-      </g>
-      
-      <!-- Code Quality -->
-      <g transform="translate(0, 200)">
-        <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Code Analysis</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">SonarQube + ESLint</text>
-      </g>
-      
-      <!-- Security Scan -->
-      <g transform="translate(0, 300)">
-        <rect width="200" height="80" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Scanning</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Snyk + OWASP</text>
-      </g>
+    <!-- GitLab -->
+    <g transform="translate(20, 60)">
+      <rect width="180" height="100" fill="url(#devGrad1)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔷</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">GitLab Enterprise</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Protected Branches</text>
+    </g>
+    
+    <!-- IDE -->
+    <g transform="translate(20, 180)">
+      <rect width="180" height="100" fill="url(#devGrad1)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">💻</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">VS Code + WebStorm</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Angular &amp; Flutter</text>
+    </g>
+    
+    <!-- Code Quality -->
+    <g transform="translate(20, 300)">
+      <rect width="180" height="100" fill="url(#devGrad1)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔍</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Code Analysis</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">SonarQube + ESLint</text>
+    </g>
+    
+    <!-- Security Scan -->
+    <g transform="translate(20, 420)">
+      <rect width="180" height="100" fill="url(#devGrad1)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔒</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Security Scanning</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Snyk + OWASP</text>
+    </g>
+    
+    <!-- Pre-commit -->
+    <g transform="translate(20, 540)">
+      <rect width="180" height="100" fill="url(#devGrad1)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">✓</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Pre-commit Hooks</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Linting &amp; Formatting</text>
     </g>
   </g>
   
   <!-- Testing Stage -->
-  <g transform="translate(350, 100)">
-    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Testing</text>
+  <g transform="translate(320, 100)">
+    <rect width="220" height="700" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="110" y="35" fill="#ffffff" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Testing</text>
     
-    <!-- Components -->
-    <g transform="translate(25, 70)">
-      <!-- Unit Tests -->
-      <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Unit Testing</text>
-      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Jest + Mocha</text>
-      
-      <!-- Integration Tests -->
-      <g transform="translate(0, 100)">
-        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Integration Tests</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Blockchain Testing</text>
-      </g>
-      
-      <!-- Performance Tests -->
-      <g transform="translate(0, 200)">
-        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Performance Testing</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">K6 + JMeter</text>
-      </g>
-      
-      <!-- Security Tests -->
-      <g transform="translate(0, 300)">
-        <rect width="200" height="80" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Testing</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Penetration Testing</text>
-      </g>
+    <!-- Unit Tests -->
+    <g transform="translate(20, 60)">
+      <rect width="180" height="100" fill="url(#devGrad2)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🧪</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Unit Testing</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Jest + Karma</text>
+    </g>
+    
+    <!-- Integration Tests -->
+    <g transform="translate(20, 180)">
+      <rect width="180" height="100" fill="url(#devGrad2)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔗</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Integration Tests</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">API Testing</text>
+    </g>
+    
+    <!-- Performance Tests -->
+    <g transform="translate(20, 300)">
+      <rect width="180" height="100" fill="url(#devGrad2)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">⚡</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Performance Testing</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">K6 + JMeter</text>
+    </g>
+    
+    <!-- Security Tests -->
+    <g transform="translate(20, 420)">
+      <rect width="180" height="100" fill="url(#devGrad2)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🛡️</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Security Testing</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Penetration Tests</text>
+    </g>
+    
+    <!-- E2E Tests -->
+    <g transform="translate(20, 540)">
+      <rect width="180" height="100" fill="url(#devGrad2)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🌐</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">E2E Testing</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Cypress + Selenium</text>
     </g>
   </g>
   
   <!-- Deployment Stage -->
-  <g transform="translate(650, 100)">
-    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Deployment</text>
+  <g transform="translate(590, 100)">
+    <rect width="220" height="700" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="110" y="35" fill="#ffffff" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Deployment</text>
     
-    <!-- Components -->
-    <g transform="translate(25, 70)">
-      <!-- Smart Contract Deploy -->
-      <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Smart Contracts</text>
-      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Truffle + Hardhat</text>
-      
-      <!-- Cloud Deploy -->
-      <g transform="translate(0, 100)">
-        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Cloud Deployment</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">AWS EKS</text>
-      </g>
-      
-      <!-- Database Migration -->
-      <g transform="translate(0, 200)">
-        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">DB Migration</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Liquibase</text>
-      </g>
-      
-      <!-- Backup -->
-      <g transform="translate(0, 300)">
-        <rect width="200" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Backup & DR</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Multi-Region</text>
-      </g>
+    <!-- Build -->
+    <g transform="translate(20, 60)">
+      <rect width="180" height="100" fill="url(#devGrad3)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔨</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Build &amp; Compile</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Angular + Flutter</text>
+    </g>
+    
+    <!-- Cloud Deploy -->
+    <g transform="translate(20, 180)">
+      <rect width="180" height="100" fill="url(#devGrad3)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">☁️</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Cloud Deployment</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">AWS EKS + S3</text>
+    </g>
+    
+    <!-- DB Migration -->
+    <g transform="translate(20, 300)">
+      <rect width="180" height="100" fill="url(#devGrad3)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🗄️</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">DB Migration</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">PostgreSQL</text>
+    </g>
+    
+    <!-- CI/CD -->
+    <g transform="translate(20, 420)">
+      <rect width="180" height="100" fill="url(#devGrad3)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔄</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">CI/CD Pipeline</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">GitLab CI/CD</text>
+    </g>
+    
+    <!-- Backup -->
+    <g transform="translate(20, 540)">
+      <rect width="180" height="100" fill="url(#devGrad3)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">💾</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Backup &amp; DR</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Multi-Region</text>
     </g>
   </g>
   
   <!-- Monitoring Stage -->
-  <g transform="translate(950, 100)">
-    <rect width="250" height="600" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Monitoring</text>
+  <g transform="translate(860, 100)">
+    <rect width="220" height="700" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="110" y="35" fill="#ffffff" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Monitoring</text>
     
-    <!-- Components -->
-    <g transform="translate(25, 70)">
-      <!-- APM -->
-      <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">APM</text>
-      <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">New Relic</text>
-      
-      <!-- Logging -->
-      <g transform="translate(0, 100)">
-        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Logging</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">ELK Stack</text>
-      </g>
-      
-      <!-- Alerting -->
-      <g transform="translate(0, 200)">
-        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Alerting</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">PagerDuty</text>
-      </g>
-      
-      <!-- Analytics -->
-      <g transform="translate(0, 300)">
-        <rect width="200" height="80" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-        <text x="100" y="35" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Analytics</text>
-        <text x="100" y="55" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Grafana + Kibana</text>
-      </g>
+    <!-- APM -->
+    <g transform="translate(20, 60)">
+      <rect width="180" height="100" fill="url(#devGrad4)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">📊</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">APM</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">New Relic</text>
+    </g>
+    
+    <!-- Logging -->
+    <g transform="translate(20, 180)">
+      <rect width="180" height="100" fill="url(#devGrad4)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">📝</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Logging</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">ELK Stack</text>
+    </g>
+    
+    <!-- Alerting -->
+    <g transform="translate(20, 300)">
+      <rect width="180" height="100" fill="url(#devGrad4)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">🔔</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Alerting</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">PagerDuty</text>
+    </g>
+    
+    <!-- Analytics -->
+    <g transform="translate(20, 420)">
+      <rect width="180" height="100" fill="url(#devGrad4)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">📈</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Analytics</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Grafana &amp; Kibana</text>
+    </g>
+    
+    <!-- Health Checks -->
+    <g transform="translate(20, 540)">
+      <rect width="180" height="100" fill="url(#devGrad4)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="42" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">❤️</text>
+      <text x="90" y="75" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Health Checks</text>
+      <text x="90" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Uptime Monitoring</text>
     </g>
   </g>
   
   <!-- Flow Arrows -->
-  <g transform="translate(0, 0)" stroke="#64748b" stroke-width="2" fill="none">
+  <g stroke="#ffffff" stroke-width="4" fill="none" marker-end="url(#arrowhead)" opacity="0.8">
     <!-- Dev to Test -->
-    <path d="M300 400 L350 400"/>
-    <polygon points="345,395 355,400 345,405" fill="#64748b"/>
+    <path d="M270 450 L320 450"/>
     
     <!-- Test to Deploy -->
-    <path d="M600 400 L650 400"/>
-    <polygon points="645,395 655,400 645,405" fill="#64748b"/>
+    <path d="M540 450 L590 450"/>
     
     <!-- Deploy to Monitor -->
-    <path d="M900 400 L950 400"/>
-    <polygon points="945,395 955,400 945,405" fill="#64748b"/>
+    <path d="M810 450 L860 450"/>
+  </g>
+  
+  <!-- Return Flow (Feedback loops) -->
+  <g stroke="#ffffff" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.5" stroke-dasharray="5,5">
+    <!-- Monitor to Dev (Feedback) -->
+    <path d="M970 500 Q1100 500 1100 200 Q1100 100 270 100 L270 400"/>
+    
+    <!-- Test to Dev (Bug fixes) -->
+    <path d="M320 500 Q200 500 200 200 Q200 100 270 100 L270 400"/>
+  </g>
+  
+  <!-- Stage Labels with Icons -->
+  <g transform="translate(50, 850)">
+    <rect width="220" height="30" fill="rgba(37,99,235,0.3)" rx="6" stroke="#2563eb" stroke-width="2"/>
+    <text x="110" y="22" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Code Development &amp; Quality</text>
+  </g>
+  
+  <g transform="translate(320, 850)">
+    <rect width="220" height="30" fill="rgba(16,185,129,0.3)" rx="6" stroke="#10b981" stroke-width="2"/>
+    <text x="110" y="22" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Automated Testing Suite</text>
+  </g>
+  
+  <g transform="translate(590, 850)">
+    <rect width="220" height="30" fill="rgba(245,158,11,0.3)" rx="6" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="22" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Automated Deployment</text>
+  </g>
+  
+  <g transform="translate(860, 850)">
+    <rect width="220" height="30" fill="rgba(99,102,241,0.3)" rx="6" stroke="#6366f1" stroke-width="2"/>
+    <text x="110" y="22" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Continuous Monitoring</text>
   </g>
 </svg>

@@ -1,0 +1,98 @@
+<section class="overview" *ngIf="product">
+  <!-- Product Explanation for FinTech -->
+  <div class="intro-section" *ngIf="product.id === 'fintech'">
+    <div class="intro-badge">
+      <span class="badge-icon">◆</span>
+      <span>Platform Overview</span>
+    </div>
+    <h2 class="intro-title">Two Powerful Products.<br>One Unified Platform.</h2>
+    <p class="intro-subtitle">Built for scale. Designed for simplicity.</p>
+    
+    <div class="platform-cards">
+      <div class="platform-card">
+        <div class="card-number">01</div>
+        <h3>Corporate Web Portal</h3>
+        <p>Enterprise-grade Angular dashboard for bulk processing, portfolio management, real-time analytics, and seamless third-party integrations.</p>
+        <div class="card-tags">
+          <span>Angular</span>
+          <span>Enterprise</span>
+          <span>Web</span>
+        </div>
+      </div>
+      
+      <div class="platform-card">
+        <div class="card-number">02</div>
+        <h3>Mobile Application</h3>
+        <p>Flutter-powered app for stocks trading, mutual funds, rewards, payments, and complete financial management on the go.</p>
+        <div class="card-tags">
+          <span>Flutter</span>
+          <span>iOS</span>
+          <span>Android</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots Gallery -->
+  <div class="gallery-section">
+    <div class="section-header">
+      <span class="section-label">Gallery</span>
+      <h2 class="section-title">Product Screenshots</h2>
+    </div>
+    
+    <div class="gallery-container">
+      <div class="main-image-wrapper">
+        <button class="nav-btn prev" (click)="prevScreenshot()" aria-label="Previous">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+        
+        <div class="main-image">
+          <img [src]="getCurrentScreenshot()?.url || ''" 
+               [alt]="getCurrentScreenshot()?.title || ''"
+               loading="lazy">
+        </div>
+        
+        <button class="nav-btn next" (click)="nextScreenshot()" aria-label="Next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+      </div>
+      
+      <p class="image-caption">{{ getCurrentScreenshot()?.title || '' }}</p>
+      
+      <div class="thumbnails">
+        <button *ngFor="let screenshot of product.screenshots; let i = index"
+                class="thumbnail"
+                [class.active]="i === activeScreenshotIndex"
+                (click)="setActiveScreenshot(i)">
+          <img [src]="screenshot.url" [alt]="screenshot.title" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section">
+    <div class="section-header centered">
+      <span class="section-label">Features</span>
+      <h2 class="section-title">What Makes It Special</h2>
+      <p class="section-subtitle">Thoughtfully crafted features that deliver exceptional experiences.</p>
+    </div>
+    
+    <div class="features-grid">
+      <article class="feature-card" *ngFor="let feature of product.features; let i = index">
+        <div class="feature-visual">
+          <img [src]="feature.image" [alt]="feature.title" loading="lazy">
+        </div>
+        <div class="feature-content">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+

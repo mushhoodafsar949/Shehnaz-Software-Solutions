@@ -1433,6 +1433,105 @@
 
 // PrimeNG Component Customizations
 ::ng-deep {
+  // Dropdown customization for feedback page
+  .review-filters,
+  .feedback-collection-section {
+    .p-dropdown {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+      width: 100%;
+      min-height: 2.75rem;
+
+      &:not(.p-disabled):hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.125rem rgba(var(--primary-color-rgb), 0.1);
+      }
+
+      &:not(.p-disabled).p-focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.125rem rgba(var(--primary-color-rgb), 0.2);
+      }
+
+      .p-dropdown-label {
+        padding: 0.625rem 1rem;
+        color: var(--text-color);
+        font-size: 0.9375rem;
+        background: transparent;
+        border: 0 none;
+
+        &.p-placeholder {
+          color: var(--text-secondary-color);
+        }
+      }
+
+      .p-dropdown-trigger {
+        width: 2.5rem;
+        background: transparent;
+        color: var(--text-secondary-color);
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+
+        .p-dropdown-trigger-icon {
+          font-size: 0.875rem;
+        }
+      }
+
+      .p-dropdown-clear-icon {
+        color: var(--text-secondary-color);
+        right: 2.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: -0.625rem;
+
+        &:hover {
+          color: var(--text-color);
+        }
+      }
+    }
+
+    .p-dropdown-panel {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+
+      .p-dropdown-items-wrapper {
+        .p-dropdown-item {
+          padding: 0.75rem 1rem;
+          margin: 0.25rem 0;
+          border-radius: 0.5rem;
+          color: var(--text-color);
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: var(--surface-hover);
+            color: var(--text-color);
+          }
+
+          &.p-highlight {
+            background: rgba(var(--primary-color-rgb), 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+          }
+
+          &:focus {
+            outline: none;
+            background: var(--surface-hover);
+          }
+        }
+
+        .p-dropdown-empty-message {
+          padding: 0.75rem 1rem;
+          color: var(--text-secondary-color);
+        }
+      }
+    }
+  }
+
   // Rating customization
   .custom-rating {
     .p-rating-star {

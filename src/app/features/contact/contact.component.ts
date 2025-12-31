@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
 import { BookingDialogComponent } from './booking-dialog.component';
 
@@ -89,15 +89,18 @@ export class ContactComponent {
   ) {}
 
   openBookingDialog() {
-    this.dialogService.open(BookingDialogComponent, {
-      header: 'Schedule a Meeting',
+    const ref = this.dialogService.open(BookingDialogComponent, {
+      header: '',
       width: '90%',
       maximizable: true,
       style: { maxWidth: '600px' },
-      contentStyle: { overflow: 'auto' },
+      contentStyle: { overflow: 'auto', padding: '1.5rem' },
       baseZIndex: 10000,
-      dismissableMask: true
-    }).onClose.subscribe(result => {
+      dismissableMask: true,
+      showHeader: false
+    });
+    
+    ref.onClose.subscribe(result => {
       if (result?.success) {
         this.messageService.add({
           severity: 'success',

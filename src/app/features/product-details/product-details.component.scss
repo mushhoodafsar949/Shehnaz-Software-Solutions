@@ -1,0 +1,344 @@
+// Apple/Tesla Inspired Product Details
+// Premium, minimal design with excellent typography
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.product-page {
+  min-height: 100vh;
+  background: var(--surface-ground, #ffffff);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+// Loading State
+.loading-state {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  .loader {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--surface-border, #f0f0f0);
+    border-top-color: var(--text-color, #1d1d1f);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    will-change: transform;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-secondary-color, #86868b);
+    margin: 0;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// Error State
+.error-state {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color, #1d1d1f);
+    margin: 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-secondary-color, #86868b);
+    margin: 0;
+  }
+
+  .btn-back {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color, #166534);
+    color: var(--primary-color-text, #ffffff);
+    border: none;
+    border-radius: 980px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    will-change: background-color, transform;
+
+    &:hover {
+      background: var(--primary-color-light, #0077ed);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Main Content
+.product-main {
+  width: 100%;
+}
+
+// Hero Header
+.product-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+  padding: 8rem 2rem 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .header-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 980px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    span {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  .product-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+    margin: 0 0 1.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .product-description {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin: 0 0 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tech-badges {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tech-badge {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 980px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+// Tab Navigation
+.tab-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface-overlay, rgba(255, 255, 255, 0.8));
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--surface-border, rgba(0, 0, 0, 0.08));
+  transform: translateZ(0);
+  will-change: background-color;
+  transition: background-color 0.3s ease;
+}
+
+.tab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab-btn {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary-color, #86868b);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.2s ease;
+  will-change: color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color, #1d1d1f);
+    transition: width 0.2s ease;
+    will-change: width;
+  }
+
+  &:hover {
+    color: var(--text-color, #1d1d1f);
+  }
+
+  &.active {
+    color: var(--text-color, #1d1d1f);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// Tab Content
+.tab-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+// Dark Theme Support
+:host-context(.dark-theme) {
+  .product-page {
+    background: var(--surface-ground);
+  }
+
+  .tab-navigation {
+    background: rgba(30, 41, 59, 0.8);
+    border-bottom-color: var(--surface-border);
+  }
+
+  .tab-btn {
+    color: var(--text-secondary-color);
+
+    &:hover,
+    &.active {
+      color: var(--text-color);
+    }
+  }
+}
+
+// Reduced Motion Support
+@media (prefers-reduced-motion: reduce) {
+  .tab-btn,
+  .tab-btn::after,
+  .loader {
+    transition: none;
+    animation: none;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .product-header {
+    padding: 6rem 1.5rem 4rem;
+
+    .product-title {
+      font-size: 2.5rem;
+    }
+
+    .product-description {
+      font-size: 1rem;
+    }
+  }
+
+  .tab-container {
+    padding: 0 1rem;
+  }
+
+  .tab-btn {
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .tab-content {
+    padding: 1.5rem 1rem;
+  }
+}

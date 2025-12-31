@@ -1,0 +1,111 @@
+<section class="process" *ngIf="product">
+  <!-- Hero -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <span class="hero-label">Process</span>
+      <h1 class="hero-title">How We Build.<br>Why It Matters.</h1>
+      <p class="hero-subtitle">Agile methodology meets engineering excellence.</p>
+    </div>
+  </div>
+
+  <!-- Workflow Diagrams -->
+  <div class="workflow-section">
+    <div class="workflow-grid">
+      <!-- Agile Methodology -->
+      <div class="workflow-card">
+        <div class="workflow-header">
+          <div class="workflow-icon agile">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Agile Methodology</h3>
+            <p>Iterative development with continuous feedback</p>
+          </div>
+        </div>
+        <div class="workflow-diagram" *ngIf="product.agileDiagram">
+          <img [src]="product.agileDiagram" 
+               alt="Agile Process" 
+               loading="lazy"
+               (error)="onAgileImageError($event)"
+               (load)="agileImageError = false"
+               *ngIf="!agileImageError">
+          <div class="diagram-placeholder" *ngIf="agileImageError" style="padding: 2rem; text-align: center; color: #86868b;">
+            <span>Agile process diagram</span>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Unable to load diagram at: {{ product.agileDiagram }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sprint Workflow -->
+      <div class="workflow-card">
+        <div class="workflow-header">
+          <div class="workflow-icon sprint">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Sprint Workflow</h3>
+            <p>2-week cycles for predictable delivery</p>
+          </div>
+        </div>
+        <div class="workflow-diagram" *ngIf="product.sprintWorkflow">
+          <img [src]="product.sprintWorkflow" 
+               alt="Sprint Workflow" 
+               loading="lazy"
+               (error)="onSprintImageError($event)"
+               (load)="sprintImageError = false"
+               *ngIf="!sprintImageError">
+          <div class="diagram-placeholder" *ngIf="sprintImageError" style="padding: 2rem; text-align: center; color: #86868b;">
+            <span>Sprint workflow diagram</span>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Unable to load diagram at: {{ product.sprintWorkflow }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Development Practices -->
+  <div class="practices-section">
+    <div class="section-header">
+      <span class="section-label">Practices</span>
+      <h2 class="section-title">Engineering Excellence</h2>
+      <p class="section-subtitle">Best practices that ensure quality at every step.</p>
+    </div>
+
+    <div class="practices-grid">
+      <article class="practice-card" *ngFor="let practice of product.developmentPractices; let i = index">
+        <div class="practice-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <h3>{{ practice.title }}</h3>
+        <p>{{ practice.description }}</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Metrics Banner -->
+  <div class="metrics-banner">
+    <div class="metrics-grid">
+      <div class="metric">
+        <span class="metric-value">95%</span>
+        <span class="metric-label">Sprint Completion</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">85%</span>
+        <span class="metric-label">Code Coverage</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">&lt;4h</span>
+        <span class="metric-label">PR Review Time</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">99.9%</span>
+        <span class="metric-label">Uptime SLA</span>
+      </div>
+    </div>
+  </div>
+</section>
+

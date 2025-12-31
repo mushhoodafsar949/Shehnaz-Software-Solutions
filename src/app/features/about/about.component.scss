@@ -548,7 +548,7 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center top;
+          object-position: center center;
           display: block;
           transition: transform 0.3s ease;
         }
@@ -624,6 +624,36 @@
       // Special positioning for Anayat Ullah image to show face properly
       &.anayat-card .member-image-container .member-image {
         object-position: center 35%;
+      }
+
+      // Special positioning for Mushhood image to align properly
+      &.mushhood-card .member-image-container .member-image {
+        object-position: center 25%;
+      }
+
+      // Special positioning for Kasim image to align properly - show more head
+      &.kasim-card .member-image-container .member-image {
+        object-position: center 15%;
+      }
+
+      // Special positioning for Arslan image to show head properly
+      &.arslan-card .member-image-container .member-image {
+        object-position: center 15%;
+      }
+
+      // Special positioning for Jahanzaib image to show head properly
+      &.jahanzaib-card .member-image-container .member-image {
+        object-position: center 5%;
+      }
+
+      // Special positioning for Abbas image to show head properly
+      &.abbas-card .member-image-container .member-image {
+        object-position: center 15%;
+      }
+
+      // Special positioning for Shahzaib image to show head properly
+      &.shahzaib-card .member-image-container .member-image {
+        object-position: center 15%;
       }
 
       .member-info {

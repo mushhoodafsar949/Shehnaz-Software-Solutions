@@ -115,7 +115,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     {
       year: '2019',
       title: 'Foundation & Vision',
-      description: 'Nest Tech Solutions was founded with a vision to revolutionize digital transformation. Started as a small team of passionate developers with big dreams.',
+      description: 'Nest Tech AI Solutions was founded with a vision to revolutionize digital transformation. Started as a small team of passionate developers with big dreams.',
       icon: 'pi pi-flag',
       metrics: ['5 Team Members', 'First Office', 'Vision Established']
     },
@@ -273,8 +273,8 @@ export class AboutComponent implements OnInit, OnDestroy {
   
   teamMembers: TeamMember[] = [
     {
-      name: 'Mir Mushhood Afsar',
-      role: 'CEO & Founder',
+      name: 'Mushhood Afsar',
+      role: 'Senior Software Engineer',
       description: 'Visionary leader with 5+ years of experience in full-stack development and business strategy. Passionate about creating innovative solutions that drive business growth and digital transformation.',
       icon: 'pi pi-user',
       skills: ['Strategic Leadership', 'Digital Transformation', 'Business Development', 'Full-Stack Development', 'Team Building', 'Client Relations'],
@@ -283,7 +283,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     },
     {
       name: 'Anayat Ullah',
-      role: 'Co-founder & VP Sales',
+      role: 'Expert Lead Generation and Sales',
       description: 'Strategic business development leader focused on growth, client relationships, and market expansion. Drives revenue growth through innovative sales strategies and strategic partnerships.',
       icon: 'pi pi-briefcase',
       skills: ['Business Development', 'Strategic Sales', 'Client Relationship Management', 'Market Analysis', 'Partnership Development', 'Revenue Growth'],
@@ -291,8 +291,35 @@ export class AboutComponent implements OnInit, OnDestroy {
       image: 'assets/Team/Anayat.jpeg'
     },
     {
+      name: 'Kasim Ali',
+      role: 'Network Engineer & Cybersecurity Specialist',
+      description: 'Technology leader and networking engineering expert with extensive experience in designing and implementing robust network infrastructures. Specializes in enterprise networking solutions, system architecture, and technology strategy. Combines deep technical expertise with strategic vision to drive innovation and ensure scalable, secure technology operations.',
+      icon: 'pi pi-network',
+      skills: ['Network Architecture', 'Technology Strategy', 'System Design', 'Infrastructure Management', 'Security Implementation', 'Technical Leadership'],
+      linkedinUrl: 'https://www.linkedin.com/in/kasimali01/',
+      image: 'assets/Team/Qasim.jpeg'
+    },
+     {
+      name: 'Shahzaib Rasool',
+      role: 'Senior Backend Developer',
+      description: 'Strategic leader and backend development expert with a proven track record in building high-performance, scalable systems. Combines business acumen with deep technical expertise to drive development excellence and deliver enterprise-grade solutions. Leads development initiatives with a focus on code quality, architecture best practices, and team growth.',
+      icon: 'pi pi-briefcase',
+      skills: ['Backend Development', 'System Architecture', 'Strategic Leadership', 'Team Management', 'Code Quality', 'Enterprise Solutions'],
+      linkedinUrl: 'https://www.linkedin.com/in/shahzaib-rasool/',
+      image: 'assets/Team/Shahzaib.jpg'
+    },
+    {
+      name: 'Arslan Qureshi',
+      role: 'Senior UI/UX Designer',
+      description: 'Creative design leader with MBA credentials and extensive expertise in logo design, brand identity, and UI/UX design. Master of Figma and modern design tools, creating visually stunning and strategically effective designs. Combines business acumen with creative excellence to deliver designs that not only look exceptional but drive business results.',
+      icon: 'pi pi-palette',
+      skills: ['Logo Design', 'Brand Identity', 'Figma', 'UI/UX Design', 'Creative Strategy', 'Business Design'],
+      linkedinUrl: 'https://www.linkedin.com/in/arslanqureshi/',
+      image: 'assets/Team/Arslan.png'
+    },
+    {
       name: 'Jahanzaib Sohail',
-      role: 'CTO',
+      role: 'Senior IOS Developer',
       description: 'Expert iOS developer and technology strategist with extensive experience in mobile app architecture and development. Leads our technical innovation and mobile excellence initiatives.',
       icon: 'pi pi-mobile',
       skills: ['iOS Development', 'Mobile Architecture', 'Technical Strategy', 'Team Leadership', 'Innovation Management', 'Product Development'],
@@ -301,7 +328,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     },
     {
       name: 'Abbas Raza',
-      role: 'Head of DevOps & Infrastructure',
+      role: 'DevOps & Infrastructure',
       description: 'DevOps specialist with deep expertise in cloud infrastructure, automation, and deployment pipelines. Ensures scalable, secure, and efficient development operations.',
       icon: 'pi pi-cloud',
       skills: ['AWS Cloud', 'DevOps Automation', 'Infrastructure Management', 'Security Implementation', 'Scalability Design', 'CI/CD Pipelines'],
@@ -310,12 +337,21 @@ export class AboutComponent implements OnInit, OnDestroy {
     },
     {
       name: 'Muhammad Usama',
-      role: 'Lead Mobile Developer',
+      role: 'Flutter Mobile Developer',
       description: 'Cross-platform mobile development expert specializing in Flutter and React Native. Creates beautiful, high-performance mobile applications for both iOS and Android platforms.',
       icon: 'pi pi-mobile',
       skills: ['Flutter Development', 'Cross-Platform Mobile', 'UI/UX Implementation', 'Performance Optimization', 'Mobile Testing', 'App Store Deployment'],
       linkedinUrl: 'https://www.linkedin.com/in/muhammad-usama-330044212/',
       image: 'https://ui-avatars.com/api/?name=Muhammad+Usama&size=400&background=166534&color=ffffff&font-size=0.35&bold=true&format=png'
+    },
+    {
+      name: 'Umair Tahir',
+      role: 'Senior Solution Architect',
+      description: 'Operations leader and solution architecture expert specializing in designing and implementing automated, scalable solutions. Combines operational excellence with technical innovation to optimize business processes and deliver transformative solutions. Expert in solutioning complex business challenges and automating workflows for maximum efficiency.',
+      icon: 'pi pi-cog',
+      skills: ['Solution Architecture', 'Process Automation', 'Operations Management', 'System Integration', 'Business Optimization', 'Strategic Planning'],
+      linkedinUrl: 'https://www.linkedin.com/in/umairm18/',
+      image: 'assets/Team/Umair.jpg'
     }
   ];
 

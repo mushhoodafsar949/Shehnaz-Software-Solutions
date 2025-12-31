@@ -7,7 +7,7 @@
   </div>
   <div class="hero-v2-content-card" @fadeIn>
     <div class="hero-v2-content">
-      <div class="hero-v2-company-name" @slideUp>Nest Tech Solutions</div>
+      <div class="hero-v2-company-name" @slideUp>Nest Tech AI Solutions</div>
       <h1 class="hero-v2-headline" @slideUp>
         Digital Solutions,
         <br>
@@ -30,41 +30,27 @@
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats-section" @fadeIn>
-  <div class="stats-grid">
-    <div class="stat-item" @slideInLeft>
-      <i class="pi pi-users"></i>
-      <div class="stat-content">
-        <div class="stat-number">500+</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-    </div>
-    <div class="stat-item" @slideInLeft>
-      <i class="pi pi-star"></i>
-      <div class="stat-content">
-        <div class="stat-number">4.9/5</div>
-        <div class="stat-label">Client Rating</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Software Showcase Section -->
 <app-software-showcase></app-software-showcase>
 
 <!-- Features Section -->
 <section class="features-section" @fadeIn>
-  <div class="features-grid">
-    <p-card *ngFor="let feature of features" 
-            styleClass="feature-card"
-            @scaleIn>
-      <div class="feature-content">
-        <i [class]="feature.icon"></i>
-        <h3>{{feature.title}}</h3>
-        <p>{{feature.description}}</p>
-      </div>
-    </p-card>
+  <div class="features-container">
+    <div class="features-header">
+      <h2>Why Choose Us</h2>
+      <p>Our core values that drive exceptional results for every project</p>
+    </div>
+    <div class="features-grid">
+      <p-card *ngFor="let feature of features" 
+              styleClass="feature-card"
+              @scaleIn>
+        <div class="feature-content">
+          <i [class]="feature.icon"></i>
+          <h3>{{feature.title}}</h3>
+          <p>{{feature.description}}</p>
+        </div>
+      </p-card>
+    </div>
   </div>
 </section>
 
@@ -81,6 +67,42 @@
         <p>{{service.description}}</p>
       </div>
     </p-card>
+  </div>
+</section>
+
+<!-- Technology Stack Section -->
+<section class="tech-stack-section" @fadeIn>
+  <div class="tech-stack-container">
+    <div class="tech-stack-header">
+      <h2>Technologies We Master</h2>
+      <p>Cutting-edge tools and frameworks powering our solutions</p>
+    </div>
+    <div class="tech-stack-grid">
+      <div class="tech-item" *ngFor="let tech of technologies; trackBy: trackByTech" @scaleIn>
+        <span class="tech-name">{{tech.name}}</span>
+        <span class="tech-category">{{tech.category}}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Development Process Section -->
+<section class="process-section" @fadeIn>
+  <div class="process-container">
+    <div class="process-header">
+      <h2>Our Development Process</h2>
+      <p>Proven methodology ensuring successful project delivery</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" *ngFor="let step of processSteps; let i = index" @scaleIn>
+        <div class="step-number">{{i + 1}}</div>
+        <div class="step-icon">
+          <i [class]="step.icon"></i>
+        </div>
+        <h3>{{step.title}}</h3>
+        <p>{{step.description}}</p>
+      </div>
+    </div>
   </div>
 </section>
 

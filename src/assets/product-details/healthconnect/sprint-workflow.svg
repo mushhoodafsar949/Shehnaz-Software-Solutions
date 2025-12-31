@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sprintGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect x="0" y="0" width="1200" height="700" fill="url(#bgGradient)" rx="16"/>
+  
+  <!-- Title -->
+  <text x="600" y="45" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Sprint Workflow - 2-Week Cycle</text>
+  <text x="600" y="70" fill="#64748b" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">Agile Development Process for HealthConnect Pro</text>
+  
+  <!-- Timeline Bar -->
+  <rect x="50" y="95" width="1100" height="8" fill="#e2e8f0" rx="4"/>
+  <rect x="50" y="95" width="1100" height="8" fill="url(#sprintGradient)" rx="4"/>
+  
+  <!-- Day Markers -->
+  <g font-family="system-ui, sans-serif" font-size="11" fill="#64748b">
+    <text x="50" y="120" text-anchor="middle">Day 1</text>
+    <text x="200" y="120" text-anchor="middle">Day 2-3</text>
+    <text x="400" y="120" text-anchor="middle">Day 4-8</text>
+    <text x="700" y="120" text-anchor="middle">Day 9-10</text>
+    <text x="950" y="120" text-anchor="middle">Day 11-12</text>
+    <text x="1100" y="120" text-anchor="middle">Day 13-14</text>
+  </g>
+  
+  <!-- Sprint Planning -->
+  <g transform="translate(30, 140)">
+    <rect width="160" height="220" fill="#ffffff" stroke="#3b82f6" stroke-width="2" rx="12"/>
+    <rect width="160" height="50" fill="#3b82f6" rx="12 12 0 0"/>
+    <text x="80" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Sprint Planning</text>
+    
+    <g transform="translate(15, 65)" font-family="system-ui, sans-serif" font-size="12" fill="#374151">
+      <circle cx="8" cy="8" r="4" fill="#3b82f6"/>
+      <text x="20" y="12">Backlog Review</text>
+      
+      <circle cx="8" cy="38" r="4" fill="#3b82f6"/>
+      <text x="20" y="42">Story Pointing</text>
+      
+      <circle cx="8" cy="68" r="4" fill="#3b82f6"/>
+      <text x="20" y="72">Task Breakdown</text>
+      
+      <circle cx="8" cy="98" r="4" fill="#3b82f6"/>
+      <text x="20" y="102">Sprint Goal</text>
+      
+      <circle cx="8" cy="128" r="4" fill="#3b82f6"/>
+      <text x="20" y="132">Team Capacity</text>
+    </g>
+  </g>
+  
+  <!-- Design & Architecture -->
+  <g transform="translate(210, 140)">
+    <rect width="160" height="220" fill="#ffffff" stroke="#8b5cf6" stroke-width="2" rx="12"/>
+    <rect width="160" height="50" fill="#8b5cf6" rx="12 12 0 0"/>
+    <text x="80" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Design Phase</text>
+    
+    <g transform="translate(15, 65)" font-family="system-ui, sans-serif" font-size="12" fill="#374151">
+      <circle cx="8" cy="8" r="4" fill="#8b5cf6"/>
+      <text x="20" y="12">UX Wireframes</text>
+      
+      <circle cx="8" cy="38" r="4" fill="#8b5cf6"/>
+      <text x="20" y="42">API Design</text>
+      
+      <circle cx="8" cy="68" r="4" fill="#8b5cf6"/>
+      <text x="20" y="72">DB Schema</text>
+      
+      <circle cx="8" cy="98" r="4" fill="#8b5cf6"/>
+      <text x="20" y="102">Tech Specs</text>
+      
+      <circle cx="8" cy="128" r="4" fill="#8b5cf6"/>
+      <text x="20" y="132">Review Meeting</text>
+    </g>
+  </g>
+  
+  <!-- Development -->
+  <g transform="translate(390, 140)">
+    <rect width="200" height="220" fill="#ffffff" stroke="#10b981" stroke-width="2" rx="12"/>
+    <rect width="200" height="50" fill="#10b981" rx="12 12 0 0"/>
+    <text x="100" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Development</text>
+    
+    <g transform="translate(15, 65)" font-family="system-ui, sans-serif" font-size="12" fill="#374151">
+      <circle cx="8" cy="8" r="4" fill="#10b981"/>
+      <text x="20" y="12">Feature Development</text>
+      
+      <circle cx="8" cy="38" r="4" fill="#10b981"/>
+      <text x="20" y="42">Unit Testing (TDD)</text>
+      
+      <circle cx="8" cy="68" r="4" fill="#10b981"/>
+      <text x="20" y="72">Code Reviews</text>
+      
+      <circle cx="8" cy="98" r="4" fill="#10b981"/>
+      <text x="20" y="102">Integration Tests</text>
+      
+      <circle cx="8" cy="128" r="4" fill="#10b981"/>
+      <text x="20" y="132">Daily Standups</text>
+    </g>
+  </g>
+  
+  <!-- Testing & QA -->
+  <g transform="translate(610, 140)">
+    <rect width="180" height="220" fill="#ffffff" stroke="#f59e0b" stroke-width="2" rx="12"/>
+    <rect width="180" height="50" fill="#f59e0b" rx="12 12 0 0"/>
+    <text x="90" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Testing &amp; QA</text>
+    
+    <g transform="translate(15, 65)" font-family="system-ui, sans-serif" font-size="12" fill="#374151">
+      <circle cx="8" cy="8" r="4" fill="#f59e0b"/>
+      <text x="20" y="12">E2E Testing</text>
+      
+      <circle cx="8" cy="38" r="4" fill="#f59e0b"/>
+      <text x="20" y="42">Security Scan</text>
+      
+      <circle cx="8" cy="68" r="4" fill="#f59e0b"/>
+      <text x="20" y="72">HIPAA Validation</text>
+      
+      <circle cx="8" cy="98" r="4" fill="#f59e0b"/>
+      <text x="20" y="102">Performance Test</text>
+      
+      <circle cx="8" cy="128" r="4" fill="#f59e0b"/>
+      <text x="20" y="132">Bug Fixes</text>
+    </g>
+  </g>
+  
+  <!-- Deployment -->
+  <g transform="translate(810, 140)">
+    <rect width="160" height="220" fill="#ffffff" stroke="#ef4444" stroke-width="2" rx="12"/>
+    <rect width="160" height="50" fill="#ef4444" rx="12 12 0 0"/>
+    <text x="80" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Deployment</text>
+    
+    <g transform="translate(15, 65)" font-family="system-ui, sans-serif" font-size="12" fill="#374151">
+      <circle cx="8" cy="8" r="4" fill="#ef4444"/>
+      <text x="20" y="12">Staging Deploy</text>
+      
+      <circle cx="8" cy="38" r="4" fill="#ef4444"/>
+      <text x="20" y="42">UAT Testing</text>
+      
+      <circle cx="8" cy="68" r="4" fill="#ef4444"/>
+      <text x="20" y="72">Prod Deploy</text>
+      
+      <circle cx="8" cy="98" r="4" fill="#ef4444"/>
+      <text x="20" y="102">Health Checks</text>
+      
+      <circle cx="8" cy="128" r="4" fill="#ef4444"/>
+      <text x="20" y="132">Monitoring</text>
+    </g>
+  </g>
+  
+  <!-- Review & Retro -->
+  <g transform="translate(990, 140)">
+    <rect width="170" height="220" fill="#ffffff" stroke="#06b6d4" stroke-width="2" rx="12"/>
+    <rect width="170" height="50" fill="#06b6d4" rx="12 12 0 0"/>
+    <text x="85" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Review &amp; Retro</text>
+    
+    <g transform="translate(15, 65)" font-family="system-ui, sans-serif" font-size="12" fill="#374151">
+      <circle cx="8" cy="8" r="4" fill="#06b6d4"/>
+      <text x="20" y="12">Sprint Demo</text>
+      
+      <circle cx="8" cy="38" r="4" fill="#06b6d4"/>
+      <text x="20" y="42">Stakeholder Review</text>
+      
+      <circle cx="8" cy="68" r="4" fill="#06b6d4"/>
+      <text x="20" y="72">Retrospective</text>
+      
+      <circle cx="8" cy="98" r="4" fill="#06b6d4"/>
+      <text x="20" y="102">Metrics Review</text>
+      
+      <circle cx="8" cy="128" r="4" fill="#06b6d4"/>
+      <text x="20" y="132">Next Sprint Prep</text>
+    </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g stroke="#94a3b8" stroke-width="2" fill="none">
+    <path d="M195 250 L205 250" marker-end="url(#arrow)"/>
+    <path d="M375 250 L385 250"/>
+    <path d="M595 250 L605 250"/>
+    <path d="M795 250 L805 250"/>
+    <path d="M975 250 L985 250"/>
+  </g>
+  
+  <!-- Daily Ceremonies Section -->
+  <g transform="translate(50, 390)">
+    <rect width="1100" height="130" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" rx="12"/>
+    <text x="550" y="30" fill="#0f172a" font-family="system-ui, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Daily Ceremonies &amp; Practices</text>
+    
+    <g transform="translate(50, 50)">
+      <!-- Standup -->
+      <g>
+        <rect width="180" height="60" fill="#f0fdf4" stroke="#10b981" stroke-width="1" rx="8"/>
+        <text x="90" y="25" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Daily Standup</text>
+        <text x="90" y="45" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">15 min @ 9:30 AM</text>
+      </g>
+      
+      <!-- Code Review -->
+      <g transform="translate(220, 0)">
+        <rect width="180" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="8"/>
+        <text x="90" y="25" fill="#d97706" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Code Reviews</text>
+        <text x="90" y="45" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Continuous Process</text>
+      </g>
+      
+      <!-- Pair Programming -->
+      <g transform="translate(440, 0)">
+        <rect width="180" height="60" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1" rx="8"/>
+        <text x="90" y="25" fill="#7c3aed" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Pair Programming</text>
+        <text x="90" y="45" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Complex Features</text>
+      </g>
+      
+      <!-- CI/CD -->
+      <g transform="translate(660, 0)">
+        <rect width="180" height="60" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="8"/>
+        <text x="90" y="25" fill="#2563eb" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">CI/CD Pipeline</text>
+        <text x="90" y="45" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Automated Builds</text>
+      </g>
+      
+      <!-- Documentation -->
+      <g transform="translate(880, 0)">
+        <rect width="180" height="60" fill="#fce7f3" stroke="#ec4899" stroke-width="1" rx="8"/>
+        <text x="90" y="25" fill="#db2777" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Documentation</text>
+        <text x="90" y="45" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Living Docs</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Metrics Section -->
+  <g transform="translate(50, 540)">
+    <rect width="1100" height="130" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" rx="12"/>
+    <text x="550" y="30" fill="#0f172a" font-family="system-ui, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Sprint Metrics &amp; KPIs</text>
+    
+    <g transform="translate(80, 55)">
+      <g>
+        <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="24" font-weight="700">95%</text>
+        <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Sprint Completion</text>
+      </g>
+      
+      <g transform="translate(200, 0)">
+        <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="24" font-weight="700">85%</text>
+        <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Code Coverage</text>
+      </g>
+      
+      <g transform="translate(400, 0)">
+        <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="24" font-weight="700">&lt;4h</text>
+        <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Avg PR Review Time</text>
+      </g>
+      
+      <g transform="translate(600, 0)">
+        <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="24" font-weight="700">0</text>
+        <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Critical Bugs</text>
+      </g>
+      
+      <g transform="translate(800, 0)">
+        <text x="0" y="15" fill="#0f172a" font-family="system-ui, sans-serif" font-size="24" font-weight="700">99.9%</text>
+        <text x="0" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Uptime SLA</text>
+      </g>
+    </g>
+  </g>
+</svg>
+

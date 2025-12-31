@@ -208,7 +208,7 @@
 <!-- Why Choose Us -->
 <section class="why-choose-us" @fadeIn>
   <div class="why-container">
-    <h2>Why Choose Nest Tech Solutions?</h2>
+    <h2>Why Choose Nest Tech AI Solutions?</h2>
     <p class="section-subtitle">The advantages that set us apart in the technology landscape</p>
     
     <div class="advantages-grid">
@@ -223,46 +223,6 @@
             <span class="metric-value">{{metric.value}}</span>
             <span class="metric-label">{{metric.label}}</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Client Success Stories -->
-<section class="client-success" @fadeIn>
-  <div class="success-container">
-    <h2>Client Success Stories</h2>
-    <p class="section-subtitle">Real results from our technology partnerships</p>
-    
-    <div class="success-grid">
-      <div class="success-card" *ngFor="let story of successStories; trackBy: trackByIndex" @scaleIn>
-        <div class="success-header">
-          <div class="client-info">
-            <h3>{{story.client}}</h3>
-            <span class="industry">{{story.industry}}</span>
-          </div>
-          <div class="project-type">
-            <span class="type-badge">{{story.solutionType}}</span>
-          </div>
-        </div>
-        
-        <p class="success-challenge">{{story.challenge}}</p>
-        
-        <div class="success-results">
-          <h4>Results Achieved</h4>
-          <div class="results-grid">
-            <div class="result-item" *ngFor="let result of story.results; trackBy: trackByString">
-              <i class="pi pi-arrow-up"></i>
-              <span>{{result}}</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="success-technologies">
-          <span *ngFor="let tech of story.technologies.slice(0, 3); trackBy: trackByString" class="tech-used">
-            {{tech}}
-          </span>
         </div>
       </div>
     </div>

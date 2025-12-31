@@ -21,73 +21,23 @@ import { MessageService } from 'primeng/api';
 
 import { FeedbackService } from './feedback.service';
 import { Subscription } from 'rxjs';
-
-// Enhanced Interfaces
-interface AdvancedFeedback {
-  clientName: string;
-  clientEmail: string;
-  company?: string;
-  industry?: string;
-  projectName?: string;
-  completionDate?: Date;
-  servicesUsed?: string[];
-  projectSize?: string;
-  ratings: { [key: string]: number };
-  highlights: string;
-  improvements: string;
-  recommendation: string;
-  allowPublish: boolean;
-  showCompany: boolean;
-  contactForCase: boolean;
-}
-
-interface FeedbackType {
-  id: string;
-  title: string;
-  description: string;
-  longDescription: string;
-  icon: string;
-  count: number;
-}
-
-interface LiveStat {
-  id: string;
-  icon: string;
-  value: number;
-  displayValue: string;
-  label: string;
-  trend: number;
-}
-
-interface EmojiRating {
-  emoji: string;
-  label: string;
-}
-
-interface QuickFeedback {
-  rating: number;
-  comment: string;
-}
-
-interface Review {
-  id: string;
-  name: string;
-  email: string;
-  company?: string;
-  position?: string;
-  avatar?: string;
-  rating: number;
-  subject: string;
-  message: string;
-  projectName?: string;
-  date: Date;
-  tags: { name: string; type: string }[];
-  verified: boolean;
-  likes?: number;
-  isLiked?: boolean;
-  expanded?: boolean;
-  metrics?: { label: string; value: number }[];
-}
+import {
+  AdvancedFeedback,
+  Review,
+  ReviewTag,
+  FeedbackType,
+  LiveStat,
+  EmojiRating,
+  QuickFeedback,
+  FeedbackFormData,
+  ReviewFilters,
+  ImpactMetric,
+  ChartData,
+  ChartOptions,
+  KeyMetric,
+  DropdownOption
+} from './feedback.types';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-feedback',
@@ -150,10 +100,11 @@ interface Review {
 })
 export class FeedbackComponent implements OnInit, OnDestroy {
   @ViewChild('reviewsSection') reviewsSection!: ElementRef;
+  @ViewChild('dynamicForm') dynamicForm!: NgForm;
 
   // Original properties
-  feedbacks: any[] = [];
-  feedback: any = {
+  feedbacks: Review[] = [];
+  feedback: FeedbackFormData = {
     name: '',
     email: '',
     subject: '',
@@ -164,7 +115,26 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   isSubmitting = false;
   showSuccess = false;
   tokenError = '';
+  // Security: Token should come from environment or secure service
+  // For now, keeping as readonly but should be moved to environment config
+  // TODO: Move to environment configuration file
   readonly VALID_TOKEN = 'FEED2024';
+
+  // Sanitize input to prevent XSS
+  private sanitizeInput(input: string): string {
+    if (!input) return '';
+    // Remove potentially dangerous characters and trim
+    return input.trim()
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+      .replace(/javascript:/gi, '')
+      .replace(/on\w+\s*=/gi, '');
+  }
+
+  // Validate email format
+  private isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   // Enhanced properties
   selectedFeedbackType: string = '';
@@ -270,7 +240,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   ];
 
   // Dropdown options
-  industries = [
+  industries: DropdownOption[] = [
     { label: 'Technology', value: 'technology' },
     { label: 'Healthcare', value: 'healthcare' },
     { label: 'Finance', value: 'finance' },
@@ -280,7 +250,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
     { label: 'Other', value: 'other' }
   ];
 
-  serviceOptions = [
+  serviceOptions: DropdownOption[] = [
     { label: 'Web Development', value: 'web' },
     { label: 'Mobile Development', value: 'mobile' },
     { label: 'UI/UX Design', value: 'design' },
@@ -290,7 +260,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
     { label: 'Consulting', value: 'consulting' }
   ];
 
-  projectSizes = [
+  projectSizes: DropdownOption[] = [
     { label: 'Small (< 3 months)', value: 'small' },
     { label: 'Medium (3-6 months)', value: 'medium' },
     { label: 'Large (6-12 months)', value: 'large' },
@@ -307,33 +277,33 @@ export class FeedbackComponent implements OnInit, OnDestroy {
 
   // Review filtering and display
   filteredReviews: Review[] = [];
-  reviewFilters = {
+  reviewFilters: ReviewFilters = {
     industry: '',
     rating: '',
     service: '',
     search: ''
   };
 
-  industryFilters = [
+  industryFilters: DropdownOption[] = [
     { label: 'Technology', value: 'technology' },
     { label: 'Healthcare', value: 'healthcare' },
     { label: 'Finance', value: 'finance' },
     { label: 'E-commerce', value: 'ecommerce' }
   ];
 
-  ratingFilters = [
+  ratingFilters: DropdownOption[] = [
     { label: '5 Stars', value: '5' },
     { label: '4+ Stars', value: '4' },
     { label: '3+ Stars', value: '3' }
   ];
 
-  serviceFilters = [
+  serviceFilters: DropdownOption[] = [
     { label: 'Web Development', value: 'web' },
     { label: 'Mobile Development', value: 'mobile' },
     { label: 'UI/UX Design', value: 'design' }
   ];
 
-  sortOptions = [
+  sortOptions: DropdownOption[] = [
     { label: 'Most Recent', value: 'recent' },
     { label: 'Highest Rated', value: 'rating' },
     { label: 'Most Helpful', value: 'helpful' }
@@ -345,7 +315,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   loadingMoreReviews = false;
 
   // Impact metrics
-  impactMetrics = [
+  impactMetrics: ImpactMetric[] = [
     {
       title: 'Feature Implementations',
       description: 'Client suggestions that became reality',
@@ -373,10 +343,10 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   ];
 
   // Analytics data
-  ratingChartData: any;
-  trendsChartData: any;
-  chartOptions: any;
-  keyMetrics: any[] = [];
+  ratingChartData: ChartData | null = null;
+  trendsChartData: ChartData | null = null;
+  chartOptions: ChartOptions | null = null;
+  keyMetrics: KeyMetric[] = [];
 
   // Subscriptions
   private subscriptions: Subscription[] = [];
@@ -446,17 +416,27 @@ export class FeedbackComponent implements OnInit, OnDestroy {
 
   // Data loading methods
   loadFeedbacks() {
-    const subscription = this.feedbackService.getFeedbacks().subscribe(data => {
-      this.feedbacks = data.map((fb: any) => ({
-        ...fb,
-        date: new Date(fb.date || Date.now()),
-        tags: fb.tags || [],
-        expanded: false,
-        isLiked: false
-      }));
-      this.filteredReviews = [...this.feedbacks];
-      this.totalReviews = this.feedbacks.length;
-      this.displayedReviews = Math.min(6, this.totalReviews);
+    const subscription = this.feedbackService.getFeedbacks().subscribe({
+      next: (data) => {
+        this.feedbacks = data.map((fb) => ({
+          ...fb,
+          date: new Date(fb.date || Date.now()),
+          tags: fb.tags || [],
+          expanded: false,
+          isLiked: false
+        }));
+        this.filteredReviews = [...this.feedbacks];
+        this.totalReviews = this.feedbacks.length;
+        this.displayedReviews = Math.min(6, this.totalReviews);
+      },
+      error: (error) => {
+        console.error('Error loading feedbacks:', error);
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to load feedback. Please refresh the page.'
+        });
+      }
     });
     this.subscriptions.push(subscription);
   }
@@ -502,13 +482,61 @@ export class FeedbackComponent implements OnInit, OnDestroy {
 
   // Advanced feedback methods
   submitAdvancedFeedback() {
-    this.isSubmitting = true;
-    
-    const feedbackData = {
+    if (this.dynamicForm && this.dynamicForm.invalid) {
+      this.markFormGroupTouched(this.dynamicForm);
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Validation Error',
+        detail: 'Please fill in all required fields correctly.'
+      });
+      return;
+    }
+
+    // Sanitize all text inputs
+    const sanitizedFeedback: AdvancedFeedback = {
       ...this.advancedFeedback,
+      clientName: this.sanitizeInput(this.advancedFeedback.clientName),
+      clientEmail: this.sanitizeInput(this.advancedFeedback.clientEmail),
+      company: this.advancedFeedback.company ? this.sanitizeInput(this.advancedFeedback.company) : undefined,
+      projectName: this.advancedFeedback.projectName ? this.sanitizeInput(this.advancedFeedback.projectName) : undefined,
+      highlights: this.sanitizeInput(this.advancedFeedback.highlights),
+      improvements: this.sanitizeInput(this.advancedFeedback.improvements),
+      recommendation: this.sanitizeInput(this.advancedFeedback.recommendation),
       type: this.selectedFeedbackType,
       date: new Date()
     };
+
+    // Validate email
+    if (!this.isValidEmail(sanitizedFeedback.clientEmail)) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Invalid Email',
+        detail: 'Please enter a valid email address.'
+      });
+      return;
+    }
+
+    // Validate ratings if project feedback
+    if (this.selectedFeedbackType === 'project') {
+      const hasRatings = Object.values(sanitizedFeedback.ratings).some(rating => rating > 0);
+      if (!hasRatings) {
+        this.messageService.add({
+          severity: 'warn',
+          summary: 'Rating Required',
+          detail: 'Please provide at least one rating.'
+        });
+        return;
+      }
+    }
+
+    // Clamp ratings to valid range
+    Object.keys(sanitizedFeedback.ratings).forEach(key => {
+      sanitizedFeedback.ratings[key] = Math.max(0, Math.min(5, sanitizedFeedback.ratings[key] || 0));
+    });
+
+    this.isSubmitting = true;
+    
+    const feedbackData: AdvancedFeedback = sanitizedFeedback;
 
     const subscription = this.feedbackService.postAdvancedFeedback(feedbackData).subscribe({
       next: (response) => {
@@ -516,18 +544,36 @@ export class FeedbackComponent implements OnInit, OnDestroy {
         this.resetAdvancedForm();
         this.isSubmitting = false;
         this.loadFeedbacks(); // Refresh the list
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Your feedback has been submitted successfully!'
+        });
       },
       error: (error) => {
         console.error('Error submitting feedback:', error);
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'Failed to submit feedback. Please try again.'
+          detail: error?.message || 'Failed to submit feedback. Please try again.'
         });
         this.isSubmitting = false;
       }
     });
     this.subscriptions.push(subscription);
+  }
+
+  private markFormGroupTouched(formGroup: NgForm | any) {
+    if (!formGroup || !formGroup.controls) return;
+    Object.keys(formGroup.controls).forEach(key => {
+      const control = formGroup.controls[key];
+      if (control) {
+        control.markAsTouched();
+        if (control.controls) {
+          this.markFormGroupTouched(control);
+        }
+      }
+    });
   }
 
   saveDraft() {
@@ -577,13 +623,46 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   }
 
   copyReviewLink() {
-    navigator.clipboard.writeText(window.location.href);
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Copied!',
-      detail: 'Review link copied to clipboard.'
-    });
-    this.showShareModal = false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Copied!',
+          detail: 'Review link copied to clipboard.'
+        });
+        this.showShareModal = false;
+      }).catch(() => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to copy link. Please try again.'
+        });
+      });
+    } else {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = window.location.href;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Copied!',
+          detail: 'Review link copied to clipboard.'
+        });
+        this.showShareModal = false;
+      } catch (err) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to copy link. Please try again.'
+        });
+      }
+      document.body.removeChild(textArea);
+    }
   }
 
   shareOnLinkedIn() {
@@ -607,12 +686,24 @@ export class FeedbackComponent implements OnInit, OnDestroy {
     this.displayedReviews = Math.min(6, this.filteredReviews.length);
   }
 
-  searchReviews(event: any) {
-    const searchTerm = event.target.value.toLowerCase();
+  searchReviews(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const searchTerm = this.sanitizeInput(target.value).toLowerCase().trim();
+    this.reviewFilters.search = searchTerm;
+    
+    if (!searchTerm) {
+      this.filterReviews();
+      return;
+    }
+    
+    // Escape special regex characters to prevent regex injection
+    const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
     this.filteredReviews = this.feedbacks.filter(review =>
-      review.name.toLowerCase().includes(searchTerm) ||
-      review.subject.toLowerCase().includes(searchTerm) ||
-      review.message.toLowerCase().includes(searchTerm)
+      review.name.toLowerCase().includes(escapedSearchTerm) ||
+      review.subject.toLowerCase().includes(escapedSearchTerm) ||
+      review.message.toLowerCase().includes(escapedSearchTerm) ||
+      review.company?.toLowerCase().includes(escapedSearchTerm)
     );
     this.displayedReviews = Math.min(6, this.filteredReviews.length);
   }
@@ -679,16 +770,57 @@ export class FeedbackComponent implements OnInit, OnDestroy {
   submitFeedback() {
     if (this.isSubmitting) return;
     this.tokenError = '';
-    if (this.feedback.token !== this.VALID_TOKEN) {
-      this.tokenError = 'Invalid feedback token.';
+    
+    // Sanitize inputs
+    const sanitizedName = this.sanitizeInput(this.feedback.name);
+    const sanitizedEmail = this.sanitizeInput(this.feedback.email);
+    const sanitizedSubject = this.sanitizeInput(this.feedback.subject);
+    const sanitizedMessage = this.sanitizeInput(this.feedback.message);
+    
+    // Validate required fields
+    if (!sanitizedName || !sanitizedEmail || !sanitizedSubject || !sanitizedMessage) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Validation Error',
+        detail: 'Please fill in all required fields.'
+      });
       return;
     }
+
+    // Validate email format
+    if (!this.isValidEmail(sanitizedEmail)) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Invalid Email',
+        detail: 'Please enter a valid email address.'
+      });
+      return;
+    }
+
+    // Validate token (sanitized)
+    const sanitizedToken = this.sanitizeInput(this.feedback.token);
+    if (sanitizedToken !== this.VALID_TOKEN) {
+      this.tokenError = 'Invalid feedback token.';
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Invalid Token',
+        detail: 'Invalid feedback token. Please check your token and try again.'
+      });
+      return;
+    }
+    
     this.isSubmitting = true;
-    const feedbackData = {
-      ...this.feedback,
+    const feedbackData: Partial<Review> = {
+      name: sanitizedName,
+      email: sanitizedEmail,
+      subject: sanitizedSubject,
+      message: sanitizedMessage,
+      rating: Math.max(0, Math.min(5, this.feedback.rating)), // Clamp rating between 0-5
       date: new Date(),
-      tags: this.generateTags(this.feedback.rating)
+      tags: this.generateTags(this.feedback.rating),
+      verified: false
     };
+    
     const subscription = this.feedbackService.postFeedback(feedbackData).subscribe({
       next: (newFb) => {
         this.feedbacks.unshift(newFb);
@@ -698,17 +830,22 @@ export class FeedbackComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error submitting feedback:', error);
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: error?.message || 'Failed to submit feedback. Please try again.'
+        });
         this.isSubmitting = false;
       }
     });
     this.subscriptions.push(subscription);
   }
 
-  private generateTags(rating: number): string[] {
-    const tags = [];
-    if (rating >= 4) tags.push('Excellent');
-    if (rating >= 3) tags.push('Good');
-    if (rating <= 2) tags.push('Needs Improvement');
+  private generateTags(rating: number): ReviewTag[] {
+    const tags: ReviewTag[] = [];
+    if (rating >= 4) tags.push({ name: 'Excellent', type: 'rating' });
+    if (rating >= 3 && rating < 4) tags.push({ name: 'Good', type: 'rating' });
+    if (rating <= 2) tags.push({ name: 'Needs Improvement', type: 'rating' });
     return tags;
   }
 
@@ -721,6 +858,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
       rating: 0,
       token: ''
     };
+    this.tokenError = '';
   }
 
   private showSuccessMessage() {

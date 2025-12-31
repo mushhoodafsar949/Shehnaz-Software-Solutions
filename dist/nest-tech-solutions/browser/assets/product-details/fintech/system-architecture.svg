@@ -1,131 +1,264 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="frontendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="backendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+  
   <!-- Background -->
-  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  <rect x="0" y="0" width="1200" height="900" fill="#1a237e" rx="20"/>
   
   <!-- Title -->
-  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">FinTech Suite - System Architecture</text>
+  <text x="600" y="40" fill="#ffffff" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle">FinTech Suite - Technical Architecture</text>
   
-  <!-- Client Layer -->
-  <g transform="translate(50, 100)">
-    <rect width="1100" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Client Applications</text>
+  <!-- Frontend Layer -->
+  <g transform="translate(50, 80)">
+    <!-- Angular Web Portal -->
+    <rect width="200" height="140" fill="url(#frontendGrad)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <rect x="10" y="10" width="180" height="50" fill="rgba(255,255,255,0.2)" rx="6"/>
+    <text x="100" y="35" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Angular</text>
+    <text x="100" y="50" fill="#ffffff" font-family="Arial" font-size="11" text-anchor="middle">Web Portal</text>
+    <text x="100" y="85" fill="#ffffff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="600">Corporate Dashboard</text>
+    <text x="100" y="105" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Bulk Processing</text>
+    <text x="100" y="120" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Portfolio Analytics</text>
     
-    <!-- Web App -->
-    <g transform="translate(20, 60)">
-      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Web Trading Platform</text>
+    <!-- Flutter Mobile App -->
+    <g transform="translate(250, 0)">
+      <rect width="200" height="140" fill="url(#frontendGrad)" rx="12" stroke="#ffffff" stroke-width="2"/>
+      <rect x="10" y="10" width="180" height="50" fill="rgba(255,255,255,0.2)" rx="6"/>
+      <text x="100" y="35" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Flutter</text>
+      <text x="100" y="50" fill="#ffffff" font-family="Arial" font-size="11" text-anchor="middle">Mobile App</text>
+      <text x="100" y="85" fill="#ffffff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="600">iOS &amp; Android</text>
+      <text x="100" y="105" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Stocks &amp; Funds</text>
+      <text x="100" y="120" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Payments &amp; Rewards</text>
+    </g>
+  </g>
+  
+  <!-- API Gateway / Load Balancer -->
+  <g transform="translate(500, 80)">
+    <rect width="200" height="140" fill="#f59e0b" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="100" y="40" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">API Gateway</text>
+    <text x="100" y="60" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="11" text-anchor="middle">Load Balancer</text>
+    <rect x="20" y="75" width="160" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
+    <rect x="20" y="90" width="160" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
+    <rect x="20" y="105" width="160" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
+    <text x="100" y="125" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">SSL Termination</text>
+  </g>
+  
+  <!-- Business Logic Layer -->
+  <g transform="translate(750, 80)">
+    <rect width="200" height="140" fill="url(#backendGrad)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="100" y="40" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Business Logic</text>
+    <text x="100" y="60" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="11" text-anchor="middle">Node.js &amp; Python</text>
+    <text x="100" y="85" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">- Request Processing</text>
+    <text x="100" y="105" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">- Data Validation</text>
+    <text x="100" y="120" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">- Business Rules</text>
+  </g>
+  
+  <!-- API Services Layer -->
+  <g transform="translate(50, 280)">
+    <rect width="1100" height="300" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="550" y="30" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">API Services</text>
+    
+    <!-- Payment API -->
+    <g transform="translate(30, 60)">
+      <rect width="180" height="200" fill="url(#apiGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="40" r="25" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="47" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">$</text>
+      <text x="90" y="85" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Payment API</text>
+      <text x="90" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">IBFT Transfers</text>
+      <text x="90" y="130" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">International</text>
+      <text x="90" y="150" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Account Upgrades</text>
+      <text x="90" y="170" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Advance Salary</text>
     </g>
     
-    <!-- Mobile App -->
+    <!-- Trading API -->
     <g transform="translate(240, 60)">
-      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Mobile Apps (iOS/Android)</text>
+      <rect width="180" height="200" fill="url(#apiGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="40" r="25" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="47" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">📈</text>
+      <text x="90" y="85" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Trading API</text>
+      <text x="90" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Stocks Trading</text>
+      <text x="90" y="130" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Mutual Funds</text>
+      <text x="90" y="150" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Portfolio Mgmt</text>
+      <text x="90" y="170" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Real-time Data</text>
     </g>
     
-    <!-- API Clients -->
-    <g transform="translate(460, 60)">
-      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">API Integration Clients</text>
+    <!-- Portfolio API -->
+    <g transform="translate(450, 60)">
+      <rect width="180" height="200" fill="url(#apiGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="40" r="25" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="47" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">📊</text>
+      <text x="90" y="85" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Portfolio API</text>
+      <text x="90" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Gains/Losses</text>
+      <text x="90" y="130" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Analytics</text>
+      <text x="90" y="150" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Bulk Processing</text>
+      <text x="90" y="170" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Reports</text>
     </g>
     
-    <!-- Admin Dashboard -->
-    <g transform="translate(680, 60)">
-      <rect width="200" height="40" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Admin Dashboard</text>
+    <!-- Rewards API -->
+    <g transform="translate(660, 60)">
+      <rect width="180" height="200" fill="url(#apiGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="40" r="25" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="47" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">🎁</text>
+      <text x="90" y="85" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Rewards API</text>
+      <text x="90" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Referrals</text>
+      <text x="90" y="130" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Spin &amp; Win</text>
+      <text x="90" y="150" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Loyalty Points</text>
+      <text x="90" y="170" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Redemptions</text>
+    </g>
+    
+    <!-- Integration API -->
+    <g transform="translate(870, 60)">
+      <rect width="180" height="200" fill="url(#apiGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="90" cy="40" r="25" fill="rgba(255,255,255,0.3)"/>
+      <text x="90" y="47" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">🔗</text>
+      <text x="90" y="85" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Integration API</text>
+      <text x="90" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Banking APIs</text>
+      <text x="90" y="130" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Payment Gateways</text>
+      <text x="90" y="150" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Trading Platforms</text>
+      <text x="90" y="170" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="10" text-anchor="middle">Third-party</text>
     </g>
   </g>
   
-  <!-- Load Balancer -->
-  <g transform="translate(50, 240)">
-    <rect width="1100" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="10"/>
-    <text x="550" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Load Balancer + SSL Termination</text>
-  </g>
-  
-  <!-- Core Services -->
-  <g transform="translate(50, 320)">
-    <rect width="1100" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Core Services</text>
+  <!-- Database Layer -->
+  <g transform="translate(50, 640)">
+    <rect width="500" height="200" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="250" y="30" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Database Layer</text>
     
-    <!-- Trading Engine -->
-    <g transform="translate(20, 70)">
-      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Trading Engine</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Order Matching</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Price Discovery</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Risk Management</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Position Tracking</text>
+    <!-- PostgreSQL -->
+    <g transform="translate(30, 60)">
+      <rect width="140" height="120" fill="url(#dbGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <rect x="20" y="15" width="100" height="50" fill="rgba(255,255,255,0.2)" rx="4"/>
+      <text x="70" y="38" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">PostgreSQL</text>
+      <text x="70" y="55" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">Primary DB</text>
+      <text x="70" y="85" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">User Data</text>
+      <text x="70" y="105" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Transactions</text>
+      <text x="70" y="120" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Portfolio</text>
     </g>
     
-    <!-- Blockchain Network -->
-    <g transform="translate(290, 70)">
-      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Blockchain Network</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Smart Contracts</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Transaction Validation</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Asset Tokenization</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Consensus Protocol</text>
+    <!-- Redis Cache -->
+    <g transform="translate(190, 60)">
+      <rect width="140" height="120" fill="url(#dbGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <rect x="20" y="15" width="100" height="50" fill="rgba(255,255,255,0.2)" rx="4"/>
+      <text x="70" y="38" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Redis</text>
+      <text x="70" y="55" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">Cache</text>
+      <text x="70" y="85" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Session Data</text>
+      <text x="70" y="105" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Real-time</text>
+      <text x="70" y="120" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Queue</text>
     </g>
     
-    <!-- Analytics Engine -->
-    <g transform="translate(560, 70)">
-      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Analytics Engine</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Market Analysis</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• ML Predictions</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Risk Analytics</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Portfolio Analysis</text>
-    </g>
-    
-    <!-- User Services -->
-    <g transform="translate(830, 70)">
-      <rect width="250" height="180" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">User Services</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Account Management</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• KYC/AML</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Wallet Management</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Authentication</text>
+    <!-- File Storage -->
+    <g transform="translate(350, 60)">
+      <rect width="140" height="120" fill="url(#dbGrad)" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <rect x="20" y="15" width="100" height="50" fill="rgba(255,255,255,0.2)" rx="4"/>
+      <text x="70" y="38" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">S3 Storage</text>
+      <text x="70" y="55" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">AWS S3</text>
+      <text x="70" y="85" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Documents</text>
+      <text x="70" y="105" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Reports</text>
+      <text x="70" y="120" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Backups</text>
     </g>
   </g>
   
-  <!-- Data Layer -->
-  <g transform="translate(50, 620)">
-    <rect width="1100" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Data Layer</text>
+  <!-- Third-Party Integrations -->
+  <g transform="translate(600, 640)">
+    <rect width="550" height="200" fill="rgba(255,255,255,0.1)" rx="12" stroke="#ffffff" stroke-width="2"/>
+    <text x="275" y="30" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Third-Party Integrations</text>
     
-    <!-- Time Series DB -->
-    <g transform="translate(20, 60)">
-      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">InfluxDB</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Market Data</text>
+    <!-- Banking APIs -->
+    <g transform="translate(30, 60)">
+      <rect width="120" height="120" fill="#10b981" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="60" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="60" y="42" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">🏦</text>
+      <text x="60" y="75" fill="#ffffff" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Banking APIs</text>
+      <text x="60" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Chase</text>
+      <text x="60" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Wells Fargo</text>
     </g>
     
-    <!-- Blockchain DB -->
-    <g transform="translate(240, 60)">
-      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Ethereum Network</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Smart Contracts</text>
+    <!-- Payment Gateways -->
+    <g transform="translate(170, 60)">
+      <rect width="120" height="120" fill="#10b981" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="60" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="60" y="42" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">💳</text>
+      <text x="60" y="75" fill="#ffffff" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Payment</text>
+      <text x="60" y="90" fill="#ffffff" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Gateways</text>
+      <text x="60" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Stripe</text>
     </g>
     
-    <!-- User DB -->
-    <g transform="translate(460, 60)">
-      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">PostgreSQL</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">User Data</text>
+    <!-- Trading Platforms -->
+    <g transform="translate(310, 60)">
+      <rect width="120" height="120" fill="#10b981" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="60" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="60" y="42" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">📈</text>
+      <text x="60" y="75" fill="#ffffff" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Trading</text>
+      <text x="60" y="90" fill="#ffffff" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Platforms</text>
+      <text x="60" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Bloomberg</text>
     </g>
     
-    <!-- Cache -->
-    <g transform="translate(680, 60)">
-      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Redis Cluster</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Real-time Data</text>
+    <!-- Analytics -->
+    <g transform="translate(450, 60)">
+      <rect width="120" height="120" fill="#10b981" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="60" cy="35" r="20" fill="rgba(255,255,255,0.3)"/>
+      <text x="60" y="42" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">📊</text>
+      <text x="60" y="75" fill="#ffffff" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Analytics</text>
+      <text x="60" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Google</text>
+      <text x="60" y="110" fill="rgba(255,255,255,0.9)" font-family="Arial" font-size="9" text-anchor="middle">Analytics</text>
     </g>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g stroke="#ffffff" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.7">
+    <!-- Frontend to API Gateway -->
+    <path d="M250 220 L500 220"/>
+    <path d="M450 220 L500 220"/>
     
-    <!-- Analytics DB -->
-    <g transform="translate(900, 60)">
-      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">ClickHouse</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Analytics Data</text>
-    </g>
+    <!-- API Gateway to Business Logic -->
+    <path d="M700 220 L750 220"/>
+    
+    <!-- Business Logic to APIs -->
+    <path d="M850 220 L850 280 L140 280"/>
+    <path d="M850 220 L850 280 L350 280"/>
+    <path d="M850 220 L850 280 L560 280"/>
+    <path d="M850 220 L850 280 L770 280"/>
+    <path d="M850 220 L850 280 L980 280"/>
+    
+    <!-- APIs to Database -->
+    <path d="M140 480 L140 640 L120 640"/>
+    <path d="M350 480 L350 640 L200 640"/>
+    <path d="M560 480 L560 640 L280 640"/>
+    
+    <!-- APIs to Integrations -->
+    <path d="M770 480 L770 640 L630 640"/>
+    <path d="M980 480 L980 640 L800 640"/>
+    
+    <!-- Business Logic to Integrations -->
+    <path d="M850 220 L850 640 L700 640"/>
+  </g>
+  
+  <!-- Return Flow Arrows (lighter) -->
+  <g stroke="#ffffff" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.4" stroke-dasharray="5,5">
+    <!-- Database to APIs -->
+    <path d="M200 760 L200 480 L140 480"/>
+    <path d="M280 760 L280 480 L350 480"/>
+    
+    <!-- Integrations to APIs -->
+    <path d="M700 760 L700 480 L770 480"/>
+    <path d="M800 760 L800 480 L980 480"/>
   </g>
 </svg>

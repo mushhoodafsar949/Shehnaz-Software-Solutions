@@ -1,118 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="1000" viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
   <!-- Background -->
-  <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
+  <rect width="1400" height="1000" fill="url(#bgGrad)" rx="24"/>
   
   <!-- Title -->
-  <text x="50" y="50" fill="#1e293b" font-family="Arial" font-size="24" font-weight="bold">SmartRetail Pro - System Architecture</text>
+  <text x="700" y="45" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" text-anchor="middle">SmartRetail Pro - Modern Microservices Architecture</text>
   
-  <!-- Store Layer -->
-  <g transform="translate(50, 100)">
-    <rect width="1100" height="120" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Store Systems</text>
+  <!-- Client Layer -->
+  <g transform="translate(50, 80)">
+    <rect width="1300" height="100" fill="white" stroke="#166534" stroke-width="2" rx="12" filter="url(#shadow)"/>
+    <text x="20" y="35" fill="#166534" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Client Layer</text>
     
-    <!-- POS Terminals -->
+    <!-- Client Devices -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="180" height="40" fill="#dcfce7" stroke="#166534" stroke-width="1.5" rx="8"/>
+      <text x="90" y="26" fill="#166534" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">POS Terminals</text>
+      
+      <rect x="200" y="0" width="180" height="40" fill="#dcfce7" stroke="#166534" stroke-width="1.5" rx="8"/>
+      <text x="290" y="26" fill="#166534" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Mobile Apps</text>
+      
+      <rect x="400" y="0" width="180" height="40" fill="#dcfce7" stroke="#166534" stroke-width="1.5" rx="8"/>
+      <text x="490" y="26" fill="#166534" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Web Dashboard</text>
+      
+      <rect x="600" y="0" width="180" height="40" fill="#dcfce7" stroke="#166534" stroke-width="1.5" rx="8"/>
+      <text x="690" y="26" fill="#166534" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">IoT Devices</text>
+      
+      <rect x="800" y="0" width="180" height="40" fill="#dcfce7" stroke="#166534" stroke-width="1.5" rx="8"/>
+      <text x="890" y="26" fill="#166534" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Digital Signage</text>
+      
+      <rect x="1000" y="0" width="180" height="40" fill="#dcfce7" stroke="#166534" stroke-width="1.5" rx="8"/>
+      <text x="1090" y="26" fill="#166534" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Kiosks</text>
+    </g>
+  </g>
+  
+  <!-- API Gateway Layer -->
+  <g transform="translate(50, 200)">
+    <rect width="1300" height="80" fill="url(#primaryGrad)" stroke="#166534" stroke-width="2" rx="12" filter="url(#shadow)" opacity="0.95"/>
+    <text x="20" y="35" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="600">API Gateway &amp; Load Balancer</text>
+    <text x="20" y="58" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="13">Kong / AWS API Gateway • Rate Limiting • Authentication • Request Routing</text>
+  </g>
+  
+  <!-- Microservices Layer -->
+  <g transform="translate(50, 300)">
+    <rect width="1300" height="380" fill="white" stroke="#e2e8f0" stroke-width="2" rx="12" filter="url(#shadow)"/>
+    <text x="20" y="35" fill="#0f172a" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Microservices Layer (Kubernetes Cluster)</text>
+    
+    <!-- Row 1: Core Services -->
     <g transform="translate(20, 60)">
-      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">POS Terminals</text>
+      <!-- Sales Service -->
+      <rect x="0" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="100" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Sales Service</text>
+      <g transform="translate(15, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Transaction Processing</text>
+        <text x="0" y="32">• Payment Gateway</text>
+        <text x="0" y="49">• Receipt Generation</text>
+        <text x="0" y="66">• Refund Management</text>
+        <text x="0" y="83">• Tax Calculation</text>
+      </g>
+      
+      <!-- Inventory Service -->
+      <rect x="230" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="230" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="330" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Inventory Service</text>
+      <g transform="translate(245, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Stock Tracking</text>
+        <text x="0" y="32">• Auto Reordering</text>
+        <text x="0" y="49">• Supplier Sync</text>
+        <text x="0" y="66">• Warehouse Ops</text>
+        <text x="0" y="83">• Multi-location</text>
+      </g>
+      
+      <!-- Customer Service -->
+      <rect x="460" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="460" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="560" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Customer Service</text>
+      <g transform="translate(475, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Profile Management</text>
+        <text x="0" y="32">• Loyalty Program</text>
+        <text x="0" y="49">• Purchase History</text>
+        <text x="0" y="66">• Preferences</text>
+        <text x="0" y="83">• Support Tickets</text>
+      </g>
+      
+      <!-- Analytics Service -->
+      <rect x="690" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="690" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="790" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Analytics Service</text>
+      <g transform="translate(705, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Real-time Dashboards</text>
+        <text x="0" y="32">• Sales Reports</text>
+        <text x="0" y="49">• Predictive Analytics</text>
+        <text x="0" y="66">• Trend Analysis</text>
+        <text x="0" y="83">• KPI Tracking</text>
+      </g>
+      
+      <!-- Notification Service -->
+      <rect x="920" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="920" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="1020" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Notification Service</text>
+      <g transform="translate(935, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Push Notifications</text>
+        <text x="0" y="32">• Email Campaigns</text>
+        <text x="0" y="49">• SMS Alerts</text>
+        <text x="0" y="66">• In-app Messages</text>
+        <text x="0" y="83">• Event Triggers</text>
+      </g>
     </g>
     
-    <!-- Inventory Scanners -->
-    <g transform="translate(240, 60)">
-      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Inventory Scanners</text>
-    </g>
-    
-    <!-- Digital Displays -->
-    <g transform="translate(460, 60)">
-      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Digital Signage</text>
-    </g>
-    
-    <!-- Security Cameras -->
-    <g transform="translate(680, 60)">
-      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Systems</text>
-    </g>
-    
-    <!-- IoT Sensors -->
-    <g transform="translate(900, 60)">
-      <rect width="200" height="40" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">IoT Sensors</text>
+    <!-- Row 2: Supporting Services -->
+    <g transform="translate(20, 220)">
+      <!-- Payment Service -->
+      <rect x="0" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="0" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="100" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Payment Service</text>
+      <g transform="translate(15, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Payment Processing</text>
+        <text x="0" y="32">• Card Payments</text>
+        <text x="0" y="49">• Digital Wallets</text>
+        <text x="0" y="66">• Cryptocurrency</text>
+        <text x="0" y="83">• PCI Compliance</text>
+      </g>
+      
+      <!-- Security Service -->
+      <rect x="230" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="230" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="330" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Security Service</text>
+      <g transform="translate(245, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Authentication</text>
+        <text x="0" y="32">• Authorization</text>
+        <text x="0" y="49">• Fraud Detection</text>
+        <text x="0" y="66">• Access Control</text>
+        <text x="0" y="83">• Audit Logging</text>
+      </g>
+      
+      <!-- IoT Service -->
+      <rect x="460" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="460" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="560" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">IoT Service</text>
+      <g transform="translate(475, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Sensor Management</text>
+        <text x="0" y="32">• Device Control</text>
+        <text x="0" y="49">• Data Collection</text>
+        <text x="0" y="66">• Edge Computing</text>
+        <text x="0" y="83">• Real-time Monitoring</text>
+      </g>
+      
+      <!-- Recommendation Service -->
+      <rect x="690" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="690" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="790" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Recommendation</text>
+      <g transform="translate(705, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• ML Models</text>
+        <text x="0" y="32">• Product Suggestions</text>
+        <text x="0" y="49">• Personalization</text>
+        <text x="0" y="66">• A/B Testing</text>
+        <text x="0" y="83">• Behavior Analysis</text>
+      </g>
+      
+      <!-- Search Service -->
+      <rect x="920" y="0" width="200" height="140" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="10" filter="url(#shadow)"/>
+      <rect x="920" y="0" width="200" height="35" fill="url(#primaryGrad)" rx="10 10 0 0"/>
+      <text x="1020" y="24" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Search Service</text>
+      <g transform="translate(935, 45)" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+        <text x="0" y="15">• Full-text Search</text>
+        <text x="0" y="32">• Faceted Search</text>
+        <text x="0" y="49">• Auto-complete</text>
+        <text x="0" y="66">• Search Analytics</text>
+        <text x="0" y="83">• Relevance Ranking</text>
+      </g>
     </g>
   </g>
   
-  <!-- Edge Computing Layer -->
-  <g transform="translate(50, 240)">
-    <rect width="1100" height="80" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="10"/>
-    <text x="20" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Edge Computing Layer</text>
-    <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">Local Data Processing • Real-time Analytics • Offline Operations • Data Synchronization</text>
-  </g>
-  
-  <!-- Core Services -->
-  <g transform="translate(50, 340)">
-    <rect width="1100" height="280" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="20" y="40" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Core Services</text>
-    
-    <!-- Store Operations -->
-    <g transform="translate(20, 70)">
-      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Store Operations</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Sales Processing</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Payment Gateway</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Staff Management</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Store Analytics</text>
-    </g>
-    
-    <!-- Inventory Management -->
-    <g transform="translate(290, 70)">
-      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Inventory Management</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Stock Tracking</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Auto Reordering</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Supplier Integration</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Warehouse Mgmt</text>
-    </g>
-    
-    <!-- Customer Intelligence -->
-    <g transform="translate(560, 70)">
-      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Customer Intelligence</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Loyalty Program</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Behavior Analysis</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Personalization</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Campaign Mgmt</text>
-    </g>
-    
-    <!-- Security & Compliance -->
-    <g transform="translate(830, 70)">
-      <rect width="250" height="180" fill="#FF5722" opacity="0.1" stroke="#FF5722" stroke-width="2" rx="5"/>
-      <text x="125" y="30" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Security & Compliance</text>
-      <text x="20" y="60" fill="#64748b" font-family="Arial" font-size="14">• Fraud Detection</text>
-      <text x="20" y="90" fill="#64748b" font-family="Arial" font-size="14">• Access Control</text>
-      <text x="20" y="120" fill="#64748b" font-family="Arial" font-size="14">• Video Analytics</text>
-      <text x="20" y="150" fill="#64748b" font-family="Arial" font-size="14">• Audit Logging</text>
-    </g>
-  </g>
-  
-  <!-- Integration Layer -->
-  <g transform="translate(50, 640)">
-    <rect width="1100" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="10"/>
-    <text x="550" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Integration Layer (ESB + API Gateway)</text>
+  <!-- Message Queue & Event Bus -->
+  <g transform="translate(50, 700)">
+    <rect width="1300" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="12" filter="url(#shadow)"/>
+    <text x="20" y="35" fill="#92400e" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Message Queue &amp; Event Bus</text>
+    <text x="20" y="58" fill="#78350f" font-family="system-ui, sans-serif" font-size="13">Apache Kafka • RabbitMQ • Event Sourcing • CQRS Pattern</text>
   </g>
   
   <!-- Data Layer -->
-  <g transform="translate(50, 720)">
-    <rect width="1100" height="60" fill="white" stroke="#e2e8f0" stroke-width="2" rx="10"/>
-    <text x="20" y="35" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">Data Layer</text>
+  <g transform="translate(50, 800)">
+    <rect width="1300" height="160" fill="white" stroke="#e2e8f0" stroke-width="2" rx="12" filter="url(#shadow)"/>
+    <text x="20" y="35" fill="#0f172a" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Data Layer</text>
     
     <!-- Databases -->
-    <g transform="translate(200, 0)">
-      <text x="0" y="35" fill="#64748b" font-family="Arial" font-size="14">PostgreSQL</text>
-      <text x="200" y="35" fill="#64748b" font-family="Arial" font-size="14">MongoDB</text>
-      <text x="400" y="35" fill="#64748b" font-family="Arial" font-size="14">Redis</text>
-      <text x="600" y="35" fill="#64748b" font-family="Arial" font-size="14">Elasticsearch</text>
-      <text x="800" y="35" fill="#64748b" font-family="Arial" font-size="14">TimescaleDB</text>
+    <g transform="translate(20, 60)">
+      <!-- PostgreSQL -->
+      <rect x="0" y="0" width="180" height="80" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" rx="8" filter="url(#shadow)"/>
+      <text x="90" y="25" fill="#0c4a6e" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">PostgreSQL</text>
+      <text x="90" y="45" fill="#075985" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Transactional Data</text>
+      <text x="90" y="60" fill="#075985" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">ACID Compliance</text>
+      
+      <!-- MongoDB -->
+      <rect x="200" y="0" width="180" height="80" fill="#f0fdf4" stroke="#166534" stroke-width="2" rx="8" filter="url(#shadow)"/>
+      <text x="290" y="25" fill="#052e16" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">MongoDB</text>
+      <text x="290" y="45" fill="#14532d" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Document Store</text>
+      <text x="290" y="60" fill="#14532d" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Flexible Schema</text>
+      
+      <!-- Redis -->
+      <rect x="400" y="0" width="180" height="80" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="8" filter="url(#shadow)"/>
+      <text x="490" y="25" fill="#991b1b" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Redis</text>
+      <text x="490" y="45" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Cache Layer</text>
+      <text x="490" y="60" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Session Store</text>
+      
+      <!-- Elasticsearch -->
+      <rect x="600" y="0" width="180" height="80" fill="#f3e8ff" stroke="#9333ea" stroke-width="2" rx="8" filter="url(#shadow)"/>
+      <text x="690" y="25" fill="#581c87" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Elasticsearch</text>
+      <text x="690" y="45" fill="#6b21a8" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Search Engine</text>
+      <text x="690" y="60" fill="#6b21a8" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Log Analytics</text>
+      
+      <!-- TimescaleDB -->
+      <rect x="800" y="0" width="180" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8" filter="url(#shadow)"/>
+      <text x="890" y="25" fill="#1e3a8a" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">TimescaleDB</text>
+      <text x="890" y="45" fill="#1e40af" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Time Series</text>
+      <text x="890" y="60" fill="#1e40af" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">IoT Metrics</text>
+      
+      <!-- S3 / Object Storage -->
+      <rect x="1000" y="0" width="180" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8" filter="url(#shadow)"/>
+      <text x="1090" y="25" fill="#92400e" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">S3 / MinIO</text>
+      <text x="1090" y="45" fill="#78350f" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Object Storage</text>
+      <text x="1090" y="60" fill="#78350f" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Media Files</text>
     </g>
   </g>
+  
+  <!-- Infrastructure Layer -->
+  <g transform="translate(50, 980)">
+    <rect width="1300" height="60" fill="#f1f5f9" stroke="#64748b" stroke-width="2" rx="12"/>
+    <text x="20" y="35" fill="#475569" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Infrastructure: AWS / Azure / GCP • Kubernetes • Docker • Terraform • CI/CD Pipelines</text>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <g stroke="#166534" stroke-width="2" fill="none" opacity="0.4">
+    <!-- Client to Gateway -->
+    <path d="M700 180 L700 200" marker-end="url(#arrowhead)"/>
+    <!-- Gateway to Services -->
+    <path d="M700 280 L200 300" marker-end="url(#arrowhead)"/>
+    <path d="M700 280 L700 300" marker-end="url(#arrowhead)"/>
+    <path d="M700 280 L1200 300" marker-end="url(#arrowhead)"/>
+    <!-- Services to Message Queue -->
+    <path d="M200 680 L200 700" marker-end="url(#arrowhead)"/>
+    <path d="M700 680 L700 700" marker-end="url(#arrowhead)"/>
+    <path d="M1200 680 L1200 700" marker-end="url(#arrowhead)"/>
+    <!-- Message Queue to Data -->
+    <path d="M200 780 L200 800" marker-end="url(#arrowhead)"/>
+    <path d="M700 780 L700 800" marker-end="url(#arrowhead)"/>
+    <path d="M1200 780 L1200 800" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#166534"/>
+    </marker>
+  </defs>
 </svg>

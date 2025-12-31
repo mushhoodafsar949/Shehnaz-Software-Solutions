@@ -1,6 +1,6 @@
 # System Architecture Diagrams Collection
 
-This directory contains comprehensive system architecture diagrams created specifically for showcasing Nest Tech Solutions' technical expertise and project capabilities. All diagrams are professionally designed with consistent branding and detailed technical accuracy.
+This directory contains comprehensive system architecture diagrams created specifically for showcasing Nest Tech AI Solutions' technical expertise and project capabilities. All diagrams are professionally designed with consistent branding and detailed technical accuracy.
 
 ## 🏗️ Architecture Diagrams Collection
 
@@ -242,4 +242,4 @@ All diagrams use CSS custom properties and can be customized:
 
 ---
 
-*These architecture diagrams represent Nest Tech Solutions' commitment to technical excellence and our capability to design and implement enterprise-scale systems across various domains and technologies.*
+*These architecture diagrams represent Nest Tech AI Solutions' commitment to technical excellence and our capability to design and implement enterprise-scale systems across various domains and technologies.*

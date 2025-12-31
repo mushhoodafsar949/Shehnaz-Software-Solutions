@@ -163,11 +163,33 @@
   padding: 4rem 2rem;
   background: var(--surface-ground);
 
-  .features-grid {
+  .features-container {
     max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 auto;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-secondary-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 
     ::ng-deep .feature-card {
@@ -259,10 +281,193 @@
   }
 }
 
+// Technology Stack Section
+.tech-stack-section {
+  padding: 4rem 2rem;
+  background: var(--surface-card);
+
+  .tech-stack-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tech-stack-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-secondary-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .tech-item {
+      background: var(--surface-hover);
+      border: 1px solid var(--surface-border);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.15);
+      }
+
+      .tech-name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .tech-category {
+        font-size: 0.75rem;
+        color: var(--text-secondary-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+}
+
+// Development Process Section
+.process-section {
+  padding: 4rem 2rem;
+  background: var(--surface-ground);
+
+  .process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .process-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-secondary-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    position: relative;
+
+    @media (min-width: 1024px) {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, 
+          var(--primary-color) 0%, 
+          var(--primary-color-light) 50%, 
+          var(--primary-color) 100%);
+        z-index: 0;
+        opacity: 0.3;
+      }
+    }
+
+    .process-step {
+      position: relative;
+      z-index: 1;
+      background: var(--surface-card);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--surface-border);
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-shadow-hover);
+      }
+
+      .step-number {
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        border: 3px solid var(--surface-card);
+      }
+
+      .step-icon {
+        margin: 1rem 0 1.5rem;
+        
+        i {
+          font-size: 2.5rem;
+          color: var(--primary-color);
+        }
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        color: var(--text-secondary-color);
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+}
+
 // Testimonials Section
 .testimonials-section {
   padding: 4rem 2rem;
-  background: var(--surface-ground);
+  background: var(--surface-section);
 
   h2 {
     text-align: center;

@@ -14,7 +14,7 @@
         <span class="highlight">Digital Innovation.</span>
       </h1>
       <p class="hero-description" @slideUp>
-        Since 2019, Nest Tech Solutions has been at the forefront of digital transformation, crafting innovative solutions that empower businesses to thrive in the digital age.
+        Since 2019, Nest Tech AI Solutions has been at the forefront of digital transformation, crafting innovative solutions that empower businesses to thrive in the digital age.
       </p>
       <div class="hero-actions" @slideUp>
         <button pButton pRipple type="button" 
@@ -34,7 +34,7 @@
 <section class="history-section" @fadeIn id="history-section">
   <div class="history-container">
     <h2>Our Journey Through Innovation</h2>
-    <p class="section-subtitle">From startup to industry leader - the story of Nest Tech Solutions</p>
+    <p class="section-subtitle">From startup to industry leader - the story of Nest Tech AI Solutions</p>
     
     <div class="timeline">
       <div class="timeline-item" *ngFor="let milestone of companyTimeline; let i = index" 
@@ -57,6 +57,62 @@
   </div>
 </section>
 
+<!-- Team Leadership Carousel -->
+<section class="team-section" @fadeIn id="team-section">
+  <h2>Meet Our Leadership Team</h2>
+  <p class="section-subtitle">Visionary leaders driving innovation and excellence at Nest Tech AI Solutions</p>
+  
+  <p-carousel [value]="teamMembers" 
+             [numVisible]="3" 
+             [numScroll]="1" 
+             [circular]="true"
+             [autoplayInterval]="5000"
+             [responsiveOptions]="teamCarouselResponsive"
+             styleClass="team-carousel">
+    <ng-template let-member pTemplate="item">
+      <div class="team-member-card" 
+           [class.ceo-card]="member.role.includes('CEO')" 
+           [class.anayat-card]="member.name.includes('Anayat')" 
+           [class.mushhood-card]="member.name.includes('Mushhood')"
+           [class.kasim-card]="member.name.includes('Kasim')"
+           [class.arslan-card]="member.name.includes('Arslan')"
+           [class.jahanzaib-card]="member.name.includes('Jahanzaib')"
+           [class.abbas-card]="member.name.includes('Abbas')"
+           [class.shahzaib-card]="member.name.includes('Shahzaib')"
+           @scaleIn>
+        <div class="member-image-container">
+          <img [src]="member.image" 
+               [alt]="member.name"
+               (error)="onImageError($event)"
+               loading="lazy"
+               class="member-image">
+          <div class="member-avatar" style="display: none;">
+            <i [class]="member.icon"></i>
+          </div>
+          <div class="member-overlay">
+            <a *ngIf="member.linkedinUrl" 
+               [href]="member.linkedinUrl" 
+               target="_blank" 
+               class="linkedin-link">
+              <i class="pi pi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="member-info">
+          <h3>{{member.name}}</h3>
+          <p class="member-role">{{member.role}}</p>
+          <p class="member-description">{{member.description}}</p>
+          <div class="member-skills">
+            <p-chip *ngFor="let skill of member.skills.slice(0, 3); trackBy: trackByString"
+                    [label]="skill"
+                    styleClass="skill-chip"></p-chip>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>
+
 <!-- Company Stats -->
 <section class="stats-section" @fadeIn>
   <div class="stats-grid">
@@ -70,7 +126,7 @@
     <div class="stat-item" @slideInLeft>
       <i class="pi pi-users"></i>
       <div class="stat-content">
-        <div class="stat-number">500+</div>
+        <div class="stat-number">100+</div>
         <div class="stat-label">Projects Delivered</div>
       </div>
     </div>
@@ -130,56 +186,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- Team Leadership Carousel -->
-<section class="team-section" @fadeIn id="team-section">
-  <h2>Meet Our Leadership Team</h2>
-  <p class="section-subtitle">Visionary leaders driving innovation and excellence at Nest Tech Solutions</p>
-  
-  <p-carousel [value]="teamMembers" 
-             [numVisible]="3" 
-             [numScroll]="1" 
-             [circular]="true"
-             [autoplayInterval]="5000"
-             [responsiveOptions]="teamCarouselResponsive"
-             styleClass="team-carousel">
-    <ng-template let-member pTemplate="item">
-      <div class="team-member-card" 
-           [class.ceo-card]="member.role.includes('CEO')" 
-           [class.anayat-card]="member.name.includes('Anayat')" 
-           @scaleIn>
-        <div class="member-image-container">
-          <img [src]="member.image" 
-               [alt]="member.name"
-               (error)="onImageError($event)"
-               loading="lazy"
-               class="member-image">
-          <div class="member-avatar" style="display: none;">
-            <i [class]="member.icon"></i>
-          </div>
-          <div class="member-overlay">
-            <a *ngIf="member.linkedinUrl" 
-               [href]="member.linkedinUrl" 
-               target="_blank" 
-               class="linkedin-link">
-              <i class="pi pi-linkedin"></i>
-            </a>
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>{{member.name}}</h3>
-          <p class="member-role">{{member.role}}</p>
-          <p class="member-description">{{member.description}}</p>
-          <div class="member-skills">
-            <p-chip *ngFor="let skill of member.skills.slice(0, 3); trackBy: trackByString"
-                    [label]="skill"
-                    styleClass="skill-chip"></p-chip>
-          </div>
-        </div>
-      </div>
-    </ng-template>
-  </p-carousel>
 </section>
 
 <!-- Roadmap & Future Goals -->

@@ -28,7 +28,7 @@
     
     <!-- Website Content -->
     <rect x="15" y="40" width="270" height="30" rx="4" fill="url(#webGradient)" opacity="0.8"/>
-    <text x="150" y="58" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Nest Tech Solutions</text>
+    <text x="150" y="58" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Nest Tech AI Solutions</text>
     
     <!-- Content Blocks -->
     <rect x="15" y="80" width="80" height="60" rx="4" fill="#e2e8f0"/>

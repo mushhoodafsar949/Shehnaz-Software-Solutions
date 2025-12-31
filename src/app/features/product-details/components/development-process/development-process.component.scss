@@ -1,0 +1,335 @@
+// Apple/Tesla Inspired Development Process
+.process {
+  padding: 0;
+}
+
+// Hero
+.hero-section {
+  background: var(--surface-ground, #ffffff);
+  padding: 8rem 2rem;
+  margin: -2rem -1.5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary-color, #166534);
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--highlight-bg, #dcfce7);
+    border-radius: 100px;
+    border: 1px solid var(--surface-border, #e2e8f0);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    color: var(--text-color, #1d1d1f);
+    margin: 0 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary-color, #86868b);
+    margin: 0;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Workflow Section
+.workflow-section {
+  padding: 6rem 2rem;
+  background: var(--surface-section, #f5f5f7);
+  transition: background-color 0.3s ease;
+}
+
+.workflow-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+}
+
+.workflow-card {
+  background: var(--surface-card, #ffffff);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transform: translateZ(0);
+}
+
+.workflow-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+
+  .workflow-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &.agile {
+      background: var(--highlight-bg, #dcfce7);
+    }
+
+    &.sprint {
+      background: var(--highlight-bg, #dcfce7);
+    }
+
+    svg {
+      color: var(--primary-color, #166534);
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color, #1d1d1f);
+    margin: 0 0 0.25rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: var(--text-secondary-color, #86868b);
+    margin: 0;
+  }
+}
+
+.workflow-diagram {
+  padding: 2rem;
+  background: var(--surface-section, #fafafa);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .diagram-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary-color, #86868b);
+
+    span {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      margin: 0;
+      opacity: 0.7;
+    }
+  }
+}
+
+// Practices Section
+.practices-section {
+  padding: 6rem 2rem;
+  background: var(--surface-ground, #ffffff);
+  transition: background-color 0.3s ease;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary-color, #166534);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-color, #1d1d1f);
+      margin: 0 0 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-secondary-color, #86868b);
+      margin: 0;
+    }
+  }
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.practice-card {
+  background: var(--surface-section, #f5f5f7);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  will-change: transform;
+  transform: translateZ(0);
+
+  &:hover {
+    background: var(--surface-card, #ffffff);
+    border-color: var(--surface-border, #e5e5e5);
+    transform: translateZ(0) translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .practice-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color, #166534);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color, #1d1d1f);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary-color, #86868b);
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Dark Theme Support
+:host-context(.dark-theme) {
+  .hero-section {
+    background: var(--surface-ground);
+  }
+
+  .workflow-section {
+    background: var(--surface-section);
+  }
+
+  .workflow-card {
+    background: var(--surface-card);
+  }
+
+  .workflow-diagram {
+    background: var(--surface-section);
+  }
+
+  .practices-section {
+    background: var(--surface-ground);
+  }
+
+  .practice-card {
+    background: var(--surface-section);
+
+    &:hover {
+      background: var(--surface-card);
+    }
+  }
+
+  .metrics-banner {
+    background: var(--surface-section);
+  }
+}
+
+// Performance optimizations
+@media (prefers-reduced-motion: reduce) {
+  .practice-card {
+    transition: none;
+  }
+}
+
+// Metrics Banner
+.metrics-banner {
+  background: var(--surface-section, #f5f5f7);
+  padding: 4rem 2rem;
+  margin: 0 -1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+
+  .metrics-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .metric {
+    text-align: center;
+
+    .metric-value {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--primary-color, #166534);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary-color, #86868b);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+

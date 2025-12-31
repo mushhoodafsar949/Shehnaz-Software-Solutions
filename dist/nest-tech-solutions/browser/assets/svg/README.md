@@ -1,6 +1,6 @@
-# Custom SVG Illustrations for Nest Tech Solutions
+# Custom SVG Illustrations for Nest Tech AI Solutions
 
-This directory contains custom-designed SVG illustrations created specifically for the Nest Tech Solutions website. All SVGs follow the brand's green color scheme (#166534, #22c55e) and are optimized for web use.
+This directory contains custom-designed SVG illustrations created specifically for the Nest Tech AI Solutions website. All SVGs follow the brand's green color scheme (#166534, #22c55e) and are optimized for web use.
 
 ## Available SVGs
 
@@ -60,7 +60,7 @@ This directory contains custom-designed SVG illustrations created specifically f
 // In your component template
 <div class="hero-section">
   <img src="assets/svg/hero-illustration.svg" 
-       alt="Nest Tech Solutions - Digital Innovation" 
+       alt="Nest Tech AI Solutions - Digital Innovation" 
        class="hero-image">
 </div>
 
@@ -140,4 +140,4 @@ All illustrations maintain:
 - Professional design language
 - Technology-focused themes
 - Modern, clean aesthetics
-- Brand alignment with Nest Tech Solutions identity
+- Brand alignment with Nest Tech AI Solutions identity

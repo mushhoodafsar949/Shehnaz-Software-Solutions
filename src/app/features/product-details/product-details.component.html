@@ -1,0 +1,73 @@
+<div class="product-page">
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="loading">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+
+  <!-- Error State -->
+  <div class="error-state" *ngIf="error">
+    <h2>Something went wrong</h2>
+    <p>{{ error }}</p>
+    <button class="btn-back" (click)="goBack()">Go Back</button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="product-main" *ngIf="!loading && !error && product">
+    <!-- Hero Header -->
+    <header class="product-header">
+      <div class="header-content">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span>{{ product.id | titlecase }} Platform</span>
+        </div>
+        <h1 class="product-title">{{ product.name }}</h1>
+        <p class="product-description">{{ product.description }}</p>
+        
+        <div class="tech-badges">
+          <span class="tech-badge" *ngFor="let tech of product.technologies">{{ tech }}</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-navigation">
+      <div class="tab-container">
+        <button *ngFor="let tab of tabs"
+                class="tab-btn"
+                [class.active]="activeTab === tab.id"
+                (click)="setActiveTab(tab.id)">
+          {{ tab.label }}
+        </button>
+      </div>
+    </nav>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Overview Tab -->
+      <app-product-overview 
+        *ngIf="activeTab === 0"
+        [product]="product"
+        [responsiveOptions]="responsiveOptions">
+      </app-product-overview>
+
+      <!-- Technical Architecture Tab -->
+      <app-technical-architecture 
+        *ngIf="activeTab === 1"
+        [product]="product">
+      </app-technical-architecture>
+
+      <!-- Development Process Tab -->
+      <app-development-process 
+        *ngIf="activeTab === 2"
+        [product]="product">
+      </app-development-process>
+
+      <!-- Security & Compliance Tab -->
+      <app-security-compliance 
+        *ngIf="activeTab === 3"
+        [product]="product">
+      </app-security-compliance>
+    </div>
+  </main>
+</div>

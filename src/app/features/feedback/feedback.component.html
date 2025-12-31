@@ -33,20 +33,24 @@
         </div>
 
         <!-- Quick Action Buttons -->
-        <div class="hero-actions">
+        <div class="hero-actions" role="group" aria-label="Quick actions">
           <button pButton pRipple 
                   type="button" 
                   label="Quick Feedback" 
                   icon="pi pi-comment"
                   class="p-button-primary p-button-lg"
-                  (click)="openQuickFeedback()">
+                  aria-label="Open quick feedback form"
+                  (click)="openQuickFeedback()"
+                  (keydown.enter)="openQuickFeedback()">
           </button>
           <button pButton pRipple 
                   type="button" 
                   label="View All Reviews" 
                   icon="pi pi-eye"
                   class="p-button-outlined p-button-lg"
-                  (click)="scrollToReviews()">
+                  aria-label="Scroll to reviews section"
+                  (click)="scrollToReviews()"
+                  (keydown.enter)="scrollToReviews()">
           </button>
         </div>
       </div>
@@ -56,32 +60,38 @@
         <div class="widget-card" [@cardHover]>
           <div class="widget-header">
             <div class="widget-title">
-              <img src="assets/logo.svg" alt="Nest Tech Solutions" class="widget-logo">
+              <img src="assets/logo.svg" alt="Nest Tech AI Solutions" class="widget-logo">
               <div>
                 <h3>Feedback Center</h3>
                 <p>Choose your feedback type</p>
               </div>
             </div>
-            <div class="widget-status">
-              <div class="status-indicator active"></div>
+            <div class="widget-status" role="status" aria-live="polite">
+              <div class="status-indicator active" aria-hidden="true"></div>
               <span>Live</span>
             </div>
           </div>
           
           <!-- Feedback Type Selector -->
-          <div class="feedback-types">
+          <div class="feedback-types" role="radiogroup" aria-label="Select feedback type">
             <div class="type-card" 
                  *ngFor="let type of feedbackTypes; trackBy: trackByTypeId" 
                  [class.active]="selectedFeedbackType === type.id"
+                 [attr.aria-checked]="selectedFeedbackType === type.id"
+                 role="radio"
+                 [attr.aria-label]="type.title + ': ' + type.description"
+                 tabindex="0"
                  (click)="selectFeedbackType(type.id)"
+                 (keydown.enter)="selectFeedbackType(type.id)"
+                 (keydown.space)="selectFeedbackType(type.id); $event.preventDefault()"
                  [@typeSelection]>
-              <div class="type-icon">
+              <div class="type-icon" aria-hidden="true">
                 <i [class]="type.icon"></i>
               </div>
               <div class="type-content">
                 <h4>{{ type.title }}</h4>
                 <p>{{ type.description }}</p>
-                <span class="type-count">{{ type.count }} submissions</span>
+                <span class="type-count" [attr.aria-label]="type.count + ' submissions'">{{ type.count }} submissions</span>
               </div>
             </div>
           </div>
@@ -105,7 +115,7 @@
         
         <!-- Personal Information -->
         <div class="form-section">
-          <h3><i class="pi pi-user"></i> Contact Information</h3>
+          <h3><i class="pi pi-user" aria-hidden="true"></i> Contact Information</h3>
           <div class="form-grid">
             <div class="form-field">
               <span class="p-float-label">
@@ -114,9 +124,18 @@
                        name="clientName" 
                        [(ngModel)]="advancedFeedback.clientName" 
                        class="w-full" 
-                       required />
+                       required
+                       aria-required="true"
+                       aria-invalid="false"
+                       autocomplete="name" />
                 <label for="clientName">Full Name *</label>
               </span>
+              <small *ngIf="dynamicForm.controls['clientName']?.invalid && dynamicForm.controls['clientName']?.touched" 
+                     class="p-error" 
+                     role="alert"
+                     aria-live="polite">
+                Full name is required
+              </small>
             </div>
             
             <div class="form-field">
@@ -127,9 +146,18 @@
                        [(ngModel)]="advancedFeedback.clientEmail" 
                        type="email" 
                        class="w-full" 
-                       required />
+                       required
+                       aria-required="true"
+                       aria-invalid="false"
+                       autocomplete="email" />
                 <label for="clientEmail">Email Address *</label>
               </span>
+              <small *ngIf="dynamicForm.controls['clientEmail']?.invalid && dynamicForm.controls['clientEmail']?.touched" 
+                     class="p-error" 
+                     role="alert"
+                     aria-live="polite">
+                Valid email address is required
+              </small>
             </div>
 
             <div class="form-field">
@@ -138,7 +166,8 @@
                        id="company" 
                        name="company" 
                        [(ngModel)]="advancedFeedback.company" 
-                       class="w-full" />
+                       class="w-full"
+                       autocomplete="organization" />
                 <label for="company">Company/Organization</label>
               </span>
             </div>
@@ -152,6 +181,7 @@
                            optionLabel="label"
                            optionValue="value"
                            placeholder="Select Industry"
+                           aria-label="Select your industry"
                            class="w-full">
                 </p-dropdown>
                 <label for="industry">Industry</label>
@@ -223,24 +253,30 @@
 
         <!-- Rating Section -->
         <div class="form-section">
-          <h3><i class="pi pi-star"></i> Rate Your Experience</h3>
-          <div class="rating-grid">
+          <h3><i class="pi pi-star" aria-hidden="true"></i> Rate Your Experience</h3>
+          <div class="rating-grid" role="group" aria-label="Rate your experience">
             <div class="rating-item" *ngFor="let ratingCategory of ratingCategories">
-              <label class="rating-label">{{ ratingCategory.name }}</label>
+              <label class="rating-label" [attr.for]="'rating_' + ratingCategory.key">
+                {{ ratingCategory.name }}
+              </label>
               <p-rating [(ngModel)]="advancedFeedback.ratings[ratingCategory.key]" 
                         [name]="'rating_' + ratingCategory.key"
+                        [id]="'rating_' + ratingCategory.key"
                         [stars]="5" 
                         [cancel]="false"
+                        [attr.aria-label]="'Rate ' + ratingCategory.name + ': ' + ratingCategory.description"
                         class="custom-rating">
               </p-rating>
-              <span class="rating-description">{{ ratingCategory.description }}</span>
+              <span class="rating-description" [attr.aria-label]="ratingCategory.description">
+                {{ ratingCategory.description }}
+              </span>
             </div>
           </div>
         </div>
 
         <!-- Detailed Feedback -->
         <div class="form-section">
-          <h3><i class="pi pi-comment"></i> Detailed Feedback</h3>
+          <h3><i class="pi pi-comment" aria-hidden="true"></i> Detailed Feedback</h3>
           
           <div class="form-field">
             <span class="p-float-label">
@@ -250,10 +286,15 @@
                         [(ngModel)]="advancedFeedback.highlights" 
                         [rows]="3" 
                         [autoResize]="true"
-                        class="w-full">
+                        class="w-full"
+                        aria-label="What did we do well?"
+                        maxlength="1000">
               </textarea>
               <label for="highlights">What did we do well?</label>
             </span>
+            <small class="p-text-secondary" aria-live="polite">
+              {{ advancedFeedback.highlights.length }}/1000 characters
+            </small>
           </div>
 
           <div class="form-field">
@@ -264,10 +305,15 @@
                         [(ngModel)]="advancedFeedback.improvements" 
                         [rows]="3" 
                         [autoResize]="true"
-                        class="w-full">
+                        class="w-full"
+                        aria-label="What could we improve?"
+                        maxlength="1000">
               </textarea>
               <label for="improvements">What could we improve?</label>
             </span>
+            <small class="p-text-secondary" aria-live="polite">
+              {{ advancedFeedback.improvements.length }}/1000 characters
+            </small>
           </div>
 
           <div class="form-field">
@@ -278,23 +324,29 @@
                         [(ngModel)]="advancedFeedback.recommendation" 
                         [rows]="2" 
                         [autoResize]="true"
-                        class="w-full">
+                        class="w-full"
+                        aria-label="Would you recommend us to others? Why?"
+                        maxlength="500">
               </textarea>
               <label for="recommendation">Would you recommend us to others? Why?</label>
             </span>
+            <small class="p-text-secondary" aria-live="polite">
+              {{ advancedFeedback.recommendation.length }}/500 characters
+            </small>
           </div>
         </div>
 
         <!-- Permissions and Publishing -->
         <div class="form-section">
-          <h3><i class="pi pi-shield"></i> Privacy & Publishing</h3>
+          <h3><i class="pi pi-shield" aria-hidden="true"></i> Privacy & Publishing</h3>
           
-          <div class="checkbox-group">
+          <div class="checkbox-group" role="group" aria-label="Privacy and publishing options">
             <div class="checkbox-item">
               <p-checkbox inputId="allowPublish" 
                           name="allowPublish" 
                           [(ngModel)]="advancedFeedback.allowPublish" 
-                          [binary]="true">
+                          [binary]="true"
+                          [attr.aria-label]="'Allow us to publish this feedback as a testimonial'">
               </p-checkbox>
               <label for="allowPublish">Allow us to publish this feedback as a testimonial</label>
             </div>
@@ -303,7 +355,8 @@
               <p-checkbox inputId="showCompany" 
                           name="showCompany" 
                           [(ngModel)]="advancedFeedback.showCompany" 
-                          [binary]="true">
+                          [binary]="true"
+                          [attr.aria-label]="'Display company name in testimonial'">
               </p-checkbox>
               <label for="showCompany">Display company name in testimonial</label>
             </div>
@@ -312,7 +365,8 @@
               <p-checkbox inputId="contactForCase" 
                           name="contactForCase" 
                           [(ngModel)]="advancedFeedback.contactForCase" 
-                          [binary]="true">
+                          [binary]="true"
+                          [attr.aria-label]="'Contact me for potential case study'">
               </p-checkbox>
               <label for="contactForCase">Contact me for potential case study</label>
             </div>
@@ -326,13 +380,15 @@
             <span>Your feedback helps us improve and may be featured on our website (with your permission)</span>
           </div>
           
-          <div class="submit-actions">
+          <div class="submit-actions" role="group" aria-label="Form submission actions">
             <button pButton pRipple 
                     type="button" 
                     label="Save as Draft" 
                     icon="pi pi-save"
                     class="p-button-secondary"
-                    (click)="saveDraft()">
+                    aria-label="Save feedback as draft"
+                    (click)="saveDraft()"
+                    [disabled]="isSubmitting">
             </button>
             
             <button pButton pRipple 
@@ -341,7 +397,9 @@
                     icon="pi pi-send"
                     class="p-button-primary submit-btn"
                     [loading]="isSubmitting"
-                    [disabled]="!dynamicForm.valid || isSubmitting">
+                    [disabled]="!dynamicForm.valid || isSubmitting"
+                    [attr.aria-busy]="isSubmitting"
+                    aria-label="Submit feedback form">
             </button>
           </div>
         </div>
@@ -434,7 +492,9 @@
                      [(ngModel)]="reviewFilters.search"
                      placeholder="Search reviews..."
                      (input)="searchReviews($event)"
-                     class="search-input" />
+                     class="search-input"
+                     aria-label="Search reviews"
+                     autocomplete="off" />
             </span>
           </div>
         </div>
@@ -446,14 +506,18 @@
                     icon="pi pi-th-large"
                     [class.active]="viewMode === 'grid'"
                     (click)="setViewMode('grid')"
-                    class="p-button-outlined view-btn">
+                    class="p-button-outlined view-btn"
+                    [attr.aria-label]="'Switch to grid view'"
+                    [attr.aria-pressed]="viewMode === 'grid'">
             </button>
             <button pButton pRipple 
                     type="button"
                     icon="pi pi-list"
                     [class.active]="viewMode === 'list'"
                     (click)="setViewMode('list')"
-                    class="p-button-outlined view-btn">
+                    class="p-button-outlined view-btn"
+                    [attr.aria-label]="'Switch to list view'"
+                    [attr.aria-pressed]="viewMode === 'list'">
             </button>
           </div>
           
@@ -500,20 +564,23 @@
             </div>
           </div>
           
-          <div class="review-actions">
+          <div class="review-actions" role="group" aria-label="Review actions">
             <button pButton pRipple 
                     type="button"
                     icon="pi pi-heart"
                     [class.liked]="review.isLiked"
                     class="p-button-text like-btn"
+                    [attr.aria-label]="(review.isLiked ? 'Unlike' : 'Like') + ' review by ' + review.name"
+                    [attr.aria-pressed]="review.isLiked"
                     (click)="toggleLike(review)">
             </button>
-            <span class="like-count">{{ review.likes || 0 }}</span>
+            <span class="like-count" [attr.aria-label]="(review.likes || 0) + ' likes'">{{ review.likes || 0 }}</span>
             
             <button pButton pRipple 
                     type="button"
                     icon="pi pi-share-alt"
                     class="p-button-text share-btn"
+                    [attr.aria-label]="'Share review by ' + review.name"
                     (click)="shareReview(review)">
             </button>
           </div>
@@ -560,8 +627,8 @@
               {{ review.date | date:'mediumDate' }}
             </span>
             
-            <span class="review-verified" *ngIf="review.verified">
-              <i class="pi pi-check-circle"></i>
+            <span class="review-verified" *ngIf="review.verified" role="status" aria-label="Verified client">
+              <i class="pi pi-check-circle" aria-hidden="true"></i>
               Verified Client
             </span>
           </div>

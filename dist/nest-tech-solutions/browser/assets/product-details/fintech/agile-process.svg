@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="agileGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="agileGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="agileGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="agileGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
   <!-- Background -->
   <rect x="0" y="0" width="1200" height="800" fill="#f8f9fa" rx="20"/>
   
@@ -14,22 +33,22 @@
     <!-- Components -->
     <g transform="translate(25, 70)">
       <!-- Risk Assessment -->
-      <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Risk Assessment</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Security & Compliance</text>
+      <rect width="200" height="60" fill="url(#agileGrad1)" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Risk Assessment</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Security &amp; Compliance</text>
       
       <!-- Feature Prioritization -->
       <g transform="translate(0, 80)">
-        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Feature Prioritization</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Market Impact Analysis</text>
+        <rect width="200" height="60" fill="url(#agileGrad1)" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Feature Prioritization</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Web Portal &amp; Mobile App</text>
       </g>
       
       <!-- Capacity Planning -->
       <g transform="translate(0, 160)">
-        <rect width="200" height="60" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Capacity Planning</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Trading Volume Analysis</text>
+        <rect width="200" height="60" fill="url(#agileGrad1)" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Capacity Planning</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Team Velocity Analysis</text>
       </g>
     </g>
   </g>
@@ -41,22 +60,22 @@
     
     <!-- Components -->
     <g transform="translate(25, 70)">
-      <!-- Market Analysis -->
-      <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Market Analysis</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Trading Patterns</text>
+      <!-- Daily Standups -->
+      <rect width="200" height="60" fill="url(#agileGrad2)" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Daily Standups</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Progress &amp; Blockers</text>
       
       <!-- Security Review -->
       <g transform="translate(0, 80)">
-        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Review</text>
+        <rect width="200" height="60" fill="url(#agileGrad2)" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Security Review</text>
         <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Threat Assessment</text>
       </g>
       
       <!-- Performance Check -->
       <g transform="translate(0, 160)">
-        <rect width="200" height="60" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Performance Check</text>
+        <rect width="200" height="60" fill="url(#agileGrad2)" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Performance Check</text>
         <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">System Metrics</text>
       </g>
     </g>
@@ -69,23 +88,23 @@
     
     <!-- Components -->
     <g transform="translate(25, 70)">
-      <!-- Smart Contracts -->
-      <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Smart Contracts</text>
-      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Solidity Development</text>
+      <!-- Web Portal Development -->
+      <rect width="200" height="60" fill="url(#agileGrad3)" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Web Portal</text>
+      <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Angular Development</text>
       
-      <!-- Trading Engine -->
+      <!-- Mobile App Development -->
       <g transform="translate(0, 80)">
-        <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Trading Engine</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Order Matching</text>
+        <rect width="200" height="60" fill="url(#agileGrad3)" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Mobile App</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Flutter Development</text>
       </g>
       
-      <!-- Analytics -->
+      <!-- API Development -->
       <g transform="translate(0, 160)">
-        <rect width="200" height="60" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Analytics</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">ML Models</text>
+        <rect width="200" height="60" fill="url(#agileGrad3)" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Backend APIs</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Node.js &amp; Python</text>
       </g>
     </g>
   </g>
@@ -98,22 +117,22 @@
     <!-- Components -->
     <g transform="translate(25, 70)">
       <!-- Security Audit -->
-      <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Security Audit</text>
+      <rect width="200" height="60" fill="url(#agileGrad4)" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+      <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Security Audit</text>
       <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Penetration Testing</text>
       
       <!-- Performance Review -->
       <g transform="translate(0, 80)">
-        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Performance Review</text>
+        <rect width="200" height="60" fill="url(#agileGrad4)" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Performance Review</text>
         <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Load Testing</text>
       </g>
       
       <!-- Compliance Check -->
       <g transform="translate(0, 160)">
-        <rect width="200" height="60" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle">Compliance Check</text>
-        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">Regulatory Review</text>
+        <rect width="200" height="60" fill="url(#agileGrad4)" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="100" y="25" fill="#1e293b" font-family="Arial" font-size="14" text-anchor="middle" font-weight="600">Compliance Check</text>
+        <text x="100" y="45" fill="#64748b" font-family="Arial" font-size="12" text-anchor="middle">PCI DSS &amp; SOC 2</text>
       </g>
     </g>
   </g>
@@ -125,45 +144,45 @@
     
     <!-- Components -->
     <g transform="translate(25, 70)">
-      <!-- Trading Performance -->
-      <rect width="250" height="200" fill="#2563eb" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
-      <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Trading Performance</text>
+      <!-- Financial Performance -->
+      <rect width="250" height="200" fill="url(#agileGrad1)" opacity="0.1" stroke="#2563eb" stroke-width="2" rx="5"/>
+      <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle" font-weight="600">Financial Performance</text>
       <g transform="translate(20, 60)">
-        <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Order Execution Time</text>
-        <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Transaction Success Rate</text>
-        <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• System Uptime</text>
+        <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">- Transaction Success Rate</text>
+        <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">- Payment Processing Time</text>
+        <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">- System Uptime</text>
       </g>
       
       <!-- Security Metrics -->
       <g transform="translate(300, 0)">
-        <rect width="250" height="200" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
-        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Security Metrics</text>
+        <rect width="250" height="200" fill="url(#agileGrad3)" opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle" font-weight="600">Security Metrics</text>
         <g transform="translate(20, 60)">
-          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Attack Prevention</text>
-          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Vulnerability Fixes</text>
-          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Audit Results</text>
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">- Attack Prevention</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">- Vulnerability Fixes</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">- Audit Results</text>
         </g>
       </g>
       
       <!-- User Feedback -->
       <g transform="translate(600, 0)">
-        <rect width="250" height="200" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
-        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">User Feedback</text>
+        <rect width="250" height="200" fill="url(#agileGrad2)" opacity="0.1" stroke="#10b981" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle" font-weight="600">User Feedback</text>
         <g transform="translate(20, 60)">
-          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Trading Experience</text>
-          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• Feature Requests</text>
-          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• UI/UX Feedback</text>
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">- Mobile App Experience</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">- Web Portal Features</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">- UI/UX Feedback</text>
         </g>
       </g>
       
       <!-- Next Steps -->
       <g transform="translate(900, 0)">
-        <rect width="250" height="200" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
-        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle">Next Steps</text>
+        <rect width="250" height="200" fill="url(#agileGrad4)" opacity="0.1" stroke="#6366f1" stroke-width="2" rx="5"/>
+        <text x="125" y="40" fill="#1e293b" font-family="Arial" font-size="16" text-anchor="middle" font-weight="600">Next Steps</text>
         <g transform="translate(20, 60)">
-          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">• Performance Optimization</text>
-          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">• New Trading Features</text>
-          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">• Security Enhancements</text>
+          <text x="0" y="20" fill="#64748b" font-family="Arial" font-size="14">- Performance Optimization</text>
+          <text x="0" y="50" fill="#64748b" font-family="Arial" font-size="14">- New Features</text>
+          <text x="0" y="80" fill="#64748b" font-family="Arial" font-size="14">- Security Enhancements</text>
         </g>
       </g>
     </g>

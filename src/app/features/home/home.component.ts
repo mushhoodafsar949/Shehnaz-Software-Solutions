@@ -114,7 +114,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description: 'Optimized processes and automated workflows'
     },
     {
-      icon: 'pi pi-rocket',
+      icon: 'pi pi-fast-forward',
       title: 'Speed',
       description: 'Fast development and deployment cycles'
     }
@@ -143,9 +143,52 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  technologies = [
+    { name: 'React', category: 'Frontend' },
+    { name: 'Angular', category: 'Frontend' },
+    { name: 'Vue.js', category: 'Frontend' },
+    { name: 'Node.js', category: 'Backend' },
+    { name: 'Python', category: 'Backend' },
+    { name: 'Java', category: 'Backend' },
+    { name: 'AWS', category: 'Cloud' },
+    { name: 'Docker', category: 'DevOps' },
+    { name: 'Kubernetes', category: 'DevOps' },
+    { name: 'MongoDB', category: 'Database' },
+    { name: 'PostgreSQL', category: 'Database' },
+    { name: 'TensorFlow', category: 'AI/ML' }
+  ];
+
+  processSteps = [
+    {
+      icon: 'pi pi-search',
+      title: 'Discovery',
+      description: 'Understanding your business needs and goals'
+    },
+    {
+      icon: 'pi pi-palette',
+      title: 'Design',
+      description: 'Creating user-centered designs and prototypes'
+    },
+    {
+      icon: 'pi pi-code',
+      title: 'Development',
+      description: 'Agile development with continuous integration'
+    },
+    {
+      icon: 'pi pi-check-circle',
+      title: 'Testing',
+      description: 'Comprehensive QA and security testing'
+    },
+    {
+      icon: 'pi pi-upload',
+      title: 'Deployment',
+      description: 'Seamless launch with monitoring and support'
+    }
+  ];
+
   testimonials = [
     {
-      quote: 'Nest Tech Solutions delivered our platform ahead of schedule and exceeded all expectations. Their team is truly world-class.',
+      quote: 'Nest Tech AI Solutions delivered our platform ahead of schedule and exceeded all expectations. Their team is truly world-class.',
       author: 'Sarah Johnson',
       company: 'TechStart Inc.',
       rating: 5
@@ -203,5 +246,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   navigateToQuote() {
     this.viewportScroller.scrollToPosition([0, 0]);
     this.router.navigate(['/quote']);
+  }
+
+  trackByTech(index: number, tech: any): string {
+    return tech.name;
   }
 }

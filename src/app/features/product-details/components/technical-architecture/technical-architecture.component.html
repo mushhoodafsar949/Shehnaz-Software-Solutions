@@ -1,0 +1,95 @@
+<section class="architecture" *ngIf="product">
+  <!-- Hero -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <span class="hero-label">Architecture</span>
+      <h1 class="hero-title">Built for Scale.<br>Designed for Performance.</h1>
+      <p class="hero-subtitle">Enterprise-grade infrastructure that powers millions of transactions.</p>
+    </div>
+  </div>
+
+  <!-- System Architecture -->
+  <div class="diagram-section">
+    <div class="diagram-header">
+      <div class="diagram-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+      </div>
+      <div class="diagram-text">
+        <h2>System Architecture</h2>
+        <p>Scalable microservices architecture with high availability</p>
+      </div>
+    </div>
+    
+    <div class="diagram-container">
+      <img [src]="product.systemArchitecture" 
+           alt="System Architecture" 
+           loading="lazy"
+           *ngIf="product.systemArchitecture">
+      <div class="diagram-placeholder" *ngIf="!product.systemArchitecture">
+        <span>Architecture diagram</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DevOps Pipeline -->
+  <div class="diagram-section alt">
+    <div class="diagram-header">
+      <div class="diagram-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v6m0 6v6M1 12h6m6 0h6"/>
+          <path d="M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24"/>
+        </svg>
+      </div>
+      <div class="diagram-text">
+        <h2>DevOps Pipeline</h2>
+        <p>Automated CI/CD for rapid, reliable deployments</p>
+      </div>
+    </div>
+    
+    <div class="diagram-container">
+      <img [src]="product.devopsPipeline" 
+           alt="DevOps Pipeline" 
+           loading="lazy"
+           (error)="onImageError($event)"
+           (load)="imageError = false"
+           *ngIf="product.devopsPipeline && !imageError">
+      <div class="diagram-placeholder" *ngIf="!product.devopsPipeline || imageError">
+        <span>DevOps Pipeline Diagram</span>
+        <p *ngIf="imageError">
+          Unable to load diagram at: {{ product.devopsPipeline }}
+        </p>
+        <p *ngIf="!imageError && !product.devopsPipeline">
+          Diagram loading...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technology Stack -->
+  <div class="tech-section">
+    <div class="section-header">
+      <span class="section-label">Stack</span>
+      <h2 class="section-title">Technology Stack</h2>
+      <p class="section-subtitle">Modern technologies chosen for performance and reliability.</p>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-category" *ngFor="let tech of product.techDetails">
+        <h3>{{ tech.category }}</h3>
+        <ul>
+          <li *ngFor="let item of tech.items">
+            <span class="tech-dot"></span>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+

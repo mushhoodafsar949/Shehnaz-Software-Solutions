@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="gradientWeb1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3949ab;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a237e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="600" fill="#ffffff" rx="12"/>
+  
+  <!-- Header -->
+  <rect width="900" height="70" fill="#1a237e" rx="12 12 0 0"/>
+  <text x="450" y="45" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">Portfolio Analytics &amp; Insights</text>
+  
+  <!-- Top Stats Row -->
+  <rect x="30" y="100" width="200" height="100" fill="#f8f9fa" rx="8" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="130" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e" text-anchor="middle">Total Assets</text>
+  <text x="130" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#3949ab" text-anchor="middle">$8.2M</text>
+  <text x="130" y="180" font-family="Arial, sans-serif" font-size="12" fill="#4caf50">+15.3% YTD</text>
+  
+  <rect x="250" y="100" width="200" height="100" fill="#f8f9fa" rx="8" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="350" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e" text-anchor="middle">Active Investments</text>
+  <text x="350" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#3949ab" text-anchor="middle">247</text>
+  <text x="350" y="180" font-family="Arial, sans-serif" font-size="12" fill="#666">Across 12 sectors</text>
+  
+  <rect x="470" y="100" width="200" height="100" fill="#f8f9fa" rx="8" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="570" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e" text-anchor="middle">ROI</text>
+  <text x="570" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#4caf50" text-anchor="middle">18.7%</text>
+  <text x="570" y="180" font-family="Arial, sans-serif" font-size="12" fill="#666">Annual return</text>
+  
+  <rect x="690" y="100" width="180" height="100" fill="#f8f9fa" rx="8" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="780" y="130" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a237e" text-anchor="middle">Risk Level</text>
+  <text x="780" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ff9800" text-anchor="middle">Moderate</text>
+  <text x="780" y="180" font-family="Arial, sans-serif" font-size="12" fill="#666">Balanced</text>
+  
+  <!-- Main Chart Area -->
+  <rect x="30" y="230" width="550" height="320" fill="#ffffff" rx="8" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="305" y="260" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a237e" text-anchor="middle">Performance Trend (12 Months)</text>
+  
+  <!-- Chart Grid Lines -->
+  <line x1="60" y1="290" x2="560" y2="290" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="60" y1="350" x2="560" y2="350" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="60" y1="410" x2="560" y2="410" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="60" y1="470" x2="560" y2="470" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="60" y1="530" x2="560" y2="530" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- Chart Line -->
+  <polyline points="80,480 140,450 200,420 260,400 320,380 380,360 440,340 500,320 560,300" 
+            fill="none" stroke="#3949ab" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Chart Area Fill -->
+  <polygon points="80,480 140,450 200,420 260,400 320,380 380,360 440,340 500,320 560,300 560,530 80,530" 
+           fill="url(#gradientWeb1)" opacity="0.2"/>
+  
+  <!-- Chart Dots -->
+  <circle cx="80" cy="480" r="5" fill="#3949ab"/>
+  <circle cx="140" cy="450" r="5" fill="#3949ab"/>
+  <circle cx="200" cy="420" r="5" fill="#3949ab"/>
+  <circle cx="260" cy="400" r="5" fill="#3949ab"/>
+  <circle cx="320" cy="380" r="5" fill="#3949ab"/>
+  <circle cx="380" cy="360" r="5" fill="#3949ab"/>
+  <circle cx="440" cy="340" r="5" fill="#3949ab"/>
+  <circle cx="500" cy="320" r="5" fill="#3949ab"/>
+  <circle cx="560" cy="300" r="5" fill="#3949ab"/>
+  
+  <!-- Asset Allocation Chart -->
+  <rect x="600" y="230" width="270" height="320" fill="#ffffff" rx="8" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="735" y="260" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a237e" text-anchor="middle">Asset Allocation</text>
+  
+  <!-- Pie Chart Representation -->
+  <circle cx="735" cy="380" r="80" fill="#f8f9fa" stroke="#e0e0e0" stroke-width="2"/>
+  
+  <!-- Pie Segments -->
+  <path d="M 735 300 A 80 80 0 0 1 815 380 L 735 380 Z" fill="#3949ab"/>
+  <path d="M 815 380 A 80 80 0 0 1 735 460 L 735 380 Z" fill="#4caf50"/>
+  <path d="M 735 460 A 80 80 0 0 1 655 380 L 735 380 Z" fill="#ff9800"/>
+  <path d="M 655 380 A 80 80 0 0 1 735 300 L 735 380 Z" fill="#9c27b0"/>
+  
+  <!-- Legend -->
+  <rect x="620" y="480" width="15" height="15" fill="#3949ab" rx="2"/>
+  <text x="640" y="492" font-family="Arial, sans-serif" font-size="12" fill="#333">Stocks (45%)</text>
+  
+  <rect x="620" y="500" width="15" height="15" fill="#4caf50" rx="2"/>
+  <text x="640" y="512" font-family="Arial, sans-serif" font-size="12" fill="#333">Bonds (25%)</text>
+  
+  <rect x="750" y="480" width="15" height="15" fill="#ff9800" rx="2"/>
+  <text x="770" y="492" font-family="Arial, sans-serif" font-size="12" fill="#333">Mutual Funds (20%)</text>
+  
+  <rect x="750" y="500" width="15" height="15" fill="#9c27b0" rx="2"/>
+  <text x="770" y="512" font-family="Arial, sans-serif" font-size="12" fill="#333">Others (10%)</text>
+  
+  <!-- Bottom Section - Recent Transactions -->
+  <rect x="30" y="570" width="840" height="20" fill="#f8f9fa" rx="4"/>
+  <text x="50" y="585" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1a237e">Recent Activity:</text>
+  <text x="150" y="585" font-family="Arial, sans-serif" font-size="11" fill="#666">Dividend Payment $12K</text>
+  <text x="320" y="585" font-family="Arial, sans-serif" font-size="11" fill="#666">Stock Purchase AAPL</text>
+  <text x="500" y="585" font-family="Arial, sans-serif" font-size="11" fill="#666">Bond Maturity</text>
+  <text x="650" y="585" font-family="Arial, sans-serif" font-size="11" fill="#4caf50">All systems operational</text>
+</svg>
+
