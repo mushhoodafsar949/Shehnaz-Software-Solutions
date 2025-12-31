@@ -186,6 +186,65 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  portfolioProjects = [
+    {
+      name: 'Fuolk',
+      url: 'https://fuolk.com',
+      description: 'Modern web platform delivering innovative digital solutions',
+      category: 'Web Platform',
+      image: 'assets/portfolio/fuolk.jpg',
+      technologies: ['React', 'Node.js', 'MongoDB']
+    },
+    {
+      name: 'Hostech',
+      url: 'https://www.hostech.app/',
+      description: 'Technology solutions platform connecting businesses with cutting-edge services',
+      category: 'Tech Platform',
+      image: 'assets/portfolio/hostech.jpg',
+      technologies: ['Angular', 'Python', 'PostgreSQL']
+    },
+    {
+      name: 'Ezway Houses',
+      url: 'https://ezwayhouses.com/',
+      description: 'Real estate platform simplifying property management and transactions',
+      category: 'Real Estate',
+      image: 'assets/portfolio/ezwayhouses.jpg',
+      technologies: ['Vue.js', 'Laravel', 'MySQL']
+    },
+    {
+      name: 'Gattex',
+      url: 'https://www.gattex.com/',
+      description: 'Enterprise solutions platform for business automation and efficiency',
+      category: 'Enterprise',
+      image: 'assets/portfolio/gattex.jpg',
+      technologies: ['React', 'Node.js', 'AWS']
+    },
+    {
+      name: 'Barkkah',
+      url: 'http://barkkah.sa/',
+      description: 'E-commerce platform serving the Saudi Arabian market with seamless shopping experience',
+      category: 'E-Commerce',
+      image: 'assets/portfolio/barkkah.jpg',
+      technologies: ['Next.js', 'Node.js', 'MongoDB']
+    },
+    {
+      name: 'Al Koblan',
+      url: 'https://alkoblan.com.sa',
+      description: 'Business platform delivering comprehensive digital solutions for the Saudi market',
+      category: 'Business Platform',
+      image: 'assets/portfolio/alkoblan.jpg',
+      technologies: ['Angular', 'Python', 'PostgreSQL']
+    },
+    {
+      name: 'Musan Shop',
+      url: 'https://musan.shop',
+      description: 'Modern e-commerce marketplace with advanced shopping features and user experience',
+      category: 'E-Commerce',
+      image: 'assets/portfolio/musan.jpg',
+      technologies: ['React', 'Laravel', 'MySQL']
+    }
+  ];
+
   testimonials = [
     {
       quote: 'Nest Tech AI Solutions delivered our platform ahead of schedule and exceeded all expectations. Their team is truly world-class.',
@@ -205,6 +264,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
       company: 'DataCorp',
       rating: 5
     }
+  ];
+
+  portfolioCarouselResponsive = [
+    { breakpoint: '1400px', numVisible: 3, numScroll: 1 },
+    { breakpoint: '1024px', numVisible: 2, numScroll: 1 },
+    { breakpoint: '768px', numVisible: 2, numScroll: 1 },
+    { breakpoint: '560px', numVisible: 1, numScroll: 1 }
   ];
 
   constructor(
@@ -250,5 +316,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   trackByTech(index: number, tech: any): string {
     return tech.name;
+  }
+
+  trackByProject(index: number, project: any): string {
+    return project.name;
+  }
+
+  onPortfolioImageError(event: Event, project: any): void {
+    console.error('Failed to load portfolio image:', project.image);
+    const img = event.target as HTMLImageElement;
+    if (img) {
+      // Set a placeholder background color
+      img.style.display = 'none';
+      const wrapper = img.closest('.portfolio-image-wrapper');
+      if (wrapper) {
+        (wrapper as HTMLElement).style.background = 'linear-gradient(135deg, var(--primary-color), var(--primary-color-light))';
+        (wrapper as HTMLElement).style.display = 'flex';
+        (wrapper as HTMLElement).style.alignItems = 'center';
+        (wrapper as HTMLElement).style.justifyContent = 'center';
+        const placeholder = document.createElement('div');
+        placeholder.className = 'portfolio-placeholder';
+        placeholder.innerHTML = `<i class="pi pi-globe" style="font-size: 3rem; color: white; opacity: 0.5;"></i>`;
+        wrapper.appendChild(placeholder);
+      }
+    }
   }
 }

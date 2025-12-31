@@ -30,6 +30,56 @@
   </div>
 </section>
 
+<!-- Portfolio Projects Section - Hidden for now -->
+<!--
+<section class="portfolio-section" @fadeIn>
+  <div class="portfolio-container">
+    <div class="portfolio-header">
+      <h2>Our Portfolio</h2>
+      <p>Showcasing successful projects we've delivered for clients worldwide</p>
+    </div>
+    <p-carousel [value]="portfolioProjects" 
+                [numVisible]="3" 
+                [numScroll]="1" 
+                [circular]="true"
+                [autoplayInterval]="5000"
+                [responsiveOptions]="portfolioCarouselResponsive"
+                styleClass="portfolio-carousel">
+      <ng-template let-project pTemplate="item">
+        <a [href]="project.url" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="portfolio-card-link">
+          <div class="portfolio-card" @scaleIn>
+            <div class="portfolio-image-wrapper">
+              <img [src]="project.image" 
+                   [alt]="project.name + ' website screenshot'"
+                   (error)="onPortfolioImageError($event, project)"
+                   class="portfolio-image"
+                   loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-link">
+                  <i class="pi pi-external-link"></i>
+                  <span>Visit Website</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-category">{{project.category}}</div>
+              <h3>{{project.name}}</h3>
+              <p>{{project.description}}</p>
+              <div class="portfolio-tech">
+                <span class="tech-tag" *ngFor="let tech of project.technologies">{{tech}}</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>
+-->
+
 <!-- Software Showcase Section -->
 <app-software-showcase></app-software-showcase>
 
