@@ -19,13 +19,13 @@
       <div class="header-content">
         <div class="header-badge">
           <span class="badge-dot"></span>
-          <span>{{ product.id | titlecase }} Platform</span>
+          <span>{{ product!.id | titlecase }} Platform</span>
         </div>
-        <h1 class="product-title">{{ product.name }}</h1>
-        <p class="product-description">{{ product.description }}</p>
+        <h1 class="product-title">{{ product!.name }}</h1>
+        <p class="product-description">{{ product!.description }}</p>
         
         <div class="tech-badges">
-          <span class="tech-badge" *ngFor="let tech of product.technologies">{{ tech }}</span>
+          <span class="tech-badge" *ngFor="let tech of product!.technologies">{{ tech }}</span>
         </div>
       </div>
     </header>

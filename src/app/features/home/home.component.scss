@@ -754,6 +754,129 @@
   }
 }
 
+// Connect With Us Section
+.connect-section {
+  padding: 4rem 2rem;
+  background: var(--surface-section);
+
+  .connect-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .connect-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-secondary-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .connect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .connect-card {
+      background: var(--surface-card);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--surface-border);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-shadow-hover);
+        text-decoration: none;
+        color: inherit;
+
+        .connect-icon {
+          transform: scale(1.1);
+          background: var(--primary-color);
+
+          i {
+            color: white;
+          }
+        }
+
+        .connect-link {
+          color: var(--primary-color);
+          transform: translateX(5px);
+        }
+      }
+
+      .connect-icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1rem;
+        background: rgba(var(--primary-color-rgb), 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 2rem;
+          color: var(--primary-color);
+          transition: color 0.3s ease;
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: var(--text-secondary-color);
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .connect-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9375rem;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 0.875rem;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
 // CTA Section
 .cta-section {
   padding: 5rem 2rem;
