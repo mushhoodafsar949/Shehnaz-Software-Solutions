@@ -65,7 +65,7 @@ import { TagModule } from 'primeng/tag';
   `,
   styles: [`
     .software-showcase {
-      padding: 8rem 2rem;
+      padding: 4rem 2rem 2rem 2rem;
       background: var(--surface-ground);
       overflow: hidden;
       position: relative;

@@ -199,7 +199,8 @@ export class QuoteComponent implements OnInit {
     this.services.forEach(service => {
       if (this.quoteForm.get(service.id)?.value) {
         const quantity = this.quoteForm.get(`${service.id}_quantity`)?.value || 1;
-        total += service.basePrice * quantity;
+        const calculatedPrice = this.getCalculatedPrice(service);
+        total += calculatedPrice * quantity;
       }
     });
 
@@ -251,6 +252,38 @@ export class QuoteComponent implements OnInit {
 
   getServiceWeeks(serviceId: string): number {
     return this.quoteForm.get(`${serviceId}_weeks`)?.value || 1;
+  }
+
+  /**
+   * Calculate price based on weeks compared to default weekRange
+   * - Faster delivery (fewer weeks) = higher price (rush fee)
+   * - Standard delivery (default weeks) = base price
+   * - Extended delivery (more weeks) = slight discount
+   */
+  getCalculatedPrice(service: ServiceItem): number {
+    const weeks = this.quoteForm.get(`${service.id}_weeks`)?.value || service.weekRange;
+    const defaultWeeks = service.weekRange;
+    
+    if (weeks === defaultWeeks) {
+      return service.basePrice;
+    }
+    
+    // Calculate multiplier based on week difference
+    const weekRatio = weeks / defaultWeeks;
+    
+    if (weekRatio < 1) {
+      // Faster delivery - apply rush fee
+      // Formula: price increases exponentially as weeks decrease
+      // e.g., 0.5x weeks = 1.5x price, 0.7x weeks = 1.2x price
+      const rushMultiplier = 1 + (1 - weekRatio) * 0.5; // Max 1.5x for very fast delivery
+      return Math.round(service.basePrice * rushMultiplier);
+    } else {
+      // Extended delivery - apply discount
+      // Formula: slight discount for extended timelines
+      // e.g., 1.5x weeks = 0.95x price, 2x weeks = 0.9x price
+      const discountMultiplier = Math.max(0.85, 1 - (weekRatio - 1) * 0.1); // Min 0.85x
+      return Math.round(service.basePrice * discountMultiplier);
+    }
   }
 
   generateProposal(): void {

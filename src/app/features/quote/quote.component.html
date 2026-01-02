@@ -107,8 +107,13 @@
             </div>
 
             <div class="service-price">
-              <span>Starting from</span>
-              <strong>${{service.basePrice.toLocaleString()}}</strong>
+              <span *ngIf="!quoteForm.get(service.id)?.value">Starting from</span>
+              <span *ngIf="quoteForm.get(service.id)?.value">Price</span>
+              <strong>${{getCalculatedPrice(service).toLocaleString()}}</strong>
+              <span class="price-note" *ngIf="quoteForm.get(service.id)?.value && getServiceWeeks(service.id) !== service.weekRange">
+                <i class="pi pi-info-circle"></i>
+                {{getServiceWeeks(service.id) < service.weekRange ? 'Rush delivery' : 'Extended timeline'}}
+              </span>
             </div>
           </p-card>
         </div>
@@ -259,7 +264,7 @@
                 </div>
               </div>
               <div class="service-price">
-                ${{ (service.basePrice * getServiceQuantity(service.id)).toLocaleString() }}
+                ${{ (getCalculatedPrice(service) * getServiceQuantity(service.id)).toLocaleString() }}
               </div>
             </div>
           </div>
