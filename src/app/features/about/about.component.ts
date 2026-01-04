@@ -299,6 +299,15 @@ export class AboutComponent implements OnInit, OnDestroy {
       linkedinUrl: 'https://www.linkedin.com/in/kasimali01/',
       image: 'assets/Team/Qasim.jpeg'
     },
+    {
+      name: 'Saqlain Umer',
+      role: 'Senior AI Engineer',
+      description: 'Expert AI engineer specializing in machine learning, deep learning, and artificial intelligence solutions. Combines advanced technical expertise with innovative problem-solving to develop cutting-edge AI systems that drive business transformation and deliver measurable results.',
+      icon: 'pi pi-android',
+      skills: ['Machine Learning', 'Deep Learning', 'AI Solutions', 'Neural Networks', 'Data Science', 'AI Strategy'],
+      linkedinUrl: 'https://www.linkedin.com/in/saqlain-umer/',
+      image: 'assets/Team/Saqlain.jfif'
+    },
      {
       name: 'Shahzaib Rasool',
       role: 'Senior Backend Developer',
