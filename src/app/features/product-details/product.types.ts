@@ -34,6 +34,7 @@ export interface Product {
   id: string;
   name: string;
   description: string;
+  icon?: string;
   technologies: string[];
   screenshots: ProductScreenshot[];
   features: ProductFeature[];

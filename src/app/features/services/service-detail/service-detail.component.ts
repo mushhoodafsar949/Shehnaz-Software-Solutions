@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -59,6 +59,7 @@ interface ServiceDetail {
 export class ServiceDetailComponent implements OnInit {
   serviceId: string = '';
   service!: ServiceDetail;
+  iconError: boolean = false;
 
   // Sample project data - this would typically come from a service
   serviceDetails: { [key: string]: ServiceDetail } = {
@@ -173,11 +174,35 @@ export class ServiceDetailComponent implements OnInit {
   };
 
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.serviceId = params['id'];
       this.service = this.serviceDetails[this.serviceId];
+      this.iconError = false; // Reset error state when service changes
     });
+  }
+
+  goBack(): void {
+    this.router.navigate(['/services']);
+  }
+
+  onIconError(event: Event): void {
+    this.iconError = true;
+    const img = event.target as HTMLImageElement;
+    img.style.display = 'none';
+  }
+
+  getFallbackIcon(): string {
+    const iconMap: { [key: string]: string } = {
+      'web-development': 'pi pi-desktop',
+      'mobile-development': 'pi pi-mobile',
+      'cloud-devops': 'pi pi-cloud',
+      'ai-ml': 'pi pi-brain',
+      'ui-ux-design': 'pi pi-palette',
+      'api-development': 'pi pi-code'
+    };
+    return iconMap[this.service?.icon] || 'pi pi-cog';
   }
 }

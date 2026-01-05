@@ -1,4 +1,7 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" [class.is-open]="menuOpen" (click)="closeMenu()"></div>
+  
   <div class="navbar-container">
     <div class="navbar-brand">
       <a routerLink="/" class="navbar-logo-link" (click)="closeMenu()">
@@ -37,7 +40,9 @@
     <button pButton pRipple 
             type="button"
             class="hamburger-menu p-button-rounded p-button-text" 
-            (click)="toggleMenu()">
+            (click)="toggleMenu()"
+            [attr.aria-label]="menuOpen ? 'Close menu' : 'Open menu'"
+            [attr.aria-expanded]="menuOpen">
       <i [class]="menuOpen ? 'pi pi-times' : 'pi pi-bars'"></i>
     </button>
   </div>

@@ -1,4 +1,12 @@
 <div class="service-detail-container" *ngIf="service">
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <button pButton pRipple type="button" class="btn-back" (click)="goBack()" aria-label="Go back">
+      <i class="pi pi-arrow-left"></i>
+      Back
+    </button>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero-section" @fadeIn>
     <div class="hero-content">
@@ -6,7 +14,10 @@
         <img [src]="'assets/service-icons/' + service.icon + '.svg'" 
              [alt]="service.title + ' icon'"
              width="80"
-             height="80">
+             height="80"
+             (error)="onIconError($event)"
+             [class.icon-error]="iconError">
+        <i *ngIf="iconError" [class]="getFallbackIcon()" class="fallback-icon"></i>
       </div>
       <h1>{{service.title}}</h1>
       <p class="service-description">{{service.description}}</p>

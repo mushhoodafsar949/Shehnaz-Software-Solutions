@@ -1,3 +1,9 @@
+// Prevent horizontal scroll globally
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 // Hero Section
 .about-hero-section {
   position: relative;
@@ -8,6 +14,8 @@
   justify-content: center;
   overflow: hidden;
   background: var(--surface-ground);
+  width: 100%;
+  max-width: 100vw;
 
   .hero-background {
     position: absolute;
@@ -56,6 +64,15 @@
     max-width: 1200px;
     width: 100%;
     padding: 2rem;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1rem;
+    }
   }
 
   .hero-content {
@@ -68,6 +85,14 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.875rem;
+      }
     }
 
     .hero-headline {
@@ -76,13 +101,23 @@
       color: var(--text-color);
       margin-bottom: 1.5rem;
       line-height: 1.2;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
 
       .highlight {
         color: var(--primary-color);
       }
 
+      @media (max-width: 1024px) {
+        font-size: 3rem;
+      }
+
       @media (max-width: 768px) {
         font-size: 2.5rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
       }
     }
 
@@ -94,6 +129,18 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      padding: 0 1rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+        padding: 0;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
     }
 
     .hero-actions {
@@ -117,6 +164,18 @@
 .history-section {
   padding: 4rem 2rem;
   background: var(--surface-section);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   .history-container {
     max-width: 1200px;
@@ -243,21 +302,46 @@
 
       .timeline-content {
         max-width: 400px;
+        width: 100%;
         background: var(--surface-card);
         padding: 2rem;
         border-radius: 1rem;
         box-shadow: var(--card-shadow);
+        box-sizing: border-box;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+        @media (max-width: 768px) {
+          max-width: 100%;
+          padding: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+          padding: 1.25rem;
+        }
 
         h3 {
           color: var(--text-color);
           margin-bottom: 1rem;
           font-size: 1.3rem;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+
+          @media (max-width: 480px) {
+            font-size: 1.15rem;
+          }
         }
 
         p {
           color: var(--text-secondary-color);
           line-height: 1.6;
           margin-bottom: 1rem;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+
+          @media (max-width: 480px) {
+            font-size: 0.9375rem;
+          }
         }
 
         .timeline-metrics {
@@ -283,6 +367,18 @@
 .stats-section {
   padding: 4rem 2rem;
   background: var(--surface-card);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   .stats-grid {
     max-width: 1200px;
@@ -290,6 +386,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
     .stat-item {
       display: flex;
@@ -330,19 +438,45 @@
 .vision-mission-section {
   padding: 4rem 2rem;
   background: var(--surface-ground);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   .vision-mission-container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .vision-mission-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 1.5rem;
     }
   }
 
@@ -353,9 +487,25 @@
     text-align: center;
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+      padding: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1.5rem;
+    }
 
     &:hover {
       transform: translateY(-10px);
+
+      @media (max-width: 768px) {
+        transform: none;
+      }
     }
 
     .vm-icon {
@@ -392,12 +542,34 @@
 .culture-section {
   padding: 4rem 2rem;
   background: var(--surface-section);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+    }
   }
 
   .section-subtitle {
@@ -408,6 +580,18 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9375rem;
+    }
   }
 
   .culture-grid {
@@ -416,6 +600,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
     .culture-card {
       background: var(--surface-card);
@@ -481,7 +681,17 @@
   padding: 4rem 2rem;
   background: var(--surface-ground);
   overflow-x: hidden;
-  max-width: 100%;
+  max-width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   h2 {
     text-align: center;
@@ -531,6 +741,16 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+
+      @media (max-width: 768px) {
+        margin: 0 0.5rem;
+      }
+
+      @media (max-width: 480px) {
+        margin: 0;
+      }
 
       &:hover {
         transform: translateY(-10px);
@@ -705,6 +925,18 @@
 .roadmap-section {
   padding: 4rem 2rem;
   background: var(--surface-section);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   h2 {
     text-align: center;
@@ -729,6 +961,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
     .roadmap-item {
       background: var(--surface-card);
@@ -808,6 +1052,18 @@
 .achievements-section {
   padding: 4rem 2rem;
   background: var(--surface-ground);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   h2 {
     text-align: center;
@@ -832,6 +1088,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
     .achievement-card {
       background: var(--surface-card);
@@ -907,6 +1179,18 @@
 .success-section {
   padding: 4rem 2rem;
   background: var(--surface-section);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 
   h2 {
     text-align: center;
@@ -931,6 +1215,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
     ::ng-deep .project-card {
       height: 100%;
@@ -1158,8 +1458,58 @@
   }
 }
 
-// Responsive adjustments
+// Comprehensive Responsive adjustments
+@media (max-width: 1024px) {
+  .about-hero-section {
+    min-height: 500px;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-v2-lightray {
+    &.one {
+      width: 800px;
+      height: 800px;
+    }
+
+    &.two {
+      width: 600px;
+      height: 600px;
+    }
+
+    &.three {
+      width: 500px;
+      height: 500px;
+    }
+  }
+}
+
 @media (max-width: 768px) {
+  .about-hero-section {
+    min-height: 450px;
+    padding: 2rem 1rem;
+  }
+
+  .hero-v2-lightray {
+    &.one {
+      width: 600px;
+      height: 600px;
+      top: -300px;
+      left: -150px;
+    }
+
+    &.two {
+      width: 500px;
+      height: 500px;
+      bottom: -200px;
+      right: -80px;
+    }
+
+    &.three {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
   .timeline {
     &::before {
       left: 2rem !important;
@@ -1177,4 +1527,85 @@
       }
     }
   }
+
+  .vision-card, .mission-card {
+    .vm-icon {
+      width: 60px;
+      height: 60px;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .culture-card {
+    .culture-icon {
+      width: 60px;
+      height: 60px;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .achievement-card {
+    flex-direction: column;
+    text-align: center;
+
+    .achievement-icon {
+      margin: 0 auto;
+    }
+  }
+
+  .project-metrics {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-section {
+    min-height: 400px;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .hero-v2-lightray {
+    display: none; // Hide decorative elements on very small screens
+  }
+
+  .timeline-item {
+    margin-left: 3rem !important;
+
+    .timeline-marker {
+      left: 1.5rem !important;
+    }
+  }
+
+  .stat-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem !important;
+
+    i {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+// Prevent horizontal scroll globally for about component
+:host {
+  display: block;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }

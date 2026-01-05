@@ -36,6 +36,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   onWindowResize() {
     if (window.innerWidth > 960) {
       this.menuOpen = false;
+      this.updateBodyScroll();
     }
   }
 
@@ -54,6 +55,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (this.themeSubscription) {
       this.themeSubscription.unsubscribe();
     }
+    // Clean up body class on destroy
+    document.body.classList.remove('menu-open');
   }
 
   toggleTheme() {
@@ -62,10 +65,24 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+    this.updateBodyScroll();
   }
 
   closeMenu() {
     this.menuOpen = false;
+    this.updateBodyScroll();
+  }
+
+  private updateBodyScroll() {
+    if (window.innerWidth <= 960) {
+      if (this.menuOpen) {
+        document.body.classList.add('menu-open');
+      } else {
+        document.body.classList.remove('menu-open');
+      }
+    } else {
+      document.body.classList.remove('menu-open');
+    }
   }
 
   openQuoteDialog() {

@@ -14,9 +14,25 @@
 
   <!-- Main Content -->
   <main class="product-main" *ngIf="!loading && !error && product">
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <button pButton pRipple type="button" class="btn-back" (click)="goBack()" aria-label="Go back">
+        <i class="pi pi-arrow-left"></i>
+        <span>Back to Services</span>
+      </button>
+    </div>
+
     <!-- Hero Header -->
     <header class="product-header">
       <div class="header-content">
+        <div class="product-icon-container" *ngIf="product!.icon">
+          <img [src]="product!.icon" 
+               [alt]="product!.name + ' icon'"
+               class="product-icon"
+               (error)="onIconError($event)"
+               [class.icon-error]="iconError">
+          <i *ngIf="iconError" [class]="getFallbackIcon()" class="fallback-icon"></i>
+        </div>
         <div class="header-badge">
           <span class="badge-dot"></span>
           <span>{{ product!.id | titlecase }} Platform</span>

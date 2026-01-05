@@ -1,9 +1,23 @@
+// Prevent horizontal scroll globally
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 // Main app container
 .app-container {
   min-height: 100vh;
   background: var(--surface-ground);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 // Main content area
@@ -100,13 +114,19 @@ button {
       align-items: center;
       justify-content: center;
       animation: logoPulse 2s ease-in-out infinite;
+      position: relative;
+      overflow: visible;
       
       .logo-image {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
         object-fit: contain;
-        border-radius: 50%;
+        display: block;
         filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+        opacity: 1;
+        visibility: visible;
       }
     }
     
@@ -175,7 +195,7 @@ button {
   }
   50% {
     transform: scale(1.05);
-    opacity: 0.9;
+    opacity: 1;
   }
 }
 
@@ -210,10 +230,23 @@ button {
   }
 }
 
+// Body scroll lock when mobile menu is open
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 // Responsive adjustments
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .main-content {
-    padding-top: 70px; // Smaller navbar on mobile
+    padding-top: 65px; // Smaller navbar on mobile
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 60px; // Even smaller navbar on small mobile
   }
 }
 

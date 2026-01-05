@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product, ResponsiveOption } from './product.types';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 
 // Sub-components
 import { OverviewComponent } from './components/overview/overview.component';
@@ -15,6 +17,8 @@ import { SecurityComplianceComponent } from './components/security-compliance/se
   standalone: true,
   imports: [
     CommonModule,
+    ButtonModule,
+    RippleModule,
     OverviewComponent,
     TechnicalArchitectureComponent,
     DevelopmentProcessComponent,
@@ -28,6 +32,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   loading = true;
   error = '';
   activeTab = 0;
+  iconError: boolean = false;
   private subscription: Subscription | undefined;
 
   tabs = [
@@ -69,7 +74,27 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    // Try to go back in history, fallback to services page
+    if (window.history.length > 1) {
+      this.router.navigate(['/services']);
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
+
+  onIconError(event: Event): void {
+    this.iconError = true;
+    const img = event.target as HTMLImageElement;
+    img.style.display = 'none';
+  }
+
+  getFallbackIcon(): string {
+    const iconMap: { [key: string]: string } = {
+      'healthconnect': 'pi pi-heart',
+      'fintech': 'pi pi-dollar',
+      'smartretail': 'pi pi-shopping-cart'
+    };
+    return iconMap[this.product?.id || ''] || 'pi pi-cog';
   }
 
   private loadProduct(productId: string): void {
@@ -79,6 +104,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
           id: productId,
           name: this.getProductName(productId),
           description: this.getProductDescription(productId),
+          icon: this.getProductIcon(productId),
           technologies: this.getProductTechnologies(productId),
           features: this.getProductFeatures(productId),
           screenshots: this.getProductScreenshots(productId),
@@ -119,6 +145,15 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
       smartretail: 'Next-generation retail platform combining inventory management, point of sale, and AI-driven customer analytics for seamless operations.'
     };
     return descriptions[id] || '';
+  }
+
+  private getProductIcon(id: string): string {
+    const icons: Record<string, string> = {
+      healthconnect: 'assets/service-icons/mobile-development.svg', // Healthcare apps are mobile-focused
+      fintech: 'assets/service-icons/web-development.svg', // FinTech has web portal
+      smartretail: 'assets/service-icons/ui-ux-design.svg' // Retail focuses on UX
+    };
+    return icons[id] || '';
   }
 
   private getProductTechnologies(id: string): string[] {
